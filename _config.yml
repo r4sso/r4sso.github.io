@@ -1,0 +1,18 @@
+title: Hello World!
+email: r4ssonull@gmail.com
+navflink1 : HOME
+navlink1 : #
+navflink2 : BLOG
+navlink1 : /blog
+domain: r4sso.cf
+moto: Under Development
+profile: https://avatars.githubusercontent.com/u/66033675?s=400&u=dae590b8f089de95445eb82c661b55900bac7bc0&v=4
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter: r4ssonull
+github: r4sso
+instagram: r4sso.null

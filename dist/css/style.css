@@ -1,0 +1,179 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    color: white
+}
+
+.arimo {
+    font-family: 'Arimo';
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.raleway {
+    font-family: 'Raleway';
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+.abel {
+    font-family: 'Abel';
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+
+.about {
+    padding: 150px 0;
+    text-align: center;
+}
+
+.moto {
+    margin:15px;
+}
+
+.fa {
+
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 30px 15px;
+
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+  
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav {
+    background: rgb(0, 0, 0);
+    padding: 10 500px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu,
+  .logo {
+    font-size: 15px;
+  }
+  .item {
+    padding: 5px;
+  }
+  .item.button {
+    padding: 9px 5px;
+  }
+  .item:not(.button) a:hover,
+  .item a:hover::after {
+    color: #ccc;
+  }
+  /* Mobile menu */
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu li a {
+        display: block;
+        padding: 15px 5px;
+    }
+    .menu li.subitem a {
+        padding: 15px;
+    }
+    .toggle {
+        order: 1;
+        font-size: 20px;
+    }
+    .item.button {
+        order: 2;
+    }
+    .item {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+    .active .item {
+        display: block;
+    }
+   
+
+
+    .logo {
+      flex: 1;
+    }
+   
+
+  /* Desktop menu */
+  @media all and (min-width: 960px) {
+    .menu {
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      background: none;
+    }
+    .logo {
+      order: 0;
+    }
+    .item {
+      order: 1;
+      position: relative;
+      display: block;
+      width: auto;
+    }
+    .button {
+      order: 2;
+    }
+
+    .toggle {
+      display: none;
+    }
+    .submenu-active {
+      border-radius: 0;
+    }
+
+   
+  }
+
+  @media only screen and (max-width: 600px) {
+    nav {
+      padding:10px 10px;
+      max-width: 600px;
+      width: auto;
+    }
+
+    .item {
+        text-align: center;
+    }
+
+    .logo {
+        order: 0;
+      }
+      .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+      }
+      .button {
+        order: 2;
+      }
+      
+        
+    
+  }
