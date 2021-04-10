@@ -15,18 +15,10 @@
           <li class="item raleway"><a href="/blog">{{ site.navflink2 }}</a></li>
           </li>
       </nav>
-
-    <div class="about">
-        <img class="profile" src="dist/66033675.png"><br>
-        <a class="logo arimo" href="#"><b>{{ site.domain }}</b></a>
-        <br><p class="moto abel">{{ site.moto }}</p>
-        <a href="{{ twitter }}" class="fa fa-twitter"></a>
-        <a href="https://instagram.com/{{ instagram }}" class="fa fa-instagram"></a>
-        <a href="https://github.com/{{github}}" class="fa fa-github"></a>
-    </div>
+    {{ site.profile }}
+    {{ content }}
 
 
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-</body>
