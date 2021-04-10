@@ -167,26 +167,31 @@ img.profile {
     .about {
       padding: 50px 0;
       text-align: center;
-  }
+    }
 
-  img.profile {
-    width:200px;
-    height:200px;
-  }
-  
+    .raleway,.arimo {
+      font-size: 12px;
+    }
+
+    img.profile {
+      width:200px;
+      height:200px;
+    }
+    
     .logo {
-        order: 0;
-      }
-      .item {
-        order: 1;
-        position: relative;
-        display: block;
-        width: auto;
-      }
-      .button {
-        order: 2;
-      }
-      
+      order: 0;
+    }
+    
+    .item {
+          order: 1;
+          position: relative;
+          display: block;
+          width: auto;
+        }
+        .button {
+          order: 2;
+        }
+        
         
     
   }
