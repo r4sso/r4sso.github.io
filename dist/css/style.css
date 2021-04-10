@@ -169,6 +169,11 @@ img.profile {
       text-align: center;
   }
 
+  img.profile {
+    width:200px;
+    height:200px;
+  }
+  
     .logo {
         order: 0;
       }
