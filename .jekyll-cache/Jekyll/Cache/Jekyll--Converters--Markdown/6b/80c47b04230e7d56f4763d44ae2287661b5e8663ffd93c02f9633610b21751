@@ -1,0 +1,34 @@
+I"C<p class="label label-purple">Notes</p>
+
+<h1 class="no_toc" id="itts-open-course-cyber-security-notes">ITTS (Open Course) Cyber Security Notes</h1>
+
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#advanced-networking-and-cyber-security" id="markdown-toc-advanced-networking-and-cyber-security">Advanced Networking and Cyber Security</a></li>
+  <li><a href="#tcpip-concepts" id="markdown-toc-tcpip-concepts">TCP/IP concepts</a></li>
+  <li><a href="#network-simulator" id="markdown-toc-network-simulator">Network Simulator</a></li>
+</ol>
+
+</details>
+
+<h2 id="advanced-networking-and-cyber-security">Advanced Networking and Cyber Security</h2>
+
+<hr />
+
+<h2 id="tcpip-concepts">TCP/IP concepts</h2>
+<p><a href="/notes/network/tcpip">Basic Concepts of TCP/IP</a></p>
+
+<hr />
+<h2 id="network-simulator">Network Simulator</h2>
+<blockquote>
+  <ul>
+    <li><a href="">Network Simulation</a></li>
+    <li><a href="">Install VirtualBox</a></li>
+    <li><a href="">Create own router with OpenWRT</a></li>
+  </ul>
+</blockquote>
+
+:ET

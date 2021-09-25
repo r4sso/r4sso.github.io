@@ -11,7 +11,9 @@ In this section will be given an introduction to the basic concepts and working 
 
 TCP / IP usually exists in Unix operating systems or its derivatives. Although the development is actually separate but the history of the two is very close, especially since 4.2BSD Unix began to incorporate the TCP / IP protocol into it. Today, the TCP / IP protocol is available in many operating systems and is an integral part of the OS / 2, OS / 400, and Windows 9x / NT / 2000 / XP operating systems, as well as various Unix variants.
 
-### Basic TCP/IP Architecture
+* * *
+
+## Basic TCP/IP Architecture
 
 Data communication is the process of sending data from one computer to another. Through Network Interface Card (NIC) equipment or LAN card, data communication between computers is usually done. The NIC / LAN cards used vary greatly depending on the type of physical channel used.
 

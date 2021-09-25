@@ -1,0 +1,18 @@
+I"ù<p>Oracle VM VirtualBox is a free and open-source hosted hypervisor for x86 virtualization, developed by Oracle Corporation. Created by Innotek, it was acquired by Sun Microsystems in 2008, which was in turn acquired by Oracle in 2010. VirtualBox may be installed on Windows, macOS, Linux, Solaris and OpenSolaris.</p>
+
+<hr />
+<h2 id="bios-setting">BIOS Setting</h2>
+<p>Make sure to enable VT / Virtualization Technology in BIOS</p>
+
+<hr />
+<h2 id="installation">Installation</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">```js
+// Javascript code with syntax highlighting.
+var fun = function lang(l) {
+  dateformat.i18n = require('./lang/' + l)
+  return true;
+}
+```</span></code></pre></figure>
+
+:ET
