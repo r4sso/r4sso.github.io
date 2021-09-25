@@ -1,7 +1,7 @@
-﻿---
+---
 layout: default
-title: Basic Concepts of TCP/IP
-parent: Network
+title: Basic concept of TCP/IP
+parent: Networking
 permalink: /notes/network/tcpip
 ---
 
