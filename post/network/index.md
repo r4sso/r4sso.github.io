@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Cybersecurity
-nav_order: 2
+title: Networking
+nav_order: 4
 has_children: true
-permalink: /notes/sec/
+permalink: /notes/network/
 ---
 Coming soon
 {: .label .label-yellow }
-# Cybersecurity
+# Networking
 
 {: .fs-6 .fw-300 }
 
