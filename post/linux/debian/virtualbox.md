@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Install VirtualBox
+title: VirtualBox
 grand_parent: Linux
 parent: Debian based
 permalink: /notes/linux/debian/virtualbox

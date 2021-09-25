@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Pentesting
-nav_order: 2
+title: Networking
+nav_order: 4
 has_children: true
-permalink: /notes/sec/
+permalink: /notes/net/
 ---
 Coming soon
 {: .label .label-yellow }
-# Pentesting
+# Networking
 
 {: .fs-6 .fw-300 }
 

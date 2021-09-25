@@ -32,4 +32,6 @@ Notes
 > * [Install VirtualBox](/notes/linux/debian/virtualbox)
 > * [Create own router with OpenWRT]()
 
+* * *
+## IPv6
 

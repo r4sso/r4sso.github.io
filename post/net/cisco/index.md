@@ -1,13 +1,14 @@
 ---
 layout: default
-title: Pentesting
-nav_order: 2
+title: Cisco
+parent: Networking
 has_children: true
-permalink: /notes/sec/
+nav_order: 1
+permalink: /notes/net/cisco
 ---
 Coming soon
 {: .label .label-yellow }
-# Pentesting
+# cisco
 
 {: .fs-6 .fw-300 }
 
