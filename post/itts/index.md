@@ -10,6 +10,8 @@ Notes
 # ITTS (Open Course) Cyber Security Notes
 {: .no_toc }
 
+reference: [opencourse.itts.ac.id](https://opencourse.itts.ac.id/)
+
 <details open markdown="block">
   <summary>
     Table of contents
@@ -35,3 +37,14 @@ Notes
 * * *
 ## IPv6
 
+## Routing
+
+## Advanced Routing
+
+## VoIP and OpenBTS
+
+## Network Benchmarking
+
+## Network Programming
+
+## Intro To Hacking
