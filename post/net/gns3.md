@@ -2,7 +2,7 @@
 layout: default
 title: GNS3
 parent: Networking
-permalink: /notes/net/gns3
+permalink: /notes/net/gns3.html
 ---
 
 # GNS3
