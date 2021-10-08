@@ -21,9 +21,9 @@ Device on the Internet are assigned a unique IP address for identification and l
 
 * * *
 ![terminology-en.svg](https://upload.wikimedia.org/wikipedia/commons/5/5e/IPv6_address_terminology-en.svg)
-IPv6 is a new <mark>3rd layer protocol</mark>  <mark> designed to replace IPv4 </mark>. IPv4 was designed in the past ( [RFC 760](https://tools.ietf.org/html/rfc760) / Internet Protocol from January 1980) and since its introduction, there has been a lot of demand for more addresses and increased capabilities. Specifications [RFC 2460](https://tools.ietf.org/html/rfc2460) / Internet Protocol Version 6 Last. 
+IPv6 is a new <mark>layer 3 protocol</mark>  <mark> designed to replace IPv4 </mark>. IPv4 was designed in the past ( [RFC 760](https://tools.ietf.org/html/rfc760) / Internet Protocol from January 1980) and since its introduction, there has been a lot of demand for more addresses and increased capabilities. Specifications [RFC 2460](https://tools.ietf.org/html/rfc2460) / Internet Protocol Version 6 Last. 
 
-The main change in IPv6 is the redesign of the header, including increasing the number of addresses from 32 bits to 128 bits. Because layer 3 is responsible for end-to-end packet transport using address-based packet routing, this layer must include new IPv6 addresses (source and destination), such as IPv4.
+The main change in IPv6 is the redesign of the header, including increasing the number of addresses from 32 bits to 128 bits. Because layer 3 is <mark>responsible for end-to-end packet transport</mark> using address-based packet routing, this layer must include new IPv6 addresses (source and destination), such as IPv4.
 
 reference: [wikipedia.com](https://en.wikipedia.org/wiki/IPv6)
 [lms.onnocenter.or.id](https://lms.onnocenter.or.id/wiki/index.php/IPv6:_Apa_itu_IPv6%3F)
