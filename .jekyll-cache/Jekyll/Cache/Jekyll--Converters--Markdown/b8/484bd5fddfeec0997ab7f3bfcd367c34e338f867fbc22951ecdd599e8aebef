@@ -1,0 +1,8 @@
+I"<h2 id="installation">Installation</h2>
+<hr />
+
+<h3 id="update-the-system-clock">Update the system clock</h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">timedatectl set-ntp <span class="nb">true</span></code></pre></figure>
+
+:ET

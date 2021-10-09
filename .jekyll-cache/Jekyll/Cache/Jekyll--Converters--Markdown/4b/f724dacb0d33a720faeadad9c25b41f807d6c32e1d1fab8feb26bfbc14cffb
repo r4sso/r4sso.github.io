@@ -1,0 +1,6 @@
+I"<h2 id="installation">Installation</h2>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="o">}</span>
+git push https://&lt;GITHUB_ACCESS_TOKEN&gt;@github.com/&lt;GITHUB_USERNAME&gt;/&lt;REPOSITORY_NAME&gt;.git</code></pre></figure>
+
+:ET

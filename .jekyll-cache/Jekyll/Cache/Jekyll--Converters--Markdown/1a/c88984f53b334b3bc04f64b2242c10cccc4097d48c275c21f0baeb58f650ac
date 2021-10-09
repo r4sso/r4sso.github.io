@@ -1,0 +1,28 @@
+I"÷<h3 id="update-the-system-clock"><strong>Update the system clock</strong></h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">timedatectl set-ntp <span class="nb">true</span></code></pre></figure>
+
+<h3 id="partition-the-disks"><strong>Partition the disks</strong></h3>
+<p class="fs-3">Display partition:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">fdisk <span class="nt">-l</span></code></pre></figure>
+
+<p class="fs-3">Modify partition tables:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">fdisk /dev/the_disk_to_be_partitioned</code></pre></figure>
+
+<h3 id="format-the-partitions"><strong>Format the partitions</strong></h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">mkfs.ext4 /dev/root_partition</code></pre></figure>
+
+<p class="fs-3">If swap available:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">mkswap /dev/swap_partition</code></pre></figure>
+
+<h2 id="installation"><strong>Installation</strong></h2>
+<hr />
+<h3 id="select-mirror"><strong>Select Mirror</strong></h3>
+<p class="fs-3">Select mirror here:
+<a href="https://archlinux.org/mirrorlist/?ip_version=6">mirrorlist</a></p>
+
+:ET
