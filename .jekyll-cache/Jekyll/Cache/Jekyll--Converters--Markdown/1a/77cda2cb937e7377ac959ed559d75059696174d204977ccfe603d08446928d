@@ -1,6 +1,0 @@
-I"ê<h3 id="push-using-github-toke">Push using GitHub toke</h3>
-<pre>
-git push https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
-&lt;/pre&gt;
-</REPOSITORY_NAME></GITHUB_USERNAME></GITHUB_ACCESS_TOKEN></pre>
-:ET
