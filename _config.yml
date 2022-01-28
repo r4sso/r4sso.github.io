@@ -29,8 +29,8 @@ description: >- # this means to ignore newlines until "baseurl:" Very pog
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: r4ssonull
+github_username:  r4sso
 
 # Build settings
 theme: "just-the-docs"
@@ -119,4 +119,4 @@ gh_edit_branch: "master" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
-color_scheme: dark
+color_scheme: dracula
