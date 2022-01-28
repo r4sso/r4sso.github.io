@@ -19,6 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 logo: "https://avatars.githubusercontent.com/u/66033675?v=4"
+remote_theme: pmarsceill/just-the-docs
 title: Notes
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:" Very pog
