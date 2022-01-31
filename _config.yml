@@ -33,7 +33,7 @@ twitter_username: r4ssonull
 github_username:  r4sso
 
 # Build settings
-theme: "just-the-docs"
+# theme: "just-the-docs"
 plugins:
   - jekyll-feed
 

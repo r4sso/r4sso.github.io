@@ -1,0 +1,14 @@
+I"Î<p class="label">Windows</p>
+
+<p class="label label-blue">A</p>
+<p>Room: <a href="https://tryhackme.com/room/ice">tryhackme.org/room/ice</a></p>
+
+<h2 id="reconnaissance">Reconnaissance</h2>
+<ol>
+  <li>Nmap scan
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># nmap -sS -p- TARGET_IP</span>
+</code></pre></div>    </div>
+    <p><img src="/images/ice00.jpg" alt="ice-scan" /></p>
+  </li>
+</ol>
+:ET

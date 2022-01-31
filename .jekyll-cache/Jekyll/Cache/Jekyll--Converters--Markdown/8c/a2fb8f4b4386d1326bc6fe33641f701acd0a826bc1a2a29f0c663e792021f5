@@ -1,0 +1,11 @@
+I"<p class="label">Windows</p>
+
+<p class="label label-blue">A</p>
+<p>Room: <a href="https://tryhackme.com/room/ice">tryhackme.org/room/ice</a></p>
+
+<h2 id="reconnaissance">Reconnaissance</h2>
+<ol>
+  <li>run nmap
+<img src="/images/ice00.jpg" alt="ice-scan" /></li>
+</ol>
+:ET

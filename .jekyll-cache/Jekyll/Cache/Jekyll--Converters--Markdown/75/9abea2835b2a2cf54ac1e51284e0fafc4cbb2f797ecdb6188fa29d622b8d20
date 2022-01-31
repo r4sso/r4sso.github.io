@@ -1,0 +1,13 @@
+I"d<p class="label">Windows</p>
+
+<p class="label label-blue">A</p>
+<p>Room: <a href="https://tryhackme.com/room/ice">tryhackme.org/room/ice</a></p>
+
+<h2 id="reconnaissance">Reconnaissance</h2>
+<ol>
+  <li>run nmap w/ -p-, -A might useful :D
+<img src="/images/ice00.jpg" alt="ice-scan" />
+OS-Information:
+<img src="/images/ice01.jpg" alt="ice-os" /></li>
+</ol>
+:ET
