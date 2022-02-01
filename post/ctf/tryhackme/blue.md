@@ -10,7 +10,7 @@ Windows
 
 EternalBlue
 {: .label .label-blue }
-Room: [tryhackme.org/room/blue](https://tryhackme.com/room/blue)
+Room: [tryhackme.com/room/blue](https://tryhackme.com/room/blue)
 
 ## Reconnaissance
 First we need to do Reconnaissance.

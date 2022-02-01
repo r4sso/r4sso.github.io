@@ -1,0 +1,25 @@
+I"}<p class="label">Local File Inclusion (LFI)</p>
+
+<p>Room: <a href="https://tryhackme.com/room/inclusion">tryhackme.com/room/inclusion</a></p>
+
+<h2 id="reconnaissance">Reconnaissance</h2>
+<p>nmap scan show the target has ssh.
+<img src="/images/inclusion00.jpg" alt="nmap" /></p>
+
+<h2 id="gain-access">Gain access</h2>
+<p>Hint1: read passwd file
+<img src="/images/inclusion01.jpg" alt="passwd" />
+It’s show the username is faclonfeast &amp; the password.</p>
+
+<p><img src="/images/inclusion02.jpg" alt="ssh" />
+<br /> and its work! :D
+We just got the user flag</p>
+
+<h2 id="privsec">PrivSec</h2>
+<p><img src="/images/inclusion03.jpg" alt="sudo -l" />
+Lets do some research. I recommend to use <a href="https://gtfobins.github.io/gtfobins/socat/">gtfobins.github.io</a></p>
+
+<p><img src="/images/inclusion04.jpg" alt="privesc" /></p>
+
+<p>Here we go, we got root privileges &amp; root flag.</p>
+:ET

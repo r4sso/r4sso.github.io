@@ -10,7 +10,7 @@ Windows
 
 CVE-2004-1561
 {: .label .label-red }
-Room: [tryhackme.org/room/ice](https://tryhackme.com/room/ice)
+Room: [tryhackme.com/room/ice](https://tryhackme.com/room/ice)
 
 ## Reconnaissance
 1. run nmap w/ -p-, -A might useful :D
