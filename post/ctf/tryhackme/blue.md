@@ -4,6 +4,7 @@ title: Blue
 parent: TryHackMe
 grand_parent: CTF (writeup)
 permalink: /ctf/tryhackme/blue.html
+last_modified_date: 1 FEB 2022
 ---
 Windows
 {: .label }

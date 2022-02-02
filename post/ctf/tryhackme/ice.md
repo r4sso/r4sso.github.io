@@ -3,6 +3,7 @@ layout: default
 title: Ice
 parent: TryHackMe
 grand_parent: CTF (writeup)
+last_modified_date: 1 FEB 2022
 permalink: /ctf/tryhackme/ice.html
 ---
 Windows

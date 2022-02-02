@@ -3,6 +3,7 @@ layout: default
 title: Inclusion
 parent: TryHackMe
 grand_parent: CTF (writeup)
+last_modified_date: 1 FEB 2022
 permalink: /ctf/tryhackme/inclusion.html
 ---
 Local File Inclusion (LFI)
@@ -24,7 +25,7 @@ It's show the username is faclonfeast & the password.
 <br> and its work! :D
 We just got the user flag
 
-## PrivSec
+## PrivEsc
 ![sudo -l](/images/inclusion03.jpg)
 Lets do some research. I recommend to use [gtfobins.github.io](https://gtfobins.github.io/gtfobins/socat/)
 
