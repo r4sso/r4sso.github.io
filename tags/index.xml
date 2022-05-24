@@ -6,7 +6,15 @@
         <description>Recent content in Tags on ~/r4sso.github.io</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-uk</language>
-        <lastBuildDate>Wed, 02 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Troubleshooting</title>
+        <link>https://r4sso.github.io/tags/troubleshooting/</link>
+        <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://r4sso.github.io/tags/troubleshooting/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>ctf</title>
         <link>https://r4sso.github.io/tags/ctf/</link>
         <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>

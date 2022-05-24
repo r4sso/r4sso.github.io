@@ -6,41 +6,48 @@
         <description>Recent content in Pages on ~/r4sso.github.io</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-uk</language>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 24 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://r4sso.github.io/about/</link>
+        <pubDate>Tue, 24 May 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://r4sso.github.io/about/</guid>
+        <description>&lt;h2 id=&#34;about-me&#34;&gt;About me&lt;/h2&gt;
+&lt;p&gt;For anyone who curious:V&lt;/p&gt;
+&lt;h3 id=&#34;whoami&#34;&gt;Whoami?&lt;/h3&gt;
+&lt;p&gt;I am cybersecurity and computer enthusiast.&lt;!-- raw HTML omitted --&gt;
+I post all my writeup/blog on this site.&lt;!-- raw HTML omitted --&gt;
+All my projects is on &lt;a class=&#34;link&#34; href=&#34;https://github.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github.&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;are-you-fammiliar-with-linux&#34;&gt;Are you fammiliar with Linux?&lt;/h3&gt;
+&lt;p&gt;I&amp;rsquo;ve been using Linux since early 2018. Currently using Artix Linux as my daily driver.&lt;/p&gt;
+&lt;p&gt;My distro history:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu (first distro)&lt;/li&gt;
+&lt;li&gt;Kali Linux&lt;/li&gt;
+&lt;li&gt;Linux mint&lt;/li&gt;
+&lt;li&gt;Parrot OS&lt;/li&gt;
+&lt;li&gt;Manjaro (my first arch distro)&lt;/li&gt;
+&lt;li&gt;Pop!_OS&lt;/li&gt;
+&lt;li&gt;Blackarch&lt;/li&gt;
+&lt;li&gt;Arch Linux (after using blackarch i got balls to try arch :V /s)&lt;/li&gt;
+&lt;li&gt;Artix Linux (My first Linux Distro without systemd)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I know, I am distro hopper. Not anymore tho :V .&lt;/p&gt;
+&lt;h3 id=&#34;contact-me&#34;&gt;Contact Me&lt;/h3&gt;
+&lt;p&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:r4ssonull@gmail.com&#34; &gt;r4ssonull@gmail.com&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you spot any grammar mistake. You more than welcome to correct me &amp;gt;;)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Archives</title>
         <link>https://r4sso.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
         <guid>https://r4sso.github.io/archives/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>About</title>
-        <link>https://r4sso.github.io/about/</link>
-        <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://r4sso.github.io/about/</guid>
-        <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Apache Licence 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
-&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yuin/goldmark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alecthomas/chroma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muesli/smartcrop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/cobra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/viper&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
-&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
-&lt;p&gt;Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
-&lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-</description>
         </item>
         <item>
         <title>Links</title>

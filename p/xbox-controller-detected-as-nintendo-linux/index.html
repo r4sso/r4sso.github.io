@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-uk" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Sample article showcasing basic Markdown syntax and formatting for HTML elements.'><title>Ice (TryHackMe)</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='So my Xbox controller detected as Nintendo on my arch'><title>Xbox Controller Detected As Nintendo (Linux)</title>
 
-<link rel='canonical' href='https://r4sso.github.io/p/ice-tryhackme/'>
+<link rel='canonical' href='https://r4sso.github.io/p/xbox-controller-detected-as-nintendo-linux/'>
 
-<link rel="stylesheet" href="/scss/style.min.d89325c65dbf3aa9ed77d3e67957ce08a2e61207150a9bf49bfc521a5cb20225.css"><meta property='og:title' content='Ice (TryHackMe)'>
-<meta property='og:description' content='Sample article showcasing basic Markdown syntax and formatting for HTML elements.'>
-<meta property='og:url' content='https://r4sso.github.io/p/ice-tryhackme/'>
+<link rel="stylesheet" href="/scss/style.min.d89325c65dbf3aa9ed77d3e67957ce08a2e61207150a9bf49bfc521a5cb20225.css"><meta property='og:title' content='Xbox Controller Detected As Nintendo (Linux)'>
+<meta property='og:description' content='So my Xbox controller detected as Nintendo on my arch'>
+<meta property='og:url' content='https://r4sso.github.io/p/xbox-controller-detected-as-nintendo-linux/'>
 <meta property='og:site_name' content='~/r4sso.github.io'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='writeup' /><meta property='article:tag' content='ctf' /><meta property='article:tag' content='tryhackme' /><meta property='article:tag' content='windows' /><meta property='article:published_time' content='2022-02-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-02-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://i.imgur.com/6Ijftag.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Troubleshooting' /><meta property='article:published_time' content='2022-05-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-05-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://cdn.shopify.com/s/files/1/0075/2425/3809/products/9110-3_540x.png' />
 <meta name="twitter:site" content="@r4ssonull">
-    <meta name="twitter:creator" content="@r4ssonull"><meta name="twitter:title" content="Ice (TryHackMe)">
-<meta name="twitter:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://i.imgur.com/6Ijftag.png' />
+    <meta name="twitter:creator" content="@r4ssonull"><meta name="twitter:title" content="Xbox Controller Detected As Nintendo (Linux)">
+<meta name="twitter:description" content="So my Xbox controller detected as Nintendo on my arch"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cdn.shopify.com/s/files/1/0075/2425/3809/products/9110-3_540x.png' />
     </head>
     <body class="
     article-page
@@ -225,9 +225,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/ice-tryhackme/">
+            <a href="/p/xbox-controller-detected-as-nintendo-linux/">
                 
-                    <img src="https://i.imgur.com/6Ijftag.png" loading="lazy" alt="Featured image of post Ice (TryHackMe)" />
+                    <img src="https://cdn.shopify.com/s/files/1/0075/2425/3809/products/9110-3_540x.png" loading="lazy" alt="Featured image of post Xbox Controller Detected As Nintendo (Linux)" />
                 
             </a>
         </div>
@@ -237,8 +237,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/ctf-writeup/" >
-                CTF (writeup)
+            <a href="/categories/linux/" >
+                Linux
             </a>
         
     </header>
@@ -246,12 +246,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/ice-tryhackme/">Ice (TryHackMe)</a>
+            <a href="/p/xbox-controller-detected-as-nintendo-linux/">Xbox Controller Detected As Nintendo (Linux)</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+            So my Xbox controller detected as Nintendo on my arch
         </h3>
         
     </div>
@@ -269,7 +269,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Feb 01, 2022</time>
+                <time class="article-time--published">May 23, 2022</time>
             </div>
         
 
@@ -298,111 +298,90 @@
     <section class="article-content">
     
     
-    <p>Room: <a class="link" href="https://tryhackme.com/room/ice"  target="_blank" rel="noopener"
-    >tryhackme.com/room/ice</a></p>
-<h2 id="reconnaissance">Reconnaissance</h2>
-<ol>
-<li>run nmap w/ -p-, -A might useful :D
-<img src="/images/ice00.jpg"
+    <p>So i have generic xbox controller (its also had switch mode for nintendo switch) its work perfectly and detected as xbox before. Since i updated the kernel it detected as Nintendo Switch Pro Controller</p>
+<p><img src="/images/controller.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="ice-scan"
+		alt="lsusb1"
+	
+	
+></p>
+<p><img src="/images/controller1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="dmesg1"
+	
+	
+></p>
+<p>If you having same problem like me here the solution.
+Most solution i found on internet either bind to specific driver or install specific driver , neither of them work.</p>
+<p>So why just not unload or delete the module?
+It will still use that module when you plug it in.</p>
+<p>So lets just blacklist the module.
+The module we need to blacklist is <code>hid_nintendo</code> so it will not load and use <code>xpad</code> (xbox driver) instead.</p>
+<p>First we need to unload the module</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># modprobe -r hid_nintendo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>then put it on blacklist</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/etc/modprobe.d/nobeep.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">blacklist hid_nintendo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>arch wiki said if you want effectively blacklist that module we need to put this</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/etc/modprobe.d/blacklist.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">install hid_nintendo /bin/true
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>then replug the controller.</p>
+<p>It&rsquo;s work! It&rsquo;s now detected as xbox controller</p>
+<p><img src="/images/controller3.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="lsusb2"
 	
 	
 >
-OS-Information:
-<img src="/images/ice01.jpg"
+<img src="/images/controller4.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="ice-os"
+		alt="dmesg2"
 	
 	
-></li>
-</ol>
-<hr>
-<h2 id="gain-access">Gain Access</h2>
-<ol>
-<li>Find more information about the vulnerability.</li>
-</ol>
-<!-- raw HTML omitted -->
-<p>Hint: [execute arbitrary code in an unauthenticated fashion./ From 2004]
-<img src="/images/ice02.jpg"
-	
-	
-	
-	loading="lazy"
-	
-		alt="ice-cve"
-	
-	
->
-Seem matched w/ the hint :D</p>
-<ol>
-<li>Start metasploit</li>
-<li>Search exploit for icecast &amp; use it :D</li>
-<li>Set options required &amp; run.</li>
-</ol>
-<hr>
-<h2 id="escalate">Escalate</h2>
-<ol>
-<li>Once you get into meterpreter shell</li>
-<li>Gain information about the system target</li>
-<li>run the following command <strong><code>run post/multi/recon/local_exploit_suggester</code></strong></li>
-<li>Once you get the exploit including &ldquo;eventwr&rdquo;. Background this shell <strong>(CTRL+Z)</strong></li>
-<li>Use the exploit you get before &amp; set options required.</li>
-<li>Yolo!
-<img src="/images/ice03.jpg"
-	
-	
-	
-	loading="lazy"
-	
-		alt="ice-privec"
-	
-	
-></li>
-<li>We can now verify that we have expanded permissions using the command <code>getprivs</code>.</li>
-</ol>
-<hr>
-<h2 id="looting">Looting</h2>
-<ol>
-<li>Migrate to &ldquo;spool&rdquo;</li>
-<li>Let&rsquo;s check what user we are now with the command <code>getuid</code>.</li>
-<li>Use Mimikatz, <code>load kiwi</code>
-<img src="/images/ice04.jpg"
-	
-	
-	
-	loading="lazy"
-	
-		alt="ice-kiwi"
-	
-	
-></li>
-<li>Retrieve all credentials w/ kiwi
-<img src="/images/ice05.jpg"
-	
-	
-	
-	loading="lazy"
-	
-		alt="ice_creds"
-	
-	
-></li>
-</ol>
-<hr>
-<h2 id="post-exploitation">Post-Exploitation</h2>
-<ol>
-<li>Question 1-5 (help)</li>
-<li>Enable rdp <code>run post/windows/manage/enable_rdp</code></li>
-</ol>
+></p>
 
 </section>
 
@@ -411,13 +390,7 @@ Seem matched w/ the hint :D</p>
     
     <section class="article-tags">
         
-            <a href="/tags/writeup/">writeup</a>
-        
-            <a href="/tags/ctf/">ctf</a>
-        
-            <a href="/tags/tryhackme/">tryhackme</a>
-        
-            <a href="/tags/windows/">windows</a>
+            <a href="/tags/troubleshooting/">Troubleshooting</a>
         
     </section>
 
@@ -431,69 +404,6 @@ Seem matched w/ the hint :D</p>
     
 
     
-
-<aside class="related-contents--wrapper">
-    <h2 class="section-title">Related contents</h2>
-    <div class="related-contents">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/blue-tryhackme/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://i.imgur.com/6Ijftag.png" loading="lazy" data-key="" data-hash="https://i.imgur.com/6Ijftag.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Blue (TryHackMe)</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="has-image">
-    <a href="/p/ignite-tryhackme/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://tryhackme.com/img/banners/default_tryhackme.png" loading="lazy" data-key="" data-hash="https://tryhackme.com/img/banners/default_tryhackme.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Ignite (TryHackMe)</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="has-image">
-    <a href="/p/inclusion-tryhackme/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://i.imgur.com/laCoyOK.png" loading="lazy" data-key="" data-hash="https://i.imgur.com/laCoyOK.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Inclusion (TryHackMe)</h2>
-        </div>
-    </a>
-</article>
-            
-        </div>
-    </div>
-</aside>
 
      
     
@@ -637,42 +547,7 @@ Seem matched w/ the hint :D</p>
             >
 
             </main>
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">Table of contents</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#reconnaissance">Reconnaissance</a></li>
-    <li><a href="#gain-access">Gain Access</a></li>
-    <li><a href="#escalate">Escalate</a></li>
-    <li><a href="#looting">Looting</a></li>
-    <li><a href="#post-exploitation">Post-Exploitation</a></li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
         </div>
         <script 
