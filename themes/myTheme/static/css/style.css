@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Iosevka Web';
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+
+
+h1.title {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 800px;
+}
+
+img.avatar {
+    width: 10rem;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+h1.author {
+    margin-top: 1rem;
+    margin-bottom: 0.1rem;
+
+}
+
+blockquote.info {
+    margin-bottom: 0.5rem;
+
+   
+}
+
+p.desc {
+    margin-bottom: 0.5rem;
+}
+  

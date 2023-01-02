@@ -1,0 +1,10 @@
+<div class="item">
+    <a href="{{ .Permalink }}">
+        {{- $image := resources.Get .Params.thumb -}}
+        <img src="{{ ($image.Fill "200x200 q100 Center").RelPermalink }}">
+        <div>
+            <h1>{{ .Title }}</h1>
+            {{ .Summary }}
+        </div>
+    </a>
+</div>
