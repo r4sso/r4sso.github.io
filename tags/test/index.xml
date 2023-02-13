@@ -9,12 +9,21 @@
     <lastBuildDate>Sun, 01 Jan 2023 23:11:13 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
-      <link>https://r4sso.github.io/posts/my-first-post/</link>
+      <link>https://r4sso.github.io/p/my-first-post/</link>
       <pubDate>Sun, 01 Jan 2023 23:11:13 +0000</pubDate>
       
-      <guid>https://r4sso.github.io/posts/my-first-post/</guid>
+      <guid>https://r4sso.github.io/p/my-first-post/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2nd</title>
+      <link>https://r4sso.github.io/p/2nd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/p/2nd/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non semper purus. Curabitur pellentesque neque finibus viverra facilisis. Sed semper ipsum id enim luctus porta.</description>
     </item>
     
   </channel>

@@ -1,6 +1,22 @@
+:root {
+    --background-color: rgb(255, 255, 255) ;
+    --color: rgb(0, 0, 0);
+}
+
+[data-bs-theme='dark'] .bg-body {
+    --background-color: #000000 ;
+    --color: #ffffff;
+}
+html {
+     scroll-behavior: smooth;
+}
+
+
+
 body {
     background-color: rgb(255, 255, 255);
     font-family: 'Iosevka Web';
+    
 }
 
 .center {
@@ -16,6 +32,10 @@ h1.title {
     font-weight: 600;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 800px;
 }
@@ -26,20 +46,92 @@ img.avatar {
     border-radius: 50%;
 }
 
+img.thumb {
+    width: 500px;
+}
 
 h1.author {
     margin-top: 1rem;
     margin-bottom: 0.1rem;
-
 }
 
 blockquote.info {
     margin-bottom: 0.5rem;
-
-   
 }
 
 p.desc {
     margin-bottom: 0.5rem;
 }
-  
+
+a.nav-link {
+    font-size: 14px;
+}
+
+.navbar-brand {
+    padding:0px 0px 5px 0px;
+}
+
+
+.dark-tgl {
+    padding: 5px 0px 0px 10px;
+    border-left:1px solid #363636 ;
+}
+
+.post-list {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post-card {
+    display: inline-block;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 1em;
+    overflow: hidden;
+    width: 300px;
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+}
+
+.post-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+}
+
+.post-content {
+    padding: 1rem;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.post-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.post-title a:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.post-summary {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+}
