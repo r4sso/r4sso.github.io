@@ -3,9 +3,10 @@
     --color: rgb(0, 0, 0);
 }
 
-[data-bs-theme='dark'] .bg-body {
-    --background-color: #000000 ;
-    --color: #ffffff;
+[data-bs-theme='dark'] {
+    --background-color: #1C1B20;
+	--color:#F5F7FA;
+	--cardbackground: #222126;
 }
 html {
      scroll-behavior: smooth;
@@ -14,7 +15,8 @@ html {
 
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--background-color);
+    color: var(--color);
     font-family: 'Iosevka Web';
     
 }
@@ -38,6 +40,7 @@ a {
 
 .container {
     max-width: 800px;
+    
 }
 
 img.avatar {
@@ -98,6 +101,7 @@ a.nav-link {
 
 .post-card:hover {
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 .post-image {
@@ -109,7 +113,10 @@ a.nav-link {
 
 .post-content {
     padding: 1rem;
+    text-align: left;
+    flex: 1;
 }
+
 
 .post-title {
     font-size: 1.5rem;
@@ -119,10 +126,6 @@ a.nav-link {
 .post-title a {
     color: #333;
     text-decoration: none;
-}
-
-.post-title a:hover {
-    text-decoration: underline;
 }
 
 .post-meta {
@@ -135,3 +138,89 @@ a.nav-link {
     font-size: 0.9rem;
     margin: 1rem 0;
 }
+
+/* .tag {
+    align-self: flex-start;
+    padding: .25em .75em;
+    border-radius: 1em;
+    font-size: .75re
+} */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 20px;
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .switch input:focus + .slider:before {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  .switch input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  .switch input:checked + .slider:before {
+    background-color: white;
+  }
+  

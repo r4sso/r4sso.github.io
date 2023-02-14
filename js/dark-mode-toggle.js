@@ -1,24 +1,24 @@
-const themeToggle = document.querySelector('#dark-mode-toggle');
-const icon = document.getElementById('icon-toggle');
-const html = document.querySelector('html');
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.querySelector('#dark-mode-toggle');
+  const icon = document.querySelector('.icon-toggle');
+  const html = document.querySelector('html');
 
-themeToggle.addEventListener('change', () => {
-  if (themeToggle.checked) {
-    html.setAttribute('data-bs-theme', 'dark');
+  const setTheme = (theme) => {
+    html.setAttribute('data-bs-theme', theme);
+    themeToggle.checked = theme === 'dark';
+    icon.setAttribute('data-feather', theme === 'dark' ? 'sun' : 'moon');
+    feather.replace();
+    localStorage.setItem('theme', theme);
+  };
+
+  themeToggle.addEventListener('change', () => {
+    setTheme(themeToggle.checked ? 'dark' : 'light');
+  });
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    setTheme(savedTheme);
   } else {
-    html.setAttribute('data-bs-theme', 'light');
+    setTheme('light');
   }
-  // Use localStorage to remember the user's preference
-  localStorage.setItem('theme', html.getAttribute('data-bs-theme'));
 });
-
-// Check if the user has already set a preference for the theme
-if (localStorage.getItem('theme') === 'dark') {
-  themeToggle.checked = true;
-
-  html.setAttribute('data-bs-theme', 'dark');
-} else {
-  themeToggle.checked = false;
-  html.setAttribute('data-bs-theme', 'light');
-}
-
