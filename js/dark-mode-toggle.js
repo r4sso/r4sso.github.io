@@ -1,34 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.querySelector('#dark-mode-toggle');
-  const icon = document.querySelector('.icon-toggle');
+  const icon = document.getElementById('icon-toggle');
   const html = document.querySelector('html');
 
   themeToggle.addEventListener('change', () => {
     if (themeToggle.checked) {
       html.setAttribute('data-bs-theme', 'dark');
-      icon.setAttribute('data-feather', 'sun');
+      icon.innerHTML = '<i class="fa-regular fa-sun"></i>';
     } else {
       html.setAttribute('data-bs-theme', 'light');
-      icon.setAttribute('data-feather', 'moon');
+      icon.innerHTML = '<i class="fa-solid fa-moon"></i>';
     }
     // Use localStorage to remember the user's preference
     localStorage.setItem('theme', html.getAttribute('data-bs-theme'));
-
-    // Replace the icon with the new one
-    feather.replace();
   });
 
   // Check if the user has already set a preference for the theme
   if (localStorage.getItem('theme') === 'dark') {
     themeToggle.checked = true;
     html.setAttribute('data-bs-theme', 'dark');
-    icon.setAttribute('data-feather', 'sun');
+    icon.innerHTML = '<i class="fas fa-sun"></i>';
   } else {
     themeToggle.checked = false;
     html.setAttribute('data-bs-theme', 'light');
-    icon.setAttribute('data-feather', 'moon');
+    icon.innerHTML = '<i class="fas fa-moon"></i>';
   }
-
-  // Replace the icon with the initial one
-  feather.replace();
 });
