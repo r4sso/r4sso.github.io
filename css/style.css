@@ -7,7 +7,7 @@
 
 [data-bs-theme='dark'] {
     --background-color: rgb(28, 27, 32);
-	--color:rgb(245, 247, 250);
+	--color:rgb(255, 255, 255);
     --cardborder: #252429;
 	--cardbackground: rgb(34, 33, 38);
 }
@@ -33,7 +33,6 @@ body {
 
 
 h1.title {
-    font-style: italic;
     font-weight: 600;
 }
 
@@ -171,6 +170,16 @@ a.nav-link {
     background-color: var(--cardbackground);
     margin:2rem 0;
     padding: 2rem;
-    font-size:0.9rem;
+    font-size: 1em;
+    border-radius: 0.3em;
 }
 
+.content img {
+    max-width: 100%;
+}
+
+.highlight pre {
+    border-radius: 0.3em;
+    overflow: auto;
+    padding: 1rem;
+}

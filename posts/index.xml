@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on r4sso.github.io</title>
+    <title>r4sso.github.io</title>
     <link>https://r4sso.github.io/posts/</link>
-    <description>Recent content in Posts on r4sso.github.io</description>
+    <description>Recent content on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Feb 2023 00:38:42 +0800</lastBuildDate><atom:link href="https://r4sso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -28,6 +28,15 @@ incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>Attacktive Directory</title>
+      <link>https://r4sso.github.io/posts/writeup/attacktive-directory/</link>
+      <pubDate>Mon, 12 Dec 2022 23:11:13 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/posts/writeup/attacktive-directory/</guid>
+      <description>Enumeration Basic enumeration starts out with an nmap scan. Nmap is a relatively complex utility that has been refined over the years to detect what ports are open on a device, what services are running, and even detect what operating system is running. It&amp;rsquo;s important to note that not all services may be deteted correctly and not enumerated to it&amp;rsquo;s fullest potential. Despite nmap being an overly complex utility, it cannot enumerate everything.</description>
+    </item>
+    
+    <item>
       <title>Dummy Post 1</title>
       <link>https://r4sso.github.io/posts/dummy-post-1/</link>
       <pubDate>Wed, 01 Jun 2022 12:00:00 +0000</pubDate>
@@ -43,6 +52,15 @@ incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</description>
       
       <guid>https://r4sso.github.io/posts/dummy-post-2/</guid>
       <description>This is the content of the dummy post 2.</description>
+    </item>
+    
+    <item>
+      <title>Dummy Post 4</title>
+      <link>https://r4sso.github.io/posts/dummy/</link>
+      <pubDate>Wed, 01 Jun 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/posts/dummy/</guid>
+      <description>This is the content of the dummy post 4.</description>
     </item>
     
     <item>

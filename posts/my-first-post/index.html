@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html><head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+    <script src="/js/feather.min.js"></script> 
     <link href="https://pvinis.github.io/iosevka-webfont//3.4.1/iosevka.css" rel="stylesheet" />
     
     
     <title>r4sso.github.io | My First Post</title>
-</head><body class="bg-body"><div class="navbar navbar-expand-lg bg-body">
+</head><body class=""><div class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="https://r4sso.github.io">
       <img src="https://cdn-icons-png.flaticon.com/512/8978/8978842.png" alt="r4sso.github.io" width="30" height="30">
@@ -23,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-md-auto">
             
-            <a class="nav-link" href="/p/">
+            <a class="nav-link" href="/posts/">
             
             
             <i data-feather="pen-tool"></i> 
@@ -57,8 +60,10 @@
             
             <input type="checkbox" id="dark-mode-toggle" class="visually-hidden">
             <label for="dark-mode-toggle" class="form-check-label dark-tgl">
-              <i data-feather="moon" class="icon-toggle"></i>
+              <span id="icon-toggle"><i class="fas fa-moon"></i></span>
             </label>
+
+
             
         </ul>
       </div>
@@ -69,19 +74,17 @@
 <div class="container">
             <main id="main">
                 
+<div class="content">
 <h1>My First Post</h1>
 
 
 <p class="post-meta"><time datetime="2023-01-01">Jan 1, 2023</time></p>
 
-
-
-<a class="btn btn-sm btn-outline-dark tag-btn" href="https://r4sso.github.io/tags/test">test</a>
-
-
+ 
 <br>
-<img class="thumb" src="https://www.hackthebox.com/images/htb_socialmedia_cover.png" alt="Thumbnail" >
+<img class="thumb" src="https://www.hackthebox.com/images/htb_socialmedia_cover.png" alt="Thumbnail">
 <br><br>
+
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.</p>
 <p>Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. A erat nam at lectus urna duis.
@@ -163,16 +166,16 @@ elementum integer. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.<
 </table>
 <h2 id="code-blocks">Code Blocks</h2>
 <h4 id="code-block-with-backticks">Code block with backticks</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!doctype html&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">title</span>&gt;Example HTML5 Document&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;Test&lt;/<span style="color:#f92672">p</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;!doctype html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">html</span> lang<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">meta</span> charset<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">title</span>&gt;Example HTML5 Document&lt;/<span style="color:#7ee787">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">body</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">p</span>&gt;Test&lt;/<span style="color:#7ee787">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">html</span>&gt;
 </span></span></code></pre></div><h4 id="code-block-indented-with-four-spaces">Code block indented with four spaces</h4>
 <pre><code>&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -186,16 +189,16 @@ elementum integer. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.<
 &lt;/html&gt;
 </code></pre>
 <h4 id="code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo&rsquo;s internal highlight shortcode</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!doctype html&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">title</span>&gt;Example HTML5 Document&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;Test&lt;/<span style="color:#f92672">p</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;!doctype html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">html</span> lang<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">meta</span> charset<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">title</span>&gt;Example HTML5 Document&lt;/<span style="color:#7ee787">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">body</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">p</span>&gt;Test&lt;/<span style="color:#7ee787">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">html</span>&gt;</span></span></code></pre></div>
 <h2 id="list-types">List Types</h2>
 <h4 id="ordered-list">Ordered List</h4>
 <ol>
@@ -239,16 +242,16 @@ elementum integer. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.<
 </li>
 </ol>
 </div>
+</div>
 
             </main>
         </div>
-        <script src="/js/feather.min.js"></script>
-<script src="/js/dark-mode-toggle.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 <script>
   feather.replace()
 </script>
+<script src="/js/dark-mode-toggle.js"></script>
 
-        
     </body>
 </html>

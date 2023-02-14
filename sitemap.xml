@@ -6,10 +6,10 @@
     <lastmod>2023-02-14T00:38:42+08:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>https://r4sso.github.io/p/dummy-post-3/</loc>
+    <loc>https://r4sso.github.io/posts/</loc>
     <lastmod>2023-02-14T00:38:42+08:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/p/</loc>
+    <loc>https://r4sso.github.io/posts/dummy-post-3/</loc>
     <lastmod>2023-02-14T00:38:42+08:00</lastmod>
   </url><url>
     <loc>https://r4sso.github.io/tags/</loc>
@@ -18,17 +18,28 @@
     <loc>https://r4sso.github.io/tags/test/</loc>
     <lastmod>2023-02-14T00:38:42+08:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/p/my-first-post/</loc>
+    <loc>https://r4sso.github.io/posts/my-first-post/</loc>
     <lastmod>2023-01-01T23:11:13+00:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/p/dummy-post-1/</loc>
+    <loc>https://r4sso.github.io/posts/writeup/attacktive-directory/</loc>
+    <lastmod>2022-12-12T23:11:13+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/tags/ctf/</loc>
+    <lastmod>2022-12-12T23:11:13+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/posts/dummy-post-1/</loc>
     <lastmod>2022-06-01T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/p/dummy-post-2/</loc>
+    <loc>https://r4sso.github.io/posts/dummy-post-2/</loc>
     <lastmod>2022-06-01T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/p/2nd/</loc>
+    <loc>https://r4sso.github.io/posts/dummy/</loc>
+    <lastmod>2022-06-01T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/posts/2nd/</loc>
   </url><url>
     <loc>https://r4sso.github.io/categories/</loc>
+  </url><url>
+    <loc>https://r4sso.github.io/about/</loc>
   </url>
 </urlset>
