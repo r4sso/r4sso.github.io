@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 12 Dec 2022 23:11:13 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Attacktive Directory</title>
-      <link>https://r4sso.github.io/posts/writeup/attacktive-directory/</link>
+      <link>https://r4sso.github.io/2022/12/attacktive-directory/</link>
       <pubDate>Mon, 12 Dec 2022 23:11:13 +0000</pubDate>
       
-      <guid>https://r4sso.github.io/posts/writeup/attacktive-directory/</guid>
+      <guid>https://r4sso.github.io/2022/12/attacktive-directory/</guid>
       <description>Enumeration Basic enumeration starts out with an nmap scan. Nmap is a relatively complex utility that has been refined over the years to detect what ports are open on a device, what services are running, and even detect what operating system is running. It&amp;rsquo;s important to note that not all services may be deteted correctly and not enumerated to it&amp;rsquo;s fullest potential. Despite nmap being an overly complex utility, it cannot enumerate everything.</description>
     </item>
     

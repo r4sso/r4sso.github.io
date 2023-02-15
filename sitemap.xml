@@ -3,40 +3,35 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://r4sso.github.io/</loc>
-    <lastmod>2023-02-14T00:38:42+08:00</lastmod>
+    <lastmod>2023-02-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>https://r4sso.github.io/posts/</loc>
-    <lastmod>2023-02-14T00:38:42+08:00</lastmod>
+    <lastmod>2023-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/posts/dummy-post-3/</loc>
-    <lastmod>2023-02-14T00:38:42+08:00</lastmod>
+    <loc>https://r4sso.github.io/2023/02/arch-linux-hyprland/</loc>
+    <lastmod>2023-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/tags/linux/</loc>
+    <lastmod>2023-02-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://r4sso.github.io/tags/</loc>
-    <lastmod>2023-02-14T00:38:42+08:00</lastmod>
+    <lastmod>2023-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/tags/test/</loc>
-    <lastmod>2023-02-14T00:38:42+08:00</lastmod>
-  </url><url>
-    <loc>https://r4sso.github.io/posts/my-first-post/</loc>
+    <loc>https://r4sso.github.io/2023/01/my-first-post/</loc>
     <lastmod>2023-01-01T23:11:13+00:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/posts/writeup/attacktive-directory/</loc>
+    <loc>https://r4sso.github.io/tags/test/</loc>
+    <lastmod>2023-01-01T23:11:13+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/tags/test2/</loc>
+    <lastmod>2023-01-01T23:11:13+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/2022/12/attacktive-directory/</loc>
     <lastmod>2022-12-12T23:11:13+00:00</lastmod>
   </url><url>
     <loc>https://r4sso.github.io/tags/ctf/</loc>
     <lastmod>2022-12-12T23:11:13+00:00</lastmod>
-  </url><url>
-    <loc>https://r4sso.github.io/posts/dummy-post-1/</loc>
-    <lastmod>2022-06-01T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://r4sso.github.io/posts/dummy-post-2/</loc>
-    <lastmod>2022-06-01T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://r4sso.github.io/posts/dummy/</loc>
-    <lastmod>2022-06-01T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://r4sso.github.io/posts/2nd/</loc>
   </url><url>
     <loc>https://r4sso.github.io/categories/</loc>
   </url><url>

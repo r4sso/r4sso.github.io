@@ -6,70 +6,33 @@
     <description>Recent content on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2023 00:38:42 +0800</lastBuildDate><atom:link href="https://r4sso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Dummy Post 3</title>
-      <link>https://r4sso.github.io/posts/dummy-post-3/</link>
-      <pubDate>Tue, 14 Feb 2023 00:38:42 +0800</pubDate>
+      <title>Arch Linux (Hyprland)</title>
+      <link>https://r4sso.github.io/2023/02/arch-linux-hyprland/</link>
+      <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://r4sso.github.io/posts/dummy-post-3/</guid>
-      <description>Regular exercise has numerous benefits for both physical and mental health. One of the primary benefits is weight management - exercise can help individuals maintain a healthy weight and reduce the risk of obesity-related diseases such as diabetes and heart disease. In addition, exercise is also known to improve cardiovascular health, reduce the risk of chronic conditions such as high blood pressure and stroke, and increase overall energy levels.
-Beyond the physical benefits, regular exercise has been shown to have a positive impact on mental health.</description>
+      <guid>https://r4sso.github.io/2023/02/arch-linux-hyprland/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>https://r4sso.github.io/posts/my-first-post/</link>
+      <link>https://r4sso.github.io/2023/01/my-first-post/</link>
       <pubDate>Sun, 01 Jan 2023 23:11:13 +0000</pubDate>
       
-      <guid>https://r4sso.github.io/posts/my-first-post/</guid>
+      <guid>https://r4sso.github.io/2023/01/my-first-post/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Attacktive Directory</title>
-      <link>https://r4sso.github.io/posts/writeup/attacktive-directory/</link>
+      <link>https://r4sso.github.io/2022/12/attacktive-directory/</link>
       <pubDate>Mon, 12 Dec 2022 23:11:13 +0000</pubDate>
       
-      <guid>https://r4sso.github.io/posts/writeup/attacktive-directory/</guid>
+      <guid>https://r4sso.github.io/2022/12/attacktive-directory/</guid>
       <description>Enumeration Basic enumeration starts out with an nmap scan. Nmap is a relatively complex utility that has been refined over the years to detect what ports are open on a device, what services are running, and even detect what operating system is running. It&amp;rsquo;s important to note that not all services may be deteted correctly and not enumerated to it&amp;rsquo;s fullest potential. Despite nmap being an overly complex utility, it cannot enumerate everything.</description>
-    </item>
-    
-    <item>
-      <title>Dummy Post 1</title>
-      <link>https://r4sso.github.io/posts/dummy-post-1/</link>
-      <pubDate>Wed, 01 Jun 2022 12:00:00 +0000</pubDate>
-      
-      <guid>https://r4sso.github.io/posts/dummy-post-1/</guid>
-      <description>This is the content of the dummy post 1.</description>
-    </item>
-    
-    <item>
-      <title>Dummy Post 2</title>
-      <link>https://r4sso.github.io/posts/dummy-post-2/</link>
-      <pubDate>Wed, 01 Jun 2022 12:00:00 +0000</pubDate>
-      
-      <guid>https://r4sso.github.io/posts/dummy-post-2/</guid>
-      <description>This is the content of the dummy post 2.</description>
-    </item>
-    
-    <item>
-      <title>Dummy Post 4</title>
-      <link>https://r4sso.github.io/posts/dummy/</link>
-      <pubDate>Wed, 01 Jun 2022 12:00:00 +0000</pubDate>
-      
-      <guid>https://r4sso.github.io/posts/dummy/</guid>
-      <description>This is the content of the dummy post 4.</description>
-    </item>
-    
-    <item>
-      <title>2nd</title>
-      <link>https://r4sso.github.io/posts/2nd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://r4sso.github.io/posts/2nd/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non semper purus. Curabitur pellentesque neque finibus viverra facilisis. Sed semper ipsum id enim luctus porta.</description>
     </item>
     
   </channel>

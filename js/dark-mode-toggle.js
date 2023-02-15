@@ -23,6 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     themeToggle.checked = false;
     html.setAttribute('data-bs-theme', 'light');
-    icon.innerHTML = '<i class="fas fa-moon"></i>';
+    icon.innerHTML = '<i class="fa-solid fa-moon"></i>';
   }
 });

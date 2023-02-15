@@ -6,13 +6,31 @@
     <description>Recent content in Tags on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2023 00:38:42 +0800</lastBuildDate><atom:link href="https://r4sso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://r4sso.github.io/tags/linux/</link>
+      <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>test</title>
       <link>https://r4sso.github.io/tags/test/</link>
-      <pubDate>Tue, 14 Feb 2023 00:38:42 +0800</pubDate>
+      <pubDate>Sun, 01 Jan 2023 23:11:13 +0000</pubDate>
       
       <guid>https://r4sso.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test2</title>
+      <link>https://r4sso.github.io/tags/test2/</link>
+      <pubDate>Sun, 01 Jan 2023 23:11:13 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/tags/test2/</guid>
       <description></description>
     </item>
     
