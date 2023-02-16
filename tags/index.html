@@ -17,54 +17,69 @@
     <a class="navbar-brand" href="https://r4sso.github.io">
       <img src="https://cdn-icons-png.flaticon.com/512/8978/8978842.png" alt="r4sso.github.io" width="30" height="30">
     </a>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-md-auto">
+      <ul class="nav-l navbar-nav">
+      <form class="search-container" role="search">
+        <input id="search-box" type="text" class="search-box" name="q" placeholder="Under Development" />
+        <label for="search-box"><span class="search-icon" data-feather="search"></span></label>
+        <input type="submit" id="search-submit" />
+      </form>
+      </ul>
+      <ul class="navbar-nav ms-md-auto">
+          
+          <a class="nav-link" href="/posts/">
+          
+          
+          <i data-feather="pen-tool"></i> 
+          
+          
+          Posts
+          </a>
             
-            <a class="nav-link" href="/posts/">
+          
+          <a class="nav-link" href="/notes/">
+          
+          
+          <i data-feather="feather"></i> 
+          
+          
+          Notes
+          </a>
             
+          
+          <a class="nav-link" href="/tags/">
+          
+          
+          <i data-feather="tag"></i> 
+          
+          
+          Tags
+          </a>
             
-            <i data-feather="pen-tool"></i> 
+          
+          <a class="nav-link" href="/about/">
+          
+          
+          <i data-feather="info"></i> 
+          
+          
+          About
+          </a>
             
-            
-            Posts
-            </a>
-            
-            
-            <a class="nav-link" href="/tags/">
-            
-            
-            <i data-feather="tag"></i> 
-            
-            
-            Tags
-            </a>
-            
-            
-            <a class="nav-link" href="/about/">
-            
-            
-            <i data-feather="info"></i> 
-            
-            
-            About
-            </a>
-            
-            
+          
 
-            
-            <input type="checkbox" id="dark-mode-toggle" class="visually-hidden">
-            <label for="dark-mode-toggle" class="form-check-label dark-tgl">
-              <span id="icon-toggle"><i class="fas fa-moon"></i></span>
-            </label>
-
-
-            
-        </ul>
-      </div>
+          
+          <input type="checkbox" id="dark-mode-toggle" class="visually-hidden">
+          <label for="dark-mode-toggle" class="form-check-label dark-tgl">
+            <span id="icon-toggle"><i class="fas fa-moon"></i></span>
+          </label>
+      </ul>
+    </div>
 
       
     </div>
@@ -115,6 +130,7 @@
   feather.replace()
 </script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/browser.js"></script>
 
     </body>
 </html>

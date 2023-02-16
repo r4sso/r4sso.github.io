@@ -17,54 +17,69 @@
     <a class="navbar-brand" href="https://r4sso.github.io">
       <img src="https://cdn-icons-png.flaticon.com/512/8978/8978842.png" alt="r4sso.github.io" width="30" height="30">
     </a>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-md-auto">
+      <ul class="nav-l navbar-nav">
+      <form class="search-container" role="search">
+        <input id="search-box" type="text" class="search-box" name="q" placeholder="Under Development" />
+        <label for="search-box"><span class="search-icon" data-feather="search"></span></label>
+        <input type="submit" id="search-submit" />
+      </form>
+      </ul>
+      <ul class="navbar-nav ms-md-auto">
+          
+          <a class="nav-link" href="/posts/">
+          
+          
+          <i data-feather="pen-tool"></i> 
+          
+          
+          Posts
+          </a>
             
-            <a class="nav-link" href="/posts/">
+          
+          <a class="nav-link" href="/notes/">
+          
+          
+          <i data-feather="feather"></i> 
+          
+          
+          Notes
+          </a>
             
+          
+          <a class="nav-link" href="/tags/">
+          
+          
+          <i data-feather="tag"></i> 
+          
+          
+          Tags
+          </a>
             
-            <i data-feather="pen-tool"></i> 
+          
+          <a class="nav-link" href="/about/">
+          
+          
+          <i data-feather="info"></i> 
+          
+          
+          About
+          </a>
             
-            
-            Posts
-            </a>
-            
-            
-            <a class="nav-link" href="/tags/">
-            
-            
-            <i data-feather="tag"></i> 
-            
-            
-            Tags
-            </a>
-            
-            
-            <a class="nav-link" href="/about/">
-            
-            
-            <i data-feather="info"></i> 
-            
-            
-            About
-            </a>
-            
-            
+          
 
-            
-            <input type="checkbox" id="dark-mode-toggle" class="visually-hidden">
-            <label for="dark-mode-toggle" class="form-check-label dark-tgl">
-              <span id="icon-toggle"><i class="fas fa-moon"></i></span>
-            </label>
-
-
-            
-        </ul>
-      </div>
+          
+          <input type="checkbox" id="dark-mode-toggle" class="visually-hidden">
+          <label for="dark-mode-toggle" class="form-check-label dark-tgl">
+            <span id="icon-toggle"><i class="fas fa-moon"></i></span>
+          </label>
+      </ul>
+    </div>
 
       
     </div>
@@ -74,17 +89,27 @@
                 
   <div class="content">
     <h1>whoami</h1>
-    <p>Hello!</p>
+    <p>Hello! I am self taught Front End Developer and Security Researcher.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida metus eget tortor posuere, at convallis purus feugiat. Mauris efficitur massa et ex scelerisque, sed facilisis nibh porttitor.</p>
 <p>Vivamus egestas nisi sit amet ornare fringilla. Fusce tincidunt volutpat massa sed dictum. Maecenas pharetra nisi orci, vel luctus orci tempor nec. Suspendisse enim enim, scelerisque eu mattis nec, luctus id neque. Integer ut diam faucibus, convallis magna vel, volutpat nunc. Curabitur mi libero, auctor sed magna mattis, posuere mattis odio. Nulla vulputate ligula eros, a vehicula sem cursus ac. Nunc ut mi quis tortor viverra eleifend ac vel lacus. Integer ac tempor ante. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-<p>Suspendisse id ipsum in quam auctor consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed mollis quis erat ut pulvinar.</p>
+<h5 id="my-goal">My Goal</h5>
+<ul>
+<li>Learn more about Security.</li>
+<li>Earn my first Bounty</li>
+<li>Learn more about Programming</li>
+<li>JUST LEARN MORE <img src="https://cdn.frankerfacez.com/emoticon/128247/1" alt="4Head"></li>
+</ul>
 <h5 id="what-is-this-website">What is This Website?</h5>
-<p>This website is my blog and notes. It doubles as my cheat sheet.</p>
+<p>This website is my blog and notes. It doubles as my cheat sheet.
+&lsquo;Notes</p>
 <h6 id="website-development-goal">Website Development Goal</h6>
 <ul>
+<li>Lightweight &amp; Simple</li>
 <li><input checked="" disabled="" type="checkbox"> Dark Mode</li>
 <li><input disabled="" type="checkbox"> Post Archive</li>
 <li><input disabled="" type="checkbox"> Search Feature</li>
+<li><input disabled="" type="checkbox"> SCSS? Maybe</li>
+<li><input disabled="" type="checkbox"> Tailwind? Maybe</li>
 <li><input disabled="" type="checkbox"> More Styling</li>
 <li><input disabled="" type="checkbox"> Tidy Up Code / Less Library</li>
 <li><input disabled="" type="checkbox"> Completed</li>
@@ -100,6 +125,7 @@
   feather.replace()
 </script>
 <script src="/js/dark-mode-toggle.js"></script>
+<script src="/js/browser.js"></script>
 
     </body>
 </html>
