@@ -466,9 +466,9 @@ img.avatar {
   color: var(--secondary);
 }
 
-.projects {
-  @applys
-    
+footer {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--secondary);
 }
 
 img {
@@ -1275,10 +1275,6 @@ img {
 
 .h-6 {
   height: 1.5rem;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .h-auto {
@@ -2146,10 +2142,6 @@ img {
     margin-top: 0px;
   }
 
-  .sm\:block {
-    display: block;
-  }
-
   .sm\:flex {
     display: flex;
   }
@@ -2168,10 +2160,6 @@ img {
 
   .sm\:justify-start {
     justify-content: flex-start;
-  }
-
-  .sm\:justify-center {
-    justify-content: center;
   }
 
   .sm\:px-6 {
@@ -2225,14 +2213,6 @@ img {
 }
 
 @media (min-width: 1024px) {
-  .lg\:block {
-    display: block;
-  }
-
-  .lg\:hidden {
-    display: none;
-  }
-
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
