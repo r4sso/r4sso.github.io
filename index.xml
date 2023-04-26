@@ -30,12 +30,12 @@ Useful links Title Description GTFOBins A curated list of Unix binaries that can
     
     <item>
       <title>Arch Linux (Hyprland)</title>
-      <link>https://r4sso.github.io/blog/2023/archinstall/</link>
+      <link>https://r4sso.github.io/notes/archinstall/</link>
       <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://r4sso.github.io/blog/2023/archinstall/</guid>
+      <guid>https://r4sso.github.io/notes/archinstall/</guid>
       <description>My arch linux installation.
-Archinstall with Sway for base. No display manager Install yay Notes: Run as user NOT ROOT!
+Archinstall with Sway for base. No display manager Installation yay Notes: Run as user NOT ROOT!
 1git clone https://aur.archlinux.org/yay 2cd yay 3makepkg -si Packages 1yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior \ 2rofi pavucontrol thunar starship wl-clipboard wf-recorder \ 3swaybg grimblast-git ffmpegthumbnailer tumbler playerctl \ 4noise-suppression-for-voice thunar-archive-plugin kitty \ 5waybar-hyprland wlogout swaylock-effects pamixer \ 6nwg-look-bin nordic-theme papirus-icon-theme dunst Configuration Dotfiles SOON
 Wrapping the launcher 1#!/bin/sh 2 3export LIBVA_DRIVER_NAME=nvidia 4export XDG_SESSION_TYPE=wayland 5export GBM_BACKEND=nvidia-drm 6export __GLX_VENDOR_LIBRARY_NAME=nvidia 7export WLR_NO_HARDWARE_CURSORS=1 8 9 10exec Hyprland bash_profile 1if [[ -z $DISPLAY &amp;amp;&amp;amp; $(tty) == /dev/tty1 &amp;amp;&amp;amp; $XDG_SESSION_TYPE == tty ]]; then 2 exec /home/r4sso/.</description>
     </item>

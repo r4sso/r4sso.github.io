@@ -9,7 +9,7 @@
     
     
     
-    <title>r4sso.github.io | Notes</title>
+    <title>r4sso.github.io | Arch Linux (Hyprland)</title>
     <link rel="icon" type="image/x-icon" href="/images/logo.svg">
     <link href='https://fonts.googleapis.com/css?family=Dawning of a New Day' rel='stylesheet'>
 <script>
@@ -159,24 +159,70 @@
 
 <main id="main">
                 
-<div class="justify-center relative">
-<div class="post-card p-6 mt-20 rounded-md shadow-md shadow-slate-700/10 ring-1 ring-gray-900/5  mx-auto max-w-screen-md lg:text-lg">
-  <h1 class="text-3xl font-bold leading-tight">Notes</h1>
-  
-  <li class="notes">
-    <a class="notes text-sm hover:text-blue-500" href="https://r4sso.github.io/notes/tools/"><b>20/03/2023 |</b> tools</a>
-  </li>
-
-  <li class="notes">
-    <a class="notes text-sm hover:text-blue-500" href="https://r4sso.github.io/notes/links/"><b>17/02/2023 |</b> links</a>
-  </li>
-
-  <li class="notes">
-    <a class="notes text-sm hover:text-blue-500" href="https://r4sso.github.io/notes/archinstall/"><b>15/02/2023 |</b> Arch Linux (Hyprland)</a>
-  </li>
+<div class="pt-20 flex flex-col">
+    
+    <div class="prose prose-sm text-base mx-auto dark:prose-invert post-card p-6 rounded-md shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5  mx-auto max-w-screen-lg ">
+        
+        <h1 class="text-2xl font-bold">Arch Linux (Hyprland)</h1>
+        
 
 
-</div>
+
+<p class="mt-2 text-sm text-gray-400"><time datetime="2023-02-15">15 Feb, 2023</time> &#x2022; 1 minute read</p>
+
+
+        
+
+
+<a class="tag" href="https://r4sso.github.io/tags/linux">linux</a>
+
+
+        <img class="thumb object-cover object-center mx-auto rounded-md" src="https://i.imgur.com/5otdIDB.png" id="thumb-image">
+        <div class="text-md mt-0 leading-normal">
+        <p>My arch linux installation.</p>
+<ul>
+<li>Archinstall with Sway for base.</li>
+<li>No display manager</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h2 id="yay">yay</h2>
+<p><strong>Notes: Run as user NOT ROOT!</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>git clone https://aur.archlinux.org/yay
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span>cd yay
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span>makepkg -si
+</span></span></code></pre></div><h3 id="packages">Packages</h3>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior       <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span><span style="color:#79c0ff"></span>rofi pavucontrol thunar starship wl-clipboard wf-recorder     <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span><span style="color:#79c0ff"></span>swaybg grimblast-git ffmpegthumbnailer tumbler playerctl      <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">4</span><span><span style="color:#79c0ff"></span>noise-suppression-for-voice thunar-archive-plugin kitty       <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">5</span><span><span style="color:#79c0ff"></span>waybar-hyprland wlogout swaylock-effects pamixer              <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">6</span><span><span style="color:#79c0ff"></span>nwg-look-bin nordic-theme papirus-icon-theme dunst
+</span></span></code></pre></div><h2 id="configuration">Configuration</h2>
+<h3 id="dotfiles">Dotfiles</h3>
+<p><strong>SOON</strong></p>
+<h3 id="wrapping-the-launcher">Wrapping the launcher</h3>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 1</span><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#!/bin/sh
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 2</span><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 3</span><span>export <span style="color:#79c0ff">LIBVA_DRIVER_NAME</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 4</span><span>export <span style="color:#79c0ff">XDG_SESSION_TYPE</span><span style="color:#ff7b72;font-weight:bold">=</span>wayland
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 5</span><span>export <span style="color:#79c0ff">GBM_BACKEND</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia-drm
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 6</span><span>export <span style="color:#79c0ff">__GLX_VENDOR_LIBRARY_NAME</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 7</span><span>export <span style="color:#79c0ff">WLR_NO_HARDWARE_CURSORS</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">10</span><span>exec Hyprland
+</span></span></code></pre></div><h3 id="bash_profile">bash_profile</h3>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span><span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[[</span> -z <span style="color:#79c0ff">$DISPLAY</span> <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#ff7b72">$(</span>tty<span style="color:#ff7b72">)</span> <span style="color:#ff7b72;font-weight:bold">==</span> /dev/tty1 <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#79c0ff">$XDG_SESSION_TYPE</span> <span style="color:#ff7b72;font-weight:bold">==</span> tty <span style="color:#ff7b72;font-weight:bold">]]</span>; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span>  exec /home/r4sso/.wrappedhl
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span><span style="color:#ff7b72">fi</span>
+</span></span></code></pre></div>
+        </div>
+    
+    </div>
+  <footer class="grid justify-center relative p-8">
+    <span class="items-start text-sm">&copy; 2023 <b><a href="https://r4sso.github.io">r4sso.github.io</a></b></span>
+</footer>
+
 </div>
 
             </main>
