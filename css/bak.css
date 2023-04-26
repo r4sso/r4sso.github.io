@@ -2,18 +2,6 @@
 
 
 
-h1.author {
-  margin-top: 1rem;
-  margin-bottom: 0.1rem;
-}
-
-blockquote.info {
-  margin-bottom: 0.5rem;
-}
-
-
-
-
 nav.navbar {
   background-color: var(--navbar);
 
@@ -130,7 +118,7 @@ audio {
 }
 .search-icon {
   color: var(--accent);
-  position: relative;
+  position: relative;s
   left: -40px;
   cursor: pointer;
 } */
