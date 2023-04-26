@@ -2,88 +2,169 @@
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-  
-    <script src="/js/feather.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="/css/bak.css">
+    
+    <link rel="stylesheet" href="/style.css">
     <link href="https://pvinis.github.io/iosevka-webfont//3.4.1/iosevka.css" rel="stylesheet" />
     
     
-    <title>r4sso.github.io | 404 Page not found</title>
-    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/66033675?s=400&amp;u=dae590b8f089de95445eb82c661b55900bac7bc0&amp;v=41">
-</head><body><div class="navbar navbar-expand-lg sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="https://r4sso.github.io">
-      <img src="https://cdn-icons-png.flaticon.com/512/8978/8978842.png" alt="r4sso.github.io" width="30" height="30">
-    </a>
     
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <title>r4sso.github.io | 404 Page not found</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.svg">
+    <link href='https://fonts.googleapis.com/css?family=Dawning of a New Day' rel='stylesheet'>
+<script>
+    
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head><body><nav class="navbar fixed top-0 w-full z-50 shadow-sm ">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-14 items-center justify-between">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        
+        <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          
+          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="absolute left-11 flex items-center ">
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-yellow-700 rounded-full text-sm p-2.5">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+      </div>
+      <div class="flex flex-1 items-end justify-end sm:items-stretch sm:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <a class="navbar-brand" href="https://r4sso.github.io">
+            <img class="h-12 w-auto " src="/images/logo.svg" alt="r4sso.github.io">
+          </a>
+        </div>
+        
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0  hidden md:block">
+        
+        <div class="flex space-x-4">
+          
+          
+          
+          <div class="relative group">
+            
+            <a class="hover:text-blue-500 rounded-md px-2 py-2 pr-3 text-sm font-medium " href="https://r4sso.github.io/blog/">Blog</a>
+            
+          </div>
+          
+          <div class="relative group">
+            
+            <a class="hover:text-blue-500 rounded-md px-2 py-2 pr-3 text-sm font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+            
+          </div>
+          
+          <div class="relative group">
+            
+            <a class="hover:text-blue-500 rounded-md px-2 py-2 pr-3 text-sm font-medium " href="https://r4sso.github.io/about/">About</a>
+            
+          </div>
+          
+          <div class="relative group">
+            
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between hover:text-blue-500 rounded-md text-sm font-medium">‎ <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+            <div id="dropdownNavbar" class="absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-5 right-0 dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                
+                <li>
+                  <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="https://r4sso.github.io/tags">Tags</a>
+                </li>
+                
+                <li>
+                  <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="https://r4sso.github.io/archive">Archive</a>
+                </li>
+                
+                <li>
+                  <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="https://r4sso.github.io/projects/">Projects</a>
+                </li>
+                
+              </ul>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+        <div class="relative ml-3">
+            
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="nav-l navbar-nav">
-      <form class="search-container" role="search">
-        <input id="search-box" type="text" class="search-box" name="q" placeholder="Under Development" />
-        <label for="search-box"><span class="search-icon" data-feather="search"></span></label>
-        <input type="submit" id="search-submit" />
-      </form>
-      </ul>
-      <ul class="navbar-nav ms-md-auto">
-          
-          <a class="nav-link" href="/posts/">
-          
-          
-          <i data-feather="pen-tool"></i> 
-          
-          
-          Posts
-          </a>
-            
-          
-          <a class="nav-link" href="/notes/">
-          
-          
-          <i data-feather="feather"></i> 
-          
-          
-          Notes
-          </a>
-            
-          
-          <a class="nav-link" href="/tags/">
-          
-          
-          <i data-feather="tag"></i> 
-          
-          
-          Tags
-          </a>
-            
-          
-          <a class="nav-link" href="/about/">
-          
-          
-          <i data-feather="info"></i> 
-          
-          
-          About
-          </a>
-            
-          
-
-          
-          <input type="checkbox" id="dark-mode-toggle" class="visually-hidden">
-          <label for="dark-mode-toggle" class="form-check-label dark-tgl">
-            <span id="icon-toggle"><i class="fas fa-moon"></i></span>
-          </label>
-      </ul>
+        </div>
+      </div>
     </div>
+  </div>
 
+  
+  <div class="hidden " id="mobile-menu">
+    <div class="space-y-1 px-2 pt-2 pb-3">
       
+      
+          
+          
+          <div class="relative group">
+            
+            <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/blog/">Blog</a>
+            
+          </div>
+          
+          <div class="relative group">
+            
+            <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+            
+          </div>
+          
+          <div class="relative group">
+            
+            <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/about/">About</a>
+            
+          </div>
+          
+          <div class="relative group">
+            
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">‎ <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+            <div id="dropdownNavbar" class="absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-5 right-0 dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                
+                <li>
+                  <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="https://r4sso.github.io/tags">Tags</a>
+                </li>
+                
+                <li>
+                  <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="https://r4sso.github.io/archive">Archive</a>
+                </li>
+                
+                <li>
+                  <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="https://r4sso.github.io/projects/">Projects</a>
+                </li>
+                
+              </ul>
+            </div>
+            
+          </div>
+          
+ 
     </div>
-</div>
+  </div>
+</nav>
+
 <div class="container center">
           <figure class="text-center">
             <blockquote class="blockquote">
@@ -94,13 +175,8 @@
             </figcaption>
         </figure>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-<script>
-  feather.replace()
-</script>
-<script src="/js/dark-mode-toggle.js"></script>
-<script src="/js/browser.js"></script>
-
+        
+<script src="/js/script.js"></script>
         
     </body>
 </html>

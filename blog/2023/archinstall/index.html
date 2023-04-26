@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.111.3">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/bak.css">
@@ -10,7 +9,7 @@
     
     
     
-    <title>r4sso.github.io</title>
+    <title>r4sso.github.io | Arch Linux (Hyprland)</title>
     <link rel="icon" type="image/x-icon" href="/images/logo.svg">
     <link href='https://fonts.googleapis.com/css?family=Dawning of a New Day' rel='stylesheet'>
 <script>
@@ -64,7 +63,7 @@
           
           <div class="relative group">
             
-            <a class="hover:text-blue-500 rounded-md px-2 py-2 pr-3 text-sm font-medium " href="https://r4sso.github.io/blog/">Blog</a>
+            <a class="hover:text-blue-500 rounded-md px-2 py-2 pr-3 text-sm font-medium active bg-gray-900 text-white dark:text-black dark:bg-white hover:text-white " href="https://r4sso.github.io/blog/">Blog</a>
             
           </div>
           
@@ -122,7 +121,7 @@
           
           <div class="relative group">
             
-            <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/blog/">Blog</a>
+            <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium active bg-gray-900 text-white dark:text-black dark:bg-white hover:text-white " href="https://r4sso.github.io/blog/">Blog</a>
             
           </div>
           
@@ -168,12 +167,69 @@
 
 <main id="main">
                 
-    <div class="home-info break-normal prose-invert max-w-screen-md m-auto pt-24 py-6 px-4 ">
-        <h1 class="text-3xl font-bold leading-tight">Hello World!</h1>
-        <div class="entry-content my-4 text-sm">
-                I am self taught Front End Developer and Security Researcher. I love learning about technology. On this site, I write about Security (mostly Offensive side) and everything I learn. I’m actively exploring the world of Cybersecurity and Technology. <br><br> This site under development. Responsive currently broken.
+<div class="pt-20 flex flex-col">
+    
+    <div class="prose sm:prose-md mx-auto dark:prose-invert post-card p-6 rounded-md shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5  mx-auto sm:max-w-screen-lg ">
+        
+        <h1 class="text-2xl font-bold">Arch Linux (Hyprland)</h1>
+        
+
+
+
+<p class="mt-2 text-sm text-gray-400"><time datetime="2023-02-15">Feb 15, 2023</time> &#x2022; 1 minute read</p>
+
+
+        
+
+
+<a class="tag" href="https://r4sso.github.io/tags/linux">linux</a>
+
+
+        <img class="thumb object-cover object-center mx-auto rounded-md" src="https://i.imgur.com/5otdIDB.png" id="thumb-image">
+        <div class="text-md mt-0 leading-normal">
+        <p>My arch linux installation.</p>
+<ul>
+<li>Archinstall with Sway for base.</li>
+<li>No display manager</li>
+</ul>
+<h5 id="install">Install</h5>
+<h6 id="yay">yay</h6>
+<p><strong>Notes: Run as user NOT ROOT!</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>git clone https://aur.archlinux.org/yay
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span>cd yay
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span>makepkg -si
+</span></span></code></pre></div><h6 id="packages">Packages</h6>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior       <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span><span style="color:#79c0ff"></span>rofi pavucontrol thunar starship wl-clipboard wf-recorder     <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span><span style="color:#79c0ff"></span>swaybg grimblast-git ffmpegthumbnailer tumbler playerctl      <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">4</span><span><span style="color:#79c0ff"></span>noise-suppression-for-voice thunar-archive-plugin kitty       <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">5</span><span><span style="color:#79c0ff"></span>waybar-hyprland wlogout swaylock-effects pamixer              <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">6</span><span><span style="color:#79c0ff"></span>nwg-look-bin nordic-theme papirus-icon-theme dunst
+</span></span></code></pre></div><h5 id="configuration">Configuration</h5>
+<h6 id="dotfiles">Dotfiles</h6>
+<p><strong>SOON</strong></p>
+<h6 id="wrapping-the-launcher">Wrapping the launcher</h6>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 1</span><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#!/bin/sh
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 2</span><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 3</span><span>export <span style="color:#79c0ff">LIBVA_DRIVER_NAME</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 4</span><span>export <span style="color:#79c0ff">XDG_SESSION_TYPE</span><span style="color:#ff7b72;font-weight:bold">=</span>wayland
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 5</span><span>export <span style="color:#79c0ff">GBM_BACKEND</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia-drm
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 6</span><span>export <span style="color:#79c0ff">__GLX_VENDOR_LIBRARY_NAME</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 7</span><span>export <span style="color:#79c0ff">WLR_NO_HARDWARE_CURSORS</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">10</span><span>exec Hyprland
+</span></span></code></pre></div><h6 id="bash_profile">bash_profile</h6>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span><span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[[</span> -z <span style="color:#79c0ff">$DISPLAY</span> <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#ff7b72">$(</span>tty<span style="color:#ff7b72">)</span> <span style="color:#ff7b72;font-weight:bold">==</span> /dev/tty1 <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#79c0ff">$XDG_SESSION_TYPE</span> <span style="color:#ff7b72;font-weight:bold">==</span> tty <span style="color:#ff7b72;font-weight:bold">]]</span>; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span>  exec /home/r4sso/.wrappedhl
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span><span style="color:#ff7b72">fi</span>
+</span></span></code></pre></div>
         </div>
-        <div class="flex mt-4 space-x-4 sm:mt-0 ">
+    
+    </div>
+  <div class="grid justify-center relative p-8">
+    <p class="items-start">&copy; 2023 <b><a href="https://r4sso.github.io">r4sso.github.io</a></b> - Build with <b>Hugo 0.111.3</b></p>
+    <div class="flex mt-4 space-x-4 sm:justify-center sm:mt-0 ">
     <a href="https://github.com/r4sso" class="text-gray-500 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-150 hover:text-gray-500">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
         <span class="sr-only">GitHub account</span>
@@ -188,21 +244,15 @@
     </a>
     <a href="mailto:r4ssonull@gmail.com" class="text-gray-500 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-150 hover:text-red-500">
         <svg class="h-5 w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="3" y="5" width="18" height="14" rx="2" />  <polyline points="3 7 12 13 21 7" /></svg>
-        <span class="sr-only">Email</span>
+        <span class="sr-only">Instagram page</span>
     </a>
         
 </div>
- 
-        
-        
 
+    
 </div>
 
-
-
-
-
-
+</div>
 
             </main>
        

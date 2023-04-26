@@ -2,32 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>r4sso.github.io</title>
-    <link>https://r4sso.github.io/</link>
+    <link>https://r4sso.github.io/blog/</link>
     <description>Recent content on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>tools</title>
-      <link>https://r4sso.github.io/notes/tools/</link>
-      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://r4sso.github.io/notes/tools/</guid>
-      <description>Useful tools for Pentest | CTF
-Forensics Summary
-Title - tools name Description - what the tools for CTF - Usefulness for CTF Title Description CTF exiftool meta information reader/writer Clues / flags strings Useful for finding clues foremost Recover files based on their headers, footers, and internal data structures data carving steghide </description>
-    </item>
-    
-    <item>
-      <title>links</title>
-      <link>https://r4sso.github.io/notes/links/</link>
-      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://r4sso.github.io/notes/links/</guid>
-      <description>Collection of links.
-Useful links Title Description GTFOBins A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions CyberChef A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser. Payloads All The Things A list of useful payloads and bypass for Web Application Security and Pentest/CTF </description>
-    </item>
-    
+    <lastBuildDate>Wed, 15 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arch Linux (Hyprland)</title>
       <link>https://r4sso.github.io/blog/2023/archinstall/</link>

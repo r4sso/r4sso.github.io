@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 01 Jan 2023 23:11:13 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/test2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
-      <link>https://r4sso.github.io/2023/01/my-first-post/</link>
+      <link>https://r4sso.github.io/blog/2023/my-first-post/</link>
       <pubDate>Sun, 01 Jan 2023 23:11:13 +0000</pubDate>
       
-      <guid>https://r4sso.github.io/2023/01/my-first-post/</guid>
+      <guid>https://r4sso.github.io/blog/2023/my-first-post/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</description>
     </item>
