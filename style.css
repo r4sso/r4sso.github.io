@@ -1789,6 +1789,10 @@ tr:nth-child(even) {
   max-width: 80rem;
 }
 
+.max-w-full {
+  max-width: 100%;
+}
+
 .max-w-screen-lg {
   max-width: 1024px;
 }
