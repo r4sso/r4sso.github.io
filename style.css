@@ -1765,6 +1765,10 @@ tr:nth-child(even) {
   height: 100%;
 }
 
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-44 {
   width: 11rem;
 }
@@ -1787,10 +1791,6 @@ tr:nth-child(even) {
 
 .max-w-7xl {
   max-width: 80rem;
-}
-
-.max-w-full {
-  max-width: 100%;
 }
 
 .max-w-screen-lg {
