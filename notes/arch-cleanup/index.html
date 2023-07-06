@@ -8,7 +8,7 @@
     
     
     
-    <title>r4sso.github.io | Categories</title>
+    <title>r4sso.github.io | Arch Linux: Cleanup</title>
     <link rel="icon" type="image/x-icon" href="/images/logo.svg">
 <script>
     
@@ -67,7 +67,7 @@
           
           <div class="relative group">
             
-            <a class="hover:text-blue-500 px-2 py-2 pr-3 text-sm font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+            <a class="hover:text-blue-500 px-2 py-2 pr-3 text-sm font-medium  dark:text-white active underline decoration-2 underline-offset-4 decoration-blue-500  " href="https://r4sso.github.io/notes/">Notes</a>
             
           </div>
           
@@ -118,7 +118,7 @@
           
           <div class="relative group">
             
-            <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+            <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium active bg-gray-900 text-white dark:text-black dark:bg-white hover:text-white " href="https://r4sso.github.io/notes/">Notes</a>
             
           </div>
           
@@ -154,17 +154,60 @@
 
 <main id="main">
                 
-  <div class="flex flex-wrap justify-center items-center mt-20 gap-4 h-full">
+<div class="pt-20">
     
-  </div>
+    <div class="prose mx-auto dark:prose-invert post-card p-4 rounded-md shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5  max-w-screen-lg">
+        <h1 class="text-2xl font-bold">Arch Linux: Cleanup</h1>
+        
 
-  <div class="flex justify-center items-center my-8">
+
+
+<p class="mt-2 text-sm text-gray-400"><time datetime="2023-05-25">25 May, 2023</time> &#x2022; 1 minute read</p>
+
+
+        <img class="thumb object-cover object-center mx-auto max-h-full w-auto rounded-md" src="" id="thumb-image">
+        <div class="article mt-0 text-sm leading-normal">
+        <h2 id="clean-pkg-cache">Clean pkg cache</h2>
+<p>List packages</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>ls /var/cache/pacman/pkg/ | less 
+</span></span></code></pre></div><p>Remove all pkg except those installed</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo pacman -Sc 
+</span></span></code></pre></div><p>Remove all files</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo pacman -Scc
+</span></span></code></pre></div><p>Or with yay</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>yay -Scc
+</span></span></code></pre></div><hr>
+<h2 id="remove-unused-packages">Remove unused packages</h2>
+<p>List unused</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo pacman -Qtdq
+</span></span></code></pre></div><p>Remove unused</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo pacman -R <span style="color:#ff7b72">$(</span>pacman -Qtdq<span style="color:#ff7b72">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="journal-logs">Journal logs</h2>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo journalctl --vacuum-time<span style="color:#ff7b72;font-weight:bold">=</span>2d
+</span></span></code></pre></div><ul>
+<li>This will remove log older than 2 days, you can change accordingly.</li>
+<li>Clear journal log older than x day/month/year</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo journalctl --vacuum-size<span style="color:#ff7b72;font-weight:bold">=</span>100M
+</span></span></code></pre></div><ul>
+<li>Restrict logs to a certain size</li>
+</ul>
+<hr>
+<h2 id="clean-home-cache">Clean home cache</h2>
+<p>cache is located in <code>~/.cache </code></p>
+<hr>
+
+
+        
+        </div>
     
+    </div>
+  <footer class="grid justify-center relative p-8">
+    <span class="items-start text-sm">&copy; 2023 <b><a href="https://r4sso.github.io">r4sso.github.io</a></b></span>
+</footer>
 
-
-
-  </div>
-
+</div>
 
             </main>
        
