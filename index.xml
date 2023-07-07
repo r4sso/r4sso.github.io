@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>r4sso.github.io</title>
+    <title>Hello World on r4sso.github.io</title>
     <link>https://r4sso.github.io/</link>
-    <description>Recent content on r4sso.github.io</description>
+    <description>Recent content in Hello World on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -57,31 +57,12 @@ Packages yay -S hyprland eww-wayland dunst polkit-gnome qt5-wayland qt6-wayland 
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>https://r4sso.github.io/blog/2023/my-first-post/</link>
-      <pubDate>Sun, 01 Jan 2023 23:11:13 +0000</pubDate>
+      <title>Gallery</title>
+      <link>https://r4sso.github.io/gallery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://r4sso.github.io/blog/2023/my-first-post/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor&lt;br&gt;
-incididunt ut labore et dolore magna aliqua.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>TryHackMe - Attacktive Directory</title>
-      <link>https://r4sso.github.io/blog/2022/attacktive-directory/</link>
-      <pubDate>Mon, 12 Dec 2022 23:11:13 +0000</pubDate>
-      
-      <guid>https://r4sso.github.io/blog/2022/attacktive-directory/</guid>
-      <description>Enumeration Basic enumeration starts out with an nmap scan. Nmap is a relatively complex utility that has been refined over the years to detect what ports are open on a device, what services are running, and even detect what operating system is running. It&amp;rsquo;s important to note that not all services may be deteted correctly and not enumerated to it&amp;rsquo;s fullest potential. Despite nmap being an overly complex utility, it cannot enumerate everything.</description>
-    </item>
-    
-    <item>
-      <title>Math Typesetting</title>
-      <link>https://r4sso.github.io/blog/2023/math/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://r4sso.github.io/blog/2023/math/</guid>
-      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
+      <guid>https://r4sso.github.io/gallery/</guid>
+      <description> </description>
     </item>
     
   </channel>

@@ -50,31 +50,7 @@ themeToggleBtn.addEventListener('click', function() {
 
 
 
-// Get the dropdown toggle button element
-const dropdownToggle = document.getElementById('dropdownNavbarLink');
 
-// Get the dropdown menu element
-const dropdownMenu = document.getElementById('dropdownNavbar');
-
-// Add event listener for click event on dropdown toggle button
-dropdownToggle.addEventListener('click', () => {
-  // Toggle the "hidden" class on the dropdown menu to show/hide it
-  dropdownMenu.classList.toggle('hidden');
-});
-
-// Close the dropdown menu when clicking outside of it
-document.addEventListener('click', (event) => {
-  if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-    dropdownMenu.classList.add('hidden');
-  }
-});
-
-// Close the dropdown menu when pressing Esc key
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    dropdownMenu.classList.add('hidden');
-  }
-});
 
 // Get the mobile menu button element
 const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://iosevka-webfonts.github.io/iosevka/iosevka.css" rel="stylesheet" />
+    
+    
+    
+    <title>r4sso.github.io | Gallery</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.svg">
+<script>
+    
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head><body><nav class="navbar fixed top-0 w-full z-50 shadow-sm ">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-14 items-center justify-between">
+      <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+        
+        <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          
+          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="absolute left-11 flex items-center ">
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-yellow-700 rounded-full text-sm p-2.5">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+      </div>
+      <div class="flex flex-1 items-end justify-end md:items-stretch md:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <a class="navbar-brand" href="https://r4sso.github.io">
+            <img class="h-12 w-auto " src="/images/logo.svg" alt="r4sso.github.io">
+          </a>
+        </div>
+   
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0  hidden md:block">
+        
+        <div class="flex space-x-4">
+          
+          
+          
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/blog/">Blog</a>
+          
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+          
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/gallery/">Gallery</a>
+          
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/about/">About</a>
+          
+        </div>
+    </div>
+  </div>
+
+  
+  <div class="hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pt-2 pb-3">
+      
+      
+      
+      
+      <div class="relative group">
+
+          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/blog/">Blog</a>
+      
+      <div class="relative group">
+
+          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+      
+      <div class="relative group">
+
+          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/gallery/">Gallery</a>
+      
+      <div class="relative group">
+
+          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/about/">About</a>
+      
+ 
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+                
+<div class="pt-16  justify-center relative">
+    <div class="mx-auto max-w-screen-lg">
+        
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	
+	
+
+	
+		<script src="/shortcode-gallery/jquery-3.7.0.min.js"></script>
+	
+	
+	
+		<script src="/shortcode-gallery/lazy/jquery.lazy.min.js"></script>
+	
+
+	<script src="/shortcode-gallery/swipebox/js/jquery.swipebox.min.js"></script>
+	<link rel="stylesheet" href="/shortcode-gallery/swipebox/css/swipebox.min.css">
+
+	<script src="/shortcode-gallery/justified_gallery/jquery.justifiedGallery.min.js"></script>
+	<link rel="stylesheet" href="/shortcode-gallery/justified_gallery/justifiedGallery.min.css"/>
+
+
+<style>
+	
+
+	
+</style>
+
+
+
+
+
+<div id="gallery-665288c8761d48eb3366c37954243edc-0-wrapper" class="gallery-wrapper">
+<div id="gallery-665288c8761d48eb3366c37954243edc-0" class="justified-gallery">
+	
+		
+		
+				
+			
+			
+			
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			<div>
+				
+				
+					
+				
+				<a href="/gallery/images/IMG_20180629_071644_HDR.jpg" 
+					class="galleryImg"
+					
+						
+
+						
+							data-description="Redmi 4X + <br/>4.12mm f/2 1/50sec ISO 131"
+						
+
+						
+					
+					>
+					<img			
+						width="1000" height="563"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABIAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOuhtsqAR&#43;dTi0P90V56L7xASfL1TAPTCLxTzc&#43;JyvyavK31IGPyFTzsfIj0EWR67RQ1sF6qK84DeKSxP9q3JJPTz&#43;lAbxOj/vL&#43;4bjr55o5g5UUYXbA&#43;Y/nVtXcD7x/OqUP3RVxelQyywHbj5j&#43;dSl32/eb86gHapj92mhH/9k="
+							
+							class="lazy"
+							data-src="/gallery/images/IMG_20180629_071644_HDR_hub6f239e39d628c8dd487e6f6f54a33ed_3128021_1000x1000_fit_q90_lanczos.jpg"
+						
+
+						
+							
+								
+							
+						
+					>
+				</a>
+			</div>
+		
+	
+		
+		
+				
+			
+			
+			
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			<div>
+				
+				
+					
+				
+				<a href="/gallery/images/IMG_20180103_160711_HDR.jpg" 
+					class="galleryImg"
+					
+						
+
+						
+							data-description="Redmi 4X + <br/>4.12mm f/2 1/100sec ISO 154"
+						
+
+						
+					
+					>
+					<img			
+						width="1000" height="563"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABIAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOm03xNA8eS0Z4BHzY61pP4wsLVYjOSPMcIMHOPU/QV5lZ6K8kyJJbPbIykqzyMCcYxx&#43;PQipLyG1lulgHmTCMn7j7s&#43;vUfXkGsPb90NRtuehxeObG48RT6WNohijz5xbA3AZOfQe9XptRikz5civ34Oe2f5GvMZryzhjKC2kkaRcSKAu5h3P6Cq48QIv2eUCRBG4ZAUKjAXAGR14FUq66kSsups6kT5Oovk7lhUBu4yQKwXJEUQBOCx/wDQTW7qX/HtqX/XJP8A0JawpP8AVw/7zf8AoJri7jqiBm8&#43;Ybj6de2BxTgzC1yGIynOD1pg/wBfN9T/ACFO/wCXQf7lVDcwP//Z"
+							
+							class="lazy"
+							data-src="/gallery/images/IMG_20180103_160711_HDR_hu92649e2b58848c880ed6121cb19210eb_3647483_1000x1000_fit_q90_lanczos.jpg"
+						
+
+						
+							
+								
+							
+						
+					>
+				</a>
+			</div>
+		
+	
+		
+		
+				
+			
+			
+			
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			<div>
+				
+				
+					
+				
+				<a href="/gallery/images/IMG_20180103_140043_HDR.jpg" 
+					class="galleryImg"
+					
+						
+
+						
+							data-description="Redmi 4X + <br/>4.12mm f/2 1/1175sec ISO 100"
+						
+
+						
+					
+					>
+					<img			
+						width="1000" height="563"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABIAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOdsNehttSaW7upFyAVljc7v0yD16GrmnztqDXl5KH8iCIuWhxkMDxnnv19ahgeKaRHmhtymDtkktEKsRjGDgbsjmtOC6tobC6tI3tUW5ChiscceMeyf1zXLOraNkXSpxc7SZky6nbGVGS9D3MyhkYcqSeob3/Kqj3KXssMZnMcg4fmp18O2X2o/ZbmKRto&#43;Vdrbcd8EjNSWlvHo1ys0TqblOpkXkH/dPan7WDIcGkal0qtZWwKghYxtBHTpWXbqPLbgcEfzrVuf&#43;PSD/rmP6VlW/wDq3&#43;o/nXNE6upr6aif2gPlHAPatyaNGGWRScdSKxNN/wCP/wDA/wAq3ZPu/hWb3Ljsf//Z"
+							
+							class="lazy"
+							data-src="/gallery/images/IMG_20180103_140043_HDR_hu4c768b2c13c7a2280aca57149d36b6c8_6290935_1000x1000_fit_q90_lanczos.jpg"
+						
+
+						
+							
+								
+							
+						
+					>
+				</a>
+			</div>
+		
+	
+</div>
+</div>
+
+<script>
+	if (!jQuery) {
+		alert("jquery is not loaded");
+	}
+
+	$( document ).ready(() => {
+		const gallery = $("#gallery-665288c8761d48eb3366c37954243edc-0");
+		
+
+		
+		let swipeboxInstance = null;
+
+		
+		
+		gallery.on('jg.complete', () => {
+			
+				
+				
+				$(() => {
+					$('.lazy').Lazy({
+						visibleOnly: true,
+						afterLoad: element => element.css({filter: "none", transition: "filter 1.0s ease-in-out"})
+					});
+				});
+			
+
+			swipeboxInstance = $('.galleryImg').swipebox(
+				jQuery.extend({},
+					{  }
+				)
+			);
+		});
+
+		
+		gallery.justifiedGallery({
+			rowHeight : "150",
+			margins : "5",
+			border : 0,
+			randomize :  false ,
+			waitThumbnailsLoad : false,
+			lastRow : "justify",
+			captions : false,
+			
+			
+		});
+
+		
+		
+	});
+</script>
+
+
+    </div>
+</div>
+
+            </main>
+       
+
+        
+<script src="/js/script.js"></script>
+<script src="/js/copy-button.js"></script>
+
+    </body>
+</html>
