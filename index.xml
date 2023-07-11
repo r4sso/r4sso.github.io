@@ -6,7 +6,17 @@
     <description>Recent content in Hello World on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy pihole &#43; unbound on alpine</title>
+      <link>https://r4sso.github.io/blog/2023/pihole-alpine/</link>
+      <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/blog/2023/pihole-alpine/</guid>
+      <description>What is pihole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.It works by intercepting DNS requests made by devices on your network and blocking requests to domains you provide on the adlist such as (.eg.,advertisements/tracking/phishing domains.)
+What is unbound? Unbound is a validating, recursive, caching DNS resolver. It is designed to resolve domain names by starting from the root DNS servers and recursively traversing the DNS hierarchy until it obtains the final IP address associated with a domain.</description>
+    </item>
+    
     <item>
       <title>Arch Linux: Cleanup</title>
       <link>https://r4sso.github.io/notes/arch-cleanup/</link>
@@ -14,12 +24,12 @@
       
       <guid>https://r4sso.github.io/notes/arch-cleanup/</guid>
       <description>Clean pkg cache List packages
-1ls /var/cache/pacman/pkg/ | less Remove all pkg except those installed
-1sudo pacman -Sc Remove all files
-1sudo pacman -Scc Or with yay
-1yay -Scc Remove unused packages List unused
-1sudo pacman -Qtdq Remove unused
-1sudo pacman -R $(pacman -Qtdq) Journal logs 1sudo journalctl --vacuum-time=2d This will remove log older than 2 days, you can change accordingly. Clear journal log older than x day/month/year 1sudo journalctl --vacuum-size=100M Restrict logs to a certain size Clean home cache cache is located in ~/.</description>
+ls /var/cache/pacman/pkg/ | less Remove all pkg except those installed
+sudo pacman -Sc Remove all files
+sudo pacman -Scc Or with yay
+yay -Scc Remove unused packages List unused
+sudo pacman -Qtdq Remove unused
+sudo pacman -R $(pacman -Qtdq) Journal logs sudo journalctl --vacuum-time=2d This will remove log older than 2 days, you can change accordingly. Clear journal log older than x day/month/year sudo journalctl --vacuum-size=100M Restrict logs to a certain size Clean home cache cache is located in ~/.</description>
     </item>
     
     <item>
@@ -50,10 +60,10 @@ Useful links Title Description GTFOBins A curated list of Unix binaries that can
       
       <guid>https://r4sso.github.io/notes/archinstall/</guid>
       <description>Installation My arch linux installation.
-Archinstall [minimal]: Details Compositor : Hyprland Notifications : dunst Bar : eww Terminal : kitty File-manager : thunar Launcher : rofi My dotfiles availabe on (github)
+Archinstall [minimal]: Compositor : Hyprland Notifications : Dunst Bar : Waybar Terminal : Kitty File-manager : Nautilus Launcher : Rofi My dotfiles availabe on (github)
 yay Notes: Run as user NOT ROOT!
-1git clone https://aur.archlinux.org/yay 2cd yay 3makepkg -si FOR NVIDIA: hyprland-nvidia-git
-Packages yay -S hyprland eww-wayland dunst polkit-gnome qt5-wayland qt6-wayland \ kitty ttf-iosevka 1yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior \ 2rofi pavucontrol thunar starship wl-clipboard wf-recorder \ 3swaybg grimblast-git ffmpegthumbnailer tumbler playerctl \ 4noise-suppression-for-voice thunar-archive-plugin kitty \ 5waybar-hyprland wlogout swaylock-effects pamixer \ 6nwg-look-bin nordic-theme papirus-icon-theme dunst Configuration Wrapping the launcher 1#!</description>
+git clone https://aur.archlinux.org/yay cd yay makepkg -si FOR NVIDIA: hyprland-nvidia-git
+Packages yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior \ rofi pavucontrol thunar starship wl-clipboard wf-recorder \ swaybg grimblast-git ffmpegthumbnailer tumbler playerctl \ noise-suppression-for-voice thunar-archive-plugin nautilus \ waybar-hyprland wlogout swaylock-effects pamixer \ nwg-look-bin dunst Configuration Wrapping the launcher #!</description>
     </item>
     
     <item>

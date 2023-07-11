@@ -22,7 +22,7 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
-</head><body class="bg-light dark:bg-dark"><nav class="navbar fixed top-0 w-full z-50 shadow-sm dark:navbar-dark">
+</head><body class="bg-light dark:bg-dark"><nav class="navbar fixed top-0 w-full z-50  dark:navbar-dark">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-14 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -103,73 +103,63 @@
                 
 <div class="pt-20">
     
-    <div class="prose mx-auto dark:prose-invert post-card dark:post-card-dark p-8 rounded-lg shadow-2xl shadow-slate-700/10 ring-1 ring-gray-900/5  max-w-4xl">
-        <h1 class="text-2xl font-bold">Arch Linux Install (Hyprland)</h1>
+    <div class="prose prose-headings:-my-px prose-hr:-my-px prose-hr:my-2 mx-auto dark:prose-invert post-card dark:post-card-dark p-8 rounded-lg shadow-2xl shadow-slate-700/10 ring-1 ring-gray-900/5  max-w-4xl">
+        <h1 class="-mb-px  text-2xl font-bold">Arch Linux Install (Hyprland)</h1>
+        <p class="mt-2 text-sm text-gray-400">Published on Wednesday, 15 Feb 2023</p>
         
 
 
-
-<p class="mt-2 text-sm text-gray-400"><time datetime="2023-02-15">15 Feb, 2023</time> &#x2022; 1 minute read</p>
-
-
-        
-
-
-<a class="text-gray-600 text-sm underline underline-offset-4 decoration-2 decoration-gray-400 dark:text-gray-500" href="https://r4sso.github.io/tags/linux">linux</a>
+<a class="-mt-8 text-gray-600 text-sm underline underline-offset-4 decoration-2 decoration-gray-400 dark:text-gray-500" href="https://r4sso.github.io/tags/linux">linux</a>
 
 
         <hr class="-my-px my-4 h-0.5 bg-gray-200 border-0 dark:bg-gray-700 w-6/12 ">
-        <img class="thumb object-cover object-center mx-auto max-h-full w-auto rounded-md" src="https://i.imgur.com/5otdIDB.png" id="thumb-image">
+        <img class="thumb object-cover object-center mx-auto max-h-full w-auto rounded-md" src="https://i.imgur.com/uwjhh5S.png" id="thumb-image">
         <div class="article mt-0 text-sm leading-normal">
         <h1 id="installation">Installation</h1>
 <p>My arch linux installation.</p>
 <ul>
 <li>Archinstall [minimal]:</li>
 </ul>
-<h2 id="details">Details</h2>
 <pre tabindex="0"><code>Compositor    : Hyprland
-Notifications : dunst
-Bar           : eww
-Terminal      : kitty
-File-manager  : thunar
-Launcher      : rofi
+Notifications : Dunst
+Bar           : Waybar
+Terminal      : Kitty
+File-manager  : Nautilus
+Launcher      : Rofi
 </code></pre><p>My dotfiles availabe on (<a href="https://github.com/r4sso/dotfiles">github</a>)</p>
 <h2 id="yay">yay</h2>
 <p><strong>Notes: Run as user NOT ROOT!</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>git clone https://aur.archlinux.org/yay
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span>cd yay
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span>makepkg -si
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://aur.archlinux.org/yay
+</span></span><span style="display:flex;"><span>cd yay
+</span></span><span style="display:flex;"><span>makepkg -si
 </span></span></code></pre></div><p><strong>FOR NVIDIA: hyprland-nvidia-git</strong></p>
 <h3 id="packages">Packages</h3>
-<pre tabindex="0"><code>yay -S hyprland eww-wayland dunst polkit-gnome qt5-wayland qt6-wayland \
-kitty ttf-iosevka
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior       <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span><span style="color:#79c0ff"></span>rofi pavucontrol thunar starship wl-clipboard wf-recorder     <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span><span style="color:#79c0ff"></span>swaybg grimblast-git ffmpegthumbnailer tumbler playerctl      <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">4</span><span><span style="color:#79c0ff"></span>noise-suppression-for-voice thunar-archive-plugin kitty       <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">5</span><span><span style="color:#79c0ff"></span>waybar-hyprland wlogout swaylock-effects pamixer              <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">6</span><span><span style="color:#79c0ff"></span>nwg-look-bin nordic-theme papirus-icon-theme dunst
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior       <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>rofi pavucontrol thunar starship wl-clipboard wf-recorder     <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>swaybg grimblast-git ffmpegthumbnailer tumbler playerctl      <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>noise-suppression-for-voice thunar-archive-plugin nautilus    <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>waybar-hyprland wlogout swaylock-effects pamixer              <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>nwg-look-bin dunst
 </span></span></code></pre></div><h2 id="configuration">Configuration</h2>
 <h3 id="wrapping-the-launcher">Wrapping the launcher</h3>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 1</span><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#!/bin/sh
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 2</span><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 3</span><span>export <span style="color:#79c0ff">LIBVA_DRIVER_NAME</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 4</span><span>export <span style="color:#79c0ff">XDG_SESSION_TYPE</span><span style="color:#ff7b72;font-weight:bold">=</span>wayland
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 5</span><span>export <span style="color:#79c0ff">GBM_BACKEND</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia-drm
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 6</span><span>export <span style="color:#79c0ff">__GLX_VENDOR_LIBRARY_NAME</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 7</span><span>export <span style="color:#79c0ff">WLR_NO_HARDWARE_CURSORS</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">1</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 8</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 9</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">10</span><span>exec Hyprland
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">LIBVA_DRIVER_NAME</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">XDG_SESSION_TYPE</span><span style="color:#ff7b72;font-weight:bold">=</span>wayland
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">GBM_BACKEND</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia-drm
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">__GLX_VENDOR_LIBRARY_NAME</span><span style="color:#ff7b72;font-weight:bold">=</span>nvidia
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">WLR_NO_HARDWARE_CURSORS</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exec Hyprland
 </span></span></code></pre></div><h3 id="bash_profile">bash_profile</h3>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span><span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[[</span> -z <span style="color:#79c0ff">$DISPLAY</span> <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#ff7b72">$(</span>tty<span style="color:#ff7b72">)</span> <span style="color:#ff7b72;font-weight:bold">==</span> /dev/tty1 <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#79c0ff">$XDG_SESSION_TYPE</span> <span style="color:#ff7b72;font-weight:bold">==</span> tty <span style="color:#ff7b72;font-weight:bold">]]</span>; <span style="color:#ff7b72">then</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span>  exec /home/r4sso/.wrappedhl
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span><span style="color:#ff7b72">fi</span>
-</span></span></code></pre></div>
-
-        
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[[</span> -z <span style="color:#79c0ff">$DISPLAY</span> <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#ff7b72">$(</span>tty<span style="color:#ff7b72">)</span> <span style="color:#ff7b72;font-weight:bold">==</span> /dev/tty1 <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#79c0ff">$XDG_SESSION_TYPE</span> <span style="color:#ff7b72;font-weight:bold">==</span> tty <span style="color:#ff7b72;font-weight:bold">]]</span>; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span>  exec /home/r4sso/.wrappedhl
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">fi</span>
+</span></span></code></pre></div>        
+        <hr>
+        <p class="-mb-2 text-sm text-right">Last edited: <b>15/02/2023 00:00 UTC</b></p>
         </div>
-    
     </div>
   <footer class="grid justify-center relative p-8">
     <span class="items-start text-sm">&copy; 2023 <b><a href="https://r4sso.github.io">r4sso.github.io</a></b></span>

@@ -14,10 +14,10 @@
       
       <guid>https://r4sso.github.io/notes/archinstall/</guid>
       <description>Installation My arch linux installation.
-Archinstall [minimal]: Details Compositor : Hyprland Notifications : dunst Bar : eww Terminal : kitty File-manager : thunar Launcher : rofi My dotfiles availabe on (github)
+Archinstall [minimal]: Compositor : Hyprland Notifications : Dunst Bar : Waybar Terminal : Kitty File-manager : Nautilus Launcher : Rofi My dotfiles availabe on (github)
 yay Notes: Run as user NOT ROOT!
-1git clone https://aur.archlinux.org/yay 2cd yay 3makepkg -si FOR NVIDIA: hyprland-nvidia-git
-Packages yay -S hyprland eww-wayland dunst polkit-gnome qt5-wayland qt6-wayland \ kitty ttf-iosevka 1yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior \ 2rofi pavucontrol thunar starship wl-clipboard wf-recorder \ 3swaybg grimblast-git ffmpegthumbnailer tumbler playerctl \ 4noise-suppression-for-voice thunar-archive-plugin kitty \ 5waybar-hyprland wlogout swaylock-effects pamixer \ 6nwg-look-bin nordic-theme papirus-icon-theme dunst Configuration Wrapping the launcher 1#!</description>
+git clone https://aur.archlinux.org/yay cd yay makepkg -si FOR NVIDIA: hyprland-nvidia-git
+Packages yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior \ rofi pavucontrol thunar starship wl-clipboard wf-recorder \ swaybg grimblast-git ffmpegthumbnailer tumbler playerctl \ noise-suppression-for-voice thunar-archive-plugin nautilus \ waybar-hyprland wlogout swaylock-effects pamixer \ nwg-look-bin dunst Configuration Wrapping the launcher #!</description>
     </item>
     
   </channel>

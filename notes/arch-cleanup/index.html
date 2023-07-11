@@ -22,7 +22,7 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
-</head><body class="bg-light dark:bg-dark"><nav class="navbar fixed top-0 w-full z-50 shadow-sm dark:navbar-dark">
+</head><body class="bg-light dark:bg-dark"><nav class="navbar fixed top-0 w-full z-50  dark:navbar-dark">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-14 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -103,54 +103,46 @@
                 
 <div class="pt-20">
     
-    <div class="prose mx-auto dark:prose-invert post-card dark:post-card-dark p-8 rounded-lg shadow-2xl shadow-slate-700/10 ring-1 ring-gray-900/5  max-w-4xl">
-        <h1 class="text-2xl font-bold">Arch Linux: Cleanup</h1>
-        
-
-
-
-<p class="mt-2 text-sm text-gray-400"><time datetime="2023-05-25">25 May, 2023</time> &#x2022; 1 minute read</p>
-
-
+    <div class="prose prose-headings:-my-px prose-hr:-my-px prose-hr:my-2 mx-auto dark:prose-invert post-card dark:post-card-dark p-8 rounded-lg shadow-2xl shadow-slate-700/10 ring-1 ring-gray-900/5  max-w-4xl">
+        <h1 class="-mb-px  text-2xl font-bold">Arch Linux: Cleanup</h1>
+        <p class="mt-2 text-sm text-gray-400">Published on Thursday, 25 May 2023</p>
         
         <hr class="-my-px my-4 h-0.5 bg-gray-200 border-0 dark:bg-gray-700 w-6/12 ">
         <img class="thumb object-cover object-center mx-auto max-h-full w-auto rounded-md" src="" id="thumb-image">
         <div class="article mt-0 text-sm leading-normal">
         <h2 id="clean-pkg-cache">Clean pkg cache</h2>
 <p>List packages</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>ls /var/cache/pacman/pkg/ | less 
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls /var/cache/pacman/pkg/ | less 
 </span></span></code></pre></div><p>Remove all pkg except those installed</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo pacman -Sc 
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Sc 
 </span></span></code></pre></div><p>Remove all files</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo pacman -Scc
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Scc
 </span></span></code></pre></div><p>Or with yay</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>yay -Scc
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yay -Scc
 </span></span></code></pre></div><hr>
 <h2 id="remove-unused-packages">Remove unused packages</h2>
 <p>List unused</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo pacman -Qtdq
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Qtdq
 </span></span></code></pre></div><p>Remove unused</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo pacman -R <span style="color:#ff7b72">$(</span>pacman -Qtdq<span style="color:#ff7b72">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -R <span style="color:#ff7b72">$(</span>pacman -Qtdq<span style="color:#ff7b72">)</span>
 </span></span></code></pre></div><hr>
 <h2 id="journal-logs">Journal logs</h2>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo journalctl --vacuum-time<span style="color:#ff7b72;font-weight:bold">=</span>2d
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo journalctl --vacuum-time<span style="color:#ff7b72;font-weight:bold">=</span>2d
 </span></span></code></pre></div><ul>
 <li>This will remove log older than 2 days, you can change accordingly.</li>
 <li>Clear journal log older than x day/month/year</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>sudo journalctl --vacuum-size<span style="color:#ff7b72;font-weight:bold">=</span>100M
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo journalctl --vacuum-size<span style="color:#ff7b72;font-weight:bold">=</span>100M
 </span></span></code></pre></div><ul>
 <li>Restrict logs to a certain size</li>
 </ul>
 <hr>
 <h2 id="clean-home-cache">Clean home cache</h2>
 <p>cache is located in <code>~/.cache </code></p>
-<hr>
-
-
         
+        <hr>
+        <p class="-mb-2 text-sm text-right">Last edited: <b>25/05/2023 00:00 UTC</b></p>
         </div>
-    
     </div>
   <footer class="grid justify-center relative p-8">
     <span class="items-start text-sm">&copy; 2023 <b><a href="https://r4sso.github.io">r4sso.github.io</a></b></span>
