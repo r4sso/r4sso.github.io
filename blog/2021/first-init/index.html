@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://iosevka-webfonts.github.io/iosevka/iosevka.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    
+    
+    <title>r4sso.github.io | First init</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.svg">
+<script>
+    
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head><body class="bg-light dark:bg-dark"><nav class="navbar fixed top-0 w-full z-50  dark:navbar-dark">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-14 items-center justify-between">
+      <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+        
+        <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          
+          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="absolute left-11 flex items-center ">
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-yellow-700 rounded-full text-sm p-2.5">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+      </div>
+      <div class="flex flex-1 items-end justify-end md:items-stretch md:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <a class="navbar-brand" href="https://r4sso.github.io">
+            <img class="h-12 w-auto " src="/images/logo.svg" alt="r4sso.github.io">
+          </a>
+        </div>
+   
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0  hidden md:block">
+        
+        <div class="flex space-x-4">
+          
+          
+          
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium dark:text-white active underline decoration-2 underline-offset-4 decoration-blue-500" href="https://r4sso.github.io/blog/">Blog</a>
+          
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+          
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/gallery/">Gallery</a>
+          
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/about/">About</a>
+          
+        </div>
+    </div>
+  </div>
+
+  
+  <div class="hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pt-2 pb-3">
+      
+      
+      
+      
+      <div class="relative group">
+
+          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium active bg-gray-900 text-white dark:text-black dark:bg-white hover:text-white " href="https://r4sso.github.io/blog/">Blog</a>
+      
+      <div class="relative group">
+
+          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+      
+      <div class="relative group">
+
+          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/gallery/">Gallery</a>
+      
+      <div class="relative group">
+
+          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/about/">About</a>
+      
+ 
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+                
+<div class="pt-16">
+    <div class="prose prose-headings:-mb-px  prose-hr:-my-px prose-hr:my-2 mx-auto dark:prose-invert post-card dark:post-card-dark p-8 rounded-lg shadow-2xl shadow-slate-700/10 ring-1 ring-gray-900/5  max-w-4xl">
+        <h1 class="-mb-px  text-2xl font-bold">First init</h1>
+        <p class="mt-2 text-sm text-gray-400">Published on Saturday, 23 Jan 2021</p>
+        
+
+
+<a class="-mt-8 text-gray-600 text-sm underline underline-offset-4 decoration-2 decoration-gray-400 dark:text-gray-500" href="https://r4sso.github.io/tags/test">test</a>
+
+
+<a class="-mt-8 text-gray-600 text-sm underline underline-offset-4 decoration-2 decoration-gray-400 dark:text-gray-500" href="https://r4sso.github.io/tags/test2">test2</a>
+
+
+        <hr class="-my-px my-4 h-0.5 bg-gray-200 border-0 dark:bg-gray-700 w-6/12 ">
+        <img class="object-cover object-center mx-auto -mb-px max-h-fit w-auto rounded-md" src="https://i.kym-cdn.com/entries/icons/original/000/040/002/cover2.jpg" id="thumb-image">
+        <div class="article mt-0 text-sm leading-normal">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat ante justo, ut efficitur quam lacinia in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam tincidunt, leo in accumsan vestibulum, urna quam cursus risus, ac venenatis ante purus ac dolor. Nullam tempus lorem ac gravida venenatis. Etiam consectetur luctus magna ac consectetur. Nulla vel felis tempus, ultrices lorem a, aliquam magna. Donec velit libero, hendrerit in egestas vel, pretium nec nisi. Quisque in dolor est. Sed dignissim malesuada elit, eu tristique nunc ultrices id.</p>
+<p>Nulla commodo in ex quis sollicitudin. Maecenas ac nisi odio. Donec id nisi ac orci hendrerit pharetra a eget orci. Donec malesuada turpis eros, quis commodo libero mollis quis. Sed aliquam, lectus ut semper vestibulum, mi dui condimentum sapien, nec interdum libero metus vel nibh. Sed a facilisis sem, quis faucibus neque. Sed eros odio, placerat at sem a, blandit ultrices nisl. Pellentesque sed fermentum mi. Aenean suscipit lacinia ullamcorper. Pellentesque accumsan, enim at iaculis consectetur, sem turpis ultricies nisl, et mollis felis nunc ut leo. Aenean pretium massa vel dapibus vehicula.</p>
+<p>Fusce vitae tincidunt lectus. Nullam semper ultrices euismod. Sed commodo dui sed sagittis imperdiet. Phasellus egestas risus mollis risus malesuada pellentesque. Praesent aliquet mi sit amet ligula hendrerit, vitae vulputate velit consectetur. Fusce justo nisi, accumsan nec ornare non, luctus porttitor ex. Cras eu placerat dolor. Morbi molestie molestie ultricies. Mauris rhoncus, quam sit amet consectetur fermentum, purus nulla viverra mauris, at mattis mi turpis at orci. Aenean fringilla iaculis nunc et mollis. Vivamus ut leo mi. Proin rhoncus felis eu blandit rhoncus. Suspendisse sagittis vehicula urna, vestibulum finibus mi pellentesque ac. Phasellus tincidunt varius nulla, quis scelerisque nibh dignissim non. Nam malesuada, nulla id dignissim pretium, mauris est elementum enim, eget commodo nisl dui eu est.</p>
+<p>Aliquam egestas ultrices sapien et accumsan. Aliquam ultrices, libero id laoreet lacinia, velit orci euismod libero, et laoreet felis lectus in nisi. Aenean non auctor metus, nec elementum felis. Nam ultrices scelerisque ultrices. Donec a lectus non justo dapibus pellentesque id ultrices leo. Cras vitae sodales leo. Nullam venenatis id nulla laoreet egestas. Vivamus ut risus ante. Vivamus suscipit magna at tortor efficitur, vel sagittis arcu convallis. Integer et lectus vestibulum, faucibus magna eget, congue dolor. Nunc varius, augue non elementum convallis, turpis enim egestas dui, sed efficitur urna lorem eu tortor. Etiam ut risus a diam dapibus feugiat id eu lorem. Etiam aliquet lobortis tortor non tincidunt. Aenean non finibus arcu, sed porttitor quam.</p>
+<p>Praesent id quam tortor. Cras non erat nunc. Nullam rutrum quis mauris ac convallis. Donec suscipit cursus enim at finibus. Sed semper hendrerit porta. Mauris pharetra semper aliquet. Quisque diam nibh, efficitur aliquet mattis vitae, hendrerit lobortis dolor. Fusce accumsan in odio nec rutrum. Donec vestibulum id urna id vestibulum. Aenean convallis dui arcu, id cursus neque vulputate ac. Curabitur iaculis turpis sit amet arcu fringilla condimentum. Vivamus libero odio, placerat eget porta quis, lacinia a ante.</p>
+<h1 id="youtube-test">Youtube Test</h1>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/G8sX-Ez5ZOA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h1 id="syntax">Syntax</h1>
+<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
+<h2 id="headings">Headings</h2>
+<p>The following HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> elements represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level while <code>&lt;h6&gt;</code> is the lowest.</p>
+<h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
+<h3 id="h3">H3</h3>
+<h4 id="h4">H4</h4>
+<h5 id="h5">H5</h5>
+<h6 id="h6">H6</h6>
+<h2 id="paragraph">Paragraph</h2>
+<p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.</p>
+<p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.</p>
+<h2 id="blockquotes">Blockquotes</h2>
+<p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a <code>footer</code> or <code>cite</code> element, and optionally with in-line changes such as annotations and abbreviations.</p>
+<h4 id="blockquote-without-attribution">Blockquote without attribution</h4>
+<blockquote>
+<p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.<br>
+<strong>Note</strong> that you can use <em>Markdown syntax</em> within a blockquote.</p>
+</blockquote>
+<h4 id="blockquote-with-attribution">Blockquote with attribution</h4>
+<blockquote>
+<p>Don&rsquo;t communicate by sharing memory, share memory by communicating.<!-- raw HTML omitted --><br>
+— <!-- raw HTML omitted -->Rob Pike<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><!-- raw HTML omitted --></p>
+</blockquote>
+<h2 id="tables">Tables</h2>
+<p>Tables aren&rsquo;t part of the core Markdown spec, but Hugo supports them out-of-the-box.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Alice</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<h4 id="inline-markdown-within-tables">Inline Markdown within tables</h4>
+<table>
+<thead>
+<tr>
+<th>Italics</th>
+<th>Bold</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>italics</em></td>
+<td><strong>bold</strong></td>
+<td><code>code</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-blocks">Code Blocks</h2>
+<h4 id="code-block-with-backticks">Code block with backticks</h4>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;!doctype html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">html</span> lang<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">meta</span> charset<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">title</span>&gt;Example HTML5 Document&lt;/<span style="color:#7ee787">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">body</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">p</span>&gt;Test&lt;/<span style="color:#7ee787">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">html</span>&gt;
+</span></span></code></pre></div><h4 id="code-block-indented-with-four-spaces">Code block indented with four spaces</h4>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Example HTML5 Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Test&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo&rsquo;s internal highlight shortcode</h4>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;!doctype html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">html</span> lang<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">meta</span> charset<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">title</span>&gt;Example HTML5 Document&lt;/<span style="color:#7ee787">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#7ee787">body</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#7ee787">p</span>&gt;Test&lt;/<span style="color:#7ee787">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">html</span>&gt;</span></span></code></pre></div>
+<h2 id="list-types">List Types</h2>
+<h4 id="ordered-list">Ordered List</h4>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<h4 id="unordered-list">Unordered List</h4>
+<ul>
+<li>List item</li>
+<li>Another item</li>
+<li>And another item</li>
+</ul>
+<h4 id="nested-list">Nested list</h4>
+<ul>
+<li>Fruit
+<ul>
+<li>Apple</li>
+<li>Orange</li>
+<li>Banana</li>
+</ul>
+</li>
+<li>Dairy
+<ul>
+<li>Milk</li>
+<li>Cheese</li>
+</ul>
+</li>
+</ul>
+<h2 id="other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark</h2>
+<p><!-- raw HTML omitted -->GIF<!-- raw HTML omitted --> is a bitmap image format.</p>
+<p>H<!-- raw HTML omitted -->2<!-- raw HTML omitted -->O</p>
+<p>X<!-- raw HTML omitted -->n<!-- raw HTML omitted --> + Y<!-- raw HTML omitted -->n<!-- raw HTML omitted --> = Z<!-- raw HTML omitted -->n<!-- raw HTML omitted --></p>
+<p>Press <!-- raw HTML omitted --><!-- raw HTML omitted -->CTRL<!-- raw HTML omitted -->+<!-- raw HTML omitted -->ALT<!-- raw HTML omitted -->+<!-- raw HTML omitted -->Delete<!-- raw HTML omitted --><!-- raw HTML omitted --> to end the session.</p>
+<p>Most <!-- raw HTML omitted -->salamanders<!-- raw HTML omitted --> are nocturnal, and hunt for insects, worms, and other small creatures.</p>
+<h2 id="math">Math</h2>
+<p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p>
+<p>In this example we will be using <a href="https://katex.org/">KaTeX</a></p>
+<ul>
+<li>Create a partial under <code>/layouts/partials/math.html</code></li>
+<li>Within this partial reference the <a href="https://katex.org/docs/autorender.html">Auto-render Extension</a> or host these scripts locally.</li>
+<li>Include the partial in your templates like so:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">{{</span> <span style="color:#ff7b72">if</span> or .Params.math .Site.Params.math <span style="color:#ff7b72;font-weight:bold">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">{{</span> partial <span style="color:#a5d6ff">&#34;math.html&#34;</span> . <span style="color:#ff7b72;font-weight:bold">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">{{</span> end <span style="color:#ff7b72;font-weight:bold">}}</span>
+</span></span></code></pre></div><ul>
+<li>To enable KaTex globally set the parameter <code>math</code> to <code>true</code> in a project&rsquo;s configuration</li>
+<li>To enable KaTex on a per page basis include the parameter <code>math: true</code> in content files</li>
+</ul>
+<p><strong>Note:</strong> Use the online reference of <a href="https://katex.org/docs/supported.html">Supported TeX Functions</a></p>
+<h2 id="examples">Examples</h2>
+<p>Inline Math:</p>
+<p>$ (\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…) $</p>
+<p><code>$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$</code>,<br>
+$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$</p>
+<p>Block math:</p>
+<p>$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The above quote is excerpted from Rob Pike&rsquo;s <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">talk</a> during Gopherfest, November 18, 2015.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+        
+        <hr>
+        <p class="-mb-2 text-sm text-right">Last edited: <b>11/07/2023 09:18 UTC</b></p>
+        </div>
+    </div>
+  <footer class="grid justify-center relative p-8">
+    <span class="items-start text-sm">&copy; 2023 <b><a href="https://r4sso.github.io">r4sso.github.io</a></b></span>
+</footer>
+
+</div>
+
+            </main>
+       
+
+        
+<script src="/js/script.js"></script>
+<script src="/js/copy-button.js"></script>
+
+    </body>
+</html>

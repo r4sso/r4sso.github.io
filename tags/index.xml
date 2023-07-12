@@ -43,5 +43,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>test</title>
+      <link>https://r4sso.github.io/tags/test/</link>
+      <pubDate>Sat, 23 Jan 2021 23:11:13 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test2</title>
+      <link>https://r4sso.github.io/tags/test2/</link>
+      <pubDate>Sat, 23 Jan 2021 23:11:13 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/tags/test2/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

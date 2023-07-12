@@ -2,8 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://r4sso.github.io/notes/git/</loc>
+    <lastmod>2023-07-12T02:11:13+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/</loc>
+    <lastmod>2023-07-12T02:11:13+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/notes/</loc>
+    <lastmod>2023-07-12T02:11:13+00:00</lastmod>
+  </url><url>
     <loc>https://r4sso.github.io/blog/</loc>
-    <lastmod>2023-07-11T07:10:00+00:00</lastmod>
+    <lastmod>2023-07-11T09:18:00+00:00</lastmod>
   </url><url>
     <loc>https://r4sso.github.io/tags/alpine/</loc>
     <lastmod>2023-07-11T07:10:00+00:00</lastmod>
@@ -14,19 +23,13 @@
     <loc>https://r4sso.github.io/tags/docker/</loc>
     <lastmod>2023-07-11T07:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://r4sso.github.io/</loc>
-    <lastmod>2023-07-11T07:10:00+00:00</lastmod>
-  </url><url>
     <loc>https://r4sso.github.io/tags/pihole/</loc>
     <lastmod>2023-07-11T07:10:00+00:00</lastmod>
   </url><url>
     <loc>https://r4sso.github.io/tags/</loc>
-    <lastmod>2023-07-11T07:10:00+00:00</lastmod>
+    <lastmod>2023-07-11T09:18:00+00:00</lastmod>
   </url><url>
     <loc>https://r4sso.github.io/notes/arch-cleanup/</loc>
-    <lastmod>2023-05-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://r4sso.github.io/notes/</loc>
     <lastmod>2023-05-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://r4sso.github.io/notes/tools/</loc>
@@ -40,6 +43,15 @@
   </url><url>
     <loc>https://r4sso.github.io/tags/linux/</loc>
     <lastmod>2023-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/blog/2021/first-init/</loc>
+    <lastmod>2023-07-11T09:18:00+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/tags/test/</loc>
+    <lastmod>2023-07-11T09:18:00+00:00</lastmod>
+  </url><url>
+    <loc>https://r4sso.github.io/tags/test2/</loc>
+    <lastmod>2023-07-11T09:18:00+00:00</lastmod>
   </url><url>
     <loc>https://r4sso.github.io/categories/</loc>
   </url><url>

@@ -50,8 +50,6 @@ themeToggleBtn.addEventListener('click', function() {
 
 
 
-
-
 // Get the mobile menu button element
 const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
 
@@ -68,12 +66,6 @@ mobileMenuButton.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-
-// var toc = document.querySelector('.toc');
-// if (toc.textContent.trim().length === 0) {
-//   toc.style.display = 'none';
-// }
-
 // JavaScript code
 window.addEventListener('load', function() {
   var thumbImage = document.getElementById('thumb-image');
@@ -82,13 +74,4 @@ window.addEventListener('load', function() {
   }
 });
 
-
-// navbar responsive 
-// const button = document.querySelector('#menu-button');
-// const menu = document.querySelector('#menu');
-
-
-// button.addEventListener('click', () => {
-//   menu.classList.toggle('hidden');
-// });
 
