@@ -153,31 +153,17 @@ I will cover various topics, including computers, security, privacy, fitness and
 
 
 
-            </main>
-            <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-gray-300 hover:bg-gray-700 text-white rounded-full p-2 hidden" onclick="scrollToTop()">
+                <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-gray-700 hover:bg-gray-800 text-white rounded-full p-2 hidden" onclick="scrollToTop()">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up w-6 h-6">
       <path d="M18 15l-6-6-6 6" />
     </svg>
 </button>
   
 <script>
-    window.onscroll = function() { scrollFunction() };
-  
-    function scrollFunction() {
-      var scrollToTopButton = document.getElementById("scroll-to-top");
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopButton.style.display = "block";
-      } else {
-        scrollToTopButton.style.display = "none";
-      }
-    }
-  
-    function scrollToTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
+    
 </script>
   
+            </main>
         
 <script src="/js/script.js"></script>
 <script src="/js/copy-button.js"></script>
