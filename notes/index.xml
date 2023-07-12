@@ -13,8 +13,7 @@
       <pubDate>Wed, 12 Jul 2023 02:11:13 +0000</pubDate>
       
       <guid>https://r4sso.github.io/notes/git/</guid>
-      <description>Notes anything about git
-Create a new repository on the command line echo &amp;#34;# Something&amp;#34; &amp;gt;&amp;gt; README.md git init git add README.md git commit -m &amp;#34;first commit&amp;#34; git branch -M main git remote add origin https://github.com/[username]/[repo].git git push -u origin main Push an existing repository from the command line git remote add origin https://github.com/[username]/[repo].git git branch -M main git push -u origin main </description>
+      <description>Create a new repository on the command line echo &amp;#34;# Something&amp;#34; &amp;gt;&amp;gt; README.md git init git add README.md git commit -m &amp;#34;first commit&amp;#34; git branch -M main git remote add origin https://github.com/[username]/[repo].git git push -u origin main Push an existing repository from the command line git remote add origin https://github.com/[username]/[repo].git git branch -M main git push -u origin main </description>
     </item>
     
     <item>

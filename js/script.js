@@ -66,12 +66,20 @@ mobileMenuButton.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-// JavaScript code
-window.addEventListener('load', function() {
-  var thumbImage = document.getElementById('thumb-image');
-  if (thumbImage && !thumbImage.getAttribute('src')) {
-    thumbImage.remove();
-  }
-});
 
-
+// scroll to top button
+window.onscroll = function() { scrollFunction() };
+  
+    function scrollFunction() {
+      var scrollToTopButton = document.getElementById("scroll-to-top");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+      } else {
+        scrollToTopButton.style.display = "none";
+      }
+    }
+  
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
