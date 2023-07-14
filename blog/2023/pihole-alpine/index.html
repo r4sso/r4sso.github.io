@@ -59,13 +59,13 @@
           
           
           
-            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium dark:text-white active underline decoration-2 underline-offset-4 decoration-blue-500" href="https://r4sso.github.io/blog/">Blog</a>
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-bold dark:text-white active underline decoration-2 underline-offset-4 decoration-blue-500" href="https://r4sso.github.io/blog/">Blog</a>
           
-            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-bold " href="https://r4sso.github.io/notes/">Notes</a>
           
-            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/gallery/">Gallery</a>
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-bold " href="https://r4sso.github.io/gallery/">Gallery</a>
           
-            <a class="hover:text-blue-500 px-1 py-2  text-sm font-medium " href="https://r4sso.github.io/about/">About</a>
+            <a class="hover:text-blue-500 px-1 py-2  text-sm font-bold " href="https://r4sso.github.io/about/">About</a>
           
         </div>
     </div>
@@ -102,7 +102,7 @@
 <main id="main">
                 
 <div class="pt-16">
-    <div class="prose prose-headings:-mb-px  prose-hr:-my-px prose-hr:my-2 mx-auto dark:prose-invert post-card dark:post-card-dark p-8 rounded-lg shadow-2xl shadow-slate-700/10 ring-1 ring-gray-900/5  max-w-4xl">
+    <div class="prose prose-headings:-mb-px  prose-hr:-my-px prose-hr:my-2 mx-auto dark:prose-invert post-card dark:post-card-dark p-8 rounded-lg shadow-2xl shadow-slate-700/10  max-w-4xl ">
         <h1 class="-mb-px  text-2xl font-bold">Deploy pihole &#43; unbound on alpine</h1>
         <p class="mt-2 text-sm text-gray-400">Published on Tuesday, 11 Jul 2023</p>
         
@@ -117,10 +117,8 @@
 <a class="-mt-8 text-gray-600 text-sm underline underline-offset-4 decoration-2 decoration-gray-400 dark:text-gray-500" href="https://r4sso.github.io/tags/alpine">alpine</a>
 
 
-        <hr class="-my-px my-4 h-0.5 bg-gray-200 border-0 dark:bg-gray-700 w-6/12 ">
-        <img class="object-cover object-center mx-auto -mb-px max-h-fit w-auto rounded-md" src="https://i.imgur.com/KCpToL8.png" id="thumb-image">
-        <div class="article mt-0 text-sm leading-normal">
-        <h2 id="what-is-pihole">What is pihole?</h2>
+        <hr class="-my-px my-4 h-0.5 bg-gray-200 border-0 dark:bg-gray-700 w-6/12 "><img class="object-cover object-center mx-auto -mb-px max-h-fit w-auto rounded-md" src="https://i.imgur.com/KCpToL8.png" id="thumb-image"><div class=" text-sm leading-normal ">
+          <h2 id="what-is-pihole">What is pihole?</h2>
 <p>Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.It works by intercepting DNS requests made by devices on your network and blocking requests to domains you provide on the <a href="https://firebog.ne">adlist</a> such as (.eg.,advertisements/tracking/phishing domains.)</p>
 <h2 id="what-is-unbound">What is unbound?</h2>
 <p>Unbound is a validating, recursive, caching DNS resolver. It is designed to resolve domain names by starting from the root DNS servers and recursively traversing the DNS hierarchy until it obtains the final IP address associated with a domain.</p>
@@ -201,8 +199,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div><p>http://[your_pihole_ip]/admin</p>
         
-        <hr>
-        <p class="-mb-2 text-sm text-right">Last edited: <b>11/07/2023 07:10 UTC</b></p>
+          <hr>
+          <p class="-mb-2 text-sm text-right">Last edited: <b>11/07/2023 07:10 UTC</b></p>
         </div>
     </div>
 
@@ -212,7 +210,7 @@
 
 </div>
 
-                <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-gray-700 hover:bg-gray-800 text-white rounded-full p-4 hidden" onclick="scrollToTop()">
+                <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-gray-700 hover:bg-gray-800 text-white rounded-full p-4  hidden" onclick="scrollToTop()">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up w-6 h-6">
       <path d="M18 15l-6-6-6 6" />
     </svg>
