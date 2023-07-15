@@ -60,7 +60,7 @@ Title - tools name Description - what the tools for CTF - Usefulness for CTF Tit
       
       <guid>https://r4sso.github.io/notes/links/</guid>
       <description>Collection of links.
-Useful links Title Description GTFOBins A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions CyberChef A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser. Payloads All The Things A list of useful payloads and bypass for Web Application Security and Pentest/CTF </description>
+Title Description GTFOBins A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions CyberChef A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser. Payloads All The Things A list of useful payloads and bypass for Web Application Security and Pentest/CTF Books Title Description Anna’s Archive Non-profit, open-source search engine for “shadow libraries”.</description>
     </item>
     
     <item>
