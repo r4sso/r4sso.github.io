@@ -203,13 +203,38 @@
           <hr>
           <p class="-mb-2 text-sm text-right">Last edited: <b>11/07/2023 07:10 UTC</b></p>
         </div>
+    
     </div>
+</div>
 
-  <footer class="grid justify-center relative text-center p-8">
+<div id="giscus-container" class="mt-2 max-w-4xl mx-auto post-card dark:post-card-dark text-white p-8 rounded-lg shadow-2xl shadow-slate-700/10">
+    <script>
+        var giscusTheme = localStorage.getItem("color-theme") || "light"; 
+        var giscusAttributes = {
+          src: "https://giscus.app/client.js",
+          "data-repo": "r4sso/r4sso.github.io",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMDAyOTQzNzM=",
+          "data-category": "Announcements",
+          "data-category-id": "DIC_kwDOEeYg5c4CX55V",
+          "data-mapping": "pathname",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          crossorigin: "anonymous",
+          async: "",
+        };
+    
+        var giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+        document.getElementById("giscus-container").appendChild(giscusScript);
+      </script>
+  </div>
+<footer class="grid justify-center relative text-center p-8">
     <span class="items-start text-sm text-gray-500">&copy; 2023 <b><a href="https://r4sso.github.io">r4sso.github.io</a></b></span>
 </footer>
 
-</div>
+
 
                 <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-gray-700 hover:bg-gray-800 text-white rounded-full p-4  hidden" onclick="scrollToTop()">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up w-6 h-6">
