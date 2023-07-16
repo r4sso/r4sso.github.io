@@ -129,6 +129,7 @@
 <h2 id="what-is-unbound">What is unbound?</h2>
 <p>Unbound is a validating, recursive, caching DNS resolver. It is designed to resolve domain names by starting from the root DNS servers and recursively traversing the DNS hierarchy until it obtains the final IP address associated with a domain.</p>
 <hr>
+<p>There are many ways to deploy Pi-hole and Unbound on Alpine Linux, but the easiest way is to use Docker with Docker Compose. In this article, I&rsquo;ll be using the official Pi-hole image. If you&rsquo;re interested in a bundled image that already includes Unbound, you can check out the repository at <a href="https://github.com/chriscrowe/docker-pihole-unbound">github.com/chriscrowe/docker-pihole-unbound</a></p>
 <h3 id="enable-community-repository">Enable community repository</h3>
 <p>Use editor of your choice &amp; uncomment community repository in <code>/etc/apk/repositories</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#/media/cdrom/apks</span>
@@ -206,7 +207,7 @@
 </span></span></code></pre></div><p>http://[your_pihole_ip]/admin</p>
         
           <hr>
-          <p class="-mb-2 text-sm text-right">Last edited: <b>11/07/2023 07:10 UTC</b></p>
+          <p class="-mb-2 text-sm text-right">Last edited: <b>17/07/2023 04:16 UTC</b></p>
         </div>
     
     </div>
