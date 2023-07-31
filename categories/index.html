@@ -5,6 +5,8 @@
     
     <link rel="stylesheet" href="/style.css">
     <link href="https://iosevka-webfonts.github.io/iosevka/iosevka.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+
     
     
     
@@ -23,28 +25,27 @@
         }
       </script>
 </head><body class="bg-light dark:bg-dark"><nav class="navbar fixed top-0 w-full z-50  dark:navbar-dark">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-14 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
         
-        <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
-          
-          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          
-          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
         </button>
       </div>
-      <div class="absolute left-11 flex items-center ">
-        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-yellow-700 rounded-full text-sm p-2.5">
+
+      
+      <div class="absolute left-11 ">
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-yellow-700 rounded-full text-sm p-2 ml-0.5">
           <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
           <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
         </button>
       </div>
+     
+
       <div class="flex flex-1 items-end justify-end md:items-stretch md:justify-start">
         <div class="flex flex-shrink-0 items-center">
           <a class="navbar-brand" href="https://r4sso.github.io">
@@ -54,45 +55,66 @@
    
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0  hidden md:block">
-        
-        <div class="flex space-x-4">
+        <div class="flex space-x-2 tracking-tighter text-sm  ">
           
           
           
-            <a class="hover:text-blue-500 px-1 py-2  text-sm font-bold " href="https://r4sso.github.io/blog/">Blog</a>
+            <a class="hover:underline hover:decoration-blue-500 underline-offset-4 decoration-2  py-2 px-0.5 font-medium" href="https://r4sso.github.io/blog/">Blog</a>
+            
+              <span class="text-gray-400 py-2 select-none">|</span>
+            
           
-            <a class="hover:text-blue-500 px-1 py-2  text-sm font-bold " href="https://r4sso.github.io/notes/">Notes</a>
+            <a class="hover:underline hover:decoration-blue-500 underline-offset-4 decoration-2  py-2 px-0.5 font-medium" href="https://r4sso.github.io/notes/">Notes</a>
+            
+              <span class="text-gray-400 py-2 select-none">|</span>
+            
           
-            <a class="hover:text-blue-500 px-1 py-2  text-sm font-bold " href="https://r4sso.github.io/gallery/">Gallery</a>
+            <a class="hover:underline hover:decoration-blue-500 underline-offset-4 decoration-2  py-2 px-0.5 font-medium" href="https://r4sso.github.io/gallery/">Gallery</a>
+            
+              <span class="text-gray-400 py-2 select-none">|</span>
+            
           
-            <a class="hover:text-blue-500 px-1 py-2  text-sm font-bold " href="https://r4sso.github.io/about/">About</a>
+            <a class="hover:underline hover:decoration-blue-500 underline-offset-4 decoration-2  py-2 px-0.5 font-medium" href="https://r4sso.github.io/categories/">Category</a>
+            
+              <span class="text-gray-400 py-2 select-none">|</span>
+            
+          
+            <a class="hover:underline hover:decoration-blue-500 underline-offset-4 decoration-2  py-2 px-0.5 font-medium" href="https://r4sso.github.io/tags/">Tag</a>
+            
+              <span class="text-gray-400 py-2 select-none">|</span>
+            
+          
+            <a class="hover:underline hover:decoration-blue-500 underline-offset-4 decoration-2  py-2 px-0.5 font-medium" href="https://r4sso.github.io/blog/rss.xml">Rss</a>
+            
+              <span class="text-gray-400 py-2 select-none">|</span>
+            
+          
+            <a class="hover:underline hover:decoration-blue-500 underline-offset-4 decoration-2  py-2 px-0.5 font-medium" href="https://r4sso.github.io/about/">?</a>
+            
           
         </div>
     </div>
   </div>
 
   
-  <div class="hidden" id="mobile-menu">
+  <div class="md:hidden hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pt-2 pb-3">
       
       
       
+       <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/blog/">Blog</a>
       
-      <div class="relative group">
-
-          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/blog/">Blog</a>
+       <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/notes/">Notes</a>
       
-      <div class="relative group">
-
-          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/notes/">Notes</a>
+       <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/gallery/">Gallery</a>
       
-      <div class="relative group">
-
-          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/gallery/">Gallery</a>
+       <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/categories/">Category</a>
       
-      <div class="relative group">
-
-          <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/about/">About</a>
+       <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/tags/">Tag</a>
+      
+       <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/blog/rss.xml">Rss</a>
+      
+       <a class="hover:text-blue-500 rounded-md block rounded-md px-3 py-2 text-base font-medium " href="https://r4sso.github.io/about/">?</a>
       
  
     </div>
@@ -101,14 +123,22 @@
 
 <main id="main">
                 
-  <div class="flex justify-center mt-16">
-    <div class="max-w-2xl rounded-lg ">
-      
+<div class="justify-center relative">
+<div class="leading-normal post-card p-6 mt-20 dark:post-card-dark rounded-md shadow-md shadow-slate-700/10 ring-1 ring-gray-900/5  mx-auto max-w-screen-md lg:text-lg">
+  <h1 class="font-bold">Categories</h1>
+  <ul class="text-sm list-disc ml-3">
+    
+      <li>
+        <a class="hover:underline hover:decoration-blue-500 underline-offset-4 decoration-2" href="https://r4sso.github.io/categories/guides/">guides</a>
+        <span class="text-gray-500">(1)</span>
+      </li>
+    
+  </ul>
+</div>
 
-      
-      
-    </div>
-  </div>
+
+
+</div>
 
                 <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-slate-200 hover:bg-slate-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white rounded-full p-3  hidden" onclick="scrollToTop()">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up w-6 h-6">

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>alpine on r4sso.github.io</title>
-    <link>https://r4sso.github.io/tags/alpine/</link>
-    <description>Recent content in alpine on r4sso.github.io</description>
+    <title>docker on r4sso.github.io</title>
+    <link>https://r4sso.github.io/tags/docker/</link>
+    <description>Recent content in docker on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/alpine/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/docker/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy pihole &#43; unbound on alpine</title>
       <link>https://r4sso.github.io/blog/2023/pihole-alpine/</link>

@@ -5,6 +5,6 @@
     <link>https://r4sso.github.io/search/</link>
     <description>Recent content in Search on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://r4sso.github.io/search/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://r4sso.github.io/search/rss.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

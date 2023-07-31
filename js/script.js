@@ -11,7 +11,7 @@ var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
     
 // Change the icons inside the button based on previous settings
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark])').matches)) {
     themeToggleLightIcon.classList.remove('hidden');
 } else {
     themeToggleDarkIcon.classList.remove('hidden');
@@ -83,3 +83,23 @@ window.onscroll = function() { scrollFunction() };
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
+
+    const searchForm = document.getElementById("search-form");
+    const searchQuery = document.getElementById("search-query");
+    const searchResults = document.getElementById("search-results");
+    
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+    
+      const query = searchQuery.value.toLowerCase();
+      const results = lunrIndex.search(query);
+    
+      let html = "";
+      results.forEach((result) => {
+        // Customize the display of search results based on your needs
+        html += `<h2><a href="${result.ref}">${result.title}</a></h2>`;
+      });
+    
+      searchResults.innerHTML = html;
+    });
+    
