@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                        </div>`;
             });
           } else if (query !== "") {
-            html = "<p class='mt-4'>No results found.</p>";
+            html = "<p class='mt-4 ml-4'>No results found.</p>";
           }
   
           searchResult.innerHTML = html;

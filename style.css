@@ -1399,10 +1399,6 @@ tr:nth-child(even) {
   max-width: 72rem;
 }
 
-.max-w-lg {
-  max-width: 32rem;
-}
-
 .max-w-screen-md {
   max-width: 768px;
 }
