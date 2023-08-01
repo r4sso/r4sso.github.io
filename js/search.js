@@ -38,14 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
               const highlightedContent =
                 truncatedContent.replace(
                   new RegExp(query, "gi"),
-                  (match) => `<span class="bg-yellow-200 dark:bg-yellow-600 text-yellow-500">${match}</span>`
+                  (match) => `<span class="text-blue-500">${match}</span>`
                 );
   
               html += `<div class="mt-4 post-card dark:post-card-dark p-3 rounded-md">
                          <a href="${result.href}">
-                         <h2  class="text-xl font-semibold">${result.title}</h2>
+                         <h2 class="text-xl font-semibold">${result.title}</h2>
                          <p class="text-gray-600 dark:text-gray-400 text-sm">${highlightedContent}</p>
-                         <h3 class="text-end font-medium">${result.categories}</h3
+                         <h3 class="text-end font-medium">${result.categories}</h3>
                          </a>
                        </div>`;
             });
