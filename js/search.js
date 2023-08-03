@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
               const highlightedContent =
                 truncatedContent.replace(
                   new RegExp(query, "gi"),
-                  (match) => `<span class="text-blue-500">${match}</span>`
+                  (match) => `<span class="text-yellow-500">${match}</span>`
                 );
   
               html += `<div class="mt-4 post-card dark:post-card-dark p-3 rounded-md">
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                        </div>`;
             });
           } else if (query !== "") {
-            html = "<p class='mt-4 ml-4'>No results found.</p>";
+            html = "<p class='mt-4 text-center'>No results found.</p>";
           }
   
           searchResult.innerHTML = html;

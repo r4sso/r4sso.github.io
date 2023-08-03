@@ -66,6 +66,25 @@ mobileMenuButton.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
+// accordion
+ document.addEventListener("DOMContentLoaded", function () {
+    const accordionButton = document.querySelector('[data-accordion-target]');
+    const accordionBody = document.querySelector(accordionButton.getAttribute('data-accordion-target'));
+    const accordionIcon = document.querySelector('[data-accordion-icon]');
+
+    // Set accordion to expanded by default
+    accordionButton.setAttribute('aria-expanded', true);
+    accordionBody.classList.remove('hidden');
+
+    // Toggle the accordion when the button is clicked
+    accordionButton.addEventListener('click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      accordionBody.classList.toggle('hidden', expanded);
+      accordionIcon.classList.toggle('rotate-0', !expanded);
+      accordionIcon.classList.toggle('rotate-180', expanded);
+    });
+  });
 
 // scroll to top button
 window.onscroll = function() { scrollFunction() };

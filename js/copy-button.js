@@ -3,13 +3,13 @@ function createCopyButton(highlightDiv) {
   
     const button = document.createElement("button");
     button.className =
-      "copy-code-button absolute top-0 right-0 p-2 text-slate-500 hover:text-gray-500";
+      "copy-code-button absolute top-0 right-0  p-2 text-slate-500 hover:text-gray-500";
     button.type = "button";
     button.innerHTML =
       '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>';
     button.addEventListener("click", () => copyCodeToClipboard(button, pre));
   
-    pre.style.position = "relative";
+
     pre.appendChild(button);
   }
   
