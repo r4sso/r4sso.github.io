@@ -60,10 +60,10 @@ Title Description GTFOBins A curated list of Unix binaries that can be exploited
       
       <guid>https://r4sso.github.io/notes/archinstall/</guid>
       <description>Installation My arch linux installation.
-Archinstall [minimal]: Compositor : Hyprland Notifications : Dunst Bar : Waybar Terminal : Kitty File-manager : Nautilus Launcher : Rofi My dotfiles availabe on (github)
+Archinstall [minimal]: Compositor : Hyprland Terminal : Kitty Bar/Dock : Ags (https://github.com/Aylur/ags) File-manager : Nautilus My dotfiles availabe on (github) **SOON
 yay Notes: Run as user NOT ROOT!
-git clone https://aur.archlinux.org/yay cd yay makepkg -si FOR NVIDIA: hyprland-nvidia-git
-Packages yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior \ rofi pavucontrol thunar starship wl-clipboard wf-recorder \ swaybg grimblast-git ffmpegthumbnailer tumbler playerctl \ noise-suppression-for-voice thunar-archive-plugin nautilus \ waybar-hyprland wlogout swaylock-effects pamixer \ nwg-look-bin dunst Configuration Wrapping the launcher #!</description>
+git clone https://aur.archlinux.org/yay cd yay makepkg -si Packages FOR NVIDIA: hyprland-nvidia-git
+yay -S hyprland aylurs-gtk-shell polkit-gnome neovim viewnior \ pavucontrol sassc swww wl-clipboard wf-recorder brightnessctl \ hyprpicker slurp grimblast wayshot swappy nautilus nerdfonts Configuration Wrapping the launcher #!</description>
     </item>
     
   </channel>

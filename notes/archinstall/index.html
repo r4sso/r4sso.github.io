@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="en"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -89,10 +89,9 @@
           
         </div>
       </div>
-
-
-      
+    </div>
   </div>
+</nav>
 
   
   <div class="md:hidden hidden text-sm" id="mobile-menu">
@@ -115,7 +114,7 @@
  
     </div>
   </div>
-</nav>
+
 
 <main id="main">
                 
@@ -171,27 +170,25 @@
 <ul>
 <li>Archinstall [minimal]:</li>
 </ul>
-<pre tabindex="0"><code>Compositor    : Hyprland
-Notifications : Dunst
-Bar           : Waybar
-Terminal      : Kitty
-File-manager  : Nautilus
-Launcher      : Rofi
-</code></pre><p>My dotfiles availabe on (<a href="https://github.com/r4sso/dotfiles">github</a>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Compositor    : Hyprland
+</span></span><span style="display:flex;"><span>Terminal      : Kitty
+</span></span><span style="display:flex;"><span>Bar/Dock      : Ags (https://github.com/Aylur/ags)
+</span></span><span style="display:flex;"><span>File-manager  : Nautilus
+</span></span></code></pre></div><p>My dotfiles availabe on (<a href="https://github.com/r4sso/dotfiles">github</a>) **SOON</p>
 <h2 id="yay">yay</h2>
 <p><strong>Notes: Run as user NOT ROOT!</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://aur.archlinux.org/yay
 </span></span><span style="display:flex;"><span>cd yay
 </span></span><span style="display:flex;"><span>makepkg -si
-</span></span></code></pre></div><p><strong>FOR NVIDIA: hyprland-nvidia-git</strong></p>
-<h3 id="packages">Packages</h3>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior       <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>rofi pavucontrol thunar starship wl-clipboard wf-recorder     <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>swaybg grimblast-git ffmpegthumbnailer tumbler playerctl      <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>noise-suppression-for-voice thunar-archive-plugin nautilus    <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>waybar-hyprland wlogout swaylock-effects pamixer              <span style="color:#79c0ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>nwg-look-bin dunst
-</span></span></code></pre></div><h2 id="configuration">Configuration</h2>
+</span></span></code></pre></div><h3 id="packages">Packages</h3>
+<p><strong>FOR NVIDIA: hyprland-nvidia-git</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yay -S hyprland aylurs-gtk-shell polkit-gnome neovim viewnior  <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>pavucontrol sassc  swww wl-clipboard wf-recorder brightnessctl <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>hyprpicker slurp grimblast wayshot swappy nautilus
+</span></span></code></pre></div><ul>
+<li>nerdfonts</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
 <h3 id="wrapping-the-launcher">Wrapping the launcher</h3>
 <div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#!/bin/sh
 </span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
