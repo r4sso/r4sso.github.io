@@ -6,7 +6,17 @@
     <description>Recent content in Notes on r4sso.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jul 2023 02:11:13 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/notes/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/notes/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Site Development</title>
+      <link>https://r4sso.github.io/notes/dev-todo/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://r4sso.github.io/notes/dev-todo/</guid>
+      <description>Todo Optimize images size (Convert to WebP) Reduce fonts file size Search without JS? (Maybe) Fix need to refresh to change comment theme Fix code copy button (27-09-2023)
+Iosevka fonts added (d5519ca). New front matter if comment:false disable giscus. Comment moved inside article. Seperator removed from navbar. Gallery added to navbar. avatar added in /about &amp;amp; styling change. </description>
+    </item>
+    
     <item>
       <title>Git</title>
       <link>https://r4sso.github.io/notes/git/</link>

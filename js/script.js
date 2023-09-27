@@ -1,45 +1,60 @@
-document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false}
-            ]
-        });
-    });
+// Function to update the theme attribute
+function updateThemeAttribute(theme) {
+  // Get the element with the data-theme attribute
+  const elementWithTheme = document.querySelector('[data-theme]');
 
+  // Update the data-theme attribute with the current theme
+  elementWithTheme.setAttribute('data-theme', theme);
+}
 
-// dark mode
+// Check if the theme has been set via local storage previously
+if (!localStorage.getItem('color-theme')) {
+  // Get the user's preferred color scheme (dark or light)
+  const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
+
+  // Set the color-theme cookie to the preferred theme
+  localStorage.setItem('color-theme', preferredTheme);
+
+  // Apply the preferred theme to the document element
+  document.documentElement.classList.add(preferredTheme);
+
+  // Update the data-theme attribute
+  updateThemeAttribute(preferredTheme);
+}
+
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-    
+
 // Change the icons inside the button based on previous settings
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark])').matches)) {
-    themeToggleLightIcon.classList.remove('hidden');
-} else {
-    themeToggleDarkIcon.classList.remove('hidden');
-}
-    
-var themeToggleBtn = document.getElementById('theme-toggle');
-    
-// Check if the theme has been set via local storage previously
 if (localStorage.getItem('color-theme') === 'dark') {
-  // If the theme is set to dark, add the 'dark' class
-  document.documentElement.classList.add('dark');
+  themeToggleLightIcon.classList.remove('hidden');
+} else {
+  themeToggleDarkIcon.classList.remove('hidden');
 }
 
-themeToggleBtn.addEventListener('click', function() {
-    // toggle icons inside button
-    themeToggleDarkIcon.classList.toggle('hidden');
-    themeToggleLightIcon.classList.toggle('hidden');
-    
-    // Toggle the theme when the button is clicked
-    if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
-    } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
-    }
+var themeToggleBtn = document.getElementById('theme-toggle');
+
+themeToggleBtn.addEventListener('click', function () {
+  // toggle icons inside button
+  themeToggleDarkIcon.classList.toggle('hidden');
+  themeToggleLightIcon.classList.toggle('hidden');
+
+  // Toggle the theme when the button is clicked
+  if (document.documentElement.classList.contains('dark')) {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('color-theme', 'light');
+
+    // Update the data-theme attribute to 'light'
+    updateThemeAttribute('light');
+  } else {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('color-theme', 'dark');
+
+    // Update the data-theme attribute to 'dark'
+    updateThemeAttribute('dark');
+  }
 });
 
 
@@ -79,6 +94,20 @@ mobileMenuButton.addEventListener('click', () => {
     });
   });
 
+
+//  math
+
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+      delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+      ]
+  });
+});
+
+
+
 // scroll to top button
 window.onscroll = function() { scrollFunction() };
   
@@ -95,4 +124,5 @@ window.onscroll = function() { scrollFunction() };
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     };
+
 
