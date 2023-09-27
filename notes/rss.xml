@@ -14,7 +14,7 @@
       
       <guid>https://r4sso.github.io/notes/dev-todo/</guid>
       <description>Todo Optimize images size (Convert to WebP) Reduce fonts file size Search without JS? (Maybe) Fix need to refresh to change comment theme Fix code copy button (27-09-2023)
-Iosevka fonts added (d5519ca). New front matter if comment:false disable giscus. Comment moved inside article. Seperator removed from navbar. Gallery added to navbar. avatar added in /about &amp;amp; styling change. </description>
+Iosevka fonts added (d5519ca). Title format change. New front matter if comment:false disable giscus. Comment moved inside article. Seperator removed from navbar. Gallery added to navbar. avatar added in /about &amp;amp; styling change. </description>
     </item>
     
     <item>
