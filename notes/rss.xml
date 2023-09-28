@@ -43,7 +43,7 @@ sudo pacman -R $(pacman -Qtdq) Journal logs sudo journalctl --vacuum-time=2d Thi
     </item>
     
     <item>
-      <title>tools</title>
+      <title>Tools</title>
       <link>https://r4sso.github.io/notes/tools/</link>
       <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
       
