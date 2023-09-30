@@ -4,7 +4,7 @@
 	font-weight: 400;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('woff2/iosevka-regular.woff2') format('woff2');
+	src: url('woff2/iosevka-ss14-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -13,7 +13,7 @@
 	font-weight: 500;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('woff2/iosevka-medium.woff2') format('woff2');
+	src: url('woff2/iosevka-ss14-medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -22,7 +22,7 @@
 	font-weight: 600;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('woff2/iosevka-semibold.woff2') format('woff2');
+	src: url('woff2/iosevka-ss14-semibold.woff2') format('woff2');
 }
 
 @font-face {
@@ -31,6 +31,6 @@
 	font-weight: 700;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('woff2/iosevka-bold.woff2') format('woff2');
+	src: url('woff2/iosevka-ss14-bold.woff2') format('woff2');
 }
 
