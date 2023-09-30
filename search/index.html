@@ -10,6 +10,7 @@
     
     
     <title>Search | r4sso.github.io</title>
+    <meta name="description" content="My personal website, blog and notes of r4sso">
     <link rel="icon" type="image/x-icon" href="/images/logo.svg">
     <script>
         
@@ -118,12 +119,13 @@
         <input id="search" aria-label="Search site" type="text" name="q" placeholder="Type here to search" class="block w-full p-2  text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-blue-500  focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
       </form>
     
-      <div class="search-result mx-auto px-3">
+      <div class="search-result mx-auto px-3 max-h-[80vh] overflow-y-scroll">
           
       </div>
 
     </div>
   </div>
+  <script src="/assets/js/search.js"></script>
 
                 <div class="bg-slate-200 dark:bg-gray-800 rounded-full fixed bottom-8 right-8">
   <button id="scroll-to-top" class="rounded-full p-3 hidden  text-black dark:text-white mb-1" onclick="scrollToTop()" aria-label="Back to top">
@@ -140,8 +142,7 @@
 
             </main>
         <script src="/assets/js/script.js"></script>
-<script src="/assets/js/copy-button.js"></script>
-<script src="/assets/js/search.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
 
     </body>

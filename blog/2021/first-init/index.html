@@ -7,12 +7,23 @@
     <link href="/assets/fonts/iosevka.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
     
     
     
     <title>First init: Syntax | r4sso.github.io</title>
+    <meta name="description" content="My personal website, blog and notes of r4sso">
     <link rel="icon" type="image/x-icon" href="/images/logo.svg">
     <script>
         
@@ -113,8 +124,8 @@
   </div>
 </nav><main id="main">
                 
-<div class="pt-16">
-  <article>
+<div class="pt-12">
+  <article class="m-4">
     <div class="article prose prose-headings:-mb-px prose-hr:-my-px prose-hr:my-2 mx-auto dark:prose-invert post-card dark:post-card-dark p-6 rounded-lg shadow-2xl shadow-slate-700/10  max-w-4xl ">
         <h1 class="-mb-px  text-2xl font-bold">First init: Syntax</h1>
         <p class="mt-2 text-sm text-gray-400">Published on Saturday, 23 Jan 2021</p>
@@ -364,8 +375,7 @@ $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$</p>
 
             </main>
         <script src="/assets/js/script.js"></script>
-<script src="/assets/js/copy-button.js"></script>
-<script src="/assets/js/search.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
 
     </body>

@@ -10,6 +10,7 @@
     
     
     <title>Tools | r4sso.github.io</title>
+    <meta name="description" content="My personal website, blog and notes of r4sso">
     <link rel="icon" type="image/x-icon" href="/images/logo.svg">
     <script>
         
@@ -110,8 +111,8 @@
   </div>
 </nav><main id="main">
                 
-<div class="pt-16">
-  <article>
+<div class="pt-12">
+  <article class="m-4">
     <div class="article prose prose-headings:-mb-px prose-hr:-my-px prose-hr:my-2 mx-auto dark:prose-invert post-card dark:post-card-dark p-6 rounded-lg shadow-2xl shadow-slate-700/10  max-w-4xl ">
         <h1 class="-mb-px  text-2xl font-bold">Tools</h1>
         <p class="mt-2 text-sm text-gray-400">Published on Monday, 20 Mar 2023</p>
@@ -136,8 +137,28 @@
     <li><a href="#forensics">Forensics</a></li>
   </ul>
 </nav>
-       
 </div>
+<script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        const accordionButton = document.querySelector('[data-accordion-target]');
+        const accordionBody = document.querySelector(accordionButton.getAttribute('data-accordion-target'));
+        const accordionIcon = document.querySelector('[data-accordion-icon]');
+
+        
+        accordionButton.setAttribute('aria-expanded', true);
+        accordionBody.classList.remove('hidden');
+
+        
+        accordionButton.addEventListener('click', function () {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        accordionBody.classList.toggle('hidden', expanded);
+        accordionIcon.classList.toggle('rotate-0', !expanded);
+        accordionIcon.classList.toggle('rotate-180', expanded);
+        });
+        });
+</script>
 <p>Useful tools for Pentest | CTF</p>
 <h2 id="forensics">Forensics</h2>
 <p>Summary</p>
@@ -233,8 +254,7 @@
 
             </main>
         <script src="/assets/js/script.js"></script>
-<script src="/assets/js/copy-button.js"></script>
-<script src="/assets/js/search.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
 
     </body>

@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       const highlightedTitle = highlightMatches(title);
 
                       html += `<a href="${result.href}">
-                             <div class="mt-4 post-card dark:post-card-dark px-3 py-6 rounded-md">
+                             <div class="mt-4 post-card dark:post-card-dark px-3 py-6 rounded-md shadow-2xl shadow-slate-700/10">
                              <h2 class="text-xl font-semibold">${highlightedTitle}</h2>
                              <p class="text-gray-600 dark:text-gray-400 text-sm">${highlightedContent}</p>
                              </div>
