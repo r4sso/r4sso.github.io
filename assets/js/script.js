@@ -3,8 +3,6 @@ function updateThemeAttribute(theme) {
   // Get the element with the data-theme attribute
   const elementWithTheme = document.querySelector('[data-theme]');
 
-  // Update the data-theme attribute with the current theme
-  elementWithTheme.setAttribute('data-theme', theme);
 }
 
 // Check if the theme has been set via local storage previously
@@ -69,7 +67,7 @@ mobileMenuButton.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-
+2
 // scroll to top button
 window.onscroll = function() { scrollFunction() };
   
