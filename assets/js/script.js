@@ -46,14 +46,9 @@ themeToggleBtn.addEventListener('click', function () {
     document.documentElement.classList.remove('dark');
     localStorage.setItem('color-theme', 'light');
 
-    // Update the data-theme attribute to 'light'
-    updateThemeAttribute('light');
   } else {
     document.documentElement.classList.add('dark');
     localStorage.setItem('color-theme', 'dark');
-
-    // Update the data-theme attribute to 'dark'
-    updateThemeAttribute('dark');
   }
 });
 
@@ -73,8 +68,6 @@ mobileMenuButton.addEventListener('click', () => {
   // Toggle the "hidden" class on the mobile menu
   mobileMenu.classList.toggle('hidden');
 });
-
-
 
 
 // scroll to top button
