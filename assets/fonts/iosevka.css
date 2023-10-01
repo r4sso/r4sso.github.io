@@ -4,7 +4,7 @@
 	font-weight: 400;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('woff2/iosevka-ss14-regular.woff2') format('woff2');
+	src: url('iosevka.woff2') format('woff2'),url('iosevka.woff')2 format('woff');
 }
 
 @font-face {
@@ -13,6 +13,7 @@
 	font-weight: 700;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('woff2/iosevka-ss14-bold.woff2') format('woff2');
+	src: url('iosevka-bold.woff2') format('woff2'), url('iosevka-bold.woff') format('woff');
 }
 
+2
