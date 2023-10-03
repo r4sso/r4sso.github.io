@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /gallery/
-Disallow: /gallery/*
 Disallow: /images/
 Disallow: /images/*
