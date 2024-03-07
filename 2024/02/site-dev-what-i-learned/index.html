@@ -1,315 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <link rel="stylesheet" href="/css/style.min.d6a02735201708488c5b1f623f6d45552487d45746da47f2980ee93c8e839c69.css" integrity="sha256-1qAnNSAXCEiMWx9iP21FVSSH1FdG2kfymA7pPI6DnGk=" crossorigin="anonymous">
-      <link rel="stylesheet" href="/fonts/iosevka.min.ffb2fbd5994aec9d71eaddbde3fa08fa5c98fdb59d38d24c328c93a0d4a8285c.css" integrity="sha256-/7L71ZlK7J1x6t294/oI&#43;lyY/bWdONJMMoyToNSoKFw=" crossorigin="anonymous">
-
-
-
-
-
-<link rel="preload" as="font" href="/fonts/iosevka.woff2" type="font/woff2" crossorigin="anonymous" integrity="">
-<link rel="preload" as="font" href="/fonts/iosevka-bold.woff2" type="font/woff2" crossorigin="anonymous" integrity="">
-
-
-<script>
-    
-    if (
-      localStorage.getItem('color-theme') === 'dark' ||
-      (!('color-theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-</script>
-
-<title>Site dev: What I Learned | r4sso.github.io</title>
-<link rel="manifest" href="/site.webmanifest">
-
-
-</head>
-<body class="bg-light dark:bg-dark">
-    <header>
-        <nav class="navbar fixed top-0 w-full z-50  dark:navbar-dark">
-    <div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-14 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
-                
-                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-base text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="absolute left-14 ">
-                <a href="/search">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <title>Search</title>
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                    </svg>
-                    <span class="sr-only">Search icon</span>
-                </a>
-            </div>
-            
-            <div class="flex flex-1 items-end justify-end md:items-stretch md:justify-start">
-                <div class="flex flex-shrink-0 items-center">
-                    <a class="navbar-brand" href="https://r4sso.github.io/">
-                        <img width="48" height="48" src="/images/logo.svg" alt="r4sso.github.io">
-                    </a>
-                </div>
-            </div>
-            
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0  hidden md:block">
-                <div class="flex space-x-4 tracking-wider text-[15px]">
-                      
-                    <a class="hover:text-blue-500 py-2 px-0.5 font-semibold " href="https://r4sso.github.io/posts/">Posts</a>
-                    
-                    
-                    <a class="hover:text-blue-500 py-2 px-0.5 font-semibold " href="https://r4sso.github.io/notes/">Notes</a>
-                    
-                    
-                    <a class="hover:text-blue-500 py-2 px-0.5 font-semibold " href="https://r4sso.github.io/categories/">Category</a>
-                    
-                    
-                    <a class="hover:text-blue-500 py-2 px-0.5 font-semibold " href="https://r4sso.github.io/tags/">Tag</a>
-                    
-                    
-                    <a class="hover:text-blue-500 py-2 px-0.5 font-semibold " href="https://r4sso.github.io/posts/rss.xml">Rss</a>
-                    
-                    
-                    <a class="hover:text-blue-500 py-2 px-0.5 font-semibold " href="https://r4sso.github.io/about/">?</a>
-                    
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="md:hidden hidden text-base" id="mobile-menu">
-        <div class="space-y-2 px-5 pt-px pb-3 shadow-2xl dark:shadow-blue-500/20">
-              
-            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href="https://r4sso.github.io/posts/">Posts</a> 
-            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href="https://r4sso.github.io/notes/">Notes</a> 
-            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href="https://r4sso.github.io/categories/">Category</a> 
-            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href="https://r4sso.github.io/tags/">Tag</a> 
-            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href="https://r4sso.github.io/posts/rss.xml">Rss</a> 
-            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href="https://r4sso.github.io/about/">?</a> 
-        </div>
-    </div>
-</nav>
-    </header>
-    <main id="main">
-        
-<div class="pt-12">
-    <article class="m-4">
-        <div class="prose prose-hr:-my-px prose-hr:my-2 prose-img:rounded-md prose-figcaption:text-center prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card dark:post-card-dark mx-auto max-w-4xl rounded-lg p-6 shadow-2xl shadow-slate-700/10">
-            <h1 class="-mb-px text-2xl font-bold">Site dev: What I Learned</h1>
-            <p class="mt-2 text-sm text-gray-400">Published on Wednesday, 28 Feb 2024</p>
-            <div class="-my-4">
-
-
-<a class="tracking-tighter text-gray-600 text-sm underline underline-offset-4 decoration-1 decoration-gray-400 dark:text-gray-400 hover:no-underline hover:bg-gray-700/10 dark:hover:bg-gray-300/10 p-1 rounded-lg " href="https://r4sso.github.io/tags/webdev">#webdev</a>
-
-</div>
-            
-  
-
-  
-
-            <div class="prose-h1:text-2xl prose-a:text-blue-600 text-sm leading-normal">
-                
-                    <div class="mt-8">
-        <details class="rounded-xl border border-gray-200 bg-gray-100 p-1 dark:border-gray-700 dark:bg-slate-900" open>
-          <summary class="select-none px-3 py-2 text-sm font-semibold leading-6 text-slate-900 hover:cursor-pointer dark:text-white" aria-expanded="true">Table Of Content</summary>
-          <div class="prose-li:my-px prose-ul:mt-px ml-1.5"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#optimization">Optimization</a>
-      <ul>
-        <li><a href="#hugo">Hugo</a></li>
-        <li><a href="#tailwind-css">Tailwind CSS</a></li>
-        <li><a href="#images">Images</a>
-          <ul>
-            <li><a href="#size-them-correctly">Size Them Correctly</a></li>
-            <li><a href="#serve-them-in-modern-formats">Serve Them in Modern Formats</a></li>
-            <li><a href="#lazy-load-them">Lazy Load Them</a></li>
-            <li><a href="#set-the-correct-width-and-height">Set the Correct Width and Height</a></li>
-            <li><a href="#set-the-alttext">Set the <code>alt</code>Text.</a></li>
-            <li><a href="#hugo-image-proccessing">Hugo image proccessing</a></li>
-          </ul>
-        </li>
-        <li><a href="#fonts">Fonts</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-        </details>
-</div>
-      <p>This article was meant to be published last year, but here we go. I will update this post as time goes by, sharing more things I learn and discover.</p>
-<p>In early of 2023, I discovered <a href="https://gohugo.io/">Hugo</a>, a Static Site Generator. Additionally, I learned about <a href="https://tailwindcss.com/">Tailwindcss</a>. I don&rsquo;t have a lot of experience when it comes to developing websites. I have made websites with plain HTML, CSS, and even Bootstrap, but they were mostly <code>for fun projects</code> that I didn&rsquo;t finish and eventually abandoned. This website is probably the only one I took seriously and actually completed.</p>
-<p>Below are a few things I learned when creating this site.</p>
-<h2 id="optimization">Optimization</h2>
-<p>Reducing the overall size and bandwidth usage is crucial for performance. If you look the web today, you&rsquo;ll notice that it&rsquo;s often bloated with unnecessary analytics, and ads.</p>
-<h3 id="hugo">Hugo</h3>
-<p>Hugo provides a convenient way to minify CSS, JS, JSON, HTML, SVG, or XML resources using <code>resources.Minify</code>. Here&rsquo;s an example in Go HTML template:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">css</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;css/main.css&#34;</span> <span class="p">}}</span> 
-</span></span><span class="line"><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">style</span> <span class="o">:=</span> <span class="err">$</span><span class="nx">css</span> <span class="p">|</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Minify</span> <span class="p">}}</span>
-</span></span></code></pre></div><p>Additionally, you can minify the final HTML output to <code>/public</code> by running the following command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo --minify
-</span></span></code></pre></div><h3 id="tailwind-css">Tailwind CSS</h3>
-<p>Tailwind CSS is incredibly performance-focused and aims to produce the smallest CSS file possible by only generating the CSS you are actually using in your project. To minify Tailwind CSS, you can use the following command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npx tailwindcss -o build.css --minify
-</span></span></code></pre></div><h3 id="images">Images</h3>
-<p>Images are the biggest oversight, I&rsquo;ve seen some site display uncompressed images (including me previously LOL) that can be several megabytes in size. As a result, this can significantly slow down and negatively impact its performance.</p>
-<h4 id="size-them-correctly">Size Them Correctly</h4>
-<p>Ensure that your images are appropriately sized. If the <code>max-width</code> of your website is <code>960px</code>, there&rsquo;s no need to serve images with a width larger than that. Similarly, if it&rsquo;s a thumbnail, use a thumbnail-sized image.</p>
-<h4 id="serve-them-in-modern-formats">Serve Them in Modern Formats</h4>
-<p>The <a href="https://en.wikipedia.org/wiki/WebP">WebP</a> image format is widely <a href="https://caniuse.com/webp">supported by modern browsers</a> and can significantly reduce the file size of JPEG or PNG images without a noticeable loss in quality.</p>
-<p><a href="https://en.wikipedia.org/wiki/AVIF">AVIF</a> offers even better compression but since it&rsquo;s relatively new, it&rsquo;s not supported by Hugo. For sake of simplicity i will use WebP.</p>
-<h4 id="lazy-load-them">Lazy Load Them</h4>
-<p>Take advantage of the lazy loading feature in HTML, which loads images as the user scrolls down the page and they come into view. This can improve the loading speed of pages with numerous images.</p>
-<h4 id="set-the-correct-width-and-height">Set the Correct Width and Height</h4>
-<p>Always specify the width and height attributes for images to prevent content from shifting when the image loads, ensuring a smoother user experience. <a href="https://web.dev/optimize-cls/#images-without-dimensions">Learn more</a>.</p>
-<h4 id="set-the-alttext">Set the <code>alt</code>Text.</h4>
-<p>Add descriptive <code>alt</code> text to your images, not only for users who rely on screen readers but also to enhance your search engine ranking. Additionally, it serves as a fallback when the image fails to load. Writing a brief sentence describing the image is a small but worthwhile effort.</p>
-<h4 id="hugo-image-proccessing">Hugo image proccessing</h4>
-<p>To implement into hugo, create file <code>/layouts/_default/render-image.html</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">src</span> <span class="o">:=</span> <span class="p">.</span><span class="nx">Page</span><span class="p">.</span><span class="nx">Resources</span><span class="p">.</span><span class="nf">GetMatch</span> <span class="p">(</span><span class="nx">printf</span> <span class="s">&#34;%s&#34;</span> <span class="p">(.</span><span class="nx">Destination</span> <span class="p">|</span> <span class="nx">safeURL</span><span class="p">))</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">{{</span> <span class="k">if</span> <span class="err">$</span><span class="nx">src</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nx">figure</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="err">$</span><span class="nx">data</span> <span class="o">:=</span> <span class="nx">newScratch</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="k">if</span> <span class="nx">gt</span> <span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nx">Width</span> <span class="mi">1100</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{{</span> <span class="err">$</span><span class="nx">data</span><span class="p">.</span><span class="nx">Set</span> <span class="s">&#34;webp&#34;</span> <span class="p">(</span><span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nx">Resize</span> <span class="s">&#34;960x webp q90&#34;</span><span class="p">)</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{{</span> <span class="err">$</span><span class="nx">data</span><span class="p">.</span><span class="nx">Set</span> <span class="s">&#34;fallback&#34;</span> <span class="p">(</span><span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nx">Resize</span> <span class="s">&#34;960x q90&#34;</span><span class="p">)</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="k">else</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{{</span> <span class="err">$</span><span class="nx">data</span><span class="p">.</span><span class="nx">Set</span> <span class="s">&#34;webp&#34;</span> <span class="p">(</span><span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nf">Resize</span> <span class="p">(</span><span class="nx">printf</span> <span class="s">&#34;%dx%d webp q90&#34;</span> <span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nx">Width</span> <span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nx">Height</span><span class="p">))</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{{</span> <span class="err">$</span><span class="nx">data</span><span class="p">.</span><span class="nx">Set</span> <span class="s">&#34;fallback&#34;</span> <span class="p">(</span><span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nf">Resize</span> <span class="p">(</span><span class="nx">printf</span> <span class="s">&#34;%dx%d q90&#34;</span> <span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nx">Width</span> <span class="err">$</span><span class="nx">src</span><span class="p">.</span><span class="nx">Height</span><span class="p">))</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="nx">end</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="err">$</span><span class="nx">webp</span> <span class="o">:=</span> <span class="err">$</span><span class="nx">data</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;webp&#34;</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="err">$</span><span class="nx">fallback</span> <span class="o">:=</span> <span class="err">$</span><span class="nx">data</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;fallback&#34;</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="p">=</span><span class="s">&#34;{{ $src.RelPermalink }}&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nx">picture</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nx">source</span> <span class="nx">srcset</span><span class="p">=</span><span class="s">&#34;{{ $webp.RelPermalink }}&#34;</span> <span class="kd">type</span><span class="p">=</span><span class="s">&#34;image/webp&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="p">=</span><span class="s">&#34;{{ $fallback.RelPermalink }}&#34;</span> <span class="nx">alt</span><span class="p">=</span><span class="s">&#34;{{ .Text }}&#34;</span> <span class="nx">loading</span><span class="p">=</span><span class="s">&#34;lazy&#34;</span> <span class="nx">decoding</span><span class="p">=</span><span class="s">&#34;async&#34;</span> <span class="nx">width</span><span class="p">=</span><span class="s">&#34;{{ $src.Width }}&#34;</span> <span class="nx">height</span><span class="p">=</span><span class="s">&#34;{{ $src.Height }}&#34;</span> <span class="o">/</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">/</span><span class="nx">picture</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="o">/</span><span class="nx">a</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">{{</span> <span class="nx">with</span> <span class="p">.</span><span class="nx">Title</span> <span class="p">}}&lt;</span><span class="nx">figcaption</span><span class="p">&gt;</span><span class="o">-</span> <span class="p">{{</span> <span class="p">.</span> <span class="p">|</span> <span class="nx">markdownify</span> <span class="p">}}&lt;</span><span class="o">/</span><span class="nx">figcaption</span><span class="p">&gt;{{</span> <span class="nx">end</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="o">/</span><span class="nx">figure</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">end</span><span class="p">}}</span>
-</span></span></code></pre></div><ul>
-<li>
-<p>Make sure to keep your <a href="https://gohugo.io/content-management/page-bundles/#leaf-bundles">images in the same directory</a> as the post for this to work.</p>
-</li>
-<li>
-<p>If the image is wider than 960px, it will resize it to 960px. Otherwise, it will keep the image size the same and just convert it to WebP. (It will also optimize the fallback image for browsers that don’t support WebP.)'</p>
-</li>
-<li>
-<p>Wrap the image in a link to the original, unoptimized version of the image. So you can see the original images.</p>
-</li>
-</ul>
-<p>Use like normally in your markdown:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">Red Fox</span>](<span class="na">fox.jpg &#34;Photo by Ray Hennessy on Unsplash.&#34;</span>)
-</span></span></code></pre></div><p>
-
-
-<figure>
-  
-
-  
-    
-    
-  
-
-  
-  
-
-  <a href="/2024/02/site-dev-what-i-learned/fox.jpg">
-    <picture>
-      <source srcset="/2024/02/site-dev-what-i-learned/fox_hu3d03a01dcc18bc5be0e67db3d8d209a6_188624_960x0_resize_q90_h2_box.webp" type="image/webp">
-      <img src="/2024/02/site-dev-what-i-learned/fox_hu3d03a01dcc18bc5be0e67db3d8d209a6_188624_960x0_resize_q90_box.jpg" alt="Red Fox" loading="lazy" decoding="async" width="1920" height="1278" />
-    </picture>
-  </a>
-  <figcaption>- Photo by <a href="https://unsplash.com/@rayhennessy">Ray Hennessy</a> on <a href="https://unsplash.com/">Unsplash</a>.</figcaption>
-</figure>
-
-</p>
-<p>This image is only 48 KB, compared to the original 188 KB (1920 x 1277)</p>
-<h3 id="fonts">Fonts</h3>
-<p>To further optimize your website, use WOFF and WOFF2 font formats to reduce file size. You can use site like <a href="https://www.fontsquirrel.com/tools/webfont-generator">fontsquirrel.com/tools/webfont-generator</a> to generate webfont for you. If its say file is corrupted you can use site like <a href="https://www.glyphrstudio.com/online/">glyphrstudio.com/online/</a> &amp; And export it.</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p>Images optimization reference: <a href="https://ericmurphy.xyz/blog/images/">ericmurphy.xyz/blog/images/</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-                <p class="-mb-2 text-right text-sm">Last edited: <b>28/02/2024 10:08 UTC</b></p>
-            </div>
-             <div id="giscus-container" class="mt-4">
-  <script>
-    var giscusTheme = localStorage.getItem("color-theme"); 
-    var giscusAttributes = {
-      src: "https://giscus.app/client.js",
-      "data-repo": "r4sso/r4sso.github.io",
-      "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMDAyOTQzNzM=",
-      "data-category": "Announcements",
-      "data-category-id": "DIC_kwDOEeYg5c4CX55V",
-      "data-mapping": "pathname",
-      "data-reactions-enabled": "1",
-      "data-input-position": "top",
-      "data-emit-metadata": "0",
-      "data-strict": "0",
-      "data-theme": giscusTheme,
-      "data-lang": "en",
-      "data-loading": "lazy",
-      crossorigin: "anonymous",
-      async: "",
-    };
-
-    var giscusScript = document.createElement("script");
-    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
-    document.getElementById("giscus-container").appendChild(giscusScript);
-  </script>
-</div>
-
- 
-        </div>
-    </article>
-</div>
-
-<footer class="inset-x-0 bottom-0 text-center p-8">
-    <span class="items-start text-sm text-gray-500">&copy; 2024 <b><a href="https://r4sso.github.io/">r4sso.github.io</a></b></span>
-</footer>
-
- <div class="bg-slate-200 dark:bg-gray-800 rounded-full fixed bottom-8 right-8">
-  <button id="scroll-to-top" class="rounded-full p-3 hidden  text-black dark:text-white mb-1" onclick="scrollToTop()" aria-label="Back to top">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up w-4 h-4">
-        <path d="M18 15l-6-6-6 6" />
-      </svg>
-  </button>
-  <button id="theme-toggle" type="button" class="text-blue-500 dark:text-yellow-500  rounded-full text-sm p-3" aria-label="Toggle theme">
-    <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-    <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-  </button>
-</div>
-
-    </main>
-    
-      <script src="/js/script.min.791d61189f25c9deecf3baf1d28eefa6f2bf494345abdcf37bdc901d1f5f8b8b.js" integrity="sha256-eR1hGJ8lyd7s87rx0o7vpvK/SUNFq9zze9yQHR9fi4s=" crossorigin="anonymous"></script>
-
-
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href="/css/style.min.5c15faef3e52cda391487789405685bee24e2744a6b3f29443afe22491c27bf2.css" integrity="sha256-XBX67z5SzaORSHeJQFaFvuJOJ0Sms/KUQ6/iJJHCe/I=" crossorigin=anonymous><link rel=preload as=font href=/fonts/iosevka.woff2 type=font/woff2 crossorigin=anonymous><link rel=preload as=font href=/fonts/iosevka-bold.woff2 type=font/woff2 crossorigin=anonymous><script>localStorage.getItem("color-theme")==="dark"||!("color-theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")</script><title>Site dev: What I Learned | r4sso.github.io</title>
+<link rel=manifest href=/site.webmanifest></head><body class="bg-light dark:bg-dark"><header><nav class="navbar fixed top-0 w-full z-50 dark:navbar-dark"><div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8"><div class="relative flex h-14 items-center justify-between"><div class="absolute inset-y-0 left-0 flex items-center md:hidden"><button data-collapse-toggle=navbar-default type=button class="inline-flex items-center p-2 w-10 h-10 justify-center text-base text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls=mobile-menu aria-expanded=false>
+<span class=sr-only>Open main menu</span><svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><path stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/></svg></button></div><div class="absolute left-14"><a href=/search><svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><title>Search</title><path stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 111 8a7 7 0 0114 0z"/></svg>
+<span class=sr-only>Search icon</span></a></div><div class="flex flex-1 items-end justify-end md:items-stretch md:justify-start"><div class="flex flex-shrink-0 items-center"><a class=navbar-brand href=https://r4sso.github.io/><img width=48 height=48 src=/images/logo.svg alt=r4sso.github.io></a></div></div><div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 hidden md:block"><div class="flex space-x-4 tracking-wider text-[15px]"><a class="hover:text-blue-500 py-2 px-0.5 font-semibold" href=https://r4sso.github.io/posts/>Posts</a>
+<a class="hover:text-blue-500 py-2 px-0.5 font-semibold" href=https://r4sso.github.io/notes/>Notes</a>
+<a class="hover:text-blue-500 py-2 px-0.5 font-semibold" href=https://r4sso.github.io/categories/>Category</a>
+<a class="hover:text-blue-500 py-2 px-0.5 font-semibold" href=https://r4sso.github.io/tags/>Tag</a>
+<a class="hover:text-blue-500 py-2 px-0.5 font-semibold" href=https://r4sso.github.io/posts/rss.xml>Rss</a>
+<a class="hover:text-blue-500 py-2 px-0.5 font-semibold" href=https://r4sso.github.io/about/>?</a></div></div></div></div><div class="md:hidden hidden text-base" id=mobile-menu><div class="space-y-2 px-5 pt-px pb-3 shadow-2xl dark:shadow-blue-500/20"><a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href=https://r4sso.github.io/posts/>Posts</a>
+<a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href=https://r4sso.github.io/notes/>Notes</a>
+<a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href=https://r4sso.github.io/categories/>Category</a>
+<a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href=https://r4sso.github.io/tags/>Tag</a>
+<a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href=https://r4sso.github.io/posts/rss.xml>Rss</a>
+<a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href=https://r4sso.github.io/about/>?</a></div></div></nav></header><main id=main><div class=pt-12><article class=m-4><div class="prose prose-hr:-my-px prose-hr:my-2 prose-img:rounded-md prose-figcaption:text-center prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card dark:post-card-dark mx-auto max-w-4xl rounded-lg p-6 shadow-2xl shadow-slate-700/10"><h1 class="-mb-px text-2xl font-bold">Site dev: What I Learned</h1><p class="mt-2 text-sm text-gray-400">Published on Wednesday, 28 Feb 2024</p><div class=-my-4><a class="tracking-tighter text-gray-600 text-sm underline underline-offset-4 decoration-1 decoration-gray-400 dark:text-gray-400 hover:no-underline hover:bg-gray-700/10 dark:hover:bg-gray-300/10 p-1 rounded-lg" href=https://r4sso.github.io/tags/webdev>#webdev</a></div><div class="prose-h1:text-2xl prose-a:text-blue-600 text-sm leading-normal"><div class=mt-8><details class="rounded-xl border border-gray-200 bg-gray-100 p-1 dark:border-gray-700 dark:bg-slate-900" open><summary class="select-none px-3 py-2 text-sm font-semibold leading-6 text-slate-900 hover:cursor-pointer dark:text-white" aria-expanded=true>Table Of Content</summary><div class="prose-li:my-px prose-ul:mt-px ml-1.5"><nav id=TableOfContents><ul><li><a href=#optimization>Optimization</a><ul><li><a href=#hugo>Hugo</a></li><li><a href=#tailwind-css>Tailwind CSS</a></li><li><a href=#images>Images</a><ul><li><a href=#size-them-correctly>Size Them Correctly</a></li><li><a href=#serve-them-in-modern-formats>Serve Them in Modern Formats</a></li><li><a href=#lazy-load-them>Lazy Load Them</a></li><li><a href=#set-the-correct-width-and-height>Set the Correct Width and Height</a></li><li><a href=#set-the-alttext>Set the <code>alt</code>Text.</a></li><li><a href=#hugo-image-proccessing>Hugo image proccessing</a></li></ul></li><li><a href=#fonts>Fonts</a></li></ul></li></ul></nav></div></details></div><p>This article was meant to be published last year, but here we go. I will update this post as time goes by, sharing more things I learn and discover.</p><p>In early of 2023, I discovered <a href=https://gohugo.io/>Hugo</a>, a Static Site Generator. Additionally, I learned about <a href=https://tailwindcss.com/>Tailwindcss</a>. I don&rsquo;t have a lot of experience when it comes to developing websites. I have made websites with plain HTML, CSS, and even Bootstrap, but they were mostly <code>for fun projects</code> that I didn&rsquo;t finish and eventually abandoned. This website is probably the only one I took seriously and actually completed.</p><p>Below are a few things I learned when creating this site.</p><h2 id=optimization>Optimization</h2><p>Reducing the overall size and bandwidth usage is crucial for performance. If you look the web today, you&rsquo;ll notice that it&rsquo;s often bloated with unnecessary analytics, and ads.</p><h3 id=hugo>Hugo</h3><p>Hugo provides a convenient way to minify CSS, JS, JSON, HTML, SVG, or XML resources using <code>resources.Minify</code>. Here&rsquo;s an example in Go HTML template:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=p>{{</span> <span class=err>$</span><span class=nx>css</span> <span class=o>:=</span> <span class=nx>resources</span><span class=p>.</span><span class=nx>Get</span> <span class=s>&#34;css/main.css&#34;</span> <span class=p>}}</span> 
+</span></span><span class=line><span class=cl><span class=p>{{</span> <span class=err>$</span><span class=nx>style</span> <span class=o>:=</span> <span class=err>$</span><span class=nx>css</span> <span class=p>|</span> <span class=nx>resources</span><span class=p>.</span><span class=nx>Minify</span> <span class=p>}}</span>
+</span></span></code></pre></div><p>Additionally, you can minify the final HTML output to <code>/public</code> by running the following command:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo --minify
+</span></span></code></pre></div><h3 id=tailwind-css>Tailwind CSS</h3><p>Tailwind CSS is incredibly performance-focused and aims to produce the smallest CSS file possible by only generating the CSS you are actually using in your project. To minify Tailwind CSS, you can use the following command:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>npx tailwindcss -o build.css --minify
+</span></span></code></pre></div><h3 id=images>Images</h3><p>Images are the biggest oversight, I&rsquo;ve seen some site display uncompressed images (including me previously LOL) that can be several megabytes in size. As a result, this can significantly slow down and negatively impact its performance.</p><h4 id=size-them-correctly>Size Them Correctly</h4><p>Ensure that your images are appropriately sized. If the <code>max-width</code> of your website is <code>960px</code>, there&rsquo;s no need to serve images with a width larger than that. Similarly, if it&rsquo;s a thumbnail, use a thumbnail-sized image.</p><h4 id=serve-them-in-modern-formats>Serve Them in Modern Formats</h4><p>The <a href=https://en.wikipedia.org/wiki/WebP>WebP</a> image format is widely <a href=https://caniuse.com/webp>supported by modern browsers</a> and can significantly reduce the file size of JPEG or PNG images without a noticeable loss in quality.</p><p><a href=https://en.wikipedia.org/wiki/AVIF>AVIF</a> offers even better compression but since it&rsquo;s relatively new, it&rsquo;s not supported by Hugo. For sake of simplicity i will use WebP.</p><h4 id=lazy-load-them>Lazy Load Them</h4><p>Take advantage of the lazy loading feature in HTML, which loads images as the user scrolls down the page and they come into view. This can improve the loading speed of pages with numerous images.</p><h4 id=set-the-correct-width-and-height>Set the Correct Width and Height</h4><p>Always specify the width and height attributes for images to prevent content from shifting when the image loads, ensuring a smoother user experience. <a href=https://web.dev/optimize-cls/#images-without-dimensions>Learn more</a>.</p><h4 id=set-the-alttext>Set the <code>alt</code>Text.</h4><p>Add descriptive <code>alt</code> text to your images, not only for users who rely on screen readers but also to enhance your search engine ranking. Additionally, it serves as a fallback when the image fails to load. Writing a brief sentence describing the image is a small but worthwhile effort.</p><h4 id=hugo-image-proccessing>Hugo image proccessing</h4><p>To implement into hugo, create file <code>/layouts/_default/render-image.html</code><sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=p>{{</span> <span class=err>$</span><span class=nx>src</span> <span class=o>:=</span> <span class=p>.</span><span class=nx>Page</span><span class=p>.</span><span class=nx>Resources</span><span class=p>.</span><span class=nf>GetMatch</span> <span class=p>(</span><span class=nx>printf</span> <span class=s>&#34;%s&#34;</span> <span class=p>(.</span><span class=nx>Destination</span> <span class=p>|</span> <span class=nx>safeURL</span><span class=p>))</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>{{</span> <span class=k>if</span> <span class=err>$</span><span class=nx>src</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nx>figure</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>{{</span> <span class=err>$</span><span class=nx>data</span> <span class=o>:=</span> <span class=nx>newScratch</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>{{</span> <span class=k>if</span> <span class=nx>gt</span> <span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nx>Width</span> <span class=mi>1100</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>    <span class=p>{{</span> <span class=err>$</span><span class=nx>data</span><span class=p>.</span><span class=nx>Set</span> <span class=s>&#34;webp&#34;</span> <span class=p>(</span><span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nx>Resize</span> <span class=s>&#34;960x webp q90&#34;</span><span class=p>)</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>    <span class=p>{{</span> <span class=err>$</span><span class=nx>data</span><span class=p>.</span><span class=nx>Set</span> <span class=s>&#34;fallback&#34;</span> <span class=p>(</span><span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nx>Resize</span> <span class=s>&#34;960x q90&#34;</span><span class=p>)</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>  <span class=p>{{</span> <span class=k>else</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>    <span class=p>{{</span> <span class=err>$</span><span class=nx>data</span><span class=p>.</span><span class=nx>Set</span> <span class=s>&#34;webp&#34;</span> <span class=p>(</span><span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nf>Resize</span> <span class=p>(</span><span class=nx>printf</span> <span class=s>&#34;%dx%d webp q90&#34;</span> <span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nx>Width</span> <span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nx>Height</span><span class=p>))</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>    <span class=p>{{</span> <span class=err>$</span><span class=nx>data</span><span class=p>.</span><span class=nx>Set</span> <span class=s>&#34;fallback&#34;</span> <span class=p>(</span><span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nf>Resize</span> <span class=p>(</span><span class=nx>printf</span> <span class=s>&#34;%dx%d q90&#34;</span> <span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nx>Width</span> <span class=err>$</span><span class=nx>src</span><span class=p>.</span><span class=nx>Height</span><span class=p>))</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>  <span class=p>{{</span> <span class=nx>end</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>{{</span> <span class=err>$</span><span class=nx>webp</span> <span class=o>:=</span> <span class=err>$</span><span class=nx>data</span><span class=p>.</span><span class=nx>Get</span> <span class=s>&#34;webp&#34;</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>  <span class=p>{{</span> <span class=err>$</span><span class=nx>fallback</span> <span class=o>:=</span> <span class=err>$</span><span class=nx>data</span><span class=p>.</span><span class=nx>Get</span> <span class=s>&#34;fallback&#34;</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nx>a</span> <span class=nx>href</span><span class=p>=</span><span class=s>&#34;{{ $src.RelPermalink }}&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nx>picture</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nx>source</span> <span class=nx>srcset</span><span class=p>=</span><span class=s>&#34;{{ $webp.RelPermalink }}&#34;</span> <span class=kd>type</span><span class=p>=</span><span class=s>&#34;image/webp&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nx>img</span> <span class=nx>src</span><span class=p>=</span><span class=s>&#34;{{ $fallback.RelPermalink }}&#34;</span> <span class=nx>alt</span><span class=p>=</span><span class=s>&#34;{{ .Text }}&#34;</span> <span class=nx>loading</span><span class=p>=</span><span class=s>&#34;lazy&#34;</span> <span class=nx>decoding</span><span class=p>=</span><span class=s>&#34;async&#34;</span> <span class=nx>width</span><span class=p>=</span><span class=s>&#34;{{ $src.Width }}&#34;</span> <span class=nx>height</span><span class=p>=</span><span class=s>&#34;{{ $src.Height }}&#34;</span> <span class=o>/</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=o>/</span><span class=nx>picture</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=o>/</span><span class=nx>a</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>{{</span> <span class=nx>with</span> <span class=p>.</span><span class=nx>Title</span> <span class=p>}}&lt;</span><span class=nx>figcaption</span><span class=p>&gt;</span><span class=o>-</span> <span class=p>{{</span> <span class=p>.</span> <span class=p>|</span> <span class=nx>markdownify</span> <span class=p>}}&lt;</span><span class=o>/</span><span class=nx>figcaption</span><span class=p>&gt;{{</span> <span class=nx>end</span> <span class=p>}}</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=o>/</span><span class=nx>figure</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>{{</span><span class=nx>end</span><span class=p>}}</span>
+</span></span></code></pre></div><ul><li><p>Make sure to keep your <a href=https://gohugo.io/content-management/page-bundles/#leaf-bundles>images in the same directory</a> as the post for this to work.</p></li><li><p>If the image is wider than 960px, it will resize it to 960px. Otherwise, it will keep the image size the same and just convert it to WebP. (It will also optimize the fallback image for browsers that don’t support WebP.)'</p></li><li><p>Wrap the image in a link to the original, unoptimized version of the image. So you can see the original images.</p></li></ul><p>Use like normally in your markdown:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=line><span class=cl>![<span class=nt>Red Fox</span>](<span class=na>fox.jpg &#34;Photo by Ray Hennessy on Unsplash.&#34;</span>)
+</span></span></code></pre></div><p><figure><a href=/2024/02/site-dev-what-i-learned/fox.jpg><picture><source srcset=/2024/02/site-dev-what-i-learned/fox_hu3d03a01dcc18bc5be0e67db3d8d209a6_188624_960x0_resize_q90_h2_box.webp type=image/webp><img src=/2024/02/site-dev-what-i-learned/fox_hu3d03a01dcc18bc5be0e67db3d8d209a6_188624_960x0_resize_q90_box.jpg alt="Red Fox" loading=lazy decoding=async width=1920 height=1278></picture></a><figcaption>- Photo by <a href=https://unsplash.com/@rayhennessy>Ray Hennessy</a> on <a href=https://unsplash.com/>Unsplash</a>.</figcaption></figure></p><p>This image is only 48 KB, compared to the original 188 KB (1920 x 1277)</p><h3 id=fonts>Fonts</h3><p>To further optimize your website, use WOFF and WOFF2 font formats to reduce file size. You can use site like <a href=https://www.fontsquirrel.com/tools/webfont-generator>fontsquirrel.com/tools/webfont-generator</a> to generate webfont for you. If its say file is corrupted you can use site like <a href=https://www.glyphrstudio.com/online/>glyphrstudio.com/online/</a> & And export it.</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Images optimization reference: <a href=https://ericmurphy.xyz/blog/images/>ericmurphy.xyz/blog/images/</a>.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div><p class="-mb-2 text-right text-sm">Last edited: <b>28/02/2024 10:08 UTC</b></p></div><div id=giscus-container class=mt-4><script>var giscusTheme=localStorage.getItem("color-theme"),giscusAttributes={src:"https://giscus.app/client.js","data-repo":"r4sso/r4sso.github.io","data-repo-id":"MDEwOlJlcG9zaXRvcnkzMDAyOTQzNzM=","data-category":"Announcements","data-category-id":"DIC_kwDOEeYg5c4CX55V","data-mapping":"pathname","data-reactions-enabled":"1","data-input-position":"top","data-emit-metadata":"0","data-strict":"0","data-theme":giscusTheme,"data-lang":"en","data-loading":"lazy",crossorigin:"anonymous",async:""},giscusScript=document.createElement("script");Object.entries(giscusAttributes).forEach(([e,t])=>giscusScript.setAttribute(e,t)),document.getElementById("giscus-container").appendChild(giscusScript)</script></div></div></article></div><footer class="inset-x-0 bottom-0 text-center p-8"><span class="items-start text-sm text-gray-500">&copy; 2024 <b><a href=https://r4sso.github.io/>r4sso.github.io</a></b></span></footer><div class="bg-slate-200 dark:bg-gray-800 rounded-full fixed bottom-8 right-8"><button id=scroll-to-top class="rounded-full p-3 hidden text-black dark:text-white mb-1" onclick=scrollToTop() aria-label="Back to top">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up w-4 h-4"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<button id=theme-toggle type=button class="text-blue-500 dark:text-yellow-500 rounded-full text-sm p-3" aria-label="Toggle theme"><svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentcolor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001.0 1010.586 10.586z"/></svg><svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentcolor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1A1 1 0 119 4V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707A1 1 0 1113.536 5.05l.707-.707a1 1 0 011.414.0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707A1 1 0 004.343 5.757l.707.707zm1.414 8.486-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"/></svg></button></div></main><script src=/js/script.min.791d61189f25c9deecf3baf1d28eefa6f2bf494345abdcf37bdc901d1f5f8b8b.js integrity="sha256-eR1hGJ8lyd7s87rx0o7vpvK/SUNFq9zze9yQHR9fi4s=" crossorigin=anonymous></script></body></html>

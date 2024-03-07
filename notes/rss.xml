@@ -1,54 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Notes on r4sso.github.io</title>
-    <link>https://r4sso.github.io/notes/</link>
-    <description>Recent content in Notes on r4sso.github.io</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 10 Nov 2023 03:40:00 +0000</lastBuildDate>
-    <atom:link href="https://r4sso.github.io/notes/rss.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Changelog: Site Development</title>
-      <link>https://r4sso.github.io/notes/dev-todo/</link>
-      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://r4sso.github.io/notes/dev-todo/</guid>
-      <description>Todo Optimize images (Convert to WebP) Reduce fonts file size Fix need to refresh to change comment theme (For the future)&#xA;Gallery - If i have a lot of photo to share :) Changelog (10-11-2023)&#xA;Add Guestbook Optimize Table Of Content (Remove unnecessary JS) (03-10-2023)&#xA;[thumb] Add support for (.gif and external url) Minify javascript Active navbar Fix need to refresh to change comment theme. (01-10-2023)&#xA;Navbar mobile fix. Optimization (Performance, Size, SEO) Javascript error fix.</description>
-    </item>
-    <item>
-      <title>Git</title>
-      <link>https://r4sso.github.io/notes/git/</link>
-      <pubDate>Wed, 12 Jul 2023 02:11:13 +0000</pubDate>
-      <guid>https://r4sso.github.io/notes/git/</guid>
-      <description>Create a new repository on the command line echo &amp;#34;# Something&amp;#34; &amp;gt;&amp;gt; README.md git init git add README.md git commit -m &amp;#34;first commit&amp;#34; git branch -M main git remote add origin https://github.com/[username]/[repo].git git push -u origin main Push an existing repository from the command line git remote add origin https://github.com/[username]/[repo].git git branch -M main git push -u origin main Common Problem Notes to troubleshoot&#xA;Contributions not showing on profile Make sure your config is match</description>
-    </item>
-    <item>
-      <title>Arch Linux: Cleanup</title>
-      <link>https://r4sso.github.io/notes/arch-cleanup/</link>
-      <pubDate>Thu, 25 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://r4sso.github.io/notes/arch-cleanup/</guid>
-      <description>Clean pkg cache List packages&#xA;ls /var/cache/pacman/pkg/ | less Remove all pkg except those installed&#xA;sudo pacman -Sc Remove all files&#xA;sudo pacman -Scc Or with yay&#xA;yay -Scc Remove unused packages List unused&#xA;pacman -Qtdq Remove unused&#xA;sudo pacman -R $(pacman -Qtdq) Journal logs sudo journalctl --vacuum-time=2d This will remove log older than 2 days, you can change accordingly. Clear journal log older than x day/month/year sudo journalctl --vacuum-size=100M Restrict logs to a certain size Clean home cache cache is located in ~/.</description>
-    </item>
-    <item>
-      <title>Tools</title>
-      <link>https://r4sso.github.io/notes/tools/</link>
-      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://r4sso.github.io/notes/tools/</guid>
-      <description>Useful tools for Pentest | CTF&#xA;Forensics Summary&#xA;Title - tools name Description - what the tools for CTF - Usefulness for CTF Title Description CTF exiftool meta information reader/writer Clues / flags strings Useful for finding clues foremost Recover files based on their headers, footers, and internal data structures data carving steghide </description>
-    </item>
-    <item>
-      <title>links</title>
-      <link>https://r4sso.github.io/notes/links/</link>
-      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://r4sso.github.io/notes/links/</guid>
-      <description>Collection of links.&#xA;Title Description GTFOBins A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions CyberChef A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser. Payloads All The Things A list of useful payloads and bypass for Web Application Security and Pentest/CTF Books Title Description Anna’s Archive Non-profit, open-source search engine for “shadow libraries”.</description>
-    </item>
-    <item>
-      <title>Arch Linux Install (Hyprland)</title>
-      <link>https://r4sso.github.io/notes/archinstall/</link>
-      <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://r4sso.github.io/notes/archinstall/</guid>
-      <description>Installation My arch linux installation.&#xA;Archinstall [minimal]: Compositor : Hyprland Terminal : Wezterm Bar/Dock : Ags (https://github.com/Aylur/ags) File-manager : Nautilus My dotfiles availabe on (github) **SOON&#xA;yay Notes: Run as user NOT ROOT!&#xA;git clone https://aur.archlinux.org/yay cd yay makepkg -si Packages FOR NVIDIA: hyprland-nvidia-git&#xA;yay -S hyprland aylurs-gtk-shell polkit-gnome neovim viewnior \ pavucontrol sassc swww wl-clipboard wf-recorder brightnessctl \ hyprpicker slurp grimblast wayshot swappy nautilus nerdfonts Configuration Wrapping the launcher #!</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on r4sso.github.io</title><link>https://r4sso.github.io/notes/</link><description>Recent content in Notes on r4sso.github.io</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Nov 2023 03:40:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/notes/rss.xml" rel="self" type="application/rss+xml"/><item><title>Changelog: Site Development</title><link>https://r4sso.github.io/notes/dev-todo/</link><pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/dev-todo/</guid><description>Todo Optimize images (Convert to WebP) Reduce fonts file size Fix need to refresh to change comment theme (For the future)
+Gallery - If i have a lot of photo to share :) Changelog (10-11-2023)
+Add Guestbook Optimize Table Of Content (Remove unnecessary JS) (03-10-2023)
+[thumb] Add support for (.gif and external url) Minify javascript Active navbar Fix need to refresh to change comment theme. (01-10-2023)
+Navbar mobile fix. Optimization (Performance, Size, SEO) Javascript error fix.</description></item><item><title>Git</title><link>https://r4sso.github.io/notes/git/</link><pubDate>Wed, 12 Jul 2023 02:11:13 +0000</pubDate><guid>https://r4sso.github.io/notes/git/</guid><description>Create a new repository on the command line echo &amp;#34;# Something&amp;#34; &amp;gt;&amp;gt; README.md git init git add README.md git commit -m &amp;#34;first commit&amp;#34; git branch -M main git remote add origin https://github.com/[username]/[repo].git git push -u origin main Push an existing repository from the command line git remote add origin https://github.com/[username]/[repo].git git branch -M main git push -u origin main Common Problem Notes to troubleshoot
+Contributions not showing on profile Make sure your config is match</description></item><item><title>Arch Linux: Cleanup</title><link>https://r4sso.github.io/notes/arch-cleanup/</link><pubDate>Thu, 25 May 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/arch-cleanup/</guid><description>Clean pkg cache List packages
+ls /var/cache/pacman/pkg/ | less Remove all pkg except those installed
+sudo pacman -Sc Remove all files
+sudo pacman -Scc Or with yay
+yay -Scc Remove unused packages List unused
+pacman -Qtdq Remove unused
+sudo pacman -R $(pacman -Qtdq) Journal logs sudo journalctl --vacuum-time=2d This will remove log older than 2 days, you can change accordingly. Clear journal log older than x day/month/year sudo journalctl --vacuum-size=100M Restrict logs to a certain size Clean home cache cache is located in ~/.</description></item><item><title>Tools</title><link>https://r4sso.github.io/notes/tools/</link><pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/tools/</guid><description>Useful tools for Pentest | CTF
+Forensics Summary
+Title - tools name Description - what the tools for CTF - Usefulness for CTF Title Description CTF exiftool meta information reader/writer Clues / flags strings Useful for finding clues foremost Recover files based on their headers, footers, and internal data structures data carving steghide</description></item><item><title>links</title><link>https://r4sso.github.io/notes/links/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/links/</guid><description>Collection of links.
+Title Description GTFOBins A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions CyberChef A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser. Payloads All The Things A list of useful payloads and bypass for Web Application Security and Pentest/CTF Books Title Description Anna’s Archive Non-profit, open-source search engine for “shadow libraries”.</description></item><item><title>Arch Linux Install (Hyprland)</title><link>https://r4sso.github.io/notes/archinstall/</link><pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/archinstall/</guid><description>(WIP) Installation My arch linux installation.
+Archinstall [minimal]: Compositor : Hyprland Terminal : Kitty Bar/Dock : Ags (https://github.com/Aylur/ags) File-manager : Nautilus Dotfiles I use: github.com/Aylur/dotfiles/
+yay Notes: Run as user NOT ROOT!
+git clone https://aur.archlinux.org/yay cd yay makepkg -si Configuration Wrapping the launcher #!/bin/sh export LIBVA_DRIVER_NAME=nvidia export XDG_SESSION_TYPE=wayland export GBM_BACKEND=nvidia-drm export __GLX_VENDOR_LIBRARY_NAME=nvidia export WLR_NO_HARDWARE_CURSORS=1 exec Hyprland bash_profile if [[ -z $DISPLAY &amp;amp;&amp;amp; $(tty) == /dev/tty1 &amp;amp;&amp;amp; $XDG_SESSION_TYPE == tty ]]; then exec /home/r4sso/.</description></item></channel></rss>
