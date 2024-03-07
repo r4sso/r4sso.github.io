@@ -1,2 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pihole on r4sso.github.io</title><link>https://r4sso.github.io/tags/pihole/</link><description>Recent content in Pihole on r4sso.github.io</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 17 Jul 2023 04:16:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/pihole/rss.xml" rel="self" type="application/rss+xml"/><item><title>Deploy pihole + unbound on alpine</title><link>https://r4sso.github.io/2023/07/deploy-pihole--unbound-on-alpine/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/2023/07/deploy-pihole--unbound-on-alpine/</guid><description>What is pihole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.It works by intercepting DNS requests made by devices on your network and blocking requests to domains you provide on the adlist such as (.eg.,advertisements/tracking/phishing domains.)
-What is unbound? Unbound is a validating, recursive, caching DNS resolver. It is designed to resolve domain names by starting from the root DNS servers and recursively traversing the DNS hierarchy until it obtains the final IP address associated with a domain.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pihole on r4sso.github.io</title>
+    <link>https://r4sso.github.io/tags/pihole/</link>
+    <description>Recent content in Pihole on r4sso.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 17 Jul 2023 04:16:00 +0000</lastBuildDate>
+    <atom:link href="https://r4sso.github.io/tags/pihole/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy pihole &#43; unbound on alpine</title>
+      <link>https://r4sso.github.io/2023/07/deploy-pihole--unbound-on-alpine/</link>
+      <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://r4sso.github.io/2023/07/deploy-pihole--unbound-on-alpine/</guid>
+      <description>What is pihole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.It works by intercepting DNS requests made by devices on your network and blocking requests to domains you provide on the adlist such as (.eg.,advertisements/tracking/phishing domains.)&#xA;What is unbound? Unbound is a validating, recursive, caching DNS resolver. It is designed to resolve domain names by starting from the root DNS servers and recursively traversing the DNS hierarchy until it obtains the final IP address associated with a domain.</description>
+    </item>
+  </channel>
+</rss>

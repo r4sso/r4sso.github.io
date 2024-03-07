@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Alpine on r4sso.github.io</title><link>https://r4sso.github.io/tags/alpine/</link><description>Recent content in Alpine on r4sso.github.io</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 28 Feb 2024 09:35:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/alpine/rss.xml" rel="self" type="application/rss+xml"/><item><title>My Janky Home Server</title><link>https://r4sso.github.io/2023/08/my-janky-home-server/</link><pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/2023/08/my-janky-home-server/</guid><description>Yes, this piece of junk is my home server :V
-I don&amp;rsquo;t know exactly what this board is called, it was taken from all-in-one PC from an old ticketing machine a few years ago. Even though it isn&amp;rsquo;t that powerful, it has served me well for years.
-Hardware CPU: Intel Celeron J1800 (2) @ 2.58 GHz RAM: 4GB DDR3L 1333Mhz Storage: 32GB mSATA Software I tried a couple of different operating systems, but Alpine Linux is the most suitable for my use and this machine.</description></item><item><title>Deploy pihole + unbound on alpine</title><link>https://r4sso.github.io/2023/07/deploy-pihole--unbound-on-alpine/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/2023/07/deploy-pihole--unbound-on-alpine/</guid><description>What is pihole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.It works by intercepting DNS requests made by devices on your network and blocking requests to domains you provide on the adlist such as (.eg.,advertisements/tracking/phishing domains.)
-What is unbound? Unbound is a validating, recursive, caching DNS resolver. It is designed to resolve domain names by starting from the root DNS servers and recursively traversing the DNS hierarchy until it obtains the final IP address associated with a domain.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alpine on r4sso.github.io</title>
+    <link>https://r4sso.github.io/tags/alpine/</link>
+    <description>Recent content in Alpine on r4sso.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Feb 2024 09:35:00 +0000</lastBuildDate>
+    <atom:link href="https://r4sso.github.io/tags/alpine/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Janky Home Server</title>
+      <link>https://r4sso.github.io/2023/08/my-janky-home-server/</link>
+      <pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://r4sso.github.io/2023/08/my-janky-home-server/</guid>
+      <description>Yes, this piece of junk is my home server :V&#xA;I don&amp;rsquo;t know exactly what this board is called, it was taken from all-in-one PC from an old ticketing machine a few years ago. Even though it isn&amp;rsquo;t that powerful, it has served me well for years.&#xA;Hardware CPU: Intel Celeron J1800 (2) @ 2.58 GHz RAM: 4GB DDR3L 1333Mhz Storage: 32GB mSATA Software I tried a couple of different operating systems, but Alpine Linux is the most suitable for my use and this machine.</description>
+    </item>
+    <item>
+      <title>Deploy pihole &#43; unbound on alpine</title>
+      <link>https://r4sso.github.io/2023/07/deploy-pihole--unbound-on-alpine/</link>
+      <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://r4sso.github.io/2023/07/deploy-pihole--unbound-on-alpine/</guid>
+      <description>What is pihole? Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.It works by intercepting DNS requests made by devices on your network and blocking requests to domains you provide on the adlist such as (.eg.,advertisements/tracking/phishing domains.)&#xA;What is unbound? Unbound is a validating, recursive, caching DNS resolver. It is designed to resolve domain names by starting from the root DNS servers and recursively traversing the DNS hierarchy until it obtains the final IP address associated with a domain.</description>
+    </item>
+  </channel>
+</rss>
