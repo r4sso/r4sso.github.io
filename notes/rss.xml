@@ -1,18 +1,182 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on r4sso.github.io</title><link>https://r4sso.github.io/notes/</link><description>Recent content in Notes on r4sso.github.io</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Nov 2023 03:40:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/notes/rss.xml" rel="self" type="application/rss+xml"/><item><title>Changelog: Site Development</title><link>https://r4sso.github.io/notes/dev-todo/</link><pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/dev-todo/</guid><description>Todo Optimize images (Convert to WebP) Reduce fonts file size Fix need to refresh to change comment theme (For the future)
-Gallery - If i have a lot of photo to share :) Changelog (10-11-2023)
-Add Guestbook Optimize Table Of Content (Remove unnecessary JS) (03-10-2023)
-[thumb] Add support for (.gif and external url) Minify javascript Active navbar Fix need to refresh to change comment theme. (01-10-2023)
-Navbar mobile fix. Optimization (Performance, Size, SEO) Javascript error fix.</description></item><item><title>Git</title><link>https://r4sso.github.io/notes/git/</link><pubDate>Wed, 12 Jul 2023 02:11:13 +0000</pubDate><guid>https://r4sso.github.io/notes/git/</guid><description>Create a new repository on the command line echo &amp;#34;# Something&amp;#34; &amp;gt;&amp;gt; README.md git init git add README.md git commit -m &amp;#34;first commit&amp;#34; git branch -M main git remote add origin https://github.com/[username]/[repo].git git push -u origin main Push an existing repository from the command line git remote add origin https://github.com/[username]/[repo].git git branch -M main git push -u origin main Common Problem Notes to troubleshoot
-Contributions not showing on profile Make sure your config is match</description></item><item><title>Arch Linux: Cleanup</title><link>https://r4sso.github.io/notes/arch-cleanup/</link><pubDate>Thu, 25 May 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/arch-cleanup/</guid><description>Clean pkg cache List packages
-ls /var/cache/pacman/pkg/ | less Remove all pkg except those installed
-sudo pacman -Sc Remove all files
-sudo pacman -Scc Or with yay
-yay -Scc Remove unused packages List unused
-pacman -Qtdq Remove unused
-sudo pacman -R $(pacman -Qtdq) Journal logs sudo journalctl --vacuum-time=2d This will remove log older than 2 days, you can change accordingly. Clear journal log older than x day/month/year sudo journalctl --vacuum-size=100M Restrict logs to a certain size Clean home cache cache is located in ~/.</description></item><item><title>Tools</title><link>https://r4sso.github.io/notes/tools/</link><pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/tools/</guid><description>Useful tools for Pentest | CTF
-Forensics Summary
-Title - tools name Description - what the tools for CTF - Usefulness for CTF Title Description CTF exiftool meta information reader/writer Clues / flags strings Useful for finding clues foremost Recover files based on their headers, footers, and internal data structures data carving steghide</description></item><item><title>links</title><link>https://r4sso.github.io/notes/links/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/links/</guid><description>Collection of links.
-Title Description GTFOBins A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions CyberChef A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser. Payloads All The Things A list of useful payloads and bypass for Web Application Security and Pentest/CTF Books Title Description Anna’s Archive Non-profit, open-source search engine for “shadow libraries”.</description></item><item><title>Arch Linux Install (Hyprland)</title><link>https://r4sso.github.io/notes/archinstall/</link><pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/archinstall/</guid><description>(WIP) Installation My arch linux installation.
-Archinstall [minimal]: Compositor : Hyprland Terminal : Kitty Bar/Dock : Ags (https://github.com/Aylur/ags) File-manager : Nautilus Dotfiles I use: github.com/Aylur/dotfiles/
-yay Notes: Run as user NOT ROOT!
-git clone https://aur.archlinux.org/yay cd yay makepkg -si Configuration Wrapping the launcher #!/bin/sh export LIBVA_DRIVER_NAME=nvidia export XDG_SESSION_TYPE=wayland export GBM_BACKEND=nvidia-drm export __GLX_VENDOR_LIBRARY_NAME=nvidia export WLR_NO_HARDWARE_CURSORS=1 exec Hyprland bash_profile if [[ -z $DISPLAY &amp;amp;&amp;amp; $(tty) == /dev/tty1 &amp;amp;&amp;amp; $XDG_SESSION_TYPE == tty ]]; then exec /home/r4sso/.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on r4sso.github.io</title><link>https://r4sso.github.io/notes/</link><description>Recent content in Notes on r4sso.github.io</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 10 Nov 2023 03:40:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/notes/rss.xml" rel="self" type="application/rss+xml"/><item><title>Changelog: Site Development</title><link>https://r4sso.github.io/notes/dev-todo/</link><pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/dev-todo/</guid><description>&lt;h2 id="todo">Todo&lt;/h2>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Optimize images (Convert to WebP)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Reduce fonts file size&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Fix need to refresh to change comment theme&lt;/li>
+&lt;/ul>
+&lt;p>(For the future)&lt;/p>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Gallery - If i have a lot of photo to share :)&lt;/li>
+&lt;/ul>
+&lt;h2 id="changelog">Changelog&lt;/h2>
+&lt;p>(10-11-2023)&lt;/p>
+&lt;ul>
+&lt;li>Add Guestbook&lt;/li>
+&lt;li>Optimize Table Of Content (Remove unnecessary JS)&lt;/li>
+&lt;/ul>
+&lt;p>(03-10-2023)&lt;/p>
+&lt;ul>
+&lt;li>[thumb] Add support for (.gif and external url)&lt;/li>
+&lt;li>Minify javascript&lt;/li>
+&lt;li>Active navbar&lt;/li>
+&lt;li>Fix need to refresh to change comment theme.&lt;/li>
+&lt;/ul>
+&lt;p>(01-10-2023)&lt;/p></description></item><item><title>Git</title><link>https://r4sso.github.io/notes/git/</link><pubDate>Wed, 12 Jul 2023 02:11:13 +0000</pubDate><guid>https://r4sso.github.io/notes/git/</guid><description>&lt;h2 id="create-a-new-repository-on-the-command-line">Create a new repository on the command line&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;# Something&amp;#34;&lt;/span> &amp;gt;&amp;gt; README.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git init
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add README.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;first commit&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -M main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git remote add origin https://github.com/&lt;span class="o">[&lt;/span>username&lt;span class="o">]&lt;/span>/&lt;span class="o">[&lt;/span>repo&lt;span class="o">]&lt;/span>.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push -u origin main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="push-an-existing-repository-from-the-command-line">Push an existing repository from the command line&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git remote add origin https://github.com/&lt;span class="o">[&lt;/span>username&lt;span class="o">]&lt;/span>/&lt;span class="o">[&lt;/span>repo&lt;span class="o">]&lt;/span>.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -M main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push -u origin main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="common-problem">Common Problem&lt;/h2>
+&lt;p>Notes to troubleshoot&lt;/p>
+&lt;h3 id="contributions-not-showing-on-profile">Contributions not showing on profile&lt;/h3>
+&lt;p>Make sure your config is match&lt;br>
+Email:&lt;/p></description></item><item><title>Arch Linux: Cleanup</title><link>https://r4sso.github.io/notes/arch-cleanup/</link><pubDate>Thu, 25 May 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/arch-cleanup/</guid><description>&lt;h2 id="clean-pkg-cache">Clean pkg cache&lt;/h2>
+&lt;p>List packages&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ls /var/cache/pacman/pkg/ &lt;span class="p">|&lt;/span> less 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Remove all pkg except those installed&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo pacman -Sc 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Remove all files&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo pacman -Scc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Or with yay&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yay -Scc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="remove-unused-packages">Remove unused packages&lt;/h2>
+&lt;p>List unused&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pacman -Qtdq
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Remove unused&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo pacman -R &lt;span class="k">$(&lt;/span>pacman -Qtdq&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="journal-logs">Journal logs&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo journalctl --vacuum-time&lt;span class="o">=&lt;/span>2d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>This will remove log older than 2 days, you can change accordingly.&lt;/li>
+&lt;li>Clear journal log older than x day/month/year&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo journalctl --vacuum-size&lt;span class="o">=&lt;/span>100M
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Restrict logs to a certain size&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="clean-home-cache">Clean home cache&lt;/h2>
+&lt;p>cache is located in &lt;code>~/.cache &lt;/code>&lt;/p></description></item><item><title>Tools</title><link>https://r4sso.github.io/notes/tools/</link><pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/tools/</guid><description>&lt;p>Useful tools for Pentest | CTF&lt;/p>
+&lt;h2 id="forensics">Forensics&lt;/h2>
+&lt;p>Summary&lt;/p>
+&lt;ul>
+&lt;li>Title - tools name&lt;/li>
+&lt;li>Description - what the tools for&lt;/li>
+&lt;li>CTF - Usefulness for CTF&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Title&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th style="text-align: left">CTF&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">exiftool&lt;/td>
+ &lt;td style="text-align: left">meta information reader/writer&lt;/td>
+ &lt;td style="text-align: left">Clues / flags&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">strings&lt;/td>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;td style="text-align: left">Useful for finding clues&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">foremost&lt;/td>
+ &lt;td style="text-align: left">Recover files based on their headers, footers, and internal data structures&lt;/td>
+ &lt;td style="text-align: left">data carving&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">steghide&lt;/td>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>links</title><link>https://r4sso.github.io/notes/links/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/links/</guid><description>&lt;p>Collection of links.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Title&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://gtfobins.github.io">GTFOBins&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://gchq.github.io/CyberChef/">CyberChef&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://swisskyrepo.github.io/PayloadsAllTheThings/https://swisskyrepo.github.io/PayloadsAllTheThings/">Payloads All The Things&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">A list of useful payloads and bypass for Web Application Security and Pentest/CTF&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="books">Books&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Title&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://annas-archive.org/">Anna’s Archive&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">Non-profit, open-source search engine for “shadow libraries”.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>Arch Linux Install (Hyprland)</title><link>https://r4sso.github.io/notes/archinstall/</link><pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/archinstall/</guid><description>&lt;h1 id="installation">Installation&lt;/h1>
+&lt;p>My arch linux installation.&lt;/p>
+&lt;ul>
+&lt;li>Archinstall [minimal]:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">&lt;span class="line">&lt;span class="cl">Compositor : Hyprland
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Terminal : Wezterm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Bar/Dock : Ags (https://github.com/Aylur/ags)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">File-manager : Nautilus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>My dotfiles availabe on (&lt;a href="https://github.com/r4sso/dotfiles">github&lt;/a>) **SOON&lt;/p>
+&lt;h2 id="yay">yay&lt;/h2>
+&lt;p>&lt;strong>Notes: Run as user NOT ROOT!&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone https://aur.archlinux.org/yay
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> yay
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">makepkg -si
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="packages">Packages&lt;/h3>
+&lt;p>&lt;strong>FOR NVIDIA: hyprland-nvidia-git&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yay -S hyprland aylurs-gtk-shell polkit-gnome neovim viewnior &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>pavucontrol sassc swww wl-clipboard wf-recorder brightnessctl &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>hyprpicker slurp grimblast wayshot swappy nautilus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>nerdfonts&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuration">Configuration&lt;/h2>
+&lt;h3 id="wrapping-the-launcher">Wrapping the launcher&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">LIBVA_DRIVER_NAME&lt;/span>&lt;span class="o">=&lt;/span>nvidia
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">XDG_SESSION_TYPE&lt;/span>&lt;span class="o">=&lt;/span>wayland
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">GBM_BACKEND&lt;/span>&lt;span class="o">=&lt;/span>nvidia-drm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">__GLX_VENDOR_LIBRARY_NAME&lt;/span>&lt;span class="o">=&lt;/span>nvidia
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">WLR_NO_HARDWARE_CURSORS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">exec&lt;/span> Hyprland
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="bash_profile">bash_profile&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> -z &lt;span class="nv">$DISPLAY&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="k">$(&lt;/span>tty&lt;span class="k">)&lt;/span> &lt;span class="o">==&lt;/span> /dev/tty1 &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nv">$XDG_SESSION_TYPE&lt;/span> &lt;span class="o">==&lt;/span> tty &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">exec&lt;/span> /home/r4sso/.wrappedhl
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,6 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on r4sso.github.io</title><link>https://r4sso.github.io/tags/linux/</link><description>Recent content in Linux on r4sso.github.io</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 28 Feb 2024 09:35:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/linux/rss.xml" rel="self" type="application/rss+xml"/><item><title>My Janky Home Server</title><link>https://r4sso.github.io/2023/08/my-janky-home-server/</link><pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/2023/08/my-janky-home-server/</guid><description>Yes, this piece of junk is my home server :V
-I don&amp;rsquo;t know exactly what this board is called, it was taken from all-in-one PC from an old ticketing machine a few years ago. Even though it isn&amp;rsquo;t that powerful, it has served me well for years.
-Hardware CPU: Intel Celeron J1800 (2) @ 2.58 GHz RAM: 4GB DDR3L 1333Mhz Storage: 32GB mSATA Software I tried a couple of different operating systems, but Alpine Linux is the most suitable for my use and this machine.</description></item><item><title>Arch Linux Install (Hyprland)</title><link>https://r4sso.github.io/notes/archinstall/</link><pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/archinstall/</guid><description>(WIP) Installation My arch linux installation.
-Archinstall [minimal]: Compositor : Hyprland Terminal : Kitty Bar/Dock : Ags (https://github.com/Aylur/ags) File-manager : Nautilus Dotfiles I use: github.com/Aylur/dotfiles/
-yay Notes: Run as user NOT ROOT!
-git clone https://aur.archlinux.org/yay cd yay makepkg -si Configuration Wrapping the launcher #!/bin/sh export LIBVA_DRIVER_NAME=nvidia export XDG_SESSION_TYPE=wayland export GBM_BACKEND=nvidia-drm export __GLX_VENDOR_LIBRARY_NAME=nvidia export WLR_NO_HARDWARE_CURSORS=1 exec Hyprland bash_profile if [[ -z $DISPLAY &amp;amp;&amp;amp; $(tty) == /dev/tty1 &amp;amp;&amp;amp; $XDG_SESSION_TYPE == tty ]]; then exec /home/r4sso/.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on r4sso.github.io</title><link>https://r4sso.github.io/tags/linux/</link><description>Recent content in Linux on r4sso.github.io</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 Feb 2024 09:35:00 +0000</lastBuildDate><atom:link href="https://r4sso.github.io/tags/linux/rss.xml" rel="self" type="application/rss+xml"/><item><title>My Janky Home Server</title><link>https://r4sso.github.io/2023/08/my-janky-home-server/</link><pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/2023/08/my-janky-home-server/</guid><description>My first home server, janky but serve me well, and list of software I use.</description></item><item><title>Arch Linux Install (Hyprland)</title><link>https://r4sso.github.io/notes/archinstall/</link><pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/archinstall/</guid><description>&lt;h1 id="installation">Installation&lt;/h1>
+&lt;p>My arch linux installation.&lt;/p>
+&lt;ul>
+&lt;li>Archinstall [minimal]:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">&lt;span class="line">&lt;span class="cl">Compositor : Hyprland
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Terminal : Wezterm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Bar/Dock : Ags (https://github.com/Aylur/ags)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">File-manager : Nautilus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>My dotfiles availabe on (&lt;a href="https://github.com/r4sso/dotfiles">github&lt;/a>) **SOON&lt;/p>
+&lt;h2 id="yay">yay&lt;/h2>
+&lt;p>&lt;strong>Notes: Run as user NOT ROOT!&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone https://aur.archlinux.org/yay
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> yay
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">makepkg -si
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="packages">Packages&lt;/h3>
+&lt;p>&lt;strong>FOR NVIDIA: hyprland-nvidia-git&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yay -S hyprland aylurs-gtk-shell polkit-gnome neovim viewnior &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>pavucontrol sassc swww wl-clipboard wf-recorder brightnessctl &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>hyprpicker slurp grimblast wayshot swappy nautilus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>nerdfonts&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuration">Configuration&lt;/h2>
+&lt;h3 id="wrapping-the-launcher">Wrapping the launcher&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">LIBVA_DRIVER_NAME&lt;/span>&lt;span class="o">=&lt;/span>nvidia
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">XDG_SESSION_TYPE&lt;/span>&lt;span class="o">=&lt;/span>wayland
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">GBM_BACKEND&lt;/span>&lt;span class="o">=&lt;/span>nvidia-drm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">__GLX_VENDOR_LIBRARY_NAME&lt;/span>&lt;span class="o">=&lt;/span>nvidia
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">WLR_NO_HARDWARE_CURSORS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">exec&lt;/span> Hyprland
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="bash_profile">bash_profile&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="o">[[&lt;/span> -z &lt;span class="nv">$DISPLAY&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="k">$(&lt;/span>tty&lt;span class="k">)&lt;/span> &lt;span class="o">==&lt;/span> /dev/tty1 &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nv">$XDG_SESSION_TYPE&lt;/span> &lt;span class="o">==&lt;/span> tty &lt;span class="o">]]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">exec&lt;/span> /home/r4sso/.wrappedhl
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
