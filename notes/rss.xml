@@ -76,53 +76,53 @@ Email:&lt;/p></description></item><item><title>Arch Linux: Cleanup</title><link>
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Title&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
- &lt;th style="text-align: left">CTF&lt;/th>
+ &lt;th>Title&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;th>CTF&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">exiftool&lt;/td>
- &lt;td style="text-align: left">meta information reader/writer&lt;/td>
- &lt;td style="text-align: left">Clues / flags&lt;/td>
+ &lt;td>exiftool&lt;/td>
+ &lt;td>meta information reader/writer&lt;/td>
+ &lt;td>Clues / flags&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">strings&lt;/td>
- &lt;td style="text-align: left">&lt;/td>
- &lt;td style="text-align: left">Useful for finding clues&lt;/td>
+ &lt;td>strings&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>Useful for finding clues&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">foremost&lt;/td>
- &lt;td style="text-align: left">Recover files based on their headers, footers, and internal data structures&lt;/td>
- &lt;td style="text-align: left">data carving&lt;/td>
+ &lt;td>foremost&lt;/td>
+ &lt;td>Recover files based on their headers, footers, and internal data structures&lt;/td>
+ &lt;td>data carving&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">steghide&lt;/td>
- &lt;td style="text-align: left">&lt;/td>
- &lt;td style="text-align: left">&lt;/td>
+ &lt;td>steghide&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item><item><title>links</title><link>https://r4sso.github.io/notes/links/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://r4sso.github.io/notes/links/</guid><description>&lt;p>Collection of links.&lt;/p>
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Title&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Title&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://gtfobins.github.io">GTFOBins&lt;/a>&lt;/td>
- &lt;td style="text-align: left">A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions&lt;/td>
+ &lt;td>&lt;a href="https://gtfobins.github.io">GTFOBins&lt;/a>&lt;/td>
+ &lt;td>A curated list of Unix binaries that can be exploited by an attacker to bypass local security restrictions&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://gchq.github.io/CyberChef/">CyberChef&lt;/a>&lt;/td>
- &lt;td style="text-align: left">A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser.&lt;/td>
+ &lt;td>&lt;a href="https://gchq.github.io/CyberChef/">CyberChef&lt;/a>&lt;/td>
+ &lt;td>A s1imple, intuitive web app for carrying out all manner of &amp;ldquo;cyber&amp;rdquo; operations within a web browser.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://swisskyrepo.github.io/PayloadsAllTheThings/https://swisskyrepo.github.io/PayloadsAllTheThings/">Payloads All The Things&lt;/a>&lt;/td>
- &lt;td style="text-align: left">A list of useful payloads and bypass for Web Application Security and Pentest/CTF&lt;/td>
+ &lt;td>&lt;a href="https://swisskyrepo.github.io/PayloadsAllTheThings/https://swisskyrepo.github.io/PayloadsAllTheThings/">Payloads All The Things&lt;/a>&lt;/td>
+ &lt;td>A list of useful payloads and bypass for Web Application Security and Pentest/CTF&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -130,14 +130,14 @@ Email:&lt;/p></description></item><item><title>Arch Linux: Cleanup</title><link>
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Title&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Title&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://annas-archive.org/">Anna’s Archive&lt;/a>&lt;/td>
- &lt;td style="text-align: left">Non-profit, open-source search engine for “shadow libraries”.&lt;/td>
+ &lt;td>&lt;a href="https://annas-archive.org/">Anna’s Archive&lt;/a>&lt;/td>
+ &lt;td>Non-profit, open-source search engine for “shadow libraries”.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item></channel></rss>
