@@ -1,5 +1,5 @@
-## my-website
-My website source code.
+## r4sso.github.io
+My hugo personal website with custom theme.
 
 ### Requirements
 - Hugo+**extended** (latest)
