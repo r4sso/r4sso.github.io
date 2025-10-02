@@ -1,0 +1,38 @@
+{
+  "name": "mytheme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./themes/myTheme/assets/css/main.css -o ./assets/css/style.css",
+    "watch": "npx @tailwindcss/cli -i ./themes/myTheme/assets/css/main.css -o ./assets/css/style.css --watch",
+    "minify": "npx @tailwindcss/cli -i ./themes/myTheme/assets/css/main.css -o ./assets/css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r4sso/myTheme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/r4sso/myTheme/issues"
+  },
+  "homepage": "https://github.com/r4sso/myTheme#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.7",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/upgrade": "^4.1.7",
+    "@types/bun": "latest",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.7"
+  },
+  "dependencies": {
+    "postcss-cli": "^11.0.0"
+  },
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

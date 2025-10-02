@@ -3,7 +3,6 @@ resources/
 node_modules/
 *.log
 package-lock.json
-package.json
 .hugo_build.lock
 .env
 bun.lock
