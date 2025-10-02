@@ -1,0 +1,19 @@
+<div class="text-sm">
+  <h2 class="my-2 text-xl font-semibold leading-tight">Featured Posts</h2>
+  <ul class="list-disc">
+      {{ range where .Site.RegularPages "Params.featured" "==" true }}
+      <li class="ml-6 text-gray-800 dark:text-gray-300">
+          <a class="rounded-lg p-1 text-sm hover:bg-gray-700/10 dark:hover:bg-gray-300/10" href="{{ .Permalink }}"><b>{{.Date.Format "02/01/2006"}} -</b> <span class="font-semibold text-blue-600">{{.Title}}</span></a>
+      </li>
+      {{ end }}
+  </ul>
+
+  <h2 class="my-2 text-xl font-semibold leading-tight">Recent Posts</h2>
+  <ul class="list-disc">
+      {{ range .Site.RegularPages | first 3 }}
+      <li class="ml-6 text-gray-800 dark:text-gray-300">
+          <a class="rounded-lg p-1 text-sm hover:bg-gray-700/10 dark:hover:bg-gray-300/10" href="{{ .Permalink }}"><b>{{.Date.Format "02/01/2006"}} -</b> <span class="font-semibold text-blue-600">{{.Title}}</span> <span class="font-semibold">[{{ .Section | strings.FirstUpper }}]</span></a>
+      </li>
+      {{ end }}
+  </ul>
+</div>

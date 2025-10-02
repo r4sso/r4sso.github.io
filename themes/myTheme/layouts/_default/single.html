@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="pt-12">
+    <article class="m-4">
+        <div class="prose prose-hr:-my-px prose-hr:my-2 prose-img:rounded-md prose-figcaption:text-center prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card dark:post-card-dark mx-auto max-w-4xl rounded-lg p-6 shadow-2xl shadow-slate-700/10">
+            <h1 class="-mb-px text-2xl font-bold">{{ .Title }}</h1>
+            <p class="mt-2 text-sm text-gray-400">Published on {{ .Date.Format "Monday, 2 Jan 2006" }}</p>
+            <div class="-my-4">{{ partial "categories.html" . }}</div>
+            {{ partial "thumb.html" . }}
+
+            <div class="prose-h1:text-2xl prose-a:text-blue-600 text-sm leading-normal">
+                {{ if .Params.toc | default .Site.Params.tableOfContents }}
+                    {{ partial "toc.html" . }} 
+                {{- end -}} 
+                
+                {{ .Content }}
+                <p class="-mb-2 text-right text-sm">Last edited: <b>{{ .Lastmod.Format "2/01/2006 15:04 MST" }}</b></p>
+            </div>
+            {{ if ne .Params.comment false }} {{ partial "giscus.html" . }} {{ end }}
+        </div>
+    </article>
+</div>
+
+{{ partial "footer.html" . }}
+{{ end }}

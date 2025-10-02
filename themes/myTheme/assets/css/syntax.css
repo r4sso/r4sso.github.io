@@ -1,0 +1,160 @@
+/* ====================================
+   1. Light Theme Variables
+   ==================================== */
+.chroma {
+  --chroma-color: rgb(0, 0, 0);
+  --chroma-bg: rgb(248, 250, 252);
+  --chroma-err: rgb(166, 23, 23);
+  --chroma-err-bg: rgb(227, 210, 210);
+  --chroma-hl-bg: rgb(229, 229, 229);
+  --chroma-lnt: rgb(127, 127, 127);
+  --chroma-ln: rgb(127, 127, 127);
+  --chroma-k: rgb(0, 0, 0);
+  --chroma-kc: rgb(0, 0, 0);
+  --chroma-kt: #445588;
+  --chroma-nc: rgb(68, 85, 136);
+  --chroma-no: #008080;
+  --chroma-nd: #3c5d5d;
+  --chroma-ni: #800080;
+  --chroma-ne: #990000;
+  --chroma-nf: #990000;
+  --chroma-nl: #990000;
+  --chroma-nn: #555555;
+  --chroma-nt: #000080;
+  --chroma-nv: #008080;
+  --chroma-vc: #008080;
+  --chroma-s: #dd1144;
+  --chroma-sa: #dd1144;
+  --chroma-sr: #009926;
+  --chroma-ss: #990073;
+  --chroma-mm: #009999;
+  --chroma-c: #8b949e;
+  --chroma-cs: #999999;
+  --chroma-gd: #000000;
+  --chroma-gd-bg: #ffdddd;
+  --chroma-gr: #aa0000;
+  --chroma-gh: #999999;
+  --chroma-gi: #000000;
+  --chroma-gi-bg: #000000;
+  --chroma-go: #888888;
+  --chroma-gp: #555555;
+  --chroma-gu: #aaaaaa;
+  --chroma-gt: #aa0000;
+  --chroma-w: #bbbbbb;
+}
+
+/* ====================================
+   2. Dark Theme Variables
+   ==================================== */
+.dark .chroma {
+  --chroma-color: rgb(230, 237, 243);
+  --chroma-bg: #010409;
+  --chroma-err: rgb(248, 81, 73);
+  --chroma-err-bg: #490202;
+  --chroma-hl-bg: rgb(110, 118, 129);
+  --chroma-lnt: rgb(115, 118, 121);
+  --chroma-ln: rgb(110, 118, 129);
+  --chroma-k: #ff7b72;
+  --chroma-kc: rgb(121, 192, 255);
+  --chroma-kt: rgb(255, 123, 114);
+  --chroma-nc: rgb(240, 136, 62);
+  --chroma-no: #79c0ff;
+  --chroma-nd: #d2a8ff;
+  --chroma-ni: #ffa657;
+  --chroma-ne: #f0883e;
+  --chroma-nf: #d2a8ff;
+  --chroma-nl: #79c0ff;
+  --chroma-nn: #ff7b72;
+  --chroma-py: #79c0ff;
+  --chroma-nt: #7ee787;
+  --chroma-nv: #79c0ff;
+  --chroma-l: #a5d6ff;
+  --chroma-ld: #79c0ff;
+  --chroma-s: #a5d6ff;
+  --chroma-sa: #79c0ff;
+  --chroma-sr: #79c0ff;
+  --chroma-ss: #a5d6ff;
+  --chroma-mm: #a5d6ff;
+  --chroma-c: #8b949e;
+  --chroma-cs: #8b949e;
+  --chroma-gd: #ffa198;
+  --chroma-gd-bg: #490202;
+  --chroma-gr: #ffa198;
+  --chroma-gh: #79c0ff;
+  --chroma-gi: #56d364;
+  --chroma-gi-bg: #0f5323;
+  --chroma-go: #8b949e;
+  --chroma-gp: #8b949e;
+  --chroma-gu: #79c0ff;
+  --chroma-gt: #ff7b72;
+  --chroma-w: #6e7681;
+}
+
+/* ====================================
+   3. Syntax Highlighting Styles
+   ==================================== */
+.chroma {
+  color: var(--chroma-colr);
+  background-color: var(--chroma-bg);
+}
+
+.chroma .err { color: var(--chroma-err); background-color: var(--chroma-err-bg); }
+.chroma .hl { background-color: var(--chroma-hl-bg); }
+.chroma .lnt, .chroma .ln { color: var(--chroma-lnt); }
+
+.chroma .k, .chroma .kc, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr {
+  color: var(--chroma-k);
+}
+
+.chroma .kt { color: var(--chroma-kt); }
+.chroma .nc { color: var(--chroma-nc); font-weight: bold; }
+.chroma .no { color: var(--chroma-no); font-weight: bold; }
+.chroma .nd { color: var(--chroma-nd); font-weight: bold; }
+.chroma .ni { color: var(--chroma-ni); }
+.chroma .ne { color: var(--chroma-ne); font-weight: bold; }
+.chroma .nf { color: var(--chroma-nf); font-weight: bold; }
+.chroma .nl { color: var(--chroma-nl); font-weight: bold; }
+.chroma .nn { color: var(--chroma-nn); }
+.chroma .nt { color: var(--chroma-nt); }
+.chroma .nv, .chroma .vc, .chroma .vg, .chroma .vi { color: var(--chroma-nv); }
+
+.chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .sd, .chroma .s1, .chroma .s2, .chroma .se, .chroma .sh, .chroma .si, .chroma .sx {
+  color: var(--chroma-s);
+}
+
+.chroma .sr { color: var(--chroma-sr); }
+.chroma .ss { color: var(--chroma-ss); }
+
+.chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il, .chroma .mo {
+  color: var(--chroma-mm);
+}
+
+.chroma .c, .chroma .ch, .chroma .cm, .chroma .c1 {
+  color: var(--chroma-c);
+  font-style: italic;
+}
+
+.chroma .cs, .chroma .cp, .chroma .cpf {
+  color: var(--chroma-cs);
+  font-style: italic;
+  font-weight: bold;
+}
+
+.chroma .gd {
+  color: var(--chroma-gd);
+  background-color: var(--chroma-gd-bg);
+}
+
+.chroma .gr { color: var(--chroma-gr); }
+.chroma .gh { color: var(--chroma-gh); font-weight: bold; }
+.chroma .gi {
+  color: var(--chroma-gi);
+  background-color: var(--chroma-gi-bg);
+}
+
+.chroma .go { color: var(--chroma-go); }
+.chroma .gp { color: var(--chroma-gp); }
+.chroma .gu { color: var(--chroma-gu); }
+.chroma .gt { color: var(--chroma-gt); }
+.chroma .w  { color: var(--chroma-w); }
+

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="relative mt-16 justify-center">
+    <div class="prose dark:prose-invert mx-auto my-6 max-w-4xl p-8">
+        <div class="relative">
+            <h1>{{ .Title }}</h1>
+            <div class="text-sm leading-normal">
+                <img class="float-none h-auto w-40 rounded md:float-right md:mx-2 md:-mt-12" src="{{ .Params.thumb }}" title="{{ .Params.avatar_title }}">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

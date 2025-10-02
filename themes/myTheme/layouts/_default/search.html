@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="pt-20">
+  <div class="mx-auto max-w-xl">
+    <form id="search" action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get" class="px-3">
+      <div class="relative">
+        <div class="pointer-events-none absolute inset-y-0 left-5 flex items-center">
+          <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+          </svg>
+        </div>
+        <input aria-label="Search site" type="text" name="q" placeholder="Type here to search (Require Javascript)" class="block w-full rounded-xl border border-gray-300 bg-gray-100 p-2 px-12 text-gray-900 placeholder:text-center focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500">
+      </div>
+    </form>
+
+    <div class="search-result mx-auto max-h-[80vh] overflow-y-scroll px-3">
+      <!-- Search results go here -->
+    </div>
+  </div>
+</div>
+
+{{- with resources.Get "js/search.js" }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{ end }}

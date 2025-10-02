@@ -1,0 +1,91 @@
+baseURL = 'https://r4sso.github.io'
+languageCode = 'en'
+title = 'r4sso.github.io'
+theme = ["myTheme"]
+pagerSize = 5
+enableRobotsTXT = true
+
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+
+[outputFormats.RSS]
+  mediatype = "application/rss+xml"
+  baseName = "rss" # This will generate the RSS feed as "index.xml"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+
+
+[permalinks]
+  posts = '/:year/:month/:title/'
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNumbersInTable = false
+    noClasses = false
+    
+
+  [markup.goldmark.renderer]
+    hardWraps = true
+
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+[params]
+    title = "Hello World!"
+    description = "My personal website, blog and notes of r4sso"
+    logo = "/images/logo.svg"
+    favicon= "/images/logo.svg"
+    tableOfContents = true
+    github="r4sso"
+    instagram="mfterm"
+    mail="0xr4sso@proton.me"
+
+
+    
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    pageRef = "posts"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "Notes"
+    pageRef = "notes"
+    url = "/notes/"
+    weight = 2
+  [[menu.main]]
+    name = "Category"
+    pageRef = "categories"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    name = "Tag"
+    pageRef = "tags"
+    url = "/tags/"
+    weight = 4
+  [[menu.main]]
+    name = "Rss"
+    pageRef = "rss"
+    url = "/posts/rss.xml"
+    weight = 5
+  [[menu.main]]
+    name = "?"
+    pageRef = "about"
+    url = "/about/"
+    weight = 6
+
+
+    
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true
+

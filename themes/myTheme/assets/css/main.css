@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import "./syntax.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  /* Fonts */
+  @font-face {
+    font-family: 'Iosevka Web';
+    font-display: swap;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    src: url('/fonts/iosevka.woff2') format('woff2'),
+         url('/fonts/iosevka.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Iosevka Web';
+    font-display: swap;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    src: url('/fonts/iosevka-bold.woff2') format('woff2'),
+         url('/fonts/iosevka-bold.woff') format('woff');
+  }
+
+  body {
+    font-family: 'Iosevka Web';
+  }
+
+  :target {
+    scroll-margin-top: 150px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(255, 255, 255);
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid rgb(208, 215, 222);
+  }
+
+  td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  table td:first-child,
+  table th:first-child {
+    padding-left: 10px;
+  }
+
+  table td:last-child,
+  table th:last-child {
+    padding-right: 10px;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(246, 248, 250);
+  }
+
+  /* Dark Mode Table Overrides */
+  .dark table {
+    background-color: rgb(13, 17, 23);
+  }
+
+  .dark tr:nth-child(even) {
+    background-color: rgb(39, 43, 51);
+  }
+
+  .dark th,
+  .dark td {
+    border-color: rgb(48, 54, 61);
+  }
+}
+
+
+
+@layer utilities {
+  .bg-cus {
+    background-color: rgb(248, 250, 252);
+    color: rgb(0, 0, 0);
+  }
+
+  .dark .bg-cus {
+    background-color: rgb(1, 4, 9);
+    color: rgb(255, 255, 255);
+  }
+
+  .navbar {
+    background-color: rgb(248, 250, 252);
+  }
+
+  .dark .navbar {
+    background-color: rgb(1, 4, 9);
+  }
+
+  .post-card {
+    background-color: rgb(255, 255, 255);
+  }
+
+  .dark .post-card {
+    background-color: rgb(16, 17, 20);
+  }
+}
+

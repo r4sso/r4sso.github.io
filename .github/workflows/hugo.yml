@@ -1,0 +1,65 @@
+name: Deploy Hugo site to GitHub Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+  # Allows manual triggers from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions for GITHUB_TOKEN to allow deployment to gh-pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping queued runs but not canceling in-progress runs
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # If using Hugo themes as submodules
+          fetch-depth: 0        # For .GitInfo and .Lastmod support
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest  # Use specific version if needed, e.g., '1.1.34'
+
+      - name: Install dependencies with Bun
+        run: bun install  # Installs Tailwind CSS, @tailwindcss/typography, PostCSS, etc.
+
+      - name: Minify CSS with Bun
+        run: bun run minify  # Matches Makefile's minify step for Tailwind CSS
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'  # Uses latest extended Hugo version
+          extended: true
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: bunx hugo --minify --cleanDestinationDir  # Matches Makefile's build step
+
+      - name: Deploy to gh-pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages

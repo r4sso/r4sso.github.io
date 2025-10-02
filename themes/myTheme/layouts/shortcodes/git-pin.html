@@ -1,0 +1,9 @@
+{{- $username := .Get "username" -}}
+{{- $repo := .Get "repo" -}}
+{{- $class := .Get "class" -}}
+
+<div class="projects">
+  <a href="https://github.com/{{ $username }}/{{ $repo }}">
+    <img  class="{{ $class }}" src="https://github-readme-stats.vercel.app/api/pin/?username={{ $username }}&repo={{ $repo }}&theme=chartreuse-dark&bg_color=161b22&hide_border=true">
+  </a>  
+</div>
