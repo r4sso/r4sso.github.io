@@ -1,8 +1,8 @@
-<nav class="navbar fixed top-0 w-full z-50  dark:navbar-dark">
+<nav class="navbar fixed top-0 w-full z-50 dark:navbar-dark">
     <div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-14 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
-                <!-- hamburger -->
+                <!-- Hamburger -->
                 <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-base text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -11,7 +11,7 @@
                 </button>
             </div>
             <!-- Search -->
-            <div class="absolute left-14 ">
+            <div class="absolute left-14">
                 <a href="/search">
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <title>Search</title>
@@ -20,7 +20,7 @@
                     <span class="sr-only">Search icon</span>
                 </a>
             </div>
-            <!-- Branding  -->
+            <!-- Branding -->
             <div class="flex flex-1 items-end justify-end md:items-stretch md:justify-start">
                 <div class="flex shrink-0 items-center">
                     <a class="navbar-brand" href="{{ .Site.BaseURL }}">
@@ -28,24 +28,26 @@
                     </a>
                 </div>
             </div>
-            <!-- Menu -->
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0  hidden md:block">
+            <!-- Desktop Menu -->
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 hidden md:block">
                 <div class="flex space-x-4 tracking-wider text-[15px]">
-                    {{ $currentPage := . }} {{ $section := .Site.GetPage $currentPage.Section }} {{ range $index, $item := .Site.Menus.main }}
-                    <a class="hover:text-blue-500 py-2 px-0.5 font-semibold {{if $section.IsMenuCurrent " main " . }}text-blue-500{{end}}" href="{{ $item.URL | absLangURL | safeURL }}">{{ $item.Name }}</a>
-                    <!-- {{ if ne $index (sub (len $.Site.Menus.main) 1) }}
-                        <span class="text-gray-400 py-2 select-none">|</span>
-                    {{ end }} -->
+                    {{ $currentPage := . }} 
+                    {{ $section := .Site.GetPage $currentPage.Section }} 
+                    {{ range $index, $item := .Site.Menus.main }}
+                    <a class="hover:text-blue-600 px-0.5 font-semibold {{if $section.IsMenuCurrent "main" . }}border-b-2 border-black dark:border-white pb-0{{end}}" href="{{ $item.URL | absLangURL | safeURL }}">{{ $item.Name }}</a>
                     {{ end }}
                 </div>
             </div>
         </div>
     </div>
-    <!-- Mobile menu, show/hide based on menu state. -->
+    <!-- Mobile Menu -->
     <div class="md:hidden hidden text-base" id="mobile-menu">
         <div class="space-y-2 px-5 pt-px pb-3 shadow-2xl dark:shadow-blue-500/20">
-            {{ $currentPage := . }} {{ $section := .Site.GetPage $currentPage.Section }} {{ range .Site.Menus.main }}
-            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block rounded-md py-2 text-base font-semibold tracking-wider" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a> {{ end }}
+            {{ $currentPage := . }} 
+            {{ $section := .Site.GetPage $currentPage.Section }} 
+            {{ range .Site.Menus.main }}
+            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block py-2 text-base font-semibold tracking-wider {{if $section.IsMenuCurrent "main" . }}text-blue-600{{end}}" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a> 
+            {{ end }}
         </div>
     </div>
 </nav>

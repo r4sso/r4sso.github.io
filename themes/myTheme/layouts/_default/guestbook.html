@@ -2,12 +2,11 @@
 <div class="pt-12">
     <article class="m-4">
         <div class="prose prose-hr:-my-px prose-hr:my-2 prose-img:rounded-md prose-figcaption:text-center prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card dark:post-card-dark mx-auto max-w-4xl rounded-lg p-6 shadow-2xl shadow-slate-700/10">
-            <h1 class="-mb-px text-2xl font-bold">{{ .Title }}</h1>
+            <h1 class="leading-1 text-2xl font-bold">{{ .Title }}</h1>
             <div class="prose-h1:text-2xl prose-a:text-blue-600 text-sm leading-normal">
                 {{ .Content }}
             </div>
             <div id="giscus-container" class="mt-4"></div>
-            <p class="-mb-2 text-right text-sm">Last edited: <b>{{ .Lastmod.Format "2/01/2006 15:04 MST" }}</b></p>
         </div>
     </article>
 </div>

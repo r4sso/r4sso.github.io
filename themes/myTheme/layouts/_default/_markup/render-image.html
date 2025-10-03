@@ -1,6 +1,9 @@
 {{ $src := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 
 {{ if $src }}
+<!-- <figure class="rounded-lg md:p-6 bg-gray-100 md:dark:bg-slate-900"
+    
+-->
 <figure>
   {{ $data := newScratch }}
 
@@ -18,7 +21,7 @@
   <a href="{{ $src.RelPermalink }}">
     <picture>
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-      <img src="{{ $fallback.RelPermalink }}" alt="{{ .Text }}" loading="lazy" decoding="async" width="{{ $src.Width }}" height="{{ $src.Height }}" />
+      <img class="mx-auto shadow-xl shadow-blue-gray-900/50" src="{{ $fallback.RelPermalink }}" alt="{{ .Text }}" loading="lazy" decoding="async" width="{{ $src.Width }}" height="{{ $src.Height }}" />
     </picture>
   </a>
   {{ with .Title }}<figcaption>- {{ . | markdownify }}</figcaption>{{ end }}

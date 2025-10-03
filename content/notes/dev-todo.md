@@ -1,7 +1,7 @@
 ---
 title: "Changelog: Site Development"
 date: 2023-09-27
-lastmod: 2023-11-10T03:40:00Z
+lastmod: 2025-10-03T10:55:45Z
 toc: false
 featured: true
 comment: false
@@ -13,10 +13,15 @@ comment: false
 - [X] Fix need to refresh to change comment theme
 
 (For the future)
-- [ ] Gallery - If i have a lot of photo to share :) 
+- [X] Gallery (Basic) - If i have a lot of photo to share :) 
+- [ ] Add more feature to Gallery 
 
 
 ## Changelog
+
+(03-10-2025)
+- More Optimization
+- Gallery added
 
 (10-11-2023)
 - Add Guestbook
