@@ -4,5 +4,5 @@
 {{ partialCached "head/js.html" . }}
 {{ if .Params.math }}{{ partial "helpers/katex.html" . }}{{ end }}
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
-<link rel="icon" href="{{ .Site.Params.logo }}">
+<link rel="icon" href="data:image/svg+xml;base64,{{ readFile .Site.Params.logo | base64Encode }}" type="image/svg+xml">
 

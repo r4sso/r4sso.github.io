@@ -1,0 +1,4 @@
+---
+title: Gallery
+type: gallery
+---

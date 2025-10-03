@@ -1,0 +1,101 @@
+{{ define "main" }}
+<style>
+    .gallery {
+        column-count: 1;
+        column-gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .gallery {
+            column-count: 2;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .gallery {
+            column-count: 3;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .gallery {
+            column-count: 4 !important;
+        }
+    }
+
+    .img-container {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+
+    .img-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .img-container picture {
+        display: block;
+    }
+</style>
+
+<div class="mt-16">
+    <div class="px-4">
+        <div class="gallery">
+            <!-- Process images from the current page's resources -->
+            {{ range .Resources.ByType "image" }}
+                <div class="img-container">
+                    {{ $src := . }}
+                    {{ if $src }}
+                        {{ $data := newScratch }}
+                        {{ if gt $src.Width 1100 }}
+                            {{ $data.Set "webp" ($src.Resize "560x webp q90") }}
+                            {{ $data.Set "fallback" ($src.Resize "960x q90") }}
+                        {{ else }}
+                            {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q90" $src.Width $src.Height)) }}
+                            {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q90" $src.Width $src.Height)) }}
+                        {{ end }}
+                        {{ $webp := $data.Get "webp" }}
+                        {{ $fallback := $data.Get "fallback" }}
+                        <a href="{{ $src.RelPermalink }}">
+                            <picture>
+                                <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+                                <img src="{{ $fallback.RelPermalink }}" alt="{{ $src.Name }}" loading="lazy" decoding="async" width="{{ $src.Width }}" height="{{ $src.Height }}" />
+                            </picture>
+                        </a>
+                    {{ end }}
+                </div>
+            {{ end }}
+
+            <!-- Process images from posts with Params.gallery set to true -->
+            {{ $posts := where (where .Site.RegularPages "Section" "posts") "Params.gallery" true }}
+            {{ range $posts }}
+                {{ $post := . }}
+                {{ range $post.Resources.ByType "image" }}
+                    <div class="img-container">
+                        {{ $src := . }}
+                        {{ if $src }}
+                            {{ $data := newScratch }}
+                            {{ if gt $src.Width 1100 }}
+                                {{ $data.Set "webp" ($src.Resize "960x webp q90") }}
+                                {{ $data.Set "fallback" ($src.Resize "960x q90") }}
+                            {{ else }}
+                                {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q90" $src.Width $src.Height)) }}
+                                {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q90" $src.Width $src.Height)) }}
+                            {{ end }}
+                            {{ $webp := $data.Get "webp" }}
+                            {{ $fallback := $data.Get "fallback" }}
+                            <a href="{{ $post.Permalink }}">
+                                <picture>
+                                    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+                                    <img src="{{ $fallback.RelPermalink }}" alt="{{ $post.Title }}" loading="lazy" decoding="async" width="{{ $src.Width }}" height="{{ $src.Height }}" />
+                                </picture>
+                            </a>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

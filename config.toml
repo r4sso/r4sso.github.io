@@ -18,9 +18,9 @@ pygmentsCodefences = true
   page = ["HTML"]
   section = ["HTML", "RSS"]
 
-
 [permalinks]
-  posts = '/:year/:month/:title/'
+  posts = "/:year/:month/:title/"
+  gallery = "/gallery/:filename"
 
 [markup]
   [markup.highlight]
@@ -63,26 +63,30 @@ pygmentsCodefences = true
     url = "/notes/"
     weight = 2
   [[menu.main]]
+    name = "Gallery"
+    pageRef = "gallery"
+    url = "/gallery/"
+    weight = 3
+  [[menu.main]]
     name = "Category"
     pageRef = "categories"
     url = "/categories/"
-    weight = 3
+    weight = 4
   [[menu.main]]
     name = "Tag"
     pageRef = "tags"
     url = "/tags/"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "Rss"
     pageRef = "rss"
     url = "/posts/rss.xml"
-    weight = 5
+    weight = 6
   [[menu.main]]
     name = "?"
     pageRef = "about"
     url = "/about/"
-    weight = 6
-
+    weight = 7
 
     
 [privacy]
