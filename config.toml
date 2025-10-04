@@ -8,7 +8,6 @@ enableRobotsTXT = true
 pygmentsUseClasses = true
 pygmentsCodefences = true
 
-
 [outputFormats.RSS]
   mediatype = "application/rss+xml"
   baseName = "rss" # This will generate the RSS feed as "index.xml"
@@ -20,7 +19,6 @@ pygmentsCodefences = true
 
 [permalinks]
   posts = "/:year/:month/:title/"
-  gallery = "/gallery/:filename"
 
 [markup]
   [markup.highlight]
@@ -48,12 +46,11 @@ pygmentsCodefences = true
     github="r4sso"
     instagram="mfterm"
     mail="0xr4sso@proton.me"
+    githubEditURL = "https://github.com/r4sso/r4sso.github.io/blob/main/content/"
 
-
-    
 [menu]
   [[menu.main]]
-    name = "Posts"
+    name = "Blog"
     pageRef = "posts"
     url = "/posts/"
     weight = 1
@@ -62,33 +59,43 @@ pygmentsCodefences = true
     pageRef = "notes"
     url = "/notes/"
     weight = 2
+
   [[menu.main]]
     name = "Gallery"
     pageRef = "gallery"
     url = "/gallery/"
     weight = 3
+  
   [[menu.main]]
+    identifier = "more"
+  name = "More"
+  pageRef = "more"
+  weight = 4
+
+  [[menu.main]]
+    parent = "more"
     name = "Category"
     pageRef = "categories"
     url = "/categories/"
-    weight = 4
+    weight = 6
   [[menu.main]]
+    parent = "more"
     name = "Tag"
     pageRef = "tags"
     url = "/tags/"
-    weight = 5
+    weight = 7
   [[menu.main]]
+    parent = "more"
     name = "Rss"
     pageRef = "rss"
     url = "/posts/rss.xml"
-    weight = 6
+    weight = 8
   [[menu.main]]
     name = "?"
     pageRef = "about"
     url = "/about/"
-    weight = 7
+    weight = 9
 
-    
 [privacy]
   [privacy.youtube]
     privacyEnhanced = true

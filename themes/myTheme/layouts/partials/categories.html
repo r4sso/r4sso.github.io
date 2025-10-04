@@ -1,6 +1,35 @@
-{{ with .Params.tags }}
-{{ range . }}
-{{ $href := print (absURL "tags/") (urlize .) }}
-<a class="tracking-tighter text-gray-600 text-sm underline underline-offset-4 decoration-1 decoration-gray-400 dark:text-gray-400 hover:no-underline hover:bg-gray-700/10 dark:hover:bg-gray-300/10 p-1 rounded-lg " href="{{ $href }}">#{{ . }}</a>
+<!-- Categories with SVG icon displayed once, categories inline with commas -->
+{{ with .Params.categories }}
+  <div class="flex flex-wrap gap-px items-center">
+    <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+    </svg>
+    <span class="inline-flex flex-wrap gap-2 items-center px-px">
+      {{ range $index, $category := . }}
+        {{ $href := print (absURL "categories/") (urlize $category) }}
+        <a class="capitalize leading-1 text-gray-600 text-sm underline underline-offset-4 decoration-1 decoration-gray-400 dark:text-gray-400 hover:no-underline hover:text-blue-600 hover:bg-gray-700/10 dark:hover:bg-gray-300/10 p-2 rounded-lg inline-flex items-center" href="{{ $href }}">{{ $category }}</a>
+        {{ if ne $index (sub (len $.Params.categories) 1) }}
+          <span class="text-gray-600 dark:text-gray-400 -mx-1">, </span>
+        {{ end }}
+      {{ end }}
+    </span>
+  </div>
 {{ end }}
+
+<!-- Tags with price tag SVG icon displayed once, tags inline with commas, icon aligned at same level -->
+{{ with .Params.tags }}
+  <div class="flex flex-wrap gap-px items-center mb-2">
+    <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V5a2 2 0 012-2z"></path>
+    </svg>
+    <span class="inline-flex flex-wrap gap-px items-center px-px">
+      {{ range $index, $tag := . }}
+        {{ $href := print (absURL "tags/") (urlize $tag) }}
+        <a class="capitalize leading-1 text-gray-600 text-sm underline underline-offset-4 decoration-1 decoration-gray-400 dark:text-gray-400 hover:no-underline hover:text-blue-600 hover:bg-gray-700/10 dark:hover:bg-gray-300/10 p-2 rounded-lg inline-flex items-center" href="{{ $href }}">{{ $tag }}</a>
+        {{ if ne $index (sub (len $.Params.tags) 1) }}
+          <span class="text-gray-600 dark:text-gray-400 -mx-1">,</span>
+        {{ end }}
+      {{ end }}
+    </span>
+  </div>
 {{ end }}

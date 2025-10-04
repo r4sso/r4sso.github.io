@@ -9,9 +9,9 @@ Summary
 - Description - what the tools for 
 - CTF - Usefulness for CTF
 
-Title | Description | CTF
----- | ---- | ----
-exiftool | meta information reader/writer | Clues / flags
-strings  | | Useful for finding clues
-foremost | Recover files based on their headers, footers, and internal data structures |data carving
-steghide | 
+| Title | Description | CTF
+|:----:| ---- | ----
+| exiftool | meta information reader/writer | Clues / flags
+| strings  | | Useful for finding clues
+| foremost | Recover files based on their headers, footers, and internal data structures |data carving
+| steghide | 

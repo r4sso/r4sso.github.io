@@ -37,8 +37,8 @@
   /* Tables */
   table {
     width: 100%;
-    border-collapse: collapse;
     background-color: rgb(255, 255, 255);
+    @apply border-collapse rounded-md;
   }
 
   th, td {

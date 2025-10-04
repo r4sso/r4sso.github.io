@@ -1,5 +1,5 @@
 <nav class="navbar fixed top-0 w-full z-50 dark:navbar-dark">
-    <div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-14 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
                 <!-- Hamburger -->
@@ -34,7 +34,23 @@
                     {{ $currentPage := . }} 
                     {{ $section := .Site.GetPage $currentPage.Section }} 
                     {{ range $index, $item := .Site.Menus.main }}
-                    <a class="hover:text-blue-600 px-0.5 font-semibold {{if $section.IsMenuCurrent "main" . }}border-b-2 border-black dark:border-white pb-0{{end}}" href="{{ $item.URL | absLangURL | safeURL }}">{{ $item.Name }}</a>
+                    {{ if $item.HasChildren }}
+                    <div class="relative group" tabindex="0">
+                        <button type="button" class="inline-flex items-center gap-x-1.5 rounded-md px-0.5 font-semibold hover:text-blue-600 focus:outline-none">
+                            {{ $item.Name }}
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-slate-900 shadow-lg hidden group-focus-within:block outline-1 outline-black/5 transition transition-discrete">
+                            {{ range $index, $child := $item.Children }}
+                            <a href="{{ .URL | absLangURL | safeURL }}" class="block px-4 py-2 text-sm font-semibold hover:text-blue-600 {{if $section.IsMenuCurrent "main" . }}text-blue-600{{end}} {{ if ne $index (sub (len $item.Children) 1) }}border-b border-gray-200 dark:border-slate-700{{end}}" tabindex="0">{{ .Name }}</a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ else }}
+                    <a class="hover:text-blue-600 px-0.5 font-semibold {{if $section.IsMenuCurrent "main" . }}border-b-2 border-black dark:border-white pb-0{{end}}" href="{{ .URL | absLangURL | safeURL }}">{{ $item.Name }}</a>
+                    {{ end }}
                     {{ end }}
                 </div>
             </div>
@@ -42,11 +58,27 @@
     </div>
     <!-- Mobile Menu -->
     <div class="md:hidden hidden text-base" id="mobile-menu">
-        <div class="space-y-2 px-5 pt-px pb-3 shadow-2xl dark:shadow-blue-500/20">
+        <div class="space-y-1 px-4 pt-2 pb-4 bg-white dark:bg-slate-900 shadow-lg rounded-b-lg">
             {{ $currentPage := . }} 
             {{ $section := .Site.GetPage $currentPage.Section }} 
-            {{ range .Site.Menus.main }}
-            <a class="text-center bg-slate-200 dark:bg-slate-900 hover:text-blue-500 rounded-md block py-2 text-base font-semibold tracking-wider {{if $section.IsMenuCurrent "main" . }}text-blue-600{{end}}" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a> 
+            {{ range $index, $item := .Site.Menus.main }}
+            <div class="{{ if ne $index (sub (len $.Site.Menus.main) 1) }}border-b border-gray-200 dark:border-gray-700 pb-2{{end}}">
+                <a class="flex items-center justify-between px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md font-semibold {{if $section.IsMenuCurrent "main" . }}text-blue-600{{end}}" href="{{ .URL | absLangURL | safeURL }}">
+                    {{ .Name }}
+                    {{ if .HasChildren }}
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                    </svg>
+                    {{ end }}
+                </a>
+                {{ if .HasChildren }}
+                <div class="pl-6 space-y-1 mt-1">
+                    {{ range $childIndex, $child := .Children }}
+                    <a class="block px-2 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md {{if $section.IsMenuCurrent "main" . }}text-blue-600{{end}} {{ if ne $childIndex (sub (len $item.Children) 1) }}border-b border-gray-200 dark:border-slate-700{{end}}" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
             {{ end }}
         </div>
     </div>

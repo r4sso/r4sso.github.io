@@ -1,7 +1,7 @@
 ---
 title: "Changelog: Site Development"
 date: 2023-09-27
-lastmod: 2025-10-03T10:55:45Z
+lastmod: 2025-10-04T10:55:45Z
 toc: false
 featured: true
 comment: false
@@ -18,6 +18,11 @@ comment: false
 
 
 ## Changelog
+
+(04-10-2025)
+- Active navbar
+- Improved styling (mobile navbar/Tags,Categories icon/Edit button)
+- Dropdown navbar
 
 (03-10-2025)
 - More Optimization
