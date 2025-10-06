@@ -8,6 +8,11 @@ function toggleTheme() {
   changeGiscusTheme(isDarkMode ? 'dark' : 'light');
 }
 
+// Jf javascript enabled show scroll to top/theme button else hidden
+document.querySelectorAll('.show-with-js').forEach(element => {
+    element.classList.remove('hidden');
+});
+
 // Function to handle theme icon visibility
 function handleThemeIcons() {
   const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
