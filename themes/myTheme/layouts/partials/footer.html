@@ -1,15 +1,3 @@
-<footer class="w-full border-t border-gray-100 py-10 mt-10">
-    <div class="max-w-5xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <span class="text-sm text-gray-500">
-            &copy; {{ now.Format "2006"}} 
-            <a href="{{ .Site.BaseURL }}" class="font-semibold text-gray-900 hover:text-blue-600 transition-colors">
-                {{ .Site.Title }}
-            </a>
-        </span>
-        
-        <nav class="flex space-x-6 text-xs font-medium uppercase tracking-wider text-gray-400">
-            <a href="#top" class="hover:text-gray-900">Back to Top</a>
-            <a href="/privacy" class="hover:text-gray-900">Privacy</a>
-        </nav>
-    </div>
+<footer class="inset-x-0 bottom-0 text-center p-8">
+    <span class="items-start text-sm text-gray-500">&copy; {{ now.Format "2006"}} <b><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></b></span>
 </footer>

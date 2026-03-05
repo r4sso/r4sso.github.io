@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/r4sso/myTheme#readme",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.7",
+    "@tailwindcss/cli": "^4.2.1",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/upgrade": "^4.1.7",
     "@types/bun": "latest",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.2.1"
   },
   "dependencies": {
     "postcss-cli": "^11.0.0"
