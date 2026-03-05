@@ -1,6 +1,6 @@
-baseURL = 'https://r4sso.github.io'
+baseURL = 'https://r4sso.my'
 languageCode = 'en'
-title = 'r4sso.github.io'
+title = 'r4sso.my'
 theme = ["myTheme"]
 pagerSize = 5
 enableRobotsTXT = true
