@@ -1,6 +1,6 @@
 {{- if or (in .Params.thumb "http") (in .Params.thumb ".gif") -}}
   {{ $src := .Page.Resources.GetMatch (.Params.thumb | safeURL) }}
-  <figure class="-my-px max-w-fit3 mx-auto">
+  <figure class="-my-px max-w-3xl mx-auto">
     <a href="{{ .Params.thumb }}">
       <picture>
         <img src="{{ .Params.thumb }}" alt="{{ .Params.alt }}" decoding="async" width="900" height="900">
@@ -12,7 +12,7 @@
   {{ $src := .Page.Resources.GetMatch (.Params.thumb | safeURL) }}
 
   {{ if $src }}
-  <figure class="-my-px max-w-fit3 mx-auto">
+  <figure class="-my-px max-w-3xl mx-auto">
     {{ $data := newScratch }}
 
     {{ if gt $src.Width 1100 }}

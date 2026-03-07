@@ -1,15 +1,31 @@
 {{ define "main" }}
-<div class="relative mt-16 justify-center">
-    <div class="mx-auto max-w-2xl px-4 lg:text-lg">
-        <h1 class="text-3xl font-bold leading-tight">{{ .Title }}</h1>
-        <ul class="list-disc">
-            {{ range .Data.Terms.Alphabetical }}
-            <li class="ml-6 text-gray-800 dark:text-gray-300">
-                <a class="rounded-lg p-1 text-sm font-semibold text-blue-600 hover:bg-gray-700/10 dark:hover:bg-gray-300/10" href="{{ .Page.Permalink }}">{{ .Name | strings.FirstUpper }}</a>
-                <span class="text-sm">({{ .Count }})</span>
-            </li>
-            {{ end }}
-        </ul>
-    </div>
+<div class="max-w-3xl px-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+  <section class="mb-4">
+    <h1 class="mb-4 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+      {{ .Title }}
+    </h1>
+    
+    <ul class="border-l-2 border-gray-100 dark:border-gray-800">
+      {{ range .Data.Terms.Alphabetical }}
+      <li class="group relative pl-4">
+        <a href="{{ .Page.Permalink }}" class="block transition-all">
+          <span class="font-mono text-gray-500 dark:text-gray-400">
+            {{ printf "%02d" .Count }} items
+          </span>
+          
+          <span class="mx-2 text-gray-300 dark:text-gray-600">—</span>
+          
+          <span class="font-medium text-blue-600 group-hover:underline">
+            {{ .Name | strings.FirstUpper }}
+          </span>
+          
+          <span class="ml-2 rounded bg-gray-100 px-1.5 py-0.5 text-[10px] uppercase tracking-wider text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+            Category
+          </span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
 </div>
 {{ end }}

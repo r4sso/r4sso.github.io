@@ -1,19 +1,28 @@
 {{ define "main" }}
-<div class="pt-12">
-    <article class="m-4">
-        <div class="prose prose-hr:-my-px prose-hr:my-2 prose-img:rounded-md prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card dark:post-card-dark mx-auto max-w-4xl rounded-lg p-6 shadow-2xl shadow-slate-700/10">
-            <h1 class="text-2xl font-bold">{{ .Title }}</h1>
-            <p class="leading-1 text-sm text-gray-400">Published on {{ .Date.Format "Monday, 2 Jan 2006" }}</p>
-            <div class="">{{ partial "categories.html" . }}</div>
+<div class="py-2">
+    <article class="">
+        <div class="prose prose-hr:-my-px prose-hr:my-2 prose-img:rounded-md prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card dark:post-card-dark mx-auto max-w-3xl rounded-lg p-6 shadow-2xl shadow-slate-700/10">
+            
+            <h1 class="text-2xl font-bold mb-2">{{ .Title }}</h1>
+            
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+                <p class="leading-1 text-gray-400 m-0">{{ .Date.Format "2 January 2006" }} / {{ .ReadingTime }} min read</p>
+                {{ if ne .Lastmod .Date }}
+                <span class="bg-gray-100 dark:bg-slate-900 text-red-600 rounded-lg px-2 py-1">Updated: {{ .Lastmod.Format "2 January 2006" }}</span>
+                {{ end }}
+            </div>
+           
+            <div class="not-prose">{{ partial "categories.html" . }}</div>
             {{ partial "thumb.html" . }}
 
-            <div class="prose-h1:text-2xl prose-a:text-blue-600 text-sm leading-normal">
+            <div class="prose-h1:text-2xl prose-a:text-blue-600 text-sm text-justify leading-normal mt-6">
                 {{ if .Params.toc | default .Site.Params.tableOfContents }}
                     {{ partial "toc.html" . }} 
                 {{- end -}} 
                 
                 {{ .Content }}
-                <div class="flex flex-col-reverse sm:flex-row justify-between items-baseline">
+
+                <div class="flex flex-col-reverse sm:flex-row justify-between items-baseline mt-8 border-t border-gray-100 dark:border-gray-800 pt-4">
                     <p class="leading-1 text-[13px] text-gray-400">
                         <a href="{{ .Site.Params.githubEditURL }}{{ .File.Path }}" class="text-blue-600 hover:underline flex items-center no-underline mt-0">
                             <svg class="inline-block mr-2 h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -27,14 +36,13 @@
                             </svg>
                         </a>
                     </p>
-                    <p class="leading-1 text-[13px] text-gray-400 mb-0">
-                        Updated on {{ .Lastmod.Format "2 Jan 2006 15:04 MST" }}
-                    </p>
                 </div>
-            {{ if ne .Params.comment false }} {{ partial "giscus.html" . }} {{ end }}
-        </div>
-    </article>
-</div>
+            </div> {{ if ne .Params.comment false }} 
+                <div class="mt-8">
+                    {{ partial "giscus.html" . }} 
+                </div>
+            {{ end }}
 
-{{ partial "footer.html" . }}
+        </div> </article>
+</div>
 {{ end }}

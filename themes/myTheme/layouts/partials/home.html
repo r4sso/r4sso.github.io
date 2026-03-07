@@ -1,6 +1,6 @@
-<div class="mx-auto max-w-(--breakpoint-md) break-normal px-4 py-6 pt-20">
+<div class="mx-auto max-w-3xl break-normal px-4 py-6">
         <h1 class="text-3xl font-bold leading-tight">{{ .Title }}</h1>
-        <div class="prose prose-a:text-blue-600 prose-a:no-underline prose-a:bg-gray-300 prose-a:dark:bg-gray-700 prose-a:px-1 prose-a:py-0.5 prose-a:hover:underline prose-a:rounded-md prose-a:font-semibold my-4 max-w-2xl text-sm text-slate-500 dark:text-slate-300">{{ .Content }}</div>
+        <div class="text-justify prose prose-a:text-blue-600 prose-a:no-underline prose-a:bg-gray-300 prose-a:dark:bg-gray-700 prose-a:px-1 prose-a:py-0.5 prose-a:hover:underline prose-a:rounded-md prose-a:font-semibold my-4 max-w-2xl text-sm text-slate-500 dark:text-slate-300">{{ .Content }}</div>
     
         {{ partial "home/social.html" . }}
         {{ partial "home/featured.html" . }}

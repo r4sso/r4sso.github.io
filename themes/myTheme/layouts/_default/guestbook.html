@@ -1,7 +1,7 @@
 {{ define "main" }}
-<div class="pt-12">
+<div class="">
     <article class="m-4">
-        <div class="prose prose-hr:-my-px prose-hr:my-2 prose-img:rounded-md prose-figcaption:text-center prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card dark:post-card-dark mx-auto max-w-4xl rounded-lg p-6 shadow-2xl shadow-slate-700/10">
+        <div class="prose prose-hr:-my-px prose-hr:my-2 prose-img:rounded-md prose-figcaption:text-center prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card dark:post-card-dark mx-auto max-w-3xl rounded-lg p-6 shadow-2xl shadow-slate-700/10">
             <h1 class="leading-1 text-2xl font-bold">{{ .Title }}</h1>
             <div class="prose-h1:text-2xl prose-a:text-blue-600 text-sm leading-normal">
                 {{ .Content }}
@@ -10,8 +10,6 @@
         </div>
     </article>
 </div>
-
-{{ partial "footer.html" . }}
 
 <script>
     var giscusTheme = localStorage.getItem("color-theme"); // Use the "color-theme" cookie

@@ -1,101 +1,48 @@
 {{ define "main" }}
-<style>
-    .gallery {
-        column-count: 1;
-        column-gap: 1rem;
-    }
+<div class="p-2 md:p-4 max-w-7xl mx-auto">
+    <div class="columns-2 gap-4 md:columns-3 lg:columns-4">
+        
+        {{/* 1. Page Resources */}}
+        {{ range .Resources.ByType "image" }}
+            <div class="mb-4 break-inside-avoid">
+                <a href="{{ .RelPermalink }}" class="group relative block overflow-hidden bg-gray-100 transition-all duration-300 hover:shadow-xl">
+                    {{ $webp := .Resize "800x webp q85" }}
+                    {{ $fallback := .Resize "800x q85" }}
+                    <picture>
+                        <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+                        <img src="{{ $fallback.RelPermalink }}" 
+                             alt="{{ .Name }}" 
+                             loading="lazy" 
+                             class="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    </picture>
+                </a>
+            </div>
+        {{ end }}
 
-    @media (min-width: 640px) {
-        .gallery {
-            column-count: 2;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .gallery {
-            column-count: 3;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .gallery {
-            column-count: 4 !important;
-        }
-    }
-
-    .img-container {
-        break-inside: avoid;
-        margin-bottom: 1rem;
-    }
-
-    .img-container img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .img-container picture {
-        display: block;
-    }
-</style>
-
-<div class="mt-16">
-    <div class="px-4">
-        <div class="gallery">
-            <!-- Process images from the current page's resources -->
+        {{/* 2. Gallery Posts */}}
+        {{ $posts := where (where .Site.RegularPages "Section" "posts") "Params.gallery" true }}
+        {{ range $posts }}
+            {{ $post := . }}
             {{ range .Resources.ByType "image" }}
-                <div class="img-container">
-                    {{ $src := . }}
-                    {{ if $src }}
-                        {{ $data := newScratch }}
-                        {{ if gt $src.Width 1100 }}
-                            {{ $data.Set "webp" ($src.Resize "560x webp q90") }}
-                            {{ $data.Set "fallback" ($src.Resize "960x q90") }}
-                        {{ else }}
-                            {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q90" $src.Width $src.Height)) }}
-                            {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q90" $src.Width $src.Height)) }}
-                        {{ end }}
-                        {{ $webp := $data.Get "webp" }}
-                        {{ $fallback := $data.Get "fallback" }}
-                        <a href="{{ $src.RelPermalink }}">
-                            <picture>
-                                <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-                                <img src="{{ $fallback.RelPermalink }}" alt="{{ $src.Name }}" loading="lazy" decoding="async" width="{{ $src.Width }}" height="{{ $src.Height }}" />
-                            </picture>
-                        </a>
-                    {{ end }}
+                <div class="mb-4 break-inside-avoid">
+                    <a href="{{ $post.Permalink }}" class="group relative block overflow-hidden bg-gray-100 transition-all duration-300 hover:shadow-xl">
+                        {{ $webp := .Resize "800x webp q85" }}
+                        {{ $fallback := .Resize "800x q85" }}
+                        <picture>
+                            <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+                            <img src="{{ $fallback.RelPermalink }}" 
+                                 alt="{{ $post.Title }}" 
+                                 loading="lazy" 
+                                 class="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        </picture>
+                        <div class="absolute inset-0 flex items-end bg-black/40 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <p class="text-sm font-medium text-white">{{ $post.Title }}</p>
+                        </div>
+                    </a>
                 </div>
             {{ end }}
+        {{ end }}
 
-            <!-- Process images from posts with Params.gallery set to true -->
-            {{ $posts := where (where .Site.RegularPages "Section" "posts") "Params.gallery" true }}
-            {{ range $posts }}
-                {{ $post := . }}
-                {{ range $post.Resources.ByType "image" }}
-                    <div class="img-container">
-                        {{ $src := . }}
-                        {{ if $src }}
-                            {{ $data := newScratch }}
-                            {{ if gt $src.Width 1100 }}
-                                {{ $data.Set "webp" ($src.Resize "960x webp q90") }}
-                                {{ $data.Set "fallback" ($src.Resize "960x q90") }}
-                            {{ else }}
-                                {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q90" $src.Width $src.Height)) }}
-                                {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q90" $src.Width $src.Height)) }}
-                            {{ end }}
-                            {{ $webp := $data.Get "webp" }}
-                            {{ $fallback := $data.Get "fallback" }}
-                            <a href="{{ $post.Permalink }}">
-                                <picture>
-                                    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-                                    <img src="{{ $fallback.RelPermalink }}" alt="{{ $post.Title }}" loading="lazy" decoding="async" width="{{ $src.Width }}" height="{{ $src.Height }}" />
-                                </picture>
-                            </a>
-                        {{ end }}
-                    </div>
-                {{ end }}
-            {{ end }}
-        </div>
     </div>
 </div>
 {{ end }}

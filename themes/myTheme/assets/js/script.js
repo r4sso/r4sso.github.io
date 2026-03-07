@@ -41,25 +41,14 @@ function handleMobileMenu() {
 }
 
 // Function to handle scroll to top
-function handleScrollToTop() {
-  window.onscroll = function() {
-      scrollFunction()
-  };
-
-  function scrollFunction() {
-      const scrollToTopButton = document.getElementById("scroll-to-top");
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          scrollToTopButton.style.display = "block";
-      } else {
-          scrollToTopButton.style.display = "none";
-      }
+const btn = document.getElementById('scroll-to-top');
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    btn.classList.remove('hidden');
+  } else {
+    btn.classList.add('hidden');
   }
-}
-
-function scrollToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+};
 
 // Check if the theme has been set via local storage
 const storedTheme = localStorage.getItem('color-theme');
@@ -100,5 +89,3 @@ themeToggleBtn.addEventListener('click', () => {
 
 // Init UI
 handleMobileMenu();
-handleScrollToTop();
-
