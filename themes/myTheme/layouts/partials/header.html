@@ -51,10 +51,12 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
                 </a>
 
-                <button data-collapse-toggle="mobile-menu" type="button" 
-                    class="md:hidden group relative h-10 w-10 flex flex-col items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all focus:outline-none"
-                    onclick="this.classList.toggle('is-active'); document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <div class="space-y-1.5">
+               <button id="mobile-menu-button" 
+                    aria-controls="mobile-menu" 
+                    aria-expanded="false"
+                    type="button" 
+                    class="md:hidden group relative h-10 w-10 flex flex-col items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all focus:outline-none">
+                    <div class="space-y-1.5 pointer-events-none">
                         <span class="block w-5 h-0.5 bg-gray-600 dark:bg-gray-300 transition-all duration-300 group-[.is-active]:rotate-45 group-[.is-active]:translate-y-2"></span>
                         <span class="block w-5 h-0.5 bg-gray-600 dark:bg-gray-300 transition-all duration-300 group-[.is-active]:opacity-0"></span>
                         <span class="block w-5 h-0.5 bg-gray-600 dark:bg-gray-300 transition-all duration-300 group-[.is-active]:-rotate-45 group-[.is-active]:-translate-y-2"></span>

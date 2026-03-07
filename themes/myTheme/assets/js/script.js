@@ -30,13 +30,22 @@ function handleThemeIcons() {
 
 // Function to handle mobile menu toggle
 function handleMobileMenu() {
-  const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+  // Select button by the aria-controls attribute we added
+  const menuButton = document.querySelector('[aria-controls="mobile-menu"]');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  mobileMenuButton.addEventListener('click', () => {
-      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-      mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-      mobileMenu.classList.toggle('hidden');
+  // Guard: Stop if elements aren't on this specific page
+  if (!menuButton || !mobileMenu) return;
+
+  menuButton.addEventListener('click', () => {
+      // 1. Toggle the menu visibility
+      const isNowHidden = mobileMenu.classList.toggle('hidden');
+      
+      // 2. Update ARIA state for accessibility
+      menuButton.setAttribute('aria-expanded', !isNowHidden);
+      
+      // 3. REACTIVE PART: Toggle the class that animates the hamburger into an X
+      menuButton.classList.toggle('is-active');
   });
 }
 
@@ -49,6 +58,14 @@ window.onscroll = function() {
     btn.classList.add('hidden');
   }
 };
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
 
 // Check if the theme has been set via local storage
 const storedTheme = localStorage.getItem('color-theme');
