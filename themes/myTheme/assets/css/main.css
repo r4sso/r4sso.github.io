@@ -1,11 +1,21 @@
 @import "tailwindcss";
 @import "./syntax.css";
-@plugin "@tailwindcss/typography"; 
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
-  --variant-dark: .dark &;
-  
-  --font-family-sans: "Iosevka Web", ui-sans-serif, system-ui;
+  --font-iosevka: "Iosevka Web", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-cus-bg: rgb(248, 250, 252);
+  --color-cus-text: rgb(0, 0, 0);
+  --color-navbar: rgb(248, 250, 252);
+  --color-post-card: rgb(255, 255, 255);
+
+  --dark-cus-bg: rgb(1, 4, 9);
+  --dark-cus-text: rgb(255, 255, 255);
+  --dark-navbar: rgb(1, 4, 9);
+  --dark-post-card: rgb(16, 17, 20);
 }
 
 @layer base {
@@ -15,7 +25,6 @@
     font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    /* woff2 first for modern browsers, woff second for compatibility */
     src: url('/fonts/iosevka.woff2') format('woff2'),
          url('/fonts/iosevka.woff') format('woff');
   }
@@ -31,47 +40,68 @@
   }
 
   body {
-    @apply font-sans; 
+    font-family: var(--font-iosevka);
   }
 
   :target {
     scroll-margin-top: 80px;
   }
 
-  /* Tables */
   table {
-    @apply w-full bg-white border-collapse rounded-md;
-    .dark & { background-color: rgb(13, 17, 23); }
+    @apply w-full border-collapse rounded-md bg-white;
+    /* Dark override */
+    @apply dark:bg-[rgb(13,17,23)];
   }
 
   th, td {
     @apply p-[10px] border border-[rgb(208,215,222)];
-    .dark & { border-color: rgb(48, 54, 61); }
+    /* Dark override */
+    @apply dark:border-[rgb(48,54,61)];
+  }
+
+  td {
+    @apply pt-3 pb-3;
+  }
+
+  table td:first-child,
+  table th:first-child {
+    @apply pl-[10px];
+  }
+
+  table td:last-child,
+  table th:last-child {
+    @apply pr-[10px];
   }
 
   tr:nth-child(even) {
-    background-color: rgb(246, 248, 250);
-    .dark & { background-color: rgb(39, 43, 51); }
+    @apply bg-[rgb(246,248,250)] dark:bg-[rgb(39,43,51)];
   }
 }
 
 @layer utilities {
+  /* bg-cus utility */
   .bg-cus {
-    background-color: rgb(248, 250, 252);
-    color: rgb(0, 0, 0);
-    .dark & {
-      background-color: rgb(1, 4, 9);
-      color: rgb(255, 255, 255);
-    }
+    background-color: var(--color-cus-bg);
+    color: var(--color-cus-text);
+  }
+  .dark .bg-cus {
+    background-color: var(--dark-cus-bg);
+    color: var(--dark-cus-text);
   }
 
+  /* navbar utility */
   .navbar {
-    background-color: rgb(248, 250, 252);
-    .dark & { background-color: rgb(1, 4, 9); }
+    background-color: var(--color-navbar);
+  }
+  .dark .navbar {
+    background-color: var(--dark-navbar);
   }
 
+  /* post-card utility */
   .post-card {
-    background-color: rgb(255, 255, 255);
-    .dark & { background-color: rgb(16, 17, 20); }
+    background-color: var(--color-post-card);
+  }
+  .dark .post-card {
+    background-color: var(--dark-post-card);
   }
 }
