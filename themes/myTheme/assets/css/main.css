@@ -1,17 +1,21 @@
 @import "tailwindcss";
 @import "./syntax.css";
-@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/typography"; 
 
-@custom-variant dark (&:is(.dark *));
+@theme {
+  --variant-dark: .dark &;
+  
+  --font-family-sans: "Iosevka Web", ui-sans-serif, system-ui;
+}
 
 @layer base {
-  /* Fonts */
   @font-face {
     font-family: 'Iosevka Web';
     font-display: swap;
     font-weight: 400;
     font-stretch: normal;
     font-style: normal;
+    /* woff2 first for modern browsers, woff second for compatibility */
     src: url('/fonts/iosevka.woff2') format('woff2'),
          url('/fonts/iosevka.woff') format('woff');
   }
@@ -27,7 +31,7 @@
   }
 
   body {
-    font-family: 'Iosevka Web';
+    @apply font-sans; 
   }
 
   :target {
@@ -36,77 +40,38 @@
 
   /* Tables */
   table {
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    @apply border-collapse rounded-md;
+    @apply w-full bg-white border-collapse rounded-md;
+    .dark & { background-color: rgb(13, 17, 23); }
   }
 
   th, td {
-    padding: 10px;
-    border: 1px solid rgb(208, 215, 222);
-  }
-
-  td {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  table td:first-child,
-  table th:first-child {
-    padding-left: 10px;
-  }
-
-  table td:last-child,
-  table th:last-child {
-    padding-right: 10px;
+    @apply p-[10px] border border-[rgb(208,215,222)];
+    .dark & { border-color: rgb(48, 54, 61); }
   }
 
   tr:nth-child(even) {
     background-color: rgb(246, 248, 250);
-  }
-
-  /* Dark Mode Table Overrides */
-  .dark table {
-    background-color: rgb(13, 17, 23);
-  }
-
-  .dark tr:nth-child(even) {
-    background-color: rgb(39, 43, 51);
-  }
-
-  .dark th,
-  .dark td {
-    border-color: rgb(48, 54, 61);
+    .dark & { background-color: rgb(39, 43, 51); }
   }
 }
-
-
 
 @layer utilities {
   .bg-cus {
     background-color: rgb(248, 250, 252);
     color: rgb(0, 0, 0);
-  }
-
-  .dark .bg-cus {
-    background-color: rgb(1, 4, 9);
-    color: rgb(255, 255, 255);
+    .dark & {
+      background-color: rgb(1, 4, 9);
+      color: rgb(255, 255, 255);
+    }
   }
 
   .navbar {
     background-color: rgb(248, 250, 252);
-  }
-
-  .dark .navbar {
-    background-color: rgb(1, 4, 9);
+    .dark & { background-color: rgb(1, 4, 9); }
   }
 
   .post-card {
     background-color: rgb(255, 255, 255);
-  }
-
-  .dark .post-card {
-    background-color: rgb(16, 17, 20);
+    .dark & { background-color: rgb(16, 17, 20); }
   }
 }
-
