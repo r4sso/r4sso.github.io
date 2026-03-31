@@ -27,6 +27,6 @@ Then unplug the controller and plug it back in. If it doesn't work, try rebootin
 
 
 Read More:
-[wiki.archlinux.org/title/Kernel_module#Blacklisting](https://wiki.archlinux.org/title/Kernel_module#Blacklisting)
+[https://wiki.archlinux.org/title/Kernel_module#Blacklisting](https://wiki.archlinux.org/title/Kernel_module#Blacklisting)
 
 
