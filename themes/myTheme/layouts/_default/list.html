@@ -13,11 +13,11 @@
                         </a>
                 </div>
                 
-                <div class="text-sm leading-relaxed text-gray-700 dark:text-gray-300 ml-4">
+                <div class="leading-relaxed text-gray-700 dark:text-gray-300 ml-4">
                         <section class="mb-4 relative flex flex-col">
                                 <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Pinned Posts</h2>
         
-                                <ul class="border-l-2 border-gray-100 dark:border-gray-800">
+                                <ul class="border-l-2 border-gray-100 dark:border-gray-800 text-sm">
                                         {{ range where .Site.RegularPages "Params.featured" "==" true }}
                                         <li class="group relative pl-4">
                                                 <a href="{{ .Permalink }}" class="block transition-all">
@@ -29,7 +29,7 @@
                                         {{ end }}
                                 </ul>
 
-				<span class="self-end">
+				<span class="self-end text-base">
 					<a class="hover:text-blue-500 transition-colors" href="/posts/all">View All Posts <span aria-hidden="true">→</span></a>
 				</span>
 			</section>
