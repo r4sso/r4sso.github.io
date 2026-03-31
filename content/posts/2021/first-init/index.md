@@ -6,7 +6,6 @@ layout: "post"
 thumb: "images/sisyphus.gif"
 summary: "Hello World!"
 math: true
-draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat ante justo, ut efficitur quam lacinia in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam tincidunt, leo in accumsan vestibulum, urna quam cursus risus, ac venenatis ante purus ac dolor. Nullam tempus lorem ac gravida venenatis. Etiam consectetur luctus magna ac consectetur. Nulla vel felis tempus, ultrices lorem a, aliquam magna. Donec velit libero, hendrerit in egestas vel, pretium nec nisi. Quisque in dolor est. Sed dignissim malesuada elit, eu tristique nunc ultrices id.

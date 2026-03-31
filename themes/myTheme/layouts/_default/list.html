@@ -1,35 +1,56 @@
 {{ define "main" }}
 <div class="flex justify-center">
-  <div class="w-full max-w-3xl px-4">
-  
-    <!-- Top-right link styled as button -->
-    <div class="flex justify-start mb-4 mt-2">
-      <a href="/posts/all" class="inline-flex items-center gap-2 rounded-md shadow-2xl px-4 py-1.5 text-black font-semibold dark:text-white post-card hover:ring-2 focus-ring-4 rounded-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-             stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-        </svg>
-        <span class="ml-4">All Posts</span>
-      </a>
-    </div>
+        <div class="w-full max-w-3xl px-4">
+                <div class="flex items-center gap-3 my-4">
+                        <h1 class="text-3xl font-bold dark:text-white">Posts</h1>
 
-    <!-- Post list -->
-    <div class="rounded-lg">
-      {{ range (.Paginate .RegularPages).Pages }}
-      <a href="{{ .RelPermalink }}" class="block">
-        <div class="post-card mb-5 translate-y-1 rounded-md p-6 shadow-2xl shadow-slate-700/10 transition duration-150 hover:shadow-xl active:scale-95 dark:text-white dark:hover:shadow-sky-700/10">
-          <h2 class="mb-4 text-2xl font-bold">{{ .Title }}</h2>
-          {{ partial "metadata.html" . }}
-          <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">{{ .Summary }}</p>
-        </div>
-      </a>
-      {{ end }}
-    </div>
+                        <a href="/rss.xml" class="text-orange-500 hover:text-orange-600 transition-colors" aria-label="RSS Feed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                        <circle cx="5" cy="19" r="1"></circle>
+                                </svg>
+                        </a>
+                </div>
+                
+                <div class="text-sm leading-relaxed text-gray-700 dark:text-gray-300 ml-4">
+                        <section class="mb-4 relative flex flex-col">
+                                <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Pinned Posts</h2>
+        
+                                <ul class="border-l-2 border-gray-100 dark:border-gray-800">
+                                        {{ range where .Site.RegularPages "Params.featured" "==" true }}
+                                        <li class="group relative pl-4">
+                                                <a href="{{ .Permalink }}" class="block transition-all">
+                                                        <span class="font-mono text-gray-500 dark:text-gray-400">{{ .Date.Format "02 Jan 2006" }}</span>
+                                                        <span class="mx-2 text-gray-300 dark:text-gray-600">—</span>
+                                                        <span class="font-medium text-blue-600 group-hover:underline">{{ .Title }}</span>
+                                                </a>
+                                        </li>
+                                        {{ end }}
+                                </ul>
 
-    <!-- Pagination -->
-    {{ partial "pagination.html" . }}
-  </div>
+				<span class="self-end">
+					<a class="hover:text-blue-500 transition-colors" href="/posts/all">View All Posts <span aria-hidden="true">→</span></a>
+				</span>
+			</section>
+		</div>
+
+		<div class="border-t border-gray-200 dark:border-gray-700 mb-4"></div>
+
+		<div class="rounded-lg">
+			{{ range (.Paginate .RegularPages).Pages }}
+			<a href="{{ .RelPermalink }}" class="block">
+				<div class="post-card mb-5 translate-y-1 rounded-md p-6 shadow-2xl shadow-slate-700/10 transition duration-150 hover:shadow-xl active:scale-95 dark:text-white dark:hover:shadow-sky-700/10">
+					<h2 class="mb-4 text-2xl font-bold">{{ .Title }}</h2>
+					{{ partial "metadata.html" . }}
+					<p class="mt-4 text-sm text-gray-600 dark:text-gray-300">{{ .Summary }}</p>
+				</div>
+			</a>
+			{{ end }}
+		</div>
+
+		{{ partial "pagination.html" . }}
+	</div>
 </div>
 {{ end }}
 

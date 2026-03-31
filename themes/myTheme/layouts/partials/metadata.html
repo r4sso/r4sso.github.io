@@ -2,5 +2,5 @@
 {{ $dateFormat := .Site.Params.dateFormat | default "2 Jan, 2006" }}
 {{ $readingTime := .ReadingTime }}
 {{ if gt $readingTime 0 }}
-<p class="-my-3 text-sm text-gray-400"><time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time> &#x2022; {{ $readingTime }} minute{{ if gt $readingTime 1 }}s{{ end }} read</p>
+<p class="-my-3 text-sm text-gray-500"><time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time> &#x2022; {{ $readingTime }} minute{{ if gt $readingTime 1 }}s{{ end }} read</p>
 {{ end }}
