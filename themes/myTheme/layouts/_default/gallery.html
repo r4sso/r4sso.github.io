@@ -1,46 +1,92 @@
 {{ define "main" }}
-<div class="p-2 md:p-4 max-w-7xl mx-auto">
-    <div class="columns-2 gap-4 md:columns-3 lg:columns-4">
+<div class="transition-colors duration-300 -mx-4 sm:-mx-8">
+    <div class="grid grid-cols-3 gap-[1px] md:gap-[2px] grid-flow-row-dense">
         
-        {{/* 1. Page Resources */}}
-        {{ range .Resources.ByType "image" }}
-            <div class="mb-4 break-inside-avoid">
-                <a href="{{ .RelPermalink }}" class="group relative block overflow-hidden bg-gray-100 transition-all duration-300 hover:shadow-xl">
-                    {{ $webp := .Resize "800x webp q85" }}
-                    {{ $fallback := .Resize "800x q85" }}
-                    <picture>
-                        <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-                        <img src="{{ $fallback.RelPermalink }}" 
-                             alt="{{ .Name }}" 
-                             loading="lazy" 
-                             class="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    </picture>
-                </a>
-            </div>
+        {{/* 1. BUILD THE DATA COLLECTION */}}
+        {{ $items := slice }}
+
+        {{/* Add Direct Page Resources */}}
+        {{ range sort (.Resources.ByType "image") "Name" "desc" }}
+            {{ $items = $items | append (dict "context" . "link" .RelPermalink "parent" $) }}
         {{ end }}
 
-        {{/* 2. Gallery Posts */}}
-        {{ $posts := where (where .Site.RegularPages "Section" "posts") "Params.gallery" true }}
+        {{/* Add Gallery Posts Images */}}
+        {{ $posts := (where (where .Site.RegularPages "Section" "posts") "Params.gallery" true).ByDate.Reverse }}
         {{ range $posts }}
             {{ $post := . }}
-            {{ range .Resources.ByType "image" }}
-                <div class="mb-4 break-inside-avoid">
-                    <a href="{{ $post.Permalink }}" class="group relative block overflow-hidden bg-gray-100 transition-all duration-300 hover:shadow-xl">
-                        {{ $webp := .Resize "800x webp q85" }}
-                        {{ $fallback := .Resize "800x q85" }}
-                        <picture>
-                            <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-                            <img src="{{ $fallback.RelPermalink }}" 
-                                 alt="{{ $post.Title }}" 
-                                 loading="lazy" 
-                                 class="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                        </picture>
-                        <div class="absolute inset-0 flex items-end bg-black/40 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                            <p class="text-sm font-medium text-white">{{ $post.Title }}</p>
-                        </div>
-                    </a>
-                </div>
+            {{ range sort (.Resources.ByType "image") "Name" "desc" }}
+                {{ $items = $items | append (dict "context" . "link" $post.Permalink "parent" $post) }}
             {{ end }}
+        {{ end }}
+
+        {{/* 2. RENDER THE COMBINED COLLECTION */}}
+        {{ range $items }}
+            {{ $img := .context }}
+            {{ $link := .link }}
+            {{ $parent := .parent }}
+            
+            {{/* Image Metadata Logic */}}
+            {{ $isTall := gt $img.Height $img.Width }}
+            {{ $title := $img.Params.title | default (default $parent.Title $img.Name) }}
+            
+            {{/* Date Logic */}}
+            {{ $imgDate := "" }}
+            {{ if $img.Exif }}
+                {{ $imgDate = $img.Exif.Date.Format "Jan 02, 2006" }}
+            {{ else }}
+                {{ $imgDate = $parent.Date.Format "Jan 02, 2006" }}
+            {{ end }}
+
+            <div class="relative overflow-hidden group {{ if $isTall }} row-span-2 {{ end }}">
+                <a href="{{ $link }}" class="block h-full w-full focus:outline-none focus-visible:ring-2 ring-inset ring-blue-500">
+                    
+                    {{/* Optimized Image */}}
+                    <img src="{{ ($img.Resize "800x q85").RelPermalink }}" 
+                         alt="{{ $title }}" 
+                         loading="lazy" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-active:scale-105 {{ if not $isTall }} aspect-square {{ end }}" />
+
+                    {{/* Overlay */}}
+                    <div class="absolute inset-0 flex flex-col justify-center items-center p-4 text-center
+                                 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300
+                                 bg-white/95 dark:bg-black/90 text-zinc-900 dark:text-white pointer-events-none">
+                        
+                        {{/* Date */}}
+                        <div class="flex flex-col items-center mb-1 opacity-60">
+                            <span class="text-[8px] font-medium tracking-tighter uppercase">{{ $imgDate }}</span>
+                        </div>
+
+                        {{/* Title */}}
+                        <span class="text-xs font-bold truncate w-full px-2 mb-2">{{ $title }}</span>
+
+                        {{/* Advanced Metadata Info */}}
+                        <div class="mt-1 pt-2 border-t border-zinc-200 dark:border-zinc-800 w-3/4 text-[9px] leading-relaxed">
+                            {{ if $img.Params.equipment }}
+                                <p class="font-bold uppercase tracking-tight">{{ $img.Params.equipment }}</p>
+                                <p class="opacity-70">{{ $img.Params.settings }}</p>
+                            {{ else if $img.Exif }}
+                                {{/* Camera Model & Lens */}}
+                                <p class="font-bold uppercase tracking-tight mb-0.5">
+                                    {{ $img.Exif.Tags.Model }}
+                                </p>
+                                
+                                {{/* Technical Specs Strip */}}
+                                <p class="opacity-80 font-mono">
+                                    {{ with $img.Exif.Tags.FocalLengthIn35mmFormat }}{{ . }}mm • {{ end }}
+                                    ƒ/{{ $img.Exif.Tags.FNumber }} • 
+                                    {{ $img.Exif.Tags.ExposureTime }}s • 
+                                    ISO {{ $img.Exif.Tags.ISOSpeedRatings }}
+                                </p>
+
+                                {{/* Optional Lens Info - Some cameras don't export this clearly in Hugo's Exif */}}
+                                {{ if $img.Exif.Tags.LensModel }}
+                                    <p class="text-[7px] opacity-50 italic mt-1 truncate w-full">{{ $img.Exif.Tags.LensModel }}</p>
+                                {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </a>
+            </div>
         {{ end }}
 
     </div>
