@@ -1,14 +1,13 @@
 {{ define "main" }}
 <div class="flex justify-center text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-    <div class="w-full max-w-3xl px-4">
-        <div class="flex justify-start mb-4 pt-2">
-            <a href="/posts" class="inline-flex items-center gap-2 rounded-md shadow-2xl px-4 py-2 text-black font-semibold dark:text-white dark:post-card-dark post-card hover:ring-2 focus-ring-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
-                </svg>
-                <span class="ml-4">Card View</span>
-            </a>
-        </div>
+	<div class="w-full max-w-3xl px-4">
+		<div class="flex justify-start mb-4 pt-2">
+			<span class="text-sm py-2">
+				<a class="hover:text-blue-500 transition-colors" href="/posts">
+					<span aria-hidden="true">←</span> Return To Posts
+				</a>
+			</span>
+		</div>
 
         <section>
             <h2 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">All Posts</h2>
