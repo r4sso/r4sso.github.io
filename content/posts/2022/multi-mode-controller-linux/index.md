@@ -1,7 +1,7 @@
 ---
 title: "Fix EasySMX SL-9111 Detected as Nintendo Controller on Linux"
 date: 2022-02-08
-lastmod: 2025-03-31T10:08:00Z
+lastmod: 2026-03-31T10:08:00Z
 summary: "A quick guide to fix a generic multi-mode controller being incorrectly detected as the wrong controller in Linux by blacklisting a module."
 tags: ["linux"]
 ---
