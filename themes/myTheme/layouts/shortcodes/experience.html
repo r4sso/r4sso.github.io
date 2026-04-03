@@ -1,0 +1,76 @@
+ <div class="not-prose">  
+  <div class="mt-12">
+            <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Experience</h2>
+            <div class="space-y-12">
+                {{ range $.Page.Params.experience }}
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="shrink-0 mt-1">
+                        <img src="{{ .logo | relURL }}" alt="{{ .company }} logo" class="w-12 h-12 object-contain rounded-md shadow-sm border border-gray-200 dark:border-gray-800">
+                    </div>
+
+                    <div class="grow">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">{{ .company }}</h3>
+                            {{ if .type }}
+                            <p class="text-sm text-gray-600 dark:text-gray-400">{{ .type }} · {{ .duration }}</p>
+                            {{ end }}
+                            {{ if .location_type }}
+                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ .location_type }}</p>
+                            {{ end }}
+                        </div>
+
+                        {{ if .roles }}
+                            <div class="relative mt-4 space-y-6 before:absolute before:inset-y-0 before:left-[4.5px] before:w-[2px] before:bg-gray-300 dark:before:bg-gray-700">
+                                {{ range .roles }}
+                                <div class="relative pl-6">
+                                    <div class="absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full bg-gray-400 dark:bg-gray-500 ring-[3px] ring-white dark:ring-gray-900"></div>
+                                    <div class="flex flex-col">
+                                        <h4 class="text-base font-semibold text-gray-900 dark:text-gray-100">{{ .title }}</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">{{ .date }}</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">{{ .location }}</p>
+                                        <p class="mt-2 text-sm text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">{{ .description | markdownify }}</p>
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        {{ else }}
+                            <div class="flex flex-col">
+                                <h4 class="text-base font-semibold text-gray-900 dark:text-gray-100">{{ .title }}</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ .duration }}</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ .location }}</p>
+                                <p class="mt-2 text-sm text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">{{ .description | markdownify }}</p>
+                                {{ if .bullets }}
+                                <ul class="mt-2 list-outside list-disc pl-4 text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                                    {{ range .bullets }}<li>{{ . | markdownify }}</li>{{ end }}
+                                </ul>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                    </div>
+                </div>
+                <hr class="border-gray-200 dark:border-gray-800 my-8 last:hidden border-t-0">
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="mt-16 mb-12">
+            <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Education</h2>
+            <div class="space-y-10">
+                {{ range $.Page.Params.education }}
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="shrink-0 mt-1">
+                        <img src="{{ .logo | relURL }}" alt="{{ .school }} logo" class="w-12 h-12 object-contain rounded-md shadow-sm border border-gray-200 dark:border-gray-800">
+                    </div>
+                    <div class="grow">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 leading-tight">{{ .school }}</h3>
+                        <div class="text-base text-gray-800 dark:text-gray-200 font-medium">{{ .degree }}</div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">{{ .date }} • {{ .location }}</p>
+                        {{ if .gpa }}
+                        <p class="mt-2 text-sm font-semibold text-gray-700 dark:text-gray-300">GPA: <span class="font-normal">{{ .gpa }}</span></p>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+      </div>
+</div>

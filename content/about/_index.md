@@ -4,6 +4,41 @@ layout: "about"
 outputs: ["HTML"]
 thumb: "/images/Jjl8THMh.jpg"
 avatar_title: "me. (REAL)"
+
+experience:
+  - company: "CORPS OF ARMCHAIR"
+    logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Ftweet_video_thumb%2FFdHBgKwWQAkHD5o.jpg%3Alarge&f=1&nofb=1&ipt=ce5cfff7e18b0f3f4b98c718975732f6816f4cbfcef2a46da4ab18661a5d20c5"
+    type: "Contract"
+    duration: "6 mos"
+    location_type: "On-site"
+    roles:
+      - title: "Brainrot Technician"
+        date: "Dec 2027 - Present · 4 mos"
+        location: "Basement"
+        description: "Support core brainrot infrastructure."
+      - title: "Aware"
+        date: "Oct 2027 - Dec 2027 · 3 mos"
+        location: "Mars"
+        description: "Unemployment"
+
+  - company: "TEST"
+    logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.7tv.app%2Femote%2F60e857ca401af27eed2f6a4e%2F3x.webp&f=1&nofb=1&ipt=441a9d1c335e5d3ae61bdca8ab28db156c5d09279a131c3673a3c370dfabaa32"
+    title: "System Administrator"
+    type: "Internship"
+    duration: "Sep 1888 - Dec 8888 · 12 mos"
+    location: "The Moon · On-site"
+    description: "Messing around"
+    bullets:
+      - "Install BINDOWS"
+
+education:
+  - school: "Technical College"
+    degree: "IT-020-3:2013 COMPUTER SYSTEM OPERATION"
+    logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femoji.discadia.com%2Femojis%2Fa530c1f4-6812-4932-8ceb-fd7ebf07968f.GIF&f=1&nofb=1&ipt=55f8c4af73b0404848c231d0da98cc41893e0c2588125a90bd32503ae9ff34b3"
+    date: "Aug 2025 - Aug 2026"
+    location: "Somewehre in Malaysia"
+    gpa: "Dont know yet"
+    description: "Focusing on Network Security and Cloud Infrastructure."
 ---
 
 Hello! I go by "r4sso".
@@ -18,6 +53,8 @@ I generally interested anything about computers.
 ## Contact
 - E-mail: [0xr4sso@proton.me](mailto:0xr4sso@proton.me)
 - Instagram: [@mfterm](https://instagram.com/mfterm)
+
+{{< experience >}}
 
 ## Support Me
 Monero ([QR](/images/dono/monero.png)):

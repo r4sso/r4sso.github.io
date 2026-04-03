@@ -1,4 +1,6 @@
 ---
 title: "Guestbook"
 ---
-Hello World! :)
+Hi there! :)
+
+Feel free to sign my Guestbook.
