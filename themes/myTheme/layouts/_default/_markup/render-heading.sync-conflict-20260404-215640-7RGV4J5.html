@@ -1,6 +1,4 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}" class="group flex items-center scroll-mt-20">
-    <a href="#{{ .Anchor | safeURL }}" class="mr-2 no-underline">
-        {{ strings.Repeat (sub .Level 1) "#" }}
-    </a>
+    <a href="#{{ .Anchor | safeURL }}" class="mr-2 no-underline">#</a>
     <span>{{ .Text | safeHTML }}</span>
 </h{{ .Level }}>
