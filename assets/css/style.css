@@ -2299,6 +2299,11 @@
       font-weight: var(--font-weight-bold);
     }
   }
+  .prose-a\:break-words {
+    & :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      overflow-wrap: break-word;
+    }
+  }
   .prose-a\:text-blue-600 {
     & :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
       color: var(--color-blue-600);
