@@ -26,7 +26,6 @@ blacklist hid_nintendo
 Then unplug the controller and plug it back in. If it doesn't work, try rebooting the system.
 
 
-Read More:
-[https://wiki.archlinux.org/title/Kernel_module#Blacklisting](https://wiki.archlinux.org/title/Kernel_module#Blacklisting)
+Read More: [https://wiki.archlinux.org/title/Kernel_module#Blacklisting](https://wiki.archlinux.org/title/Kernel_module#Blacklisting)
 
 
