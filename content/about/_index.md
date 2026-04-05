@@ -36,8 +36,8 @@ education:
     degree: "IT-020-3:2013 COMPUTER SYSTEM OPERATION"
     logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femoji.discadia.com%2Femojis%2Fa530c1f4-6812-4932-8ceb-fd7ebf07968f.GIF&f=1&nofb=1&ipt=55f8c4af73b0404848c231d0da98cc41893e0c2588125a90bd32503ae9ff34b3"
     date: "Aug 2025 - Aug 2026"
-    location: "Somewehre in Malaysia"
-    gpa: "Dont know yet"
+    location: "Somewhere in Malaysia"
+    gpa: "Test"
     description: "Focusing on Network Security and Cloud Infrastructure."
 ---
 

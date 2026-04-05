@@ -66,11 +66,11 @@ After the installation is complete, export `packettracer` so you can launch it f
 distrobox-export --bin /usr/local/bin/packettracer --export-path ~/.local/bin/
 ```
 
-Run `packettracer` and log in. Now Packet Tracer is ready to use:)
+Run `packettracer` and log in. Now Packet Tracer is ready to use :)
 
 [1]: https://distrobox.it/
 
 [^1]: [https://wiki.alpinelinux.org/wiki/Podman#Configuration](https://wiki.alpinelinux.org/wiki/Podman#Configuratioin)
 [^2]: [https://wiki.alpinelinux.org/wiki/Podman#Running_in_rootless_mode](https://wiki.alpinelinux.org/wiki/Podman#Running_in_rootless_mode)
 [^3]: [https://wiki.alpinelinux.org/wiki/Distrobox#Running_graphical_programs](https://wiki.alpinelinux.org/wiki/Distrobox#Running_graphical_programs)
-[^4]:[https://www.reddit.com/r/linux4noobs/comments/1aosn3p/how_to_install_cisco_packet_tracer_on_any_distro/](https://www.reddit.com/r/linux4noobs/comments/1aosn3p/how_to_install_cisco_packet_tracer_on_any_distro/)
+[^4]: [https://www.reddit.com/r/linux4noobs/comments/1aosn3p/how_to_install_cisco_packet_tracer_on_any_distro/](https://www.reddit.com/r/linux4noobs/comments/1aosn3p/how_to_install_cisco_packet_tracer_on_any_distro/)
