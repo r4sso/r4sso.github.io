@@ -1,7 +1,7 @@
 ---
 title: "Install Cisco Packet Tracer on Alpine Linux"
 date: 2026-04-04
-#lastmod: 2026-04-04T10:08:00Z
+lastmod: 2026-04-06T10:08:00Z
 summary: "A guide to install Cisco Packet Tracer on Alpine Linux using distrobox."
 categories: ["Guides"]
 tags: ["linux"]
@@ -67,7 +67,7 @@ After the installation is complete, export `packettracer` so you can launch it f
 distrobox-export --bin /usr/local/bin/packettracer --export-path ~/.local/bin/
 ```
 
-Run `packettracer` and log in. Now Packet Tracer is ready to use :)
+Run `packettracer` and open `Advanced Settings`. Tick `Use internal web browser for Cisco Networking Academy login`. Log in. Now Packet Tracer is ready to use :)
 
 [1]: https://distrobox.it/
 
