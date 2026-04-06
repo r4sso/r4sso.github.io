@@ -1,0 +1,1 @@
+document.querySelectorAll(".copy-btn").forEach(e=>{e.addEventListener("click",()=>{const t=e.parentElement,n=t.querySelector("pre code")||t.querySelector("code");if(!n)return;const s=n.innerText;navigator.clipboard.writeText(s).then(()=>{const t=e.innerText;e.innerText="Copied!",setTimeout(()=>{e.innerText=t},2e3)}).catch(e=>{console.error("Failed to copy: ",e)})})})
