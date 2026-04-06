@@ -4,7 +4,7 @@ date: 2023-08-01
 lastmod: 2024-02-28T09:35:00Z
 featured: true
 summary: "My first home server, janky but serve me well, and list of software I use."
-thumb: "images/IMG_20230801_083003.jpg"
+thumb: "images/20230801_083003.jpg"
 aliases: /server
 alt: "My Home Server"
 categories: ["projects"]
