@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.addEventListener("click",async()=>{const t=e.getAttribute("data-code");try{await navigator.clipboard.writeText(t),e.textContent="Copied!",setTimeout(()=>e.textContent="Copy",2e3)}catch(e){console.error("Copy failed",e)}})})})
