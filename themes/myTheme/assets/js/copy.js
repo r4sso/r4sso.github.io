@@ -1,15 +1,24 @@
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".copy-btn").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      const code = btn.getAttribute("data-code");
+document.querySelectorAll('.copy-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+        // Find the code element within the same parent container
+        const container = button.parentElement;
+        const codeElement = container.querySelector('pre code') || container.querySelector('code');
+        
+        if (!codeElement) return;
 
-      try {
-        await navigator.clipboard.writeText(code);
-        btn.textContent = "Copied!";
-        setTimeout(() => (btn.textContent = "Copy"), 2000);
-      } catch (err) {
-        console.error("Copy failed", err);
-      }
+        const textToCopy = codeElement.innerText;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // Visual feedback: Change text temporarily
+            const originalText = button.innerText;
+            button.innerText = 'Copied!';
+            
+            // Reset button text after 2 seconds
+            setTimeout(() => {
+                button.innerText = originalText;
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
     });
-  });
 });
