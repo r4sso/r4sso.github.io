@@ -106,3 +106,4 @@ themeToggleBtn.addEventListener('click', () => {
 
 // Init UI
 handleMobileMenu();
+

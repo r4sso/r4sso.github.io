@@ -104,4 +104,23 @@
   .dark .post-card {
     background-color: var(--dark-post-card);
   }
+.chroma {
+  @apply rounded-lg overflow-x-auto p-4 text-sm;
 }
+
+/* Light */
+.chroma {
+  @apply bg-gray-100 text-gray-800;
+}
+
+/* Dark */
+.dark .chroma {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.chroma pre {
+  @apply bg-transparent p-0 m-0;
+}
+}
+
+
