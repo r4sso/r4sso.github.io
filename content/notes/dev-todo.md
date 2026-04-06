@@ -3,7 +3,7 @@ title: "Changelog: Site Development"
 date: 2023-09-27
 lastmod: 2025-10-04T10:55:45Z
 toc: false
-featured: true
+featured: false
 comment: false
 ---
 
