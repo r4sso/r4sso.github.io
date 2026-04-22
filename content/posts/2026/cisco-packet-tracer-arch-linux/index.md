@@ -4,7 +4,7 @@ date: 2026-04-07
 #lastmod: 2026-04-06T10:08:00Z
 summary: "A guide to install Cisco Packet Tracer on Arch Linux"
 categories: ["Guides"]
-tags: ["linux"]
+tags: ["linux", "cisco"]
 ---
 ## Introduction
 [packettracer](https://aur.archlinux.org/packages/packettracer/) is available on [AUR](https://aur.archlinux.org/), but it cannot be installed using automated method through an [AUR helper](https://wiki.archlinux.org/title/AUR_helper) because the `.deb` file must be downloaded first before building the package.

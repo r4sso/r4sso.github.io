@@ -4,7 +4,7 @@ date: 2026-04-21
 #lastmod: 2026-04-06T10:08:00Z
 summary: "A guide to install and configure Flameshot with Sway."
 categories: ["Guides"]
-tags: ["linux"]
+tags: ["linux", "sway", "wayland"]
 featured: false
 ---
 ## Introduction

@@ -4,7 +4,7 @@ date: 2026-04-04
 lastmod: 2026-04-06T10:08:00Z
 summary: "A guide to install Cisco Packet Tracer on Alpine Linux using distrobox."
 categories: ["Guides"]
-tags: ["linux"]
+tags: ["linux", "cisco"]
 featured: true
 ---
 ## Introduction
