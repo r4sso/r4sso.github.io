@@ -2,7 +2,7 @@
 title: "Turn On X220 with a Broken Power Button"
 date: 2026-04-27
 #lastmod: 2026-04-06T10:08:00Z
-summary: "A quick guide on how to turn on a ThinkPad X220 with a broken power button by shorting two pins on the docking port."
+summary: "A quick guide on how to turn on a ThinkPad X220 with a broken power button by shorting pins on the docking port."
 categories: ["Guides"]
 tags: ["x220", "Thinkpad", "Troubleshooting"]
 featured: true
