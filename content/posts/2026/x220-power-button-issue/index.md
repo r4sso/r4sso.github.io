@@ -5,7 +5,7 @@ date: 2026-04-27
 summary: "A quick guide on how to turn on a ThinkPad X220 with a broken power button by shorting two pins on the docking port."
 categories: ["Guides"]
 tags: ["x220", "Thinkpad", "Troubleshooting"]
-featured: false
+featured: true
 ---
 ## Introduction
 I have a Lenovo ThinkPad X220 that wouldn't turn on when the power button was pressed. At first, I suspected the issue was with the power button on the keyboard, since the battery indicator light still came on when I plugged in the charger.
