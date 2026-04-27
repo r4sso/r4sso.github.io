@@ -17,7 +17,7 @@ Before purchasing a replacement keyboard, I wanted to confirm that the laptop it
 ## Shorting the Dock Pins
 Alternatively, if you have a [docking station](https://duckduckgo.com/?q=x220+dock&ia=images&iax=images), there is a power button on the dock itself.
 
-Since I don't have a docking station, I used the docking port on the bottom of the X220. Using a flat-head screwdriver, insert it into the EXACT position shown in Figure 2.
+Since I don't have a docking station, I used the docking port on the bottom of the X220. Using a flat-head screwdriver, insert it into the **EXACT** position shown in Figure 2.
 ![Docking Port](20260427_034540035.MP.jpg  "Short the pins as shown (Figure 2)")
 
 If it still doesn't turn on, make sure multiple pins are touched at the same time.
