@@ -38,6 +38,11 @@ jobs:
         with:
           bun-version: latest  # Use specific version if needed, e.g., '1.1.34'
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
       - name: Install dependencies with Bun
         run: bun install  # Installs Tailwind CSS, @tailwindcss/typography, PostCSS, etc.
 
