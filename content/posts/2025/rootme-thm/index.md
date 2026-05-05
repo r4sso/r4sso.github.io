@@ -4,6 +4,7 @@ date: 2025-05-21
 summary: "Classic web-to-root escalation, touching on enumeration, upload bypass, reverse shells, and privilege escalation using SUID binaries."
 categories: ["Writeup"]
 tags: ["TryHackMe"]
+featured: true
 ---
 Room: https://tryhackme.com/room/rrootme
 ## Reconnaissance
