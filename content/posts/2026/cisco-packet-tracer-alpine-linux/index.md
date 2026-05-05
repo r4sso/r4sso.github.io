@@ -8,7 +8,7 @@ tags: ["linux", "cisco"]
 featured: true
 ---
 ## Introduction
-Since Alpine Linux is uses musl instead of glibc, it is not possible to install Cisco Packet Tracer natively, nor when using a compatibility layer like [gcompat](https://git.adelielinux.org/adelie/gcompat). In this guide, you will it install using [distrobox][1].
+Since Alpine Linux uses musl instead of glibc, it is not possible to install Cisco Packet Tracer natively, nor when using a compatibility layer like [gcompat](https://git.adelielinux.org/adelie/gcompat). In this guide, you will install it using [distrobox][1].
 
 ## Installation
 ### Download Cisco Packet Tracer
