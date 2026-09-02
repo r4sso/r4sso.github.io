@@ -1,6 +1,10 @@
 :host,
-html {
+html,
+main {
   color-scheme: dark;
+
+  --bg-default: 0, 0, 0;
+  --primary-default: 9, 105, 218;
 
   --font-family-sans:
     "Iosevka Web",
@@ -24,28 +28,40 @@ html {
     Consolas,
     monospace;
 
+  /* Canvas */
+
   --color-canvas-default: #000000;
-  --color-canvas-overlay: #0f0f0f;
-  --color-canvas-inset: #0a0a0a;
+  --color-canvas-overlay: #000000;
+  --color-canvas-inset: #000000;
   --color-canvas-subtle: #0f0f0f;
+
+  /* Foreground */
 
   --color-fg-default: #f0f0f0;
   --color-fg-muted: #a0a0a0;
   --color-fg-subtle: #777777;
 
+  /* Borders */
+
   --color-border-default: #2a2a2a;
   --color-border-muted: #2e2e2e;
 
-  --color-accent-fg: #00d9ff;
-  --color-accent-emphasis: #00d9ff;
-  --color-accent-muted: rgba(0, 217, 255, 0.4);
-  --color-accent-subtle: rgba(0, 217, 255, 0.1);
+  /* Accent */
+
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-accent-muted: rgba(9, 105, 218, 0.4);
+  --color-accent-subtle: rgba(9, 105, 218, 0.1);
+
+  /* Status */
 
   --color-success-fg: #2eff8b;
   --color-success-emphasis: #2eff8b;
 
   --color-danger-fg: #ff4d67;
   --color-danger-emphasis: #ff4d67;
+
+  /* Buttons */
 
   --color-btn-text: #f0f0f0;
   --color-btn-bg: #0f0f0f;
@@ -55,15 +71,39 @@ html {
   --color-btn-active-bg: #1e1e1e;
   --color-btn-selected-bg: #1e1e1e;
 
+  /* Primary buttons */
+
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #0969da;
+  --color-btn-primary-border: #0969da;
+  --color-btn-primary-hover-bg: #0969da;
+  --color-btn-primary-hover-border: #0969da;
+  --color-btn-primary-selected-bg: #0969da;
+
+  /* Misc */
+
   --color-neutral-muted: rgba(255, 255, 255, 0.1);
+
+  --color-scale-gray-1: #161616;
+  --color-scale-blue-1: rgba(9, 105, 218, 0.15);
+
+  --color-social-reaction-bg-hover: var(--color-scale-gray-1);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
+
   --color-primer-shadow-inset: none;
 }
+
+
+/* ============================================================
+   Font
+   ============================================================ */
 
 @font-face {
   font-family: "Iosevka Web";
   font-display: swap;
   font-weight: 400;
   font-style: normal;
+
   src:
     url("../fonts/iosevka.woff2") format("woff2"),
     url("../fonts/iosevka.woff") format("woff");
@@ -74,14 +114,16 @@ html {
   font-display: swap;
   font-weight: 700;
   font-style: normal;
+
   src:
     url("../fonts/iosevka-bold.woff2") format("woff2"),
     url("../fonts/iosevka-bold.woff") format("woff");
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Base
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 html,
 body,
@@ -101,6 +143,9 @@ select {
 }
 
 body {
+  margin: 0 !important;
+  padding: 0 !important;
+
   font-size: 10pt !important;
   line-height: 1.6 !important;
 }
@@ -110,30 +155,32 @@ body {
   box-shadow: none !important;
 }
 
-/* ------------------------------------------------------------
-   Links
-   ------------------------------------------------------------ */
 
-a {
-  color: #00d9ff !important;
+/* ============================================================
+   Links
+   ============================================================ */
+
+a,
+.gsc-comment-header a,
+.gsc-comment-footer a,
+.gsc-comment-content a {
+  color: #0969da !important;
 }
 
 a:hover {
-  color: #00d9ff !important;
+  color: #0969da !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Header
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .gsc-header {
-  border-bottom: 1px solid #2a2a2a !important;
-  padding-bottom: 12px !important;
-  margin-bottom: 16px !important;
-}
+  margin: 0 0 16px 0 !important;
+  padding: 0 0 12px 0 !important;
 
-.gsc-header a {
-  color: #00d9ff !important;
+  border-bottom: 1px solid #2a2a2a !important;
 }
 
 .gsc-left-header,
@@ -141,21 +188,34 @@ a:hover {
   color: #a0a0a0 !important;
 }
 
-/* ------------------------------------------------------------
+.gsc-header a {
+  color: #0969da !important;
+}
+
+
+/* ============================================================
    Comment composer
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .gsc-comment-box {
+  margin: 0 !important;
+  padding: 0 !important;
+
   background: #0f0f0f !important;
   border: 1px solid #2a2a2a !important;
 }
 
 .gsc-comment-box-tabs {
+  margin: 0 !important;
+  padding: 0 !important;
+
   background: #0a0a0a !important;
   border-bottom: 1px solid #2a2a2a !important;
 }
 
 .gsc-comment-box-tabs button {
+  margin: 0 !important;
+
   background: transparent !important;
   color: #a0a0a0 !important;
   border: 0 !important;
@@ -167,16 +227,21 @@ a:hover {
 }
 
 .gsc-comment-box-tabs button[aria-selected="true"] {
-  color: #00d9ff !important;
-  border-bottom: 2px solid #00d9ff !important;
+  color: #0969da !important;
+  border-bottom: 2px solid #0969da !important;
 }
 
 .gsc-comment-box-textarea {
+  margin: 0 !important;
+  padding: 0 !important;
+
   background: #0f0f0f !important;
   border: 0 !important;
 }
 
 .gsc-comment-box-textarea textarea {
+  margin: 0 !important;
+
   background: #0f0f0f !important;
   color: #f0f0f0 !important;
   border: 0 !important;
@@ -187,9 +252,10 @@ a:hover {
   color: #777777 !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Buttons
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 button,
 .gsc-reply-box button,
@@ -213,37 +279,41 @@ button:active {
 button:focus-visible,
 textarea:focus-visible,
 input:focus-visible {
-  outline: 1px solid #00d9ff !important;
+  outline: 1px solid #0969da !important;
   outline-offset: 1px !important;
 }
 
-/* Primary buttons */
-
 .gsc-comment-box .btn-primary,
 .gsc-reply-box .btn-primary {
-  background: #00d9ff !important;
-  color: #000000 !important;
-  border-color: #00d9ff !important;
+  background: #0969da !important;
+  color: #ffffff !important;
+  border-color: #0969da !important;
 }
 
 .gsc-comment-box .btn-primary:hover,
 .gsc-reply-box .btn-primary:hover {
-  background: #00d9ff !important;
-  color: #000000 !important;
-  opacity: 0.85;
+  background: #0969da !important;
+  color: #ffffff !important;
+  border-color: #0969da !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Comments
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .gsc-comment {
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+
   background: #0f0f0f !important;
   border: 1px solid #2a2a2a !important;
-  margin-bottom: 12px !important;
 }
 
 .gsc-comment-header {
+  margin: 0 !important;
+  padding: 0 !important;
+
   background: #0a0a0a !important;
   border-bottom: 1px solid #2a2a2a !important;
   color: #a0a0a0 !important;
@@ -254,7 +324,7 @@ input:focus-visible {
 }
 
 .gsc-comment-header .author-name a {
-  color: #00d9ff !important;
+  color: #0969da !important;
 }
 
 .gsc-comment-header .datetime {
@@ -262,9 +332,11 @@ input:focus-visible {
 }
 
 .gsc-comment-content {
+  margin: 0 !important;
+  padding: 0 !important;
+
   background: #0f0f0f !important;
   color: #f0f0f0 !important;
-  padding: 12px !important;
 }
 
 .gsc-comment-content p {
@@ -279,9 +351,10 @@ input:focus-visible {
   color: #e6e6e6 !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Markdown
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .markdown-body {
   background: transparent !important;
@@ -300,7 +373,7 @@ input:focus-visible {
 }
 
 .markdown-body a {
-  color: #00d9ff !important;
+  color: #0969da !important;
 }
 
 .markdown-body blockquote {
@@ -318,7 +391,6 @@ input:focus-visible {
   background: #161616 !important;
   color: #f0f0f0 !important;
   border: 1px solid #2a2a2a !important;
-  padding: 1px 4px !important;
 }
 
 .markdown-body pre {
@@ -351,40 +423,36 @@ input:focus-visible {
   background: #0a0a0a !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Reactions
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .gsc-reactions {
-  border-top: 1px solid #2a2a2a !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
   background: #0a0a0a !important;
+  border-top: 1px solid #2a2a2a !important;
 }
 
-.gsc-reactions-button {
-  background: #0f0f0f !important;
-  color: #a0a0a0 !important;
-  border: 1px solid #2a2a2a !important;
-}
-
-.gsc-reactions-button:hover {
-  color: #00d9ff !important;
-  border-color: #3a3a3a !important;
-}
-
+.gsc-reactions-button,
 .gsc-direct-reaction-buttons button {
   background: #0f0f0f !important;
   color: #a0a0a0 !important;
   border: 1px solid #2a2a2a !important;
 }
 
+.gsc-reactions-button:hover,
 .gsc-direct-reaction-buttons button:hover {
-  color: #00d9ff !important;
-  border-color: #00d9ff !important;
+  color: #0969da !important;
+  border-color: #0969da !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Replies
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .gsc-replies {
   border-left: 1px solid #2a2a2a !important;
@@ -400,9 +468,10 @@ input:focus-visible {
   border: 1px solid #2a2a2a !important;
 }
 
-/* ------------------------------------------------------------
-   Metadata / muted text
-   ------------------------------------------------------------ */
+
+/* ============================================================
+   Muted text
+   ============================================================ */
 
 .gsc-comment-footer,
 .gsc-comment-footer *,
@@ -414,12 +483,13 @@ input:focus-visible {
 }
 
 .gsc-comment-footer a:hover {
-  color: #00d9ff !important;
+  color: #0969da !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Alerts
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .gsc-alert {
   background: #0f0f0f !important;
@@ -437,27 +507,30 @@ input:focus-visible {
   color: #2eff8b !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Avatar
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .gsc-comment-header .avatar,
 .gsc-comment-header img {
   border-radius: 0 !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Selection
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 ::selection {
-  background: #00d9ff !important;
-  color: #000000 !important;
+  background: #0969da !important;
+  color: #ffffff !important;
 }
 
-/* ------------------------------------------------------------
+
+/* ============================================================
    Scrollbar
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 ::-webkit-scrollbar {
   width: 8px;
