@@ -708,7 +708,6 @@ html.light #theme-toggle-dark-icon {
   color: var(--text-strong);
   background: var(--bg-elevated-2);
   border: 1px solid var(--border);
-  border-bottom-color: var(--border-strong);
   font-size: 11px;
   font-weight: 700;
   line-height: 1;
@@ -1094,15 +1093,35 @@ html.light #theme-toggle-dark-icon {
   border-top: 1px solid var(--border);
 }
 
-.prose img {
-  max-width: 100%;
-  margin: 16px auto;
+/* Article images */
+
+.prose figure {
+  width: 100%;
+  margin: 16px 0;
+  overflow: hidden;
   background: var(--bg);
   border: 1px solid var(--border);
 }
 
+.prose figure a,
+.prose figure picture {
+  display: block;
+  width: 100%;
+}
+
+.prose figure img {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  display: block;
+  background: var(--bg);
+  border: none;
+}
+
 .prose figcaption {
-  margin: 6px 0 12px;
+  margin: 0;
+  padding: 6px 0 0;
   color: var(--text-meta);
   font-size: 8.5pt;
   font-style: italic;
@@ -1283,17 +1302,30 @@ html.light #theme-toggle-dark-icon {
 
 /* Thumbnail */
 
+.thumb {
+  width: calc(100% + 40px);
+  margin: -20px -20px 16px;
+}
+
 .thumb figure {
-  margin: 16px auto;
+  width: 100%;
+  margin: 0;
   overflow: hidden;
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: none;
 }
 
 .thumb img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+@media (min-width: 640px) {
+  .thumb {
+    width: calc(100% + 48px);
+    margin: -24px -24px 16px;
+  }
 }
 
 /* Gallery */
