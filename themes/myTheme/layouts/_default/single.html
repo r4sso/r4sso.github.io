@@ -1,48 +1,65 @@
 {{ define "main" }}
-<div class="py-2">
-    <article class="">
-        <div class="prose prose-hr:-my-px prose-hr:my-2 prose-a:break-words prose-img:rounded-md prose-figcaption:text-center prose-figcaption:-my-4 prose-figcaption:font-semibold prose-figcaption:italic dark:prose-invert post-card mx-auto max-w-3xl rounded-lg p-6 shadow-2xl shadow-slate-700/10">
-            
-            <h1 class="text-2xl font-bold mb-2">{{ .Title }}</h1>
-            
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
-                <p class="leading-1 text-gray-400 m-0">{{ .Date.Format "2 January 2006" }} / {{ .ReadingTime }} min read</p>
-                {{ if ne .Lastmod .Date }}
-                <span class="bg-gray-100 dark:bg-slate-900 text-red-600 rounded-lg px-2 py-1">Updated: {{ .Lastmod.Format "2 January 2006" }}</span>
-                {{ end }}
-            </div>
-           
-            <div class="not-prose">{{ partial "categories.html" . }}</div>
-            {{ partial "thumb.html" . }}
-
-            <div class="prose-h1:text-2xl prose-a:text-blue-600 text-sm text-justify leading-normal mt-6">
-                {{ if .Params.toc | default .Site.Params.tableOfContents }}
-                    {{ partial "toc.html" . }} 
-                {{- end -}} 
-                
-                {{ .Content }}
-
-                <div class="flex flex-col-reverse sm:flex-row justify-between items-baseline mt-8 border-t border-gray-100 dark:border-gray-800 pt-4">
-                    <p class="leading-1 text-[13px] text-gray-400">
-                        <a href="{{ .Site.Params.githubEditURL }}{{ .File.Path }}" class="text-blue-600 hover:underline flex items-center no-underline mt-0">
-                            <svg class="inline-block mr-2 h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                            </svg>
-                            Edit this page on GitHub
-                            <svg class="inline-block ml-1 h-[11px] w-[11px] text-black dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M7 17L17 7"></path>
-                                <path d="M7 7h10v10"></path>
-                            </svg>
-                        </a>
-                    </p>
-                </div>
-            </div> {{ if ne .Params.comment false }} 
-                <div class="mt-8">
-                    {{ partial "giscus.html" . }} 
-                </div>
-            {{ end }}
-
-        </div> </article>
+{{ $showToc := and (.Params.toc | default .Site.Params.tableOfContents) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
+<div class="article-wrap">
+  {{ if $showToc }}
+  <div class="article-layout has-toc">
+    <aside class="toc-sidebar" aria-label="Table of Contents">
+      {{ partial "toc.html" . }}
+    </aside>
+    <article class="article-card">
+      <h1 class="article-title">{{ .Title }}</h1>
+      <div class="article-meta">
+        <span>{{ .Date.Format "2 January 2006" }} / {{ .ReadingTime }} min read</span>
+        {{ if ne .Lastmod .Date }}
+        <span class="updated-badge">Updated: {{ .Lastmod.Format "2 January 2006" }}</span>
+        {{ end }}
+      </div>
+      <div>{{ partial "categories.html" . }}</div>
+      {{ partial "thumb.html" . }}
+      <div class="prose">
+        {{ .Content }}
+        <div style="margin-top:24px; padding-top:14px; border-top:1px solid var(--bg-hover); display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
+          <a href="{{ .Site.Params.githubEditURL }}{{ .File.Path }}" class="edit-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Edit this page on GitHub
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+      {{ if ne .Params.comment false }}
+      <div class="giscus-wrap">
+        {{ partial "giscus.html" . }}
+      </div>
+      {{ end }}
+    </article>
+  </div>
+  {{ else }}
+  <article class="article-card">
+    <h1 class="article-title">{{ .Title }}</h1>
+    <div class="article-meta">
+      <span>{{ .Date.Format "2 January 2006" }} / {{ .ReadingTime }} min read</span>
+      {{ if ne .Lastmod .Date }}
+      <span class="updated-badge">Updated: {{ .Lastmod.Format "2 January 2006" }}</span>
+      {{ end }}
+    </div>
+    <div>{{ partial "categories.html" . }}</div>
+    {{ partial "thumb.html" . }}
+    <div class="prose">
+      {{ .Content }}
+      <div style="margin-top:24px; padding-top:14px; border-top:1px solid var(--bg-hover); display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
+        <a href="{{ .Site.Params.githubEditURL }}{{ .File.Path }}" class="edit-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          Edit this page on GitHub
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+    {{ if ne .Params.comment false }}
+    <div class="giscus-wrap">
+      {{ partial "giscus.html" . }}
+    </div>
+    {{ end }}
+  </article>
+  {{ end }}
 </div>
 {{ end }}

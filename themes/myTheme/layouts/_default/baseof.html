@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" class="dark">
 {{ partial "head.html" . }}
-<body class="bg-cus flex min-h-screen flex-col pt-16 antialiased">
-    <header>
-        {{ partial "header.html" . }}
-    </header>
-    
-    <main id="main" class="mx-auto w-full max-w-3xl px-4 sm:px-8">
-        {{ block "main" . }}{{ end }}
-        {{ partial "scroll-top.html" . }} 
-        {{ partial "footer.html" . }}
-    </main>
-    
-    {{ partial "script.html" . }}
+<body>
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+
+  <main id="main" class="site-main">
+    {{ block "main" . }}{{ end }}
+    {{ partial "scroll-top.html" . }}
+    {{ partial "footer.html" . }}
+  </main>
+
+  {{ partial "script.html" . }}
 </body>
 </html>

@@ -1,19 +1,16 @@
 {{ define "main" }}
-<div class="flex flex-col justify-center text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-    <div class="max-w-3xl px-4">
-        <h1 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ .Title }}</h1>
-        
-        <ul class="border-l-2 border-gray-100 dark:border-gray-800">
-            {{ range .Pages }}
-            <li class="group relative pl-4">
-                <a href="{{ .Permalink }}" class="block transition-all">
-                    <span class="font-mono text-gray-500 dark:text-gray-400">{{ .Date.Format "02 Jan 2006" }}</span>
-                    <span class="mx-2 text-gray-300 dark:text-gray-600">—</span>
-                    <span class="font-medium text-blue-600 group-hover:underline">{{ .Title }}</span>
-                </a>
-            </li>
-            {{ end }}
-        </ul>
-    </div>
+<div style="padding: 16px 0;">
+  <h1 class="section-title">{{ .Title }}</h1>
+  <ul class="item-list">
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <span class="item-date">{{ .Date.Format "02 Jan 2006" }}</span>
+        <span class="item-sep">—</span>
+        <span>{{ .Title }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
 </div>
 {{ end }}

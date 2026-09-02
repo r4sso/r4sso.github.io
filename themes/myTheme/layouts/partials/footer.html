@@ -1,11 +1,6 @@
-<footer class="flex {{ if eq .Section "gallery" }}w-full{{ else }}max-w-3xl{{ end }} flex-col items-center justify-between gap-y-4 px-4 pt-2 pb-8 font-bold text-gray-600 sm:flex-row sm:gap-y-0 sm:text-xs dark:text-gray-400">
-    <div class="text-center sm:text-left">
-        <span class="text-sm text-gray-500 uppercase">
-            <b>&copy; <a class="hover:text-blue-600 transition-colors" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> {{ now.Format "2006"}}</b>
-        </span>
-    </div>
-
-    <div class="flex items-center justify-center space-x-4 sm:justify-end">
-        {{ partial "home/social.html" . }}
-    </div>
+<footer class="site-footer">
+  <div>
+    <span>&copy; <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a> {{ now.Format "2006"}}</span>
+  </div>
+  {{ partial "home/social.html" . }}
 </footer>

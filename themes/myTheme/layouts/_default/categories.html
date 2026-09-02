@@ -1,31 +1,17 @@
 {{ define "main" }}
-<div class="max-w-3xl px-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-  <section class="mb-4">
-    <h1 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      {{ .Title }}
-    </h1>
-    
-    <ul class="border-l-2 border-gray-100 dark:border-gray-800">
-      {{ range .Data.Terms.Alphabetical }}
-      <li class="group relative pl-4">
-        <a href="{{ .Page.Permalink }}" class="block transition-all">
-          <span class="font-mono text-gray-500 dark:text-gray-400">
-            {{ printf "%02d" .Count }} items
-          </span>
-          
-          <span class="mx-2 text-gray-300 dark:text-gray-600">—</span>
-          
-          <span class="font-medium text-blue-600 group-hover:underline">
-            {{ .Name | strings.FirstUpper }}
-          </span>
-          
-          <span class="ml-2 rounded bg-gray-100 px-1.5 py-0.5 text-[10px] uppercase tracking-wider text-gray-600 dark:bg-gray-700 dark:text-gray-300">
-            Category
-          </span>
-        </a>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
+<div style="padding: 16px 0;">
+  <h1 class="section-title">{{ .Title }}</h1>
+  <ul class="item-list">
+    {{ range .Data.Terms.Alphabetical }}
+    <li>
+      <a href="{{ .Page.RelPermalink }}">
+        <span class="item-date">{{ printf "%02d" .Count }} items</span>
+        <span class="item-sep">—</span>
+        <span>{{ .Name | strings.FirstUpper }}</span>
+        <span class="item-section-badge">Category</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
 </div>
 {{ end }}

@@ -4,31 +4,19 @@
 {{ $lower_limit := (add $adjacent_links 1) }}
 {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
 
-{{ $baseClass := "flex items-center justify-center px-4 h-8 leading-tight transition-colors duration-200 border border-gray-300 dark:border-gray-800" }}
-{{ $inactiveClass := "text-gray-500 post-card hover:bg-gray-100 hover:text-gray-800 dark:post-card-dark dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white" }}
-{{ $activeClass := "z-10 text-blue-600 border-blue-300 bg-blue-50 dark:bg-gray-800 dark:text-white font-medium" }}
-{{ $disabledClass := "text-gray-300 post-card cursor-not-allowed dark:post-card-dark dark:text-gray-600" }}
-
-<!-- display > than 1 page only change to gt -->
 {{ if ge $paginator.TotalPages 1 }}
-<nav aria-label="Page navigation" class="flex justify-center ">
-  <ul class="inline-flex -space-x-px text-sm shadow-sm rounded-lg overflow-hidden">
-    
-    <li>
+<nav aria-label="Page navigation" class="pagination">
+  <ul class="pagination-list">
+    <li class="pagination-item">
       {{ if $paginator.HasPrev }}
-        <a href="{{ $paginator.Prev.URL }}" class="{{ $baseClass }} {{ $inactiveClass }} rounded-l-lg" aria-label="Previous">
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/></svg>
-        </a>
+        <a href="{{ $paginator.Prev.URL }}" aria-label="Previous">‹</a>
       {{ else }}
-        <span class="{{ $baseClass }} {{ $disabledClass }} rounded-l-lg">
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/></svg>
-        </span>
+        <span class="disabled">‹</span>
       {{ end }}
     </li>
 
     {{ range $paginator.Pagers }}
       {{ $.Scratch.Set "page_number_flag" false }}
-      
       {{ if gt $paginator.TotalPages $max_links }}
         {{ if le $paginator.PageNumber $lower_limit }}
           {{ if le .PageNumber $max_links }}{{ $.Scratch.Set "page_number_flag" true }}{{ end }}
@@ -44,23 +32,17 @@
       {{ end }}
 
       {{ if eq ($.Scratch.Get "page_number_flag") true }}
-        <li>
-          <a href="{{ .URL }}" class="{{ $baseClass }} {{ if eq .PageNumber $paginator.PageNumber }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}">
-            {{ .PageNumber }}
-          </a>
+        <li class="pagination-item">
+          <a href="{{ .URL }}" class="{{ if eq .PageNumber $paginator.PageNumber }}active{{ end }}">{{ .PageNumber }}</a>
         </li>
       {{ end }}
     {{ end }}
 
-    <li>
+    <li class="pagination-item">
       {{ if $paginator.HasNext }}
-        <a href="{{ $paginator.Next.URL }}" class="{{ $baseClass }} {{ $inactiveClass }} rounded-r-lg" aria-label="Next">
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
-        </a>
+        <a href="{{ $paginator.Next.URL }}" aria-label="Next">›</a>
       {{ else }}
-        <span class="{{ $baseClass }} {{ $disabledClass }} rounded-r-lg">
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
-        </span>
+        <span class="disabled">›</span>
       {{ end }}
     </li>
   </ul>

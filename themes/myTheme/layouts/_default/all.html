@@ -1,28 +1,22 @@
 {{ define "main" }}
-<div class="flex justify-center text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-	<div class="w-full max-w-3xl px-4">
-		<div class="flex justify-start mb-4 pt-2">
-			<span class="text-sm py-2">
-				<a class="hover:text-blue-500 transition-colors" href="/posts">
-					<span aria-hidden="true">←</span> Return To Posts
-				</a>
-			</span>
-		</div>
+<div style="padding: 16px 0;">
+  <div style="display:flex; justify-content:flex-start; margin-bottom:12px;">
+    <a href="{{ "posts" | relURL }}" style="font-size:9pt; font-weight:700; color:#9a9a9a; border:1px solid #2a2a2a; padding:6px 10px; background:#000000;">← Return To Posts</a>
+  </div>
 
-        <section>
-            <h2 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">All Posts</h2>
-            <ul class="border-l-2 border-gray-100 dark:border-gray-800">
-                {{ range where .Site.RegularPages "Section" "posts" }}
-                <li class="group relative pl-4">
-                    <a href="{{ .Permalink }}" class="block transition-all">
-                        <span class="font-mono text-gray-500 dark:text-gray-400">{{ .Date.Format "02 Jan 2006" }}</span>
-                        <span class="mx-2 text-gray-300 dark:text-gray-600">—</span>
-                        <span class="font-medium text-blue-600 group-hover:underline">{{ .Title }}</span>
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-        </section>
-    </div>
+  <section>
+    <h2 class="section-title">All Posts</h2>
+    <ul class="item-list">
+      {{ range where .Site.RegularPages "Section" "posts" }}
+      <li>
+        <a href="{{ .RelPermalink }}">
+          <span class="item-date">{{ .Date.Format "02 Jan 2006" }}</span>
+          <span class="item-sep">—</span>
+          <span>{{ .Title }}</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
 </div>
 {{ end }}

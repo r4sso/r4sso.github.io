@@ -1,16 +1,13 @@
 .PHONY: run build debug
 
 run:
-	@echo "Starting watch and Hugo server..."
-	@bun run watch & bunx hugo server --disableFastRender
+	@echo "Starting Hugo server (no tailwind, custom css)..."
+	@hugo server --disableFastRender
 
 debug:
 	@echo "Starting debugging"
-	@bun run watch & bunx hugo server -D --logLevel debug --disableFastRender
-
+	@hugo server -D --logLevel debug --disableFastRender
 
 build:
-	@echo "Minifying and building Hugo site..."
-	@bun run minify
-	@bunx hugo --minify --cleanDestinationDir
-
+	@echo "Building Hugo site..."
+	@hugo --minify --cleanDestinationDir

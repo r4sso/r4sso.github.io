@@ -1,19 +1,6 @@
-<div class="relative group my-4">
-
-    <!-- Copy Button (TEXT) -->
-    <button
-      class="copy-btn absolute top-0 right-0 z-10 px-2 py-1 text-xs rounded-tr-md
-             bg-slate-900 hover:bg-slate-900
-             dark:bg-gray-800/80 dark:hover:bg-gray-600
-             text-gray-200 hover:text-white "
-      aria-label="Copy code"
-    >
-    Copy
-  </button>
-
-  <!-- Chroma Highlight -->
+<div class="code-wrap">
+  <button class="copy-btn" aria-label="Copy code">Copy</button>
   {{ highlight .Inner (or .Type "text") "" }}
-
 </div>
 
 {{ $js := resources.Get "js/copy.js" | minify | fingerprint }}

@@ -1,31 +1,29 @@
-<div class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-  <section class="mb-4">
-    <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Pinned Posts</h2>
-    <ul class="border-l-2 border-gray-100 dark:border-gray-800">
+<div class="section-block">
+  <section class="section-block">
+    <h2 class="section-title">Pinned Posts</h2>
+    <ul class="item-list">
       {{ range where .Site.RegularPages "Params.featured" "==" true }}
-      <li class="group relative pl-4 ">
-        <a href="{{ .Permalink }}" class="block transition-all">
-          <span class="font-mono text-gray-500 dark:text-gray-400">{{ .Date.Format "02 Jan 2006" }}</span>
-          <span class="mx-2 text-gray-300 dark:text-gray-600">—</span>
-          <span class="font-medium text-blue-600 group-hover:underline">{{ .Title }}</span>
+      <li>
+        <a href="{{ .RelPermalink }}">
+          <span class="item-date">{{ .Date.Format "02 Jan 2006" }}</span>
+          <span class="item-sep">—</span>
+          <span>{{ .Title }}</span>
         </a>
       </li>
       {{ end }}
     </ul>
   </section>
 
-  <section>
-    <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Posts</h2>
-    <ul class="border-l-2 border-gray-100 dark:border-gray-800">
+  <section class="section-block">
+    <h2 class="section-title">Posts</h2>
+    <ul class="item-list">
       {{ range .Site.RegularPages | first 5 }}
-      <li class="group relative pl-4">
-        <a href="{{ .Permalink }}" class="block transition-all">
-          <span class="font-mono text-gray-500 dark:text-gray-400">{{ .Date.Format "02 Jan 2006" }}</span>
-          <span class="mx-2 text-gray-300 dark:text-gray-600">—</span>
-          <span class="font-medium text-blue-600 group-hover:underline">{{ .Title }}</span>
-          <span class="ml-2 rounded bg-gray-100 px-1.5 py-0.5 text-[10px] uppercase tracking-wider text-gray-600 dark:bg-gray-700 dark:text-gray-300">
-            {{ .Section }}
-          </span>
+      <li>
+        <a href="{{ .RelPermalink }}">
+          <span class="item-date">{{ .Date.Format "02 Jan 2006" }}</span>
+          <span class="item-sep">—</span>
+          <span>{{ .Title }}</span>
+          <span class="item-section-badge">{{ .Section }}</span>
         </a>
       </li>
       {{ end }}
