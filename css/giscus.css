@@ -1,10 +1,6 @@
 :host,
-html,
-main {
+html {
   color-scheme: dark;
-
-  --bg-default: 0, 0, 0;
-  --primary-default: 9, 105, 218;
 
   --font-family-sans:
     "Iosevka Web",
@@ -28,40 +24,29 @@ main {
     Consolas,
     monospace;
 
-  /* Canvas */
-
   --color-canvas-default: #000000;
-  --color-canvas-overlay: #000000;
-  --color-canvas-inset: #000000;
+  --color-canvas-overlay: #0f0f0f;
+  --color-canvas-inset: #0a0a0a;
   --color-canvas-subtle: #0f0f0f;
-
-  /* Foreground */
 
   --color-fg-default: #f0f0f0;
   --color-fg-muted: #a0a0a0;
   --color-fg-subtle: #777777;
 
-  /* Borders */
-
   --color-border-default: #2a2a2a;
   --color-border-muted: #2e2e2e;
 
-  /* Accent */
-
+  /* Same blue as light theme */
   --color-accent-fg: #0969da;
   --color-accent-emphasis: #0969da;
   --color-accent-muted: rgba(9, 105, 218, 0.4);
   --color-accent-subtle: rgba(9, 105, 218, 0.1);
-
-  /* Status */
 
   --color-success-fg: #2eff8b;
   --color-success-emphasis: #2eff8b;
 
   --color-danger-fg: #ff4d67;
   --color-danger-emphasis: #ff4d67;
-
-  /* Buttons */
 
   --color-btn-text: #f0f0f0;
   --color-btn-bg: #0f0f0f;
@@ -71,39 +56,15 @@ main {
   --color-btn-active-bg: #1e1e1e;
   --color-btn-selected-bg: #1e1e1e;
 
-  /* Primary buttons */
-
-  --color-btn-primary-text: #ffffff;
-  --color-btn-primary-bg: #0969da;
-  --color-btn-primary-border: #0969da;
-  --color-btn-primary-hover-bg: #0969da;
-  --color-btn-primary-hover-border: #0969da;
-  --color-btn-primary-selected-bg: #0969da;
-
-  /* Misc */
-
   --color-neutral-muted: rgba(255, 255, 255, 0.1);
-
-  --color-scale-gray-1: #161616;
-  --color-scale-blue-1: rgba(9, 105, 218, 0.15);
-
-  --color-social-reaction-bg-hover: var(--color-scale-gray-1);
-  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
-
   --color-primer-shadow-inset: none;
 }
-
-
-/* ============================================================
-   Font
-   ============================================================ */
 
 @font-face {
   font-family: "Iosevka Web";
   font-display: swap;
   font-weight: 400;
   font-style: normal;
-
   src:
     url("../fonts/iosevka.woff2") format("woff2"),
     url("../fonts/iosevka.woff") format("woff");
@@ -114,7 +75,6 @@ main {
   font-display: swap;
   font-weight: 700;
   font-style: normal;
-
   src:
     url("../fonts/iosevka-bold.woff2") format("woff2"),
     url("../fonts/iosevka-bold.woff") format("woff");
@@ -145,7 +105,6 @@ select {
 body {
   margin: 0 !important;
   padding: 0 !important;
-
   font-size: 10pt !important;
   line-height: 1.6 !important;
 }
@@ -160,10 +119,7 @@ body {
    Links
    ============================================================ */
 
-a,
-.gsc-comment-header a,
-.gsc-comment-footer a,
-.gsc-comment-content a {
+a {
   color: #0969da !important;
 }
 
@@ -179,7 +135,6 @@ a:hover {
 .gsc-header {
   margin: 0 0 16px 0 !important;
   padding: 0 0 12px 0 !important;
-
   border-bottom: 1px solid #2a2a2a !important;
 }
 
@@ -200,7 +155,6 @@ a:hover {
 .gsc-comment-box {
   margin: 0 !important;
   padding: 0 !important;
-
   background: #0f0f0f !important;
   border: 1px solid #2a2a2a !important;
 }
@@ -208,14 +162,12 @@ a:hover {
 .gsc-comment-box-tabs {
   margin: 0 !important;
   padding: 0 !important;
-
   background: #0a0a0a !important;
   border-bottom: 1px solid #2a2a2a !important;
 }
 
 .gsc-comment-box-tabs button {
   margin: 0 !important;
-
   background: transparent !important;
   color: #a0a0a0 !important;
   border: 0 !important;
@@ -233,15 +185,12 @@ a:hover {
 
 .gsc-comment-box-textarea {
   margin: 0 !important;
-  padding: 0 !important;
-
   background: #0f0f0f !important;
   border: 0 !important;
 }
 
 .gsc-comment-box-textarea textarea {
   margin: 0 !important;
-
   background: #0f0f0f !important;
   color: #f0f0f0 !important;
   border: 0 !important;
@@ -305,15 +254,12 @@ input:focus-visible {
 .gsc-comment {
   margin: 0 0 12px 0 !important;
   padding: 0 !important;
-
   background: #0f0f0f !important;
   border: 1px solid #2a2a2a !important;
 }
 
 .gsc-comment-header {
   margin: 0 !important;
-  padding: 0 !important;
-
   background: #0a0a0a !important;
   border-bottom: 1px solid #2a2a2a !important;
   color: #a0a0a0 !important;
@@ -333,8 +279,6 @@ input:focus-visible {
 
 .gsc-comment-content {
   margin: 0 !important;
-  padding: 0 !important;
-
   background: #0f0f0f !important;
   color: #f0f0f0 !important;
 }
@@ -430,8 +374,6 @@ input:focus-visible {
 
 .gsc-reactions {
   margin: 0 !important;
-  padding: 0 !important;
-
   background: #0a0a0a !important;
   border-top: 1px solid #2a2a2a !important;
 }
