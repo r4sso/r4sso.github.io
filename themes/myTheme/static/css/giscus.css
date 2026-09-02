@@ -1,0 +1,345 @@
+main {
+  /*
+   * r4sso.github.io
+   * cgit-inspired black/white theme
+   */
+
+  /* =====================================================
+     Base
+     ===================================================== */
+
+  --primary-default: 0, 217, 255;
+  --bg-default: 15, 15, 15;
+
+  --color-fg-default: #f0f0f0;
+  --color-fg-muted: #a0a0a0;
+  --color-fg-subtle: #777777;
+
+  --color-canvas-default: #000000;
+  --color-canvas-overlay: #0f0f0f;
+  --color-canvas-inset: #0a0a0a;
+  --color-canvas-subtle: #0f0f0f;
+
+  --color-border-default: #2a2a2a;
+  --color-border-muted: #2e2e2e;
+
+  --color-neutral-muted: rgba(255, 255, 255, 0.06);
+
+  /* =====================================================
+     Accent
+     ===================================================== */
+
+  --color-accent-fg: #00d9ff;
+  --color-accent-emphasis: #00d9ff;
+  --color-accent-muted: rgba(0, 217, 255, 0.4);
+  --color-accent-subtle: rgba(0, 217, 255, 0.1);
+
+  /* =====================================================
+     Success / danger
+     ===================================================== */
+
+  --color-success-fg: #2eff8b;
+  --color-success-emphasis: #2eff8b;
+  --color-success-muted: rgba(46, 255, 139, 0.35);
+  --color-success-subtle: rgba(46, 255, 139, 0.1);
+
+  --color-danger-fg: #ff4d67;
+  --color-danger-emphasis: #ff4d67;
+  --color-danger-muted: rgba(255, 77, 103, 0.35);
+  --color-danger-subtle: rgba(255, 77, 103, 0.1);
+
+  /* =====================================================
+     Buttons
+     ===================================================== */
+
+  --color-btn-text: #f0f0f0;
+  --color-btn-bg: #0f0f0f;
+  --color-btn-border: #2a2a2a;
+
+  --color-btn-hover-bg: #161616;
+  --color-btn-hover-border: #4a4a4a;
+
+  --color-btn-active-bg: #1e1e1e;
+  --color-btn-active-border: #4a4a4a;
+
+  --color-btn-primary-text: #000000;
+  --color-btn-primary-bg: #00d9ff;
+  --color-btn-primary-border: #00d9ff;
+
+  --color-btn-primary-hover-bg: #00d9ff;
+  --color-btn-primary-hover-border: #00d9ff;
+
+  --color-btn-selected-bg: #1e1e1e;
+
+  /* =====================================================
+     Inputs
+     ===================================================== */
+
+  --color-input-bg: #000000;
+  --color-input-contrast-bg: #000000;
+  --color-input-border: #2a2a2a;
+  --color-input-placeholder-text: #777777;
+
+  /* =====================================================
+     Primer
+     ===================================================== */
+
+  --color-primer-shadow-inset:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* =====================================================
+     Typography
+     ===================================================== */
+
+  font-family:
+    "Iosevka Web",
+    "JetBrainsMono Nerd Font",
+    "JetBrains Mono",
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  color: #f0f0f0;
+}
+
+
+/* =========================================================
+   Main background
+   ========================================================= */
+
+main {
+  background: #000000;
+  color: #f0f0f0;
+}
+
+
+/* =========================================================
+   Comment box
+   ========================================================= */
+
+main .gsc-comment-box,
+main .gsc-reply-box {
+  background: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+}
+
+
+/* =========================================================
+   Textarea
+   ========================================================= */
+
+main textarea {
+  color: #f0f0f0;
+  background: #000000;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+main textarea::placeholder {
+  color: #777777;
+}
+
+main textarea:focus {
+  color: #f0f0f0;
+  background: #000000;
+  border-color: #00d9ff;
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   Comments
+   ========================================================= */
+
+main .gsc-comment {
+  background: #000000;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+}
+
+
+/* =========================================================
+   Comment header
+   ========================================================= */
+
+main .gsc-comment-header {
+  background: #0f0f0f;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+main .gsc-comment-author {
+  color: #ffffff;
+}
+
+main .gsc-comment-author a {
+  color: #00d9ff;
+}
+
+main .gsc-comment-timestamp {
+  color: #777777;
+}
+
+
+/* =========================================================
+   Comment content
+   ========================================================= */
+
+main .gsc-comment-content {
+  color: #f0f0f0;
+  background: #000000;
+}
+
+main .gsc-comment-content a {
+  color: #00d9ff;
+}
+
+
+/* =========================================================
+   Markdown
+   ========================================================= */
+
+main .markdown-body {
+  color: #f0f0f0;
+  background: transparent;
+}
+
+main .markdown-body strong,
+main .markdown-body b {
+  color: #ffffff;
+}
+
+main .markdown-body h1,
+main .markdown-body h2,
+main .markdown-body h3,
+main .markdown-body h4,
+main .markdown-body h5,
+main .markdown-body h6 {
+  color: #ffffff;
+  border-color: #2a2a2a;
+}
+
+main .markdown-body blockquote {
+  color: #a0a0a0;
+  border-left-color: #3a3a3a;
+  background: #0a0a0a;
+}
+
+main .markdown-body code {
+  color: #f0f0f0;
+  background: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+}
+
+main .markdown-body pre {
+  color: #f0f0f0;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+}
+
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+
+main button,
+main .btn {
+  color: #f0f0f0;
+  background: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+main button:hover,
+main .btn:hover {
+  color: #ffffff;
+  background: #161616;
+  border-color: #4a4a4a;
+}
+
+
+/* =========================================================
+   Primary button
+   ========================================================= */
+
+main .btn-primary {
+  color: #000000;
+  background: #00d9ff;
+  border-color: #00d9ff;
+}
+
+main .btn-primary:hover {
+  color: #000000;
+  background: #00d9ff;
+  border-color: #00d9ff;
+}
+
+
+/* =========================================================
+   Reactions
+   ========================================================= */
+
+main .gsc-reactions-button {
+  color: #f0f0f0;
+  background: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+}
+
+main .gsc-reactions-button:hover {
+  background: #161616;
+  border-color: #4a4a4a;
+}
+
+
+/* =========================================================
+   Replies
+   ========================================================= */
+
+main .gsc-replies {
+  border-left: 1px solid #2a2a2a;
+  border-radius: 0;
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+main a {
+  color: #00d9ff;
+}
+
+main a:hover {
+  color: #00d9ff;
+}
+
+
+/* =========================================================
+   Focus
+   ========================================================= */
+
+main textarea:focus,
+main button:focus,
+main a:focus {
+  outline: 1px solid #00d9ff;
+  outline-offset: 0;
+}
+
+
+/* =========================================================
+   Square UI
+   ========================================================= */
+
+main *,
+main *::before,
+main *::after {
+  border-radius: 0 !important;
+}
