@@ -1,97 +1,8 @@
-main {
-  /*
-   * r4sso.github.io
-   * cgit-inspired black/white theme
-   */
+:host,
+html {
+  color-scheme: dark;
 
-  /* =====================================================
-     Base
-     ===================================================== */
-
-  --primary-default: 0, 217, 255;
-  --bg-default: 15, 15, 15;
-
-  --color-fg-default: #f0f0f0;
-  --color-fg-muted: #a0a0a0;
-  --color-fg-subtle: #777777;
-
-  --color-canvas-default: #000000;
-  --color-canvas-overlay: #0f0f0f;
-  --color-canvas-inset: #0a0a0a;
-  --color-canvas-subtle: #0f0f0f;
-
-  --color-border-default: #2a2a2a;
-  --color-border-muted: #2e2e2e;
-
-  --color-neutral-muted: rgba(255, 255, 255, 0.06);
-
-  /* =====================================================
-     Accent
-     ===================================================== */
-
-  --color-accent-fg: #00d9ff;
-  --color-accent-emphasis: #00d9ff;
-  --color-accent-muted: rgba(0, 217, 255, 0.4);
-  --color-accent-subtle: rgba(0, 217, 255, 0.1);
-
-  /* =====================================================
-     Success / danger
-     ===================================================== */
-
-  --color-success-fg: #2eff8b;
-  --color-success-emphasis: #2eff8b;
-  --color-success-muted: rgba(46, 255, 139, 0.35);
-  --color-success-subtle: rgba(46, 255, 139, 0.1);
-
-  --color-danger-fg: #ff4d67;
-  --color-danger-emphasis: #ff4d67;
-  --color-danger-muted: rgba(255, 77, 103, 0.35);
-  --color-danger-subtle: rgba(255, 77, 103, 0.1);
-
-  /* =====================================================
-     Buttons
-     ===================================================== */
-
-  --color-btn-text: #f0f0f0;
-  --color-btn-bg: #0f0f0f;
-  --color-btn-border: #2a2a2a;
-
-  --color-btn-hover-bg: #161616;
-  --color-btn-hover-border: #4a4a4a;
-
-  --color-btn-active-bg: #1e1e1e;
-  --color-btn-active-border: #4a4a4a;
-
-  --color-btn-primary-text: #000000;
-  --color-btn-primary-bg: #00d9ff;
-  --color-btn-primary-border: #00d9ff;
-
-  --color-btn-primary-hover-bg: #00d9ff;
-  --color-btn-primary-hover-border: #00d9ff;
-
-  --color-btn-selected-bg: #1e1e1e;
-
-  /* =====================================================
-     Inputs
-     ===================================================== */
-
-  --color-input-bg: #000000;
-  --color-input-contrast-bg: #000000;
-  --color-input-border: #2a2a2a;
-  --color-input-placeholder-text: #777777;
-
-  /* =====================================================
-     Primer
-     ===================================================== */
-
-  --color-primer-shadow-inset:
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-
-  /* =====================================================
-     Typography
-     ===================================================== */
-
-  font-family:
+  --font-family-sans:
     "Iosevka Web",
     "JetBrainsMono Nerd Font",
     "JetBrains Mono",
@@ -102,244 +13,465 @@ main {
     Consolas,
     monospace;
 
-  color: #f0f0f0;
+  --font-family-monospace:
+    "Iosevka Web",
+    "JetBrainsMono Nerd Font",
+    "JetBrains Mono",
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  --color-canvas-default: #000000;
+  --color-canvas-overlay: #0f0f0f;
+  --color-canvas-inset: #0a0a0a;
+  --color-canvas-subtle: #0f0f0f;
+
+  --color-fg-default: #f0f0f0;
+  --color-fg-muted: #a0a0a0;
+  --color-fg-subtle: #777777;
+
+  --color-border-default: #2a2a2a;
+  --color-border-muted: #2e2e2e;
+
+  --color-accent-fg: #00d9ff;
+  --color-accent-emphasis: #00d9ff;
+  --color-accent-muted: rgba(0, 217, 255, 0.4);
+  --color-accent-subtle: rgba(0, 217, 255, 0.1);
+
+  --color-success-fg: #2eff8b;
+  --color-success-emphasis: #2eff8b;
+
+  --color-danger-fg: #ff4d67;
+  --color-danger-emphasis: #ff4d67;
+
+  --color-btn-text: #f0f0f0;
+  --color-btn-bg: #0f0f0f;
+  --color-btn-border: #2a2a2a;
+  --color-btn-hover-bg: #161616;
+  --color-btn-hover-border: #3a3a3a;
+  --color-btn-active-bg: #1e1e1e;
+  --color-btn-selected-bg: #1e1e1e;
+
+  --color-neutral-muted: rgba(255, 255, 255, 0.1);
+  --color-primer-shadow-inset: none;
 }
 
+@font-face {
+  font-family: "Iosevka Web";
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src:
+    url("../fonts/iosevka.woff2") format("woff2"),
+    url("../fonts/iosevka.woff") format("woff");
+}
 
-/* =========================================================
-   Main background
-   ========================================================= */
+@font-face {
+  font-family: "Iosevka Web";
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src:
+    url("../fonts/iosevka-bold.woff2") format("woff2"),
+    url("../fonts/iosevka-bold.woff") format("woff");
+}
 
+/* ------------------------------------------------------------
+   Base
+   ------------------------------------------------------------ */
+
+html,
+body,
 main {
-  background: #000000;
-  color: #f0f0f0;
+  background: #000000 !important;
+  color: #f0f0f0 !important;
 }
 
-
-/* =========================================================
-   Comment box
-   ========================================================= */
-
-main .gsc-comment-box,
-main .gsc-reply-box {
-  background: #0f0f0f;
-  border: 1px solid #2a2a2a;
-  border-radius: 0;
+html,
+body,
+main,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-family-sans) !important;
 }
 
-
-/* =========================================================
-   Textarea
-   ========================================================= */
-
-main textarea {
-  color: #f0f0f0;
-  background: #000000;
-  border: 1px solid #2a2a2a;
-  border-radius: 0;
-  box-shadow: none;
+body {
+  font-size: 10pt !important;
+  line-height: 1.6 !important;
 }
 
-main textarea::placeholder {
-  color: #777777;
-}
-
-main textarea:focus {
-  color: #f0f0f0;
-  background: #000000;
-  border-color: #00d9ff;
-  box-shadow: none;
-}
-
-
-/* =========================================================
-   Comments
-   ========================================================= */
-
-main .gsc-comment {
-  background: #000000;
-  border: 1px solid #2a2a2a;
-  border-radius: 0;
-}
-
-
-/* =========================================================
-   Comment header
-   ========================================================= */
-
-main .gsc-comment-header {
-  background: #0f0f0f;
-  border-bottom: 1px solid #2a2a2a;
-}
-
-main .gsc-comment-author {
-  color: #ffffff;
-}
-
-main .gsc-comment-author a {
-  color: #00d9ff;
-}
-
-main .gsc-comment-timestamp {
-  color: #777777;
-}
-
-
-/* =========================================================
-   Comment content
-   ========================================================= */
-
-main .gsc-comment-content {
-  color: #f0f0f0;
-  background: #000000;
-}
-
-main .gsc-comment-content a {
-  color: #00d9ff;
-}
-
-
-/* =========================================================
-   Markdown
-   ========================================================= */
-
-main .markdown-body {
-  color: #f0f0f0;
-  background: transparent;
-}
-
-main .markdown-body strong,
-main .markdown-body b {
-  color: #ffffff;
-}
-
-main .markdown-body h1,
-main .markdown-body h2,
-main .markdown-body h3,
-main .markdown-body h4,
-main .markdown-body h5,
-main .markdown-body h6 {
-  color: #ffffff;
-  border-color: #2a2a2a;
-}
-
-main .markdown-body blockquote {
-  color: #a0a0a0;
-  border-left-color: #3a3a3a;
-  background: #0a0a0a;
-}
-
-main .markdown-body code {
-  color: #f0f0f0;
-  background: #0f0f0f;
-  border: 1px solid #2a2a2a;
-  border-radius: 0;
-}
-
-main .markdown-body pre {
-  color: #f0f0f0;
-  background: #0a0a0a;
-  border: 1px solid #2a2a2a;
-  border-radius: 0;
-}
-
-
-/* =========================================================
-   Buttons
-   ========================================================= */
-
-main button,
-main .btn {
-  color: #f0f0f0;
-  background: #0f0f0f;
-  border: 1px solid #2a2a2a;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-main button:hover,
-main .btn:hover {
-  color: #ffffff;
-  background: #161616;
-  border-color: #4a4a4a;
-}
-
-
-/* =========================================================
-   Primary button
-   ========================================================= */
-
-main .btn-primary {
-  color: #000000;
-  background: #00d9ff;
-  border-color: #00d9ff;
-}
-
-main .btn-primary:hover {
-  color: #000000;
-  background: #00d9ff;
-  border-color: #00d9ff;
-}
-
-
-/* =========================================================
-   Reactions
-   ========================================================= */
-
-main .gsc-reactions-button {
-  color: #f0f0f0;
-  background: #0f0f0f;
-  border: 1px solid #2a2a2a;
-  border-radius: 0;
-}
-
-main .gsc-reactions-button:hover {
-  background: #161616;
-  border-color: #4a4a4a;
-}
-
-
-/* =========================================================
-   Replies
-   ========================================================= */
-
-main .gsc-replies {
-  border-left: 1px solid #2a2a2a;
-  border-radius: 0;
-}
-
-
-/* =========================================================
-   Links
-   ========================================================= */
-
-main a {
-  color: #00d9ff;
-}
-
-main a:hover {
-  color: #00d9ff;
-}
-
-
-/* =========================================================
-   Focus
-   ========================================================= */
-
-main textarea:focus,
-main button:focus,
-main a:focus {
-  outline: 1px solid #00d9ff;
-  outline-offset: 0;
-}
-
-
-/* =========================================================
-   Square UI
-   ========================================================= */
-
-main *,
-main *::before,
-main *::after {
+* {
   border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ------------------------------------------------------------
+   Links
+   ------------------------------------------------------------ */
+
+a {
+  color: #00d9ff !important;
+}
+
+a:hover {
+  color: #00d9ff !important;
+}
+
+/* ------------------------------------------------------------
+   Header
+   ------------------------------------------------------------ */
+
+.gsc-header {
+  border-bottom: 1px solid #2a2a2a !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 16px !important;
+}
+
+.gsc-header a {
+  color: #00d9ff !important;
+}
+
+.gsc-left-header,
+.gsc-right-header {
+  color: #a0a0a0 !important;
+}
+
+/* ------------------------------------------------------------
+   Comment composer
+   ------------------------------------------------------------ */
+
+.gsc-comment-box {
+  background: #0f0f0f !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.gsc-comment-box-tabs {
+  background: #0a0a0a !important;
+  border-bottom: 1px solid #2a2a2a !important;
+}
+
+.gsc-comment-box-tabs button {
+  background: transparent !important;
+  color: #a0a0a0 !important;
+  border: 0 !important;
+}
+
+.gsc-comment-box-tabs button:hover {
+  background: #161616 !important;
+  color: #f0f0f0 !important;
+}
+
+.gsc-comment-box-tabs button[aria-selected="true"] {
+  color: #00d9ff !important;
+  border-bottom: 2px solid #00d9ff !important;
+}
+
+.gsc-comment-box-textarea {
+  background: #0f0f0f !important;
+  border: 0 !important;
+}
+
+.gsc-comment-box-textarea textarea {
+  background: #0f0f0f !important;
+  color: #f0f0f0 !important;
+  border: 0 !important;
+  outline: none !important;
+}
+
+.gsc-comment-box-textarea textarea::placeholder {
+  color: #777777 !important;
+}
+
+/* ------------------------------------------------------------
+   Buttons
+   ------------------------------------------------------------ */
+
+button,
+.gsc-reply-box button,
+.gsc-comment-box button {
+  background: #0f0f0f !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+button:hover,
+.gsc-reply-box button:hover,
+.gsc-comment-box button:hover {
+  background: #161616 !important;
+  border-color: #3a3a3a !important;
+}
+
+button:active {
+  background: #1e1e1e !important;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 1px solid #00d9ff !important;
+  outline-offset: 1px !important;
+}
+
+/* Primary buttons */
+
+.gsc-comment-box .btn-primary,
+.gsc-reply-box .btn-primary {
+  background: #00d9ff !important;
+  color: #000000 !important;
+  border-color: #00d9ff !important;
+}
+
+.gsc-comment-box .btn-primary:hover,
+.gsc-reply-box .btn-primary:hover {
+  background: #00d9ff !important;
+  color: #000000 !important;
+  opacity: 0.85;
+}
+
+/* ------------------------------------------------------------
+   Comments
+   ------------------------------------------------------------ */
+
+.gsc-comment {
+  background: #0f0f0f !important;
+  border: 1px solid #2a2a2a !important;
+  margin-bottom: 12px !important;
+}
+
+.gsc-comment-header {
+  background: #0a0a0a !important;
+  border-bottom: 1px solid #2a2a2a !important;
+  color: #a0a0a0 !important;
+}
+
+.gsc-comment-header .author-name {
+  color: #f0f0f0 !important;
+}
+
+.gsc-comment-header .author-name a {
+  color: #00d9ff !important;
+}
+
+.gsc-comment-header .datetime {
+  color: #777777 !important;
+}
+
+.gsc-comment-content {
+  background: #0f0f0f !important;
+  color: #f0f0f0 !important;
+  padding: 12px !important;
+}
+
+.gsc-comment-content p {
+  color: #f0f0f0 !important;
+}
+
+.gsc-comment-content strong {
+  color: #ffffff !important;
+}
+
+.gsc-comment-content em {
+  color: #e6e6e6 !important;
+}
+
+/* ------------------------------------------------------------
+   Markdown
+   ------------------------------------------------------------ */
+
+.markdown-body {
+  background: transparent !important;
+  color: #f0f0f0 !important;
+  font-family: var(--font-family-sans) !important;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: #ffffff !important;
+  border-color: #2a2a2a !important;
+}
+
+.markdown-body a {
+  color: #00d9ff !important;
+}
+
+.markdown-body blockquote {
+  color: #a0a0a0 !important;
+  border-left: 2px solid #3a3a3a !important;
+}
+
+.markdown-body hr {
+  background: #2a2a2a !important;
+  border: 0 !important;
+  height: 1px !important;
+}
+
+.markdown-body code {
+  background: #161616 !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #2a2a2a !important;
+  padding: 1px 4px !important;
+}
+
+.markdown-body pre {
+  background: #0a0a0a !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.markdown-body pre code {
+  background: transparent !important;
+  border: 0 !important;
+  color: #f0f0f0 !important;
+}
+
+.markdown-body table {
+  background: #0f0f0f !important;
+  border-color: #2a2a2a !important;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  border-color: #2a2a2a !important;
+}
+
+.markdown-body table tr {
+  background: #0f0f0f !important;
+  border-color: #2a2a2a !important;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background: #0a0a0a !important;
+}
+
+/* ------------------------------------------------------------
+   Reactions
+   ------------------------------------------------------------ */
+
+.gsc-reactions {
+  border-top: 1px solid #2a2a2a !important;
+  background: #0a0a0a !important;
+}
+
+.gsc-reactions-button {
+  background: #0f0f0f !important;
+  color: #a0a0a0 !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.gsc-reactions-button:hover {
+  color: #00d9ff !important;
+  border-color: #3a3a3a !important;
+}
+
+.gsc-direct-reaction-buttons button {
+  background: #0f0f0f !important;
+  color: #a0a0a0 !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.gsc-direct-reaction-buttons button:hover {
+  color: #00d9ff !important;
+  border-color: #00d9ff !important;
+}
+
+/* ------------------------------------------------------------
+   Replies
+   ------------------------------------------------------------ */
+
+.gsc-replies {
+  border-left: 1px solid #2a2a2a !important;
+}
+
+.gsc-reply {
+  background: #0f0f0f !important;
+  border-color: #2a2a2a !important;
+}
+
+.gsc-reply-box {
+  background: #0f0f0f !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+/* ------------------------------------------------------------
+   Metadata / muted text
+   ------------------------------------------------------------ */
+
+.gsc-comment-footer,
+.gsc-comment-footer *,
+.gsc-reply *,
+.gsc-header *,
+.gsc-timeline *,
+.color-fg-muted {
+  color: #777777 !important;
+}
+
+.gsc-comment-footer a:hover {
+  color: #00d9ff !important;
+}
+
+/* ------------------------------------------------------------
+   Alerts
+   ------------------------------------------------------------ */
+
+.gsc-alert {
+  background: #0f0f0f !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.gsc-alert-danger {
+  border-color: #ff4d67 !important;
+  color: #ff4d67 !important;
+}
+
+.gsc-alert-success {
+  border-color: #2eff8b !important;
+  color: #2eff8b !important;
+}
+
+/* ------------------------------------------------------------
+   Avatar
+   ------------------------------------------------------------ */
+
+.gsc-comment-header .avatar,
+.gsc-comment-header img {
+  border-radius: 0 !important;
+}
+
+/* ------------------------------------------------------------
+   Selection
+   ------------------------------------------------------------ */
+
+::selection {
+  background: #00d9ff !important;
+  color: #000000 !important;
+}
+
+/* ------------------------------------------------------------
+   Scrollbar
+   ------------------------------------------------------------ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
 }
