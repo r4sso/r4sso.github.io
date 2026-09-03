@@ -330,7 +330,7 @@ button:focus {
   color: var(--bg);
   background: var(--text-strong);
   border-color: var(--text-strong);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .nav-link.active:hover {
@@ -369,7 +369,7 @@ button:focus {
   color: var(--bg);
   background: var(--text-strong);
   border-color: var(--text-strong);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .nav-dropdown-trigger.active:hover {
@@ -496,11 +496,11 @@ button:focus {
   stroke: currentColor;
 }
 
-html:not(.light) #theme-toggle-light-icon {
+html.light #theme-toggle-light-icon {
   display: block !important;
 }
 
-html.light #theme-toggle-dark-icon {
+html:not(.light) #theme-toggle-dark-icon {
   display: block !important;
 }
 
@@ -585,7 +585,7 @@ html.light #theme-toggle-dark-icon {
   background: var(--text-strong);
   border-color: var(--text-strong);
   border-left-color: var(--text-strong);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .mobile-menu a.mobile-link:hover {
@@ -626,7 +626,7 @@ html.light #theme-toggle-dark-icon {
   color: var(--bg);
   background: var(--text-strong);
   border-color: var(--text-strong);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .mobile-submenu {

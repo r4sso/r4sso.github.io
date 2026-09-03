@@ -36,11 +36,10 @@ html {
   --color-border-default: #2a2a2a;
   --color-border-muted: #2e2e2e;
 
-  /* Same blue as light theme */
-  --color-accent-fg: #0969da;
-  --color-accent-emphasis: #0969da;
-  --color-accent-muted: rgba(9, 105, 218, 0.4);
-  --color-accent-subtle: rgba(9, 105, 218, 0.1);
+  --color-accent-fg: #00d9ff;
+  --color-accent-emphasis: #00d9ff;
+  --color-accent-muted: rgba(0, 217, 255, 0.4);
+  --color-accent-subtle: rgba(0, 217, 255, 0.1);
 
   --color-success-fg: #2eff8b;
   --color-success-emphasis: #2eff8b;
@@ -120,11 +119,13 @@ body {
    ============================================================ */
 
 a {
-  color: #0969da !important;
+  color: #00d9ff !important;
 }
 
 a:hover {
-  color: #0969da !important;
+  color: #00d9ff !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
 }
 
 
@@ -144,7 +145,7 @@ a:hover {
 }
 
 .gsc-header a {
-  color: #0969da !important;
+  color: #00d9ff !important;
 }
 
 
@@ -179,8 +180,8 @@ a:hover {
 }
 
 .gsc-comment-box-tabs button[aria-selected="true"] {
-  color: #0969da !important;
-  border-bottom: 2px solid #0969da !important;
+  color: #00d9ff !important;
+  border-bottom: 2px solid #00d9ff !important;
 }
 
 .gsc-comment-box-textarea {
@@ -228,22 +229,22 @@ button:active {
 button:focus-visible,
 textarea:focus-visible,
 input:focus-visible {
-  outline: 1px solid #0969da !important;
+  outline: 1px solid #00d9ff !important;
   outline-offset: 1px !important;
 }
 
 .gsc-comment-box .btn-primary,
 .gsc-reply-box .btn-primary {
-  background: #0969da !important;
-  color: #ffffff !important;
-  border-color: #0969da !important;
+  background: #00d9ff !important;
+  color: #000000 !important;
+  border-color: #00d9ff !important;
 }
 
 .gsc-comment-box .btn-primary:hover,
 .gsc-reply-box .btn-primary:hover {
-  background: #0969da !important;
-  color: #ffffff !important;
-  border-color: #0969da !important;
+  background: #00d9ff !important;
+  color: #000000 !important;
+  border-color: #00d9ff !important;
 }
 
 
@@ -270,7 +271,7 @@ input:focus-visible {
 }
 
 .gsc-comment-header .author-name a {
-  color: #0969da !important;
+  color: #00d9ff !important;
 }
 
 .gsc-comment-header .datetime {
@@ -317,7 +318,7 @@ input:focus-visible {
 }
 
 .markdown-body a {
-  color: #0969da !important;
+  color: #00d9ff !important;
 }
 
 .markdown-body blockquote {
@@ -387,8 +388,8 @@ input:focus-visible {
 
 .gsc-reactions-button:hover,
 .gsc-direct-reaction-buttons button:hover {
-  color: #0969da !important;
-  border-color: #0969da !important;
+  color: #00d9ff !important;
+  border-color: #00d9ff !important;
 }
 
 
@@ -425,7 +426,7 @@ input:focus-visible {
 }
 
 .gsc-comment-footer a:hover {
-  color: #0969da !important;
+  color: #00d9ff !important;
 }
 
 
@@ -461,12 +462,12 @@ input:focus-visible {
 
 
 /* ============================================================
-   Selection
+   Selection — match site --selection-bg dark
    ============================================================ */
 
 ::selection {
-  background: #0969da !important;
-  color: #ffffff !important;
+  background: #00d9ff !important;
+  color: #000000 !important;
 }
 
 
@@ -480,13 +481,13 @@ input:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--color-canvas-default, #000000) !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
+  background: #3a3a3a !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a3a;
+  background: #4a4a4a !important;
 }

@@ -380,13 +380,13 @@ input:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: var(--color-canvas-default, #ffffff) !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d0d7de;
+  background: #8c959f !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8c959f;
+  background: #6e7781 !important;
 }
