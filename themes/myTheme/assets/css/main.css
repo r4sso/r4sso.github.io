@@ -1322,6 +1322,20 @@ html:not(.light) #theme-toggle-dark-icon {
   display: block;
 }
 
+.thumb figcaption {
+  display: block;
+  margin: 0;
+  padding: 8px 12px 0;
+  color: var(--text-meta);
+  background: var(--bg);
+  font-size: 8.5pt;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
 @media (min-width: 640px) {
   .thumb {
     width: calc(100% + 48px);
