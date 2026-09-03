@@ -24,7 +24,7 @@ html {
     Consolas,
     monospace;
 
-  --color-canvas-default: #ffffff;
+  --color-canvas-default: #f6f8fa;
   --color-canvas-overlay: #f6f8fa;
   --color-canvas-inset: #f6f8fa;
   --color-canvas-subtle: #eff2f5;
@@ -84,7 +84,7 @@ html {
 html,
 body,
 main {
-  background: #ffffff !important;
+  background: #f6f8fa !important;
   color: #1f2328 !important;
 }
 
@@ -126,6 +126,8 @@ a:hover {
 /* Header */
 
 .gsc-header {
+  margin: 0 0 16px 0 !important;
+  padding: 0 0 12px 12px !important;
   border-bottom: 1px solid #d0d7de !important;
 }
 
