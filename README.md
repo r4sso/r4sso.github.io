@@ -1,5 +1,5 @@
 ## r4sso.github.io
-My Hugo personal website with custom `cgit` black & white square theme — no Tailwind, lightweight custom CSS.
+My Hugo personal website with custom theme.
 
 ### Requirements
 - Hugo **extended** (latest)

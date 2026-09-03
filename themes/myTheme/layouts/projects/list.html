@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div style="padding:16px 0;">
+  <div class="section-block">
+    {{ with .Content }}
+    <div class="prose" style="margin: 12px 0 16px 0;">{{ . }}</div>
+    {{ end }}
+
+    <div class="project-grid">
+      {{ range .Params.projects }}
+      {{ $p := . }}
+      <div class="project-card">
+        <div class="project-body" style="padding-bottom: 8px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+          <h3 class="project-title" style="margin:0; padding:0; flex:1;"><a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer">{{ $p.title }}</a></h3>
+          {{ with $p.label }}<div class="project-label" style="position:static; margin:0;">{{ . }}</div>{{ end }}
+        </div>
+        {{ with $p.image }}
+        {{ $imgPath := strings.TrimPrefix "/" . }}
+        {{ $img := resources.Get $imgPath }}
+        {{ if not $img }}{{ $img = resources.Get (printf "images/%s" (path.Base .)) }}{{ end }}
+        {{ if $img }}
+          {{ $webp := $img.Resize "640x webp q80" }}
+          {{ $webpSmall := $img.Resize "360x webp q75" }}
+          {{ $fallback := $img.Resize "640x q80" }}
+          {{ $fallbackSmall := $img.Resize "360x q75" }}
+          <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="project-image-wrap">
+            <picture>
+              <source srcset="{{ $webpSmall.RelPermalink }} 360w, {{ $webp.RelPermalink }} 640w" sizes="(max-width: 640px) calc(100vw - 72px), 640px" type="image/webp">
+              <source srcset="{{ $fallbackSmall.RelPermalink }} 360w, {{ $fallback.RelPermalink }} 640w" sizes="(max-width: 640px) calc(100vw - 72px), 640px" type="image/jpeg">
+              <img src="{{ $fallback.RelPermalink }}" alt="{{ $p.title }} thumbnail" loading="lazy" decoding="async" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" class="project-image">
+            </picture>
+          </a>
+        {{ else }}
+          <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="project-image-wrap">
+            <img src="{{ . }}" alt="{{ $p.title }} thumbnail" loading="lazy" decoding="async" class="project-image">
+          </a>
+        {{ end }}
+        {{ end }}
+        <div class="project-body" style="padding-top:12px;">
+          <p class="project-desc">{{ $p.description }}</p>
+          {{ with $p.tags }}
+          <div class="project-tags">
+            {{ range . }}<span class="project-tag">{{ . }}</span>{{ end }}
+          </div>
+          {{ end }}
+          <div class="project-link-wrap" style="justify-content:flex-start;">
+            <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="project-link">View Source on Github →</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
