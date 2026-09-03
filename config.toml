@@ -69,9 +69,9 @@ paginate = 5
   weight = 1
 
 [[menu.main]]
-  name = "Notes"
-  pageRef = "notes"
-  url = "/notes/"
+  name = "Projects"
+  pageRef = "projects"
+  url = "/projects/"
   weight = 2
 
 [[menu.main]]
@@ -85,6 +85,13 @@ paginate = 5
   name = "More"
   pageRef = "more"
   weight = 4
+
+[[menu.main]]
+  parent = "more"
+  name = "Notes"
+  pageRef = "notes"
+  url = "/notes/"
+  weight = 5
 
 [[menu.main]]
   parent = "more"
