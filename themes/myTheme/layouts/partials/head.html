@@ -2,9 +2,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    <link rel="canonical" href="{{ .Permalink }}">
     {{ partialCached "head/css.html" . }}
     {{ partialCached "head/js.html" . }}
     {{ if .Params.math }}{{ partial "helpers/katex.html" . }}{{ end }}
     <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+    <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ site.Title }}">
+    {{ with .Params.thumb }}{{ $ogImg := $.Page.Resources.GetMatch . }}{{ if $ogImg }}<meta property="og:image" content="{{ $ogImg.Permalink }}">{{ end }}{{ end }}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     <link rel="icon" href="data:image/svg+xml;base64,{{ readFile .Site.Params.logo | base64Encode }}" type="image/svg+xml">
+    {{ if .IsPage }}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "{{ if eq .Section "posts" }}BlogPosting{{ else }}WebPage{{ end }}",
+      "headline": {{ .Title | jsonify }},
+      "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
+      "url": {{ .Permalink | jsonify }},
+      "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+      "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+      "author": {"@type": "Person", "name": "{{ site.Params.github }}"}
+    }
+    </script>
+    {{ end }}
 </head>

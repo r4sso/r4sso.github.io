@@ -4,20 +4,34 @@
 <figure>
   {{ $data := newScratch }}
   {{ if gt $src.Width 1100 }}
-    {{ $data.Set "webp" ($src.Resize "960x webp q90") }}
-    {{ $data.Set "fallback" ($src.Resize "960x q90") }}
+    {{ $data.Set "webp" ($src.Resize "960x webp q85") }}
+    {{ $data.Set "fallback" ($src.Resize "960x q85") }}
+    {{ $data.Set "webpSmall" ($src.Resize "480x webp q85") }}
+    {{ $data.Set "fallbackSmall" ($src.Resize "480x q85") }}
   {{ else }}
-    {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q90" $src.Width $src.Height)) }}
-    {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q90" $src.Width $src.Height)) }}
+    {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q85" $src.Width $src.Height)) }}
+    {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q85" $src.Width $src.Height)) }}
   {{ end }}
   {{ $webp := $data.Get "webp" }}
   {{ $fallback := $data.Get "fallback" }}
+  {{ $isFirst := eq (.Page.Scratch.Get "imgCount") nil }}
+  {{ .Page.Scratch.Set "imgCount" 1 }}
+  {{ $loading := cond $isFirst "eager" "lazy" }}
+  {{ $fetchPriority := cond $isFirst "high" "auto" }}
   <a href="{{ $src.RelPermalink }}">
     <picture>
+      {{ if $data.Get "webpSmall" }}
+      <source srcset="{{ ($data.Get "webpSmall").RelPermalink }} 480w, {{ $webp.RelPermalink }} 960w" sizes="(max-width: 640px) 100vw, 960px" type="image/webp">
+      <source srcset="{{ ($data.Get "fallbackSmall").RelPermalink }} 480w, {{ $fallback.RelPermalink }} 960w" sizes="(max-width: 640px) 100vw, 960px" type="image/jpeg">
+      {{ else }}
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-      <img src="{{ $fallback.RelPermalink }}" alt="{{ .Text }}" loading="lazy" decoding="async" width="{{ $src.Width }}" height="{{ $src.Height }}"/>
+      {{ end }}
+      <img src="{{ $fallback.RelPermalink }}" alt="{{ .Text }}" loading="{{ $loading }}" decoding="async" fetchpriority="{{ $fetchPriority }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"/>
     </picture>
   </a>
   {{ with .Title }}<figcaption>- {{ . | markdownify }}</figcaption>{{ end }}
 </figure>
-{{end}}
+{{ else }}
+  {{/* Fallback for external images */}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async" />
+{{ end }}
