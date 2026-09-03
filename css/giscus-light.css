@@ -108,6 +108,7 @@ body {
 * {
   border-radius: 0 !important;
   box-shadow: none !important;
+  box-sizing: border-box !important;
 }
 
 /* Links */
@@ -211,6 +212,8 @@ input:focus-visible {
 .gsc-comment {
   background: #f6f8fa !important;
   border: 1px solid #d0d7de !important;
+  border-width: 1px !important;
+  box-sizing: border-box !important;
 }
 
 .gsc-comment-header {
