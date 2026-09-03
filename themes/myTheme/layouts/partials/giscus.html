@@ -1,11 +1,17 @@
+{{- $category := "General" -}}
+{{- $reactions := "1" -}}
+{{- if reflect.IsMap . -}}
+  {{- with index . "category" }}{{ $category = . }}{{ end -}}
+  {{- with index . "reactions" }}{{ $reactions = . }}{{ end -}}
+{{- end -}}
 <script src="https://giscus.app/client.js"
         data-repo="r4sso/r4sso.github.io"
         data-repo-id="MDEwOlJlcG9zaXRvcnkzMDAyOTQzNzM="
-        data-category="General"
+        data-category="{{ $category }}"
         data-category-id="DIC_kwDOEeYg5c4CX55V"
         data-mapping="pathname"
         data-strict="0"
-        data-reactions-enabled="1"
+        data-reactions-enabled="{{ $reactions }}"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
