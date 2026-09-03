@@ -4,13 +4,13 @@
 <figure>
   {{ $data := newScratch }}
   {{ if gt $src.Width 1100 }}
-    {{ $data.Set "webp" ($src.Resize "640x webp q80") }}
-    {{ $data.Set "fallback" ($src.Resize "640x q80") }}
-    {{ $data.Set "webpSmall" ($src.Resize "360x webp q75") }}
-    {{ $data.Set "fallbackSmall" ($src.Resize "360x q75") }}
+    {{ $data.Set "webp" ($src.Resize "960x webp q85") }}
+    {{ $data.Set "fallback" ($src.Resize "960x q85") }}
+    {{ $data.Set "webpSmall" ($src.Resize "480x webp q85") }}
+    {{ $data.Set "fallbackSmall" ($src.Resize "480x q85") }}
   {{ else }}
-    {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q80" $src.Width $src.Height)) }}
-    {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q80" $src.Width $src.Height)) }}
+    {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q85" $src.Width $src.Height)) }}
+    {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q85" $src.Width $src.Height)) }}
   {{ end }}
   {{ $webp := $data.Get "webp" }}
   {{ $fallback := $data.Get "fallback" }}
@@ -21,8 +21,8 @@
   <a href="{{ $src.RelPermalink }}">
     <picture>
       {{ if $data.Get "webpSmall" }}
-      <source srcset="{{ ($data.Get "webpSmall").RelPermalink }} 360w, {{ $webp.RelPermalink }} 640w" sizes="(max-width: 640px) calc(100vw - 72px), 640px" type="image/webp">
-      <source srcset="{{ ($data.Get "fallbackSmall").RelPermalink }} 360w, {{ $fallback.RelPermalink }} 640w" sizes="(max-width: 640px) calc(100vw - 72px), 640px" type="image/jpeg">
+      <source srcset="{{ ($data.Get "webpSmall").RelPermalink }} 480w, {{ $webp.RelPermalink }} 960w" sizes="(max-width: 640px) 100vw, 960px" type="image/webp">
+      <source srcset="{{ ($data.Get "fallbackSmall").RelPermalink }} 480w, {{ $fallback.RelPermalink }} 960w" sizes="(max-width: 640px) 100vw, 960px" type="image/jpeg">
       {{ else }}
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
       {{ end }}
