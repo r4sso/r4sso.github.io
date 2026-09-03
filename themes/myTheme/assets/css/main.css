@@ -1305,7 +1305,7 @@ html:not(.light) #theme-toggle-dark-icon {
 
 .thumb {
   width: calc(100% + 40px);
-  margin: -20px -20px 16px;
+  margin: 0 -20px 16px;
 }
 
 .thumb figure {
@@ -1340,7 +1340,7 @@ html:not(.light) #theme-toggle-dark-icon {
 @media (min-width: 640px) {
   .thumb {
     width: calc(100% + 48px);
-    margin: -24px -24px 16px;
+    margin: 0 -24px 16px;
   }
 }
 
