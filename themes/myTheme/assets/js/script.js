@@ -55,6 +55,101 @@
 
 
   /* ─────────────────────────────────────
+     Giscus
+     ───────────────────────────────────── */
+
+  var GISCUS_DARK_THEME =
+    'https://r4sso.my/css/giscus.css';
+
+  var GISCUS_LIGHT_THEME =
+    'https://r4sso.my/css/giscus-light.css';
+
+
+  function getGiscusTheme() {
+    return document.documentElement.classList.contains('light')
+      ? GISCUS_LIGHT_THEME
+      : GISCUS_DARK_THEME;
+  }
+
+
+  function changeGiscusTheme() {
+    var iframe = document.querySelector('iframe.giscus-frame');
+
+    if (!iframe || !iframe.contentWindow) return;
+
+    iframe.contentWindow.postMessage(
+      {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme()
+          }
+        }
+      },
+      'https://giscus.app'
+    );
+  }
+
+
+  function watchGiscus() {
+    function sendTheme(iframe) {
+      if (!iframe || !iframe.contentWindow) return;
+      changeGiscusTheme();
+      // retry for giscus ready
+      setTimeout(changeGiscusTheme, 300);
+      setTimeout(changeGiscusTheme, 800);
+      setTimeout(changeGiscusTheme, 1500);
+    }
+
+    var observer = new MutationObserver(function () {
+      var iframe = document.querySelector('iframe.giscus-frame');
+
+      if (!iframe) return;
+
+      if (!iframe.dataset.themeInitialized) {
+        iframe.dataset.themeInitialized = 'true';
+
+        iframe.addEventListener('load', function () {
+          sendTheme(iframe);
+        });
+
+        // in case already loaded
+        setTimeout(function () {
+          sendTheme(iframe);
+        }, 100);
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    var iframe = document.querySelector('iframe.giscus-frame');
+
+    if (iframe && !iframe.dataset.themeInitialized) {
+      iframe.dataset.themeInitialized = 'true';
+
+      iframe.addEventListener('load', function () {
+        sendTheme(iframe);
+      });
+
+      setTimeout(function () {
+        sendTheme(iframe);
+      }, 100);
+    }
+
+    // also handle giscus ready message
+    window.addEventListener('message', function (e) {
+      if (e.origin !== 'https://giscus.app') return;
+      if (!(typeof e.data === 'object' && e.data.giscus)) return;
+      // giscus loaded, ensure correct theme
+      var iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) sendTheme(iframe);
+    });
+  }
+
+
+  /* ─────────────────────────────────────
      Site theme
      ───────────────────────────────────── */
 
@@ -74,6 +169,13 @@
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
       }
+
+      /*
+       * Change only Giscus' custom stylesheet.
+       *
+       * The iframe itself is NOT reloaded.
+       */
+      changeGiscusTheme();
     });
   }
 
@@ -84,5 +186,6 @@
 
   handleMobileMenu();
   handleThemeToggle();
+  watchGiscus();
 
 })();

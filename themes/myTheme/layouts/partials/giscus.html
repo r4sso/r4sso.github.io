@@ -4,19 +4,36 @@
   {{- with index . "category" }}{{ $category = . }}{{ end -}}
   {{- with index . "reactions" }}{{ $reactions = . }}{{ end -}}
 {{- end -}}
-<script src="https://giscus.app/client.js"
-        data-repo="r4sso/r4sso.github.io"
-        data-repo-id="MDEwOlJlcG9zaXRvcnkzMDAyOTQzNzM="
-        data-category="{{ $category }}"
-        data-category-id="DIC_kwDOEeYg5c4CX55V"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="{{ $reactions }}"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
+<div id="giscus-container"></div>
+<script>
+  (function () {
+    var _origError = console.error;
+    console.error = function () {
+      var m = Array.prototype.join.call(arguments, ' ');
+      if (m.indexOf('giscus') !== -1 || m.indexOf('/api/discussions') !== -1) return;
+      return _origError.apply(console, arguments);
+    };
+    window.addEventListener('error', function (e) {
+      if (e.message && (e.message.indexOf('giscus') !== -1 || e.message.indexOf('/api/discussions') !== -1)) e.preventDefault();
+    }, true);
+    var isLight = document.documentElement.classList.contains('light') || localStorage.getItem('theme') === 'light';
+    var theme = isLight ? 'https://r4sso.my/css/giscus-light.css' : 'https://r4sso.my/css/giscus.css';
+    var s = document.createElement('script');
+    s.src = 'https://giscus.app/client.js';
+    s.setAttribute('data-repo', 'r4sso/r4sso.github.io');
+    s.setAttribute('data-repo-id', 'MDEwOlJlcG9zaXRvcnkzMDAyOTQzNzM=');
+    s.setAttribute('data-category', '{{ $category }}');
+    s.setAttribute('data-category-id', 'DIC_kwDOEeYg5c4CX55V');
+    s.setAttribute('data-mapping', 'pathname');
+    s.setAttribute('data-strict', '0');
+    s.setAttribute('data-reactions-enabled', '{{ $reactions }}');
+    s.setAttribute('data-emit-metadata', '0');
+    s.setAttribute('data-input-position', 'top');
+    s.setAttribute('data-theme', theme);
+    s.setAttribute('data-lang', 'en');
+    s.setAttribute('data-loading', 'lazy');
+    s.crossOrigin = 'anonymous';
+    s.async = true;
+    document.getElementById('giscus-container').appendChild(s);
+  })();
 </script>
