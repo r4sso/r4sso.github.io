@@ -1,9 +1,0 @@
-{
-  "name": "mytheme",
-  "version": "1.0.0",
-  "description": "cgit black & white square theme — no tailwind, lightweight custom css",
-  "private": true,
-  "scripts": {},
-  "devDependencies": {},
-  "dependencies": {}
-}
