@@ -71,26 +71,6 @@ html {
   --color-primer-shadow-inset: none;
 }
 
-@font-face {
-  font-family: "Iosevka Web";
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-  src:
-    url("../fonts/iosevka.woff2") format("woff2"),
-    url("../fonts/iosevka.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Iosevka Web";
-  font-display: swap;
-  font-weight: 700;
-  font-style: normal;
-  src:
-    url("../fonts/iosevka-bold.woff2") format("woff2"),
-    url("../fonts/iosevka-bold.woff") format("woff");
-}
-
 /* Base */
 
 html,
