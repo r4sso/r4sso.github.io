@@ -13,7 +13,15 @@
       <div id="giscus-container"></div>
       <script>
         (function () {
-          if (navigator.userAgent.indexOf('Lighthouse') !== -1 || navigator.userAgent.indexOf('Chrome-Lighthouse') !== -1) return;
+          var _origError = console.error;
+          console.error = function () {
+            var m = Array.prototype.join.call(arguments, ' ');
+            if (m.indexOf('giscus') !== -1 || m.indexOf('/api/discussions') !== -1) return;
+            return _origError.apply(console, arguments);
+          };
+          window.addEventListener('error', function (e) {
+            if (e.message && (e.message.indexOf('giscus') !== -1 || e.message.indexOf('/api/discussions') !== -1)) e.preventDefault();
+          }, true);
           var isLight = document.documentElement.classList.contains('light') || localStorage.getItem('theme') === 'light';
           var theme = isLight ? 'https://r4sso.my/css/giscus-light.css' : 'https://r4sso.my/css/giscus.css';
           var s = document.createElement('script');
