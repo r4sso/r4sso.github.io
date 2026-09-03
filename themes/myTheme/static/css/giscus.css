@@ -388,7 +388,6 @@ input:focus-visible {
 .gsc-reactions {
   margin: 0 !important;
   background: var(--bg) !important;
-  border-top: 1px solid var(--border) !important;
 }
 
 .gsc-reactions-button,
