@@ -1325,9 +1325,10 @@ html:not(.light) #theme-toggle-dark-icon {
 .thumb figcaption {
   display: block;
   margin: 0;
-  padding: 8px 12px 0;
+  padding: 8px 12px;
   color: var(--text-meta);
-  background: var(--bg);
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
   font-size: 8.5pt;
   font-style: italic;
   font-weight: 600;
