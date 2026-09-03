@@ -4,7 +4,7 @@
     <title>{{ .Site.Title }}</title>
     <link>{{ .Site.BaseURL }}posts/</link>
     <description>{{ .Site.Params.Description }}</description>
-    <language>{{ .Site.LanguageCode }}</language>
+    <language>{{ .Site.Language.Locale }}</language>
 
     {{ range where .Site.RegularPages "Section" "posts" }}
     <item>

@@ -1,7 +1,11 @@
 baseURL = 'https://r4sso.my'
-languageCode = 'en'
 title = 'r4sso.my'
 theme = ["myTheme"]
+
+[languages]
+  [languages.en]
+    locale = 'en'
+    weight = 1
 enableRobotsTXT = true
 
 # Pagination Settings
@@ -36,6 +40,7 @@ paginate = 5
 
   [markup.goldmark.renderer]
     hardWraps = true
+    unsafe = true
 
   [markup.goldmark.parser]
     attribute = true 

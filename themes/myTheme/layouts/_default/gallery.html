@@ -39,8 +39,8 @@
       {{ $title := $img.Params.title | default (default $parent.Title $img.Name) }}
 
       {{ $imgDate := "" }}
-      {{ if $img.Exif }}
-        {{ $imgDate = $img.Exif.Date.Format "Jan 02, 2006" }}
+      {{ if $img.Meta }}
+        {{ $imgDate = $img.Meta.Date.Format "Jan 02, 2006" }}
       {{ else }}
         {{ $imgDate = $parent.Date.Format "Jan 02, 2006" }}
       {{ end }}
@@ -73,25 +73,25 @@
                   </p>
                 {{ end }}
 
-              {{ else if $img.Exif }}
+              {{ else if $img.Meta }}
 
-                {{ with $img.Exif.Tags.Model }}
+                {{ with $img.Meta.Exif.Tags.Model }}
                   <p class="gallery-camera">
                     {{ . }}
                   </p>
                 {{ end }}
 
                 <p class="gallery-settings">
-                  {{ with $img.Exif.Tags.FocalLengthIn35mmFormat }}
+                  {{ with $img.Meta.Exif.Tags.FocalLengthIn35mmFormat }}
                     {{ . }}mm •
                   {{ end }}
 
-                  ƒ/{{ $img.Exif.Tags.FNumber }} •
-                  {{ $img.Exif.Tags.ExposureTime }}s •
-                  ISO {{ $img.Exif.Tags.ISOSpeedRatings }}
+                  ƒ/{{ $img.Meta.Exif.Tags.FNumber }} •
+                  {{ $img.Meta.Exif.Tags.ExposureTime }}s •
+                  ISO {{ $img.Meta.Exif.Tags.ISOSpeedRatings }}
                 </p>
 
-                {{ with $img.Exif.Tags.LensModel }}
+                {{ with $img.Meta.Exif.Tags.LensModel }}
                   <p class="gallery-lens">
                     {{ . }}
                   </p>
