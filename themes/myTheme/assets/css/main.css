@@ -1851,6 +1851,11 @@ html:not(.light) #theme-toggle-dark-icon {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--bg-hover);
+  background: var(--bg-elevated);
+}
+
+.giscus-frame {
+  background: var(--bg-elevated) !important;
 }
 
 /* Code copy */

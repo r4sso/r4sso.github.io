@@ -91,26 +91,30 @@
 
 
   function watchGiscus() {
+    function sendTheme(iframe) {
+      if (!iframe || !iframe.contentWindow) return;
+      changeGiscusTheme();
+      // retry for giscus ready
+      setTimeout(changeGiscusTheme, 300);
+      setTimeout(changeGiscusTheme, 800);
+      setTimeout(changeGiscusTheme, 1500);
+    }
+
     var observer = new MutationObserver(function () {
       var iframe = document.querySelector('iframe.giscus-frame');
 
       if (!iframe) return;
 
-      /*
-       * Wait until the Giscus iframe has loaded.
-       */
       if (!iframe.dataset.themeInitialized) {
         iframe.dataset.themeInitialized = 'true';
 
         iframe.addEventListener('load', function () {
-          changeGiscusTheme();
+          sendTheme(iframe);
         });
 
-        /*
-         * In case the iframe is already loaded.
-         */
+        // in case already loaded
         setTimeout(function () {
-          changeGiscusTheme();
+          sendTheme(iframe);
         }, 100);
       }
     });
@@ -120,22 +124,28 @@
       subtree: true
     });
 
-    /*
-     * Giscus may already exist when this function runs.
-     */
     var iframe = document.querySelector('iframe.giscus-frame');
 
-    if (iframe) {
+    if (iframe && !iframe.dataset.themeInitialized) {
       iframe.dataset.themeInitialized = 'true';
 
       iframe.addEventListener('load', function () {
-        changeGiscusTheme();
+        sendTheme(iframe);
       });
 
       setTimeout(function () {
-        changeGiscusTheme();
+        sendTheme(iframe);
       }, 100);
     }
+
+    // also handle giscus ready message
+    window.addEventListener('message', function (e) {
+      if (e.origin !== 'https://giscus.app') return;
+      if (!(typeof e.data === 'object' && e.data.giscus)) return;
+      // giscus loaded, ensure correct theme
+      var iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) sendTheme(iframe);
+    });
   }
 
 
