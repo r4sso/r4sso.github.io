@@ -169,7 +169,6 @@ a:hover {
 .gsc-comment-box-textarea textarea {
   background: #f6f8fa !important;
   color: #1f2328 !important;
-  border: 0 !important;
 }
 
 .gsc-comment-box-textarea textarea::placeholder {
@@ -309,7 +308,7 @@ input:focus-visible {
 
 .gsc-reactions {
   border-top: 1px solid #d0d7de !important;
-  background: #eff2f5 !important;
+  background: #f6f8fa !important;
 }
 
 .gsc-reactions-button,

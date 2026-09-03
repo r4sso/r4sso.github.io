@@ -187,7 +187,6 @@ a:hover {
 .gsc-comment-box-textarea {
   margin: 0 !important;
   background: #0f0f0f !important;
-  border: 0 !important;
 }
 
 .gsc-comment-box-textarea textarea {
@@ -377,7 +376,7 @@ input:focus-visible {
 
 .gsc-reactions {
   margin: 0 !important;
-  background: #0a0a0a !important;
+  background: #0f0f0f !important;
   border-top: 1px solid #2a2a2a !important;
 }
 
