@@ -47,11 +47,19 @@
 
       <div class="gallery-item{{ if $isTall }} tall{{ end }}">
         <a href="{{ $link }}" class="gallery-link">
-          <img
-            src="{{ ($img.Resize "800x q85").RelPermalink }}"
-            alt="{{ $title }}"
-            loading="lazy"
-          />
+          {{ $webp := $img.Resize "800x webp q85" }}
+          {{ $fallback := $img.Resize "800x q85" }}
+          <picture>
+            <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+            <img
+              src="{{ $fallback.RelPermalink }}"
+              alt="{{ $title }}"
+              loading="lazy"
+              decoding="async"
+              width="{{ $fallback.Width }}"
+              height="{{ $fallback.Height }}"
+            />
+          </picture>
 
           <div class="gallery-overlay">
             <div class="gallery-date-wrap">

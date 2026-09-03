@@ -71,30 +71,7 @@ html {
   --color-primer-shadow-inset: none;
 }
 
-@font-face {
-  font-family: "Iosevka Web";
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-  src:
-    url("../fonts/iosevka.woff2") format("woff2"),
-    url("../fonts/iosevka.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Iosevka Web";
-  font-display: swap;
-  font-weight: 700;
-  font-style: normal;
-  src:
-    url("../fonts/iosevka-bold.woff2") format("woff2"),
-    url("../fonts/iosevka-bold.woff") format("woff");
-}
-
-
-/* ============================================================
-   Base
-   ============================================================ */
+/* Base */
 
 html,
 body,
@@ -127,9 +104,7 @@ body {
 }
 
 
-/* ============================================================
-   Links
-   ============================================================ */
+/* Links */
 
 a {
   color: var(--accent) !important;
@@ -140,9 +115,8 @@ a:hover {
 }
 
 
-/* ============================================================
-   Header
-   ============================================================ */
+/* Header */
+
 
 .gsc-header {
   margin: 0 0 16px 0 !important;
@@ -160,9 +134,7 @@ a:hover {
 }
 
 
-/* ============================================================
-   Comment composer
-   ============================================================ */
+/* Comment composer */
 
 .gsc-comment-box {
   margin: 0 !important;
@@ -213,9 +185,7 @@ a:hover {
 }
 
 
-/* ============================================================
-   Buttons
-   ============================================================ */
+/* Buttons */
 
 button,
 .gsc-reply-box button,
@@ -258,9 +228,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Comments
-   ============================================================ */
+/* Comments */
 
 .gsc-comment {
   margin: 0 0 12px 0 !important;
@@ -309,9 +277,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Markdown
-   ============================================================ */
+/* Markdown */
 
 .markdown-body {
   background: transparent !important;
@@ -381,9 +347,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Reactions
-   ============================================================ */
+/* Reactions */
 
 .gsc-reactions {
   margin: 0 !important;
@@ -404,9 +368,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Replies
-   ============================================================ */
+/* Replies */
 
 .gsc-replies {
   border-left: 1px solid var(--border) !important;
@@ -423,9 +385,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Muted text
-   ============================================================ */
+/* Muted text */
 
 .gsc-comment-footer,
 .gsc-comment-footer *,
@@ -441,9 +401,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Alerts
-   ============================================================ */
+/* Alerts */
 
 .gsc-alert {
   background: var(--bg) !important;
@@ -462,9 +420,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Avatar
-   ============================================================ */
+/* Avatar */
 
 .gsc-comment-header .avatar,
 .gsc-comment-header img {
@@ -472,9 +428,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Selection
-   ============================================================ */
+/* Selection */
 
 ::selection {
   background: var(--accent) !important;
@@ -482,9 +436,7 @@ input:focus-visible {
 }
 
 
-/* ============================================================
-   Scrollbar
-   ============================================================ */
+/* Scrollbar */
 
 ::-webkit-scrollbar {
   width: 8px;

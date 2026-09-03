@@ -1,10 +1,7 @@
-// cgit square — lightweight, Iosevka, light/dark toggle
 (function () {
   'use strict';
 
-  /* ─────────────────────────────────────
-     Mobile menu
-     ───────────────────────────────────── */
+  // Mobile menu
 
   function handleMobileMenu() {
     var menuButton = document.querySelector('[aria-controls="mobile-menu"]');
@@ -25,9 +22,7 @@
   }
 
 
-  /* ─────────────────────────────────────
-     Scroll to top
-     ───────────────────────────────────── */
+  // Scroll to top
 
   var btn = document.getElementById('scroll-to-top');
 
@@ -54,9 +49,7 @@
   };
 
 
-  /* ─────────────────────────────────────
-     Giscus
-     ───────────────────────────────────── */
+ // Giscus
 
   var GISCUS_DARK_THEME =
     'https://r4sso.my/css/giscus.css';
@@ -148,10 +141,7 @@
     });
   }
 
-
-  /* ─────────────────────────────────────
-     Site theme
-     ───────────────────────────────────── */
+  // Site theme
 
   function handleThemeToggle() {
     var toggle = document.getElementById('theme-toggle');
@@ -170,19 +160,9 @@
         localStorage.setItem('theme', 'dark');
       }
 
-      /*
-       * Change only Giscus' custom stylesheet.
-       *
-       * The iframe itself is NOT reloaded.
-       */
       changeGiscusTheme();
     });
   }
-
-
-  /* ─────────────────────────────────────
-     Initialize
-     ───────────────────────────────────── */
 
   handleMobileMenu();
   handleThemeToggle();

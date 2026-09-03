@@ -7,14 +7,45 @@
   </header>
 
   {{ with .Params.thumb }}
+    {{ $thumb := . }}
+    {{ $src := "" }}
+    {{ if not (hasPrefix $thumb "http") }}
+      {{ $path := strings.TrimPrefix "/" $thumb }}
+      {{ $src = resources.Get $path }}
+      {{ if not $src }}
+        {{ $src = $.Page.Resources.GetMatch $thumb }}
+      {{ end }}
+    {{ end }}
+    {{ if $src }}
+      {{ $webp := $src.Resize "320x webp q85" }}
+      {{ $fallback := $src.Resize "320x q85" }}
+  <div class="about-profile">
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+      <img
+        class="about-thumb"
+        src="{{ $fallback.RelPermalink }}"
+        title="{{ $.Params.avatar_title }}"
+        alt="{{ $.Title }}"
+        loading="eager"
+        decoding="async"
+        width="{{ $fallback.Width }}"
+        height="{{ $fallback.Height }}"
+      >
+    </picture>
+  </div>
+    {{ else }}
   <div class="about-profile">
     <img
       class="about-thumb"
-      src="{{ . }}"
+      src="{{ $thumb }}"
       title="{{ $.Params.avatar_title }}"
       alt="{{ $.Title }}"
+      loading="eager"
+      decoding="async"
     >
   </div>
+    {{ end }}
   {{ end }}
 
   <article class="about-content">

@@ -1,7 +1,7 @@
 .PHONY: run build debug
 
 run:
-	@echo "Starting Hugo server (no tailwind, custom css)..."
+	@echo "Starting Hugo server"
 	@hugo server --disableFastRender
 
 debug:
