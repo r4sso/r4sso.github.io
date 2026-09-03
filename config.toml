@@ -40,7 +40,6 @@ paginate = 5
 
   [markup.goldmark.renderer]
     hardWraps = true
-    unsafe = true
 
   [markup.goldmark.parser]
     attribute = true 
