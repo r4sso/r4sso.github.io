@@ -147,9 +147,11 @@
 }
 
 .prose a:hover {
-  color: var(--bg);
-  background: var(--text-strong);
-  text-decoration: none;
+  color: var(--text-strong);
+  background: var(--bg-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 .prose p {

@@ -77,17 +77,15 @@
 
  // Giscus
 
-  var GISCUS_DARK_THEME =
-    '/css/giscus.css';
-
-  var GISCUS_LIGHT_THEME =
-    '/css/giscus-light.css';
-
-
   function getGiscusTheme() {
+    var container = document.getElementById('giscus-container');
+
+    if (!container) return '';
+
+    // the theme css loads inside the giscus.app iframe, so it needs a full url
     return document.documentElement.classList.contains('light')
-      ? GISCUS_LIGHT_THEME
-      : GISCUS_DARK_THEME;
+      ? container.dataset.themeLight
+      : container.dataset.themeDark;
   }
 
 

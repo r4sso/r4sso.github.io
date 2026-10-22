@@ -4,7 +4,7 @@
   {{- with index . "category" }}{{ $category = . }}{{ end -}}
   {{- with index . "reactions" }}{{ $reactions = . }}{{ end -}}
 {{- end -}}
-<div id="giscus-container"></div>
+<div id="giscus-container" data-theme-dark="{{ "css/giscus.css" | absURL }}" data-theme-light="{{ "css/giscus-light.css" | absURL }}"></div>
 <script>
   (function () {
     var _origError = console.error;
@@ -17,7 +17,7 @@
       if (e.message && (e.message.indexOf('giscus') !== -1 || e.message.indexOf('/api/discussions') !== -1)) e.preventDefault();
     }, true);
     var isLight = document.documentElement.classList.contains('light') || localStorage.getItem('theme') === 'light';
-    var theme = isLight ? '{{ "css/giscus-light.css" | relURL }}' : '{{ "css/giscus.css" | relURL }}';
+    var theme = isLight ? '{{ "css/giscus-light.css" | absURL }}' : '{{ "css/giscus.css" | absURL }}';
     var s = document.createElement('script');
     s.src = 'https://giscus.app/client.js';
     s.setAttribute('data-repo', 'r4sso/r4sso.github.io');

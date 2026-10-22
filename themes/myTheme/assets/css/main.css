@@ -545,8 +545,10 @@ html:not(.light) #theme-toggle-dark-icon {
 .mobile-menu {
   display: none;
   padding: 8px 16px 16px;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
 }
 
 .mobile-menu.open {
@@ -689,9 +691,11 @@ html:not(.light) #theme-toggle-dark-icon {
 }
 
 .home-content a:hover {
-  color: var(--bg);
-  background: var(--text-strong);
-  text-decoration: none;
+  color: var(--text-strong);
+  background: var(--bg-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 /* Featured / post lists */
