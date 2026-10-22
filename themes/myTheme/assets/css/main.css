@@ -1558,6 +1558,40 @@ html:not(.light) #theme-toggle-dark-icon {
   background: var(--bg-elevated) !important;
 }
 
+/* Inline links */
+
+.back-link {
+  display: inline-block;
+  padding: 6px 10px;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 9pt;
+  font-weight: 700;
+}
+
+.back-link:hover {
+  color: var(--bg);
+  background: var(--text-strong);
+  border-color: var(--text-strong);
+  text-decoration: none;
+}
+
+.all-posts-link {
+  color: var(--text-dim);
+  font-weight: 700;
+}
+
+.heading-anchor {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.heading-anchor:hover {
+  color: var(--text-strong);
+}
+
 /* Misc */
 
 .sr-only {
