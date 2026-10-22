@@ -24,3 +24,14 @@ hugo server -D --logLevel debug --disableFastRender
 # or
 make debug
 ```
+
+### Fonts
+The shipped web fonts are cut down to the characters this site uses, which is
+17 KB instead of 48 KB. The full fonts live in `tools/fonts/` and are never
+published.
+
+After adding content with new characters, cut the fonts again:
+```bash
+pip install brotli fonttools
+python3 tools/subset-fonts.py
+```

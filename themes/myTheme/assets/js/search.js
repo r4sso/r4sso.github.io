@@ -1,62 +1,97 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const searchForm = document.getElementById("search");
     const searchResult = document.querySelector(".search-result");
     const searchInput = searchForm.elements.q;
 
-    function performSearch(query) {
-        query = query.trim();
-        fetch("/index.json")
-            .then((response) => response.json())
-            .then((data) => {
-                const results = data.filter((item) => {
-                    const content = item.content.toLowerCase().trim();
-                    const title = item.title.toLowerCase().trim();
-                    return content.includes(query) || title.includes(query);
-                });
-                let html = "";
-                if (query !== "" && results.length > 0) {
-                    results.forEach((result) => {
-                        const content = result.content.toLowerCase();
-                        const title = result.title.toLowerCase();
-                        const highlightMatches = (text) => {
-                            return text.replace(
-                                new RegExp(query, "gi"),
-                                (match) => `<span class="text-yellow-500">${match}</span>`
-                            );
-                        };
-                        const maxWords = 130;
-                        const contentWords = content.split(" ");
-                        const index = content.indexOf(query);
-                        let startIndex = Math.max(0, index - Math.floor(maxWords / 2));
-                        let endIndex = Math.min(content.length, index + Math.floor(maxWords / 2));
-                        if (startIndex === 0) {
-                            endIndex = Math.min(endIndex + (Math.floor(maxWords / 2) - index), content.length);
-                        } else if (endIndex === content.length) {
-                            startIndex = Math.max(0, startIndex - (Math.floor(maxWords / 2) - (content.length - index - 1)));
-                        }
-                        const truncatedContent = content.substring(startIndex, endIndex);
-                        const highlightedContent = highlightMatches(truncatedContent);
-                        const highlightedTitle = highlightMatches(title);
-                        html += `<a href="${result.href}"><div class="mt-4 post-card dark:post-card-dark px-3 py-6 rounded-md shadow-2xl shadow-slate-700/10"><h2 class="text-xl font-semibold">${highlightedTitle}</h2><p class="text-gray-600 dark:text-gray-400 text-sm">${highlightedContent}</p></div></a>`;
-                    });
-                } else if (query !== "") {
-                    html = "<p class='mt-4 text-center'>No results found.</p>";
-                }
-                searchResult.innerHTML = html;
-            })
-            .catch((error) => {
-                console.error("Error fetching search index:", error);
-            });
+    let index = null;      // the search index, fetched once
+    let queryId = 0;       // ignores answers for older queries
+    let debounce = null;
+
+    function escapeRegex(text) {
+        return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 
-    searchInput.addEventListener("input", function() {
-        const query = this.value.toLowerCase();
-        performSearch(query);
+    function loadIndex() {
+        if (!index) {
+            index = fetch(searchResult.dataset.indexUrl)
+                .then((response) => response.json())
+                .catch((error) => {
+                    console.error("Error fetching search index:", error);
+                    index = null;
+                    return [];
+                });
+        }
+        return index;
+    }
+
+    function highlight(text, query) {
+        const pattern = new RegExp(escapeRegex(query), "gi");
+        return text.replace(pattern, (match) => `<mark>${match}</mark>`);
+    }
+
+    function excerpt(content, query, maxChars) {
+        const index = content.indexOf(query);
+        const half = Math.floor(maxChars / 2);
+        let start = Math.max(0, index - half);
+        let end = Math.min(content.length, index + half);
+
+        if (start === 0) {
+            end = Math.min(end + (half - index), content.length);
+        } else if (end === content.length) {
+            start = Math.max(0, start - (half - (content.length - index - 1)));
+        }
+
+        return content.substring(start, end);
+    }
+
+    function performSearch(rawQuery) {
+        const query = rawQuery.trim().toLowerCase();
+
+        if (!query) {
+            searchResult.innerHTML = "";
+            return;
+        }
+
+        const id = ++queryId;
+
+        loadIndex().then((data) => {
+            if (id !== queryId) return;   // a newer search already ran
+
+            const results = data.filter((item) => {
+                const content = item.content.toLowerCase();
+                const title = item.title.toLowerCase();
+                return content.includes(query) || title.includes(query);
+            });
+
+            if (results.length === 0) {
+                searchResult.innerHTML = "<p class='search-empty'>No results found.</p>";
+                return;
+            }
+
+            let html = "";
+            results.forEach((result) => {
+                const content = result.content.toLowerCase();
+                const title = result.title.toLowerCase();
+                const snippet = highlight(excerpt(content, query, 260), query);
+                const heading = highlight(title, query);
+
+                html += `<a href="${result.href}"><article class="post-card"><h2>${heading}</h2><p class="summary">${snippet}</p></article></a>`;
+            });
+
+            searchResult.innerHTML = html;
+        });
+    }
+
+    searchInput.addEventListener("input", function () {
+        const query = this.value;
+
+        clearTimeout(debounce);
+        debounce = setTimeout(() => performSearch(query), 150);
     });
 
-    searchForm.addEventListener("submit", function(event) {
+    searchForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        const query = searchInput.value.toLowerCase();
-        performSearch(query);
+        clearTimeout(debounce);
+        performSearch(searchInput.value);
     });
 });

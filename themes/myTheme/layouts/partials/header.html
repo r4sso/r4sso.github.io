@@ -8,47 +8,25 @@
         href="{{ "/" | relURL }}"
         aria-label="{{ .Site.Title }} home">
         <img
-          width="28"
-          height="28"
+          width="42"
+          height="24"
           src="{{ .Site.Params.logo | relURL }}"
           alt="{{ .Site.Title }}">
-      </a>
-
-      <a
-        href="{{ "search" | relURL }}"
-        class="icon-btn search-btn"
-        aria-label="Search">
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          aria-hidden="true">
-          <path d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-        </svg>
       </a>
 
     </div>
 
 
     <div class="navbar-right">
-
       <div class="nav-links">
-
         {{ $currentPage := . }}
-
         {{ range .Site.Menus.main }}
-
           {{ if .HasChildren }}
-
-          <div class="nav-dropdown" tabindex="0">
-
+          <div class="nav-dropdown">
             <button
               type="button"
-              class="nav-dropdown-trigger{{ if $currentPage.HasMenuCurrent "main" . }} active{{ end }}">
-
-              {{ .Name }}
-
+              aria-haspopup="true"
+              class="nav-dropdown-trigger{{ if $currentPage.HasMenuCurrent "main" . }} active{{ end }}">{{ .Name }}
               <svg
                 width="12"
                 height="12"
@@ -60,24 +38,17 @@
                   d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
                   clip-rule="evenodd"/>
               </svg>
-
             </button>
 
-
             <div class="nav-dropdown-menu">
-
               {{ range .Children }}
-
               <a
                 href="{{ .URL | relLangURL | safeURL }}"
                 class="nav-dropdown-item{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
                 {{ .Name }}
               </a>
-
               {{ end }}
-
             </div>
-
           </div>
 
           {{ else }}
@@ -87,18 +58,16 @@
             href="{{ .URL | relLangURL | safeURL }}">
             {{ .Name }}
           </a>
-
           {{ end }}
-
         {{ end }}
-
       </div>
 
-      <a
-        href="{{ "search" | relURL }}"
-        class="icon-btn search-btn-mobile"
-        aria-label="Search">
+      <span class="navbar-sep" aria-hidden="true"></span>
 
+      <a
+        href="{{ "search/" | relURL }}"
+        class="icon-btn"
+        aria-label="Search">
         <svg
           fill="none"
           stroke="currentColor"
@@ -107,7 +76,6 @@
           aria-hidden="true">
           <path d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
         </svg>
-
       </a>
 
       <button
@@ -117,30 +85,23 @@
         type="button">
         <svg
           id="theme-toggle-light-icon"
-          class="theme-icon theme-icon-light"
           width="16"
           height="16"
           fill="currentColor"
           viewBox="0 0 20 20"
           aria-hidden="true">
-
           <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"/>
-
         </svg>
 
         <svg
           id="theme-toggle-dark-icon"
-          class="theme-icon theme-icon-dark"
           width="16"
           height="16"
           fill="currentColor"
           viewBox="0 0 20 20"
           aria-hidden="true">
-
           <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd"/>
-
         </svg>
-
       </button>
 
       <button
@@ -150,32 +111,25 @@
         aria-label="Menu"
         type="button"
         class="hamburger">
-
         <span></span>
         <span></span>
         <span></span>
-
       </button>
-
     </div>
 
   </div>
 
   <div class="mobile-menu" id="mobile-menu">
-
     {{ $currentPage := . }}
-
     {{ range $index, $item := .Site.Menus.main }}
-
       {{ if .HasChildren }}
-
       <div class="mobile-dropdown">
-
         <button
           type="button"
           class="mobile-dropdown-trigger{{ if $currentPage.HasMenuCurrent "main" . }} active{{ end }}"
-          onclick="document.getElementById('sub-{{ $index }}').classList.toggle('open'); this.querySelector('svg').style.transform=document.getElementById('sub-{{ $index }}').classList.contains('open')?'rotate(180deg)':''">
-
+          data-submenu="sub-{{ $index }}"
+          aria-controls="sub-{{ $index }}"
+          aria-expanded="{{ if $currentPage.HasMenuCurrent "main" . }}true{{ else }}false{{ end }}">
           {{ .Name }}
 
           <svg
@@ -189,16 +143,13 @@
             <path
               fill-rule="evenodd"
               d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"/>
-
           </svg>
-
         </button>
 
 
         <div
           id="sub-{{ $index }}"
           class="mobile-submenu{{ if $currentPage.HasMenuCurrent "main" . }} open{{ end }}">
-
           {{ range .Children }}
 
           <a
@@ -206,11 +157,8 @@
             class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
             {{ .Name }}
           </a>
-
           {{ end }}
-
         </div>
-
       </div>
 
       {{ else }}
@@ -222,9 +170,6 @@
       </a>
 
       {{ end }}
-
     {{ end }}
-
   </div>
-
 </nav>

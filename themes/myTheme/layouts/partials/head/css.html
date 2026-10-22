@@ -1,9 +1,15 @@
-{{- with resources.Get "css/main.css" }}
-  {{- if eq hugo.Environment "development" }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" fetchpriority="high">
+{{- $styles := slice "css/main.css" }}
+{{- if or .IsPage (eq .Layout "guestbook") }}
+  {{- $styles = $styles | append "css/article.css" }}
+{{- end }}
+{{- range $styles }}
+  {{- with resources.Get . }}
+    {{- if eq hugo.Environment "development" }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- else }}
+      {{- with . | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" fetchpriority="high">
+      {{- end }}
     {{- end }}
   {{- end }}
 {{- end }}

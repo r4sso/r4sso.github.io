@@ -1,7 +1,0 @@
-<div class="shortcode-table">
-{{ $htmlTable := .Inner | markdownify }}
-{{ $class := .Get 0 }}
-{{ $old := "<table>" }}
-{{ $new := printf "<table>" $class }}
-{{ $htmlTable | safeHTML }}
-</div>

@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     <link rel="canonical" href="{{ .Permalink }}">
-    {{ partialCached "head/css.html" . }}
+    {{ partialCached "head/css.html" . (or .IsPage (eq .Layout "guestbook")) }}
     {{ partialCached "head/js.html" . }}
     {{ if .Params.math }}{{ partial "helpers/katex.html" . }}{{ end }}
     <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
     <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
-    <link rel="icon" href="data:image/svg+xml;base64,{{ readFile .Site.Params.logo | base64Encode }}" type="image/svg+xml">
+    <link rel="icon" href="{{ .Site.Params.logo | relURL }}" type="image/svg+xml">
     {{ if .IsPage }}
     <script type="application/ld+json">
     {

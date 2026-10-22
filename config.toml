@@ -11,7 +11,6 @@ enableRobotsTXT = true
 # Pagination Settings
 [pagination]
   pagerSize = 5
-paginate = 5
 
 # Formatting and Permalinks
 [permalinks]
@@ -49,10 +48,8 @@ paginate = 5
 
 # Site Parameters
 [params]
-  title = "Hello World!"
   description = "My personal website, blog and notes of r4sso"
   logo = "/images/logo.svg"
-  favicon = "/images/logo.svg"
   tableOfContents = true
   github = "r4sso"
   instagram = "mfterm"
@@ -113,7 +110,7 @@ paginate = 5
   weight = 8
 
 [[menu.main]]
-  name = "?"
+  name = "About"
   pageRef = "about"
   url = "/about/"
   weight = 9

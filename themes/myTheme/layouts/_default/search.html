@@ -10,7 +10,13 @@
       </div>
       <button type="submit" class="search-btn-submit">Search</button>
     </form>
-    <div class="search-result search-results"></div>
+    <div class="search-result search-results" data-index-url="{{ "index.json" | relURL }}"></div>
+    <p class="search-noscript">
+      Search needs JavaScript.
+      <a href="{{ "posts/all/" | relURL }}">Browse all posts</a>
+      or read the
+      <a href="{{ "posts/rss.xml" | relURL }}">RSS feed</a>.
+    </p>
   </div>
 </div>
 

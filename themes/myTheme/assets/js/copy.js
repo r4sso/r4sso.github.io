@@ -42,9 +42,10 @@ function fallbackCopy(text, button) {
 }
 
 function showSuccess(button) {
-    const originalText = button.innerText;
-    button.innerText = 'Copied!';
+    button.classList.add('copied');
+    button.setAttribute('aria-label', 'Copied');
     setTimeout(() => {
-        button.innerText = originalText;
+        button.classList.remove('copied');
+        button.setAttribute('aria-label', 'Copy code');
     }, 2000);
 }

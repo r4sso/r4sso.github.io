@@ -1,5 +1,6 @@
 ---
 title: "Guestbook"
+layout: guestbook
 ---
 Hi there! :)
 

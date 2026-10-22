@@ -1,5 +1,9 @@
 <script>
   (function() {
+    // flip no-js -> js so CSS can hide controls that need JavaScript
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+
     const stored = localStorage.getItem('theme');
     // dark is default, even if system prefers light or JS disabled
     if (stored === 'light') {

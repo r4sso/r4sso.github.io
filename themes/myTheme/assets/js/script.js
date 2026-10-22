@@ -22,6 +22,32 @@
   }
 
 
+  // Mobile submenus
+
+  function handleMobileDropdowns() {
+    var triggers = document.querySelectorAll('.mobile-dropdown-trigger');
+
+    for (var i = 0; i < triggers.length; i++) {
+      (function (trigger) {
+        var submenu = document.getElementById(trigger.dataset.submenu);
+        var chevron = trigger.querySelector('svg');
+
+        if (!submenu) return;
+
+        trigger.addEventListener('click', function () {
+          var isOpen = submenu.classList.toggle('open');
+
+          trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+          if (chevron) {
+            chevron.style.transform = isOpen ? 'rotate(180deg)' : '';
+          }
+        });
+      })(triggers[i]);
+    }
+  }
+
+
   // Scroll to top
 
   var btn = document.getElementById('scroll-to-top');
@@ -52,10 +78,10 @@
  // Giscus
 
   var GISCUS_DARK_THEME =
-    'https://r4sso.my/css/giscus.css';
+    '/css/giscus.css';
 
   var GISCUS_LIGHT_THEME =
-    'https://r4sso.my/css/giscus-light.css';
+    '/css/giscus-light.css';
 
 
   function getGiscusTheme() {
@@ -84,8 +110,9 @@
 
 
   function watchGiscus() {
-    function sendTheme(iframe) {
-      if (!iframe || !iframe.contentWindow) return;
+    if (!document.getElementById('giscus-container')) return;
+
+    function sendTheme() {
       changeGiscusTheme();
       // retry for giscus ready
       setTimeout(changeGiscusTheme, 300);
@@ -93,23 +120,23 @@
       setTimeout(changeGiscusTheme, 1500);
     }
 
+    function watchFrame(iframe) {
+      if (!iframe || iframe.dataset.themeInitialized) return;
+
+      iframe.dataset.themeInitialized = 'true';
+
+      iframe.addEventListener('load', function () {
+        sendTheme();
+      });
+
+      // in case already loaded
+      setTimeout(function () {
+        sendTheme();
+      }, 100);
+    }
+
     var observer = new MutationObserver(function () {
-      var iframe = document.querySelector('iframe.giscus-frame');
-
-      if (!iframe) return;
-
-      if (!iframe.dataset.themeInitialized) {
-        iframe.dataset.themeInitialized = 'true';
-
-        iframe.addEventListener('load', function () {
-          sendTheme(iframe);
-        });
-
-        // in case already loaded
-        setTimeout(function () {
-          sendTheme(iframe);
-        }, 100);
-      }
+      watchFrame(document.querySelector('iframe.giscus-frame'));
     });
 
     observer.observe(document.body, {
@@ -117,27 +144,14 @@
       subtree: true
     });
 
-    var iframe = document.querySelector('iframe.giscus-frame');
-
-    if (iframe && !iframe.dataset.themeInitialized) {
-      iframe.dataset.themeInitialized = 'true';
-
-      iframe.addEventListener('load', function () {
-        sendTheme(iframe);
-      });
-
-      setTimeout(function () {
-        sendTheme(iframe);
-      }, 100);
-    }
+    watchFrame(document.querySelector('iframe.giscus-frame'));
 
     // also handle giscus ready message
     window.addEventListener('message', function (e) {
       if (e.origin !== 'https://giscus.app') return;
       if (!(typeof e.data === 'object' && e.data.giscus)) return;
       // giscus loaded, ensure correct theme
-      var iframe = document.querySelector('iframe.giscus-frame');
-      if (iframe) sendTheme(iframe);
+      sendTheme();
     });
   }
 
@@ -165,6 +179,7 @@
   }
 
   handleMobileMenu();
+  handleMobileDropdowns();
   handleThemeToggle();
   watchGiscus();
 

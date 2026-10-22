@@ -1,8 +1,6 @@
 {{ define "main" }}
-
 <div class="article-wrap guestbook-wrap">
   <article class="article-card">
-
     <h1 class="article-title">{{ .Title }}</h1>
 
     <div class="prose">
@@ -10,10 +8,12 @@
     </div>
 
     <div class="giscus-wrap">
-      {{ partial "giscus.html" (dict "category" "Announcements" "reactions" "0") }}
+      {{ partial "giscus.html" (dict "category" "General" "reactions" "0") }}
+      <noscript>
+        <p class="giscus-noscript">Comments need JavaScript.</p>
+      </noscript>
     </div>
 
   </article>
 </div>
-
 {{ end }}

@@ -4,7 +4,7 @@
     <figure>
       <a href="{{ .Params.thumb }}">
         <picture>
-          <img src="{{ .Params.thumb }}" alt="{{ .Params.alt }}" decoding="async" width="900" height="900">
+          <img src="{{ .Params.thumb }}" alt="{{ .Params.alt }}" decoding="async" {{ with $src }}width="{{ .Width }}" height="{{ .Height }}"{{ end }}>
         </picture>
       </a>
       {{ with .Params.alt }}<figcaption>- {{ . | markdownify }}</figcaption>{{ end }}

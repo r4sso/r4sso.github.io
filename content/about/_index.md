@@ -67,7 +67,7 @@ This site is a personal space where I share my knowledge, experiences, and stori
 - Documenting what I learn.
 - Share my knowledge that might help others.
 
-This site is built with [Hugo](https://gohugo.io/) & [Tailwindss](https://tailwindcss.com/), meant to be simple and lightweight.
+This site is built with [Hugo](https://gohugo.io/) & a custom CSS theme, meant to be simple and lightweight.
 
 >If you find any errors (e.g., grammar/spelling), feel free to open new issue on [Github](https://github.com/r4sso/r4sso.github.io/issues)
 
