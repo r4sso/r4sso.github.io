@@ -10,4 +10,4 @@ Even though I'm not the best writer :D
 [Sign My Guestbook](/guestbook)
 
 Email: 0xr4sso [at] proton (dot) me
-GitHub: [@r4sso](phttps://github.com/r4sso)
+GitHub: [@r4sso](https://github.com/r4sso)
