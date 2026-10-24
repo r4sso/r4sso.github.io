@@ -7,12 +7,7 @@
       {{ .Content }}
     </div>
 
-    <div class="giscus-wrap">
-      {{ partial "giscus.html" (dict "category" "General" "reactions" "0") }}
-      <noscript>
-        <p class="giscus-noscript">Comments need JavaScript.</p>
-      </noscript>
-    </div>
+    {{ partial "comments.html" (dict "page" . "guestbook" true) }}
 
   </article>
 </div>

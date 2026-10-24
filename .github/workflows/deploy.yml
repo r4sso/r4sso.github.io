@@ -1,0 +1,36 @@
+name: deploy
+# Builds the site and pushes ./public to the gh-pages branch.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.168.0'
+          extended: true
+
+      - name: build
+        run: hugo --minify --cleanDestinationDir
+
+      - name: publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ github.token }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          commit_message: 'deploy: ${{ github.sha }}'

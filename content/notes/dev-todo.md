@@ -56,7 +56,7 @@ comment: false
 (27-09-2023)
 - Iosevka fonts added.
 - Head title order.
-- New front matter if `comment:false` disable giscus.
+- front matter `comment: false` hides the comment form.
 - Comment moved inside article.
 - Seperator removed from navbar.
 - avatar added in /about & styling change.

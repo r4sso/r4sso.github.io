@@ -75,84 +75,6 @@
   };
 
 
- // Giscus
-
-  function getGiscusTheme() {
-    var container = document.getElementById('giscus-container');
-
-    if (!container) return '';
-
-    // the theme css loads inside the giscus.app iframe, so it needs a full url
-    return document.documentElement.classList.contains('light')
-      ? container.dataset.themeLight
-      : container.dataset.themeDark;
-  }
-
-
-  function changeGiscusTheme() {
-    var iframe = document.querySelector('iframe.giscus-frame');
-
-    if (!iframe || !iframe.contentWindow) return;
-
-    iframe.contentWindow.postMessage(
-      {
-        giscus: {
-          setConfig: {
-            theme: getGiscusTheme()
-          }
-        }
-      },
-      'https://giscus.app'
-    );
-  }
-
-
-  function watchGiscus() {
-    if (!document.getElementById('giscus-container')) return;
-
-    function sendTheme() {
-      changeGiscusTheme();
-      // retry for giscus ready
-      setTimeout(changeGiscusTheme, 300);
-      setTimeout(changeGiscusTheme, 800);
-      setTimeout(changeGiscusTheme, 1500);
-    }
-
-    function watchFrame(iframe) {
-      if (!iframe || iframe.dataset.themeInitialized) return;
-
-      iframe.dataset.themeInitialized = 'true';
-
-      iframe.addEventListener('load', function () {
-        sendTheme();
-      });
-
-      // in case already loaded
-      setTimeout(function () {
-        sendTheme();
-      }, 100);
-    }
-
-    var observer = new MutationObserver(function () {
-      watchFrame(document.querySelector('iframe.giscus-frame'));
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-
-    watchFrame(document.querySelector('iframe.giscus-frame'));
-
-    // also handle giscus ready message
-    window.addEventListener('message', function (e) {
-      if (e.origin !== 'https://giscus.app') return;
-      if (!(typeof e.data === 'object' && e.data.giscus)) return;
-      // giscus loaded, ensure correct theme
-      sendTheme();
-    });
-  }
-
   // Site theme
 
   function handleThemeToggle() {
@@ -171,14 +93,11 @@
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
       }
-
-      changeGiscusTheme();
     });
   }
 
   handleMobileMenu();
   handleMobileDropdowns();
   handleThemeToggle();
-  watchGiscus();
 
 })();

@@ -54,9 +54,8 @@ enableRobotsTXT = true
   github = "r4sso"
   mail = "0xr4sso [at] proton (dot) me"
   githubEditURL = "https://github.com/r4sso/r4sso.github.io/blob/main/content/"
-  # the live site, used for files the giscus iframe loads (the dev server
-  # rewrites baseURL to localhost, which the iframe cannot reach)
-  canonicalURL = "https://r4sso.my"
+  # comment form endpoint (Cloudflare worker, see tools/worker/)
+  commentsEndpoint = "https://misty-snow-6dce.0xr4sso.workers.dev"
 
 # Navigation Menu
 [[menu.main]]

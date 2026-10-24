@@ -29,9 +29,7 @@
         </div>
       </div>
       {{ if ne .Params.comment false }}
-      <div class="giscus-wrap">
-        {{ partial "giscus.html" . }}
-      </div>
+      {{ partial "comments.html" (dict "page" .) }}
       {{ end }}
     </article>
   {{ if $showToc }}
