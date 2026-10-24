@@ -15,7 +15,7 @@
   </section>
 
   <section class="section-block">
-    <h2 class="section-title">Posts</h2>
+    <h2 class="section-title">Recent Posts</h2>
     <ul class="item-list">
       {{ range .Site.RegularPages | first 5 }}
       <li>
@@ -23,7 +23,6 @@
           <span class="item-date">{{ .Date.Format "02 Jan 2006" }}</span>
           <span class="item-sep">—</span>
           <span>{{ .Title }}</span>
-          <span class="item-section-badge">{{ .Section }}</span>
         </a>
       </li>
       {{ end }}

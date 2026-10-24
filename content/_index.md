@@ -8,3 +8,6 @@ Here, you will find a collection of articles, notes, a journal, and photos that 
 Even though I'm not the best writer :D
 
 [Sign My Guestbook](/guestbook)
+
+Email: 0xr4sso [at] proton (dot) me
+GitHub: [@r4sso](phttps://github.com/r4sso)
