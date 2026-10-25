@@ -4,7 +4,7 @@
     <form id="search" action='{{ with .GetPage "/search" }}{{.RelPermalink}}{{end}}' method="get" class="search-form">
       <div style="position:relative; flex:1;">
         <span class="search-icon">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/></svg>
+          {{ partial "icons/search.html" . }}
         </span>
         <input aria-label="Search site" type="text" name="q" placeholder="Type here to search (Require Javascript)" class="search-input">
       </div>

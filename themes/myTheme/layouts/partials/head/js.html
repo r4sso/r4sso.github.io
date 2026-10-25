@@ -4,14 +4,10 @@
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
 
-    const stored = localStorage.getItem('theme');
-    // dark is default, even if system prefers light or JS disabled
-    if (stored === 'light') {
+    // restore theme early to avoid a flash; checkbox sync happens in script.js
+    if (localStorage.getItem('theme') === 'light') {
       document.documentElement.classList.add('light');
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
+      document.getElementById('theme-toggle').checked = true;
     }
   })();
 </script>

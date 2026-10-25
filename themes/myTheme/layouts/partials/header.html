@@ -68,21 +68,12 @@
         href="{{ "search/" | relURL }}"
         class="icon-btn"
         aria-label="Search">
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          aria-hidden="true">
-          <path d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-        </svg>
+        {{ partial "icons/search.html" . }}
       </a>
 
-      <button
-        id="theme-toggle"
-        class="icon-btn theme-toggle"
-        aria-label="Toggle theme"
-        type="button">
+      <!-- checkbox stays focusable; CSS :has() does the switching -->
+      <input type="checkbox" id="theme-toggle" class="theme-toggle-box" aria-label="Toggle theme">
+      <label for="theme-toggle" class="icon-btn theme-toggle" title="Toggle theme">
         <svg
           id="theme-toggle-light-icon"
           width="16"
@@ -102,7 +93,7 @@
           aria-hidden="true">
           <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd"/>
         </svg>
-      </button>
+      </label>
 
       <button
         id="mobile-menu-button"
@@ -146,12 +137,11 @@
           </svg>
         </button>
 
-
         <div
+          class="mobile-submenu"
           id="sub-{{ $index }}"
-          class="mobile-submenu{{ if $currentPage.HasMenuCurrent "main" . }} open{{ end }}">
+          {{ if $currentPage.HasMenuCurrent "main" . }}style="display:block"{{ end }}>
           {{ range .Children }}
-
           <a
             href="{{ .URL | relLangURL | safeURL }}"
             class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
@@ -172,4 +162,5 @@
       {{ end }}
     {{ end }}
   </div>
+
 </nav>

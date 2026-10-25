@@ -1,6 +1,6 @@
 {{/*
   Static comments. One JSON entry per file in data/comments/:
-  { title, created, author, website, email(optional, never displayed), body }
+  { title, created, author, website(optional), body }
   The thread key is "Comment on: <page title>"; the render reads local files
   only. Submitting: the form POSTs to a tiny Cloudflare Worker (tools/worker/)
   holding a scoped GitHub token, which opens a review PR per comment.
@@ -26,28 +26,8 @@
 {{- end -}}
 
 <div class="comments{{ if $guestbook }} comments-top{{ end }}" id="comments">
-  {{- if eq $count 0 -}}
-    <h2 class="comments-title">{{ if $guestbook }}The guestbook is empty{{ else }}No comments yet{{ end }}</h2>
-  {{- else -}}
+  {{- if $count -}}
     <h2 class="comments-title">{{ $count }} {{ if $guestbook }}entr{{ if eq $count 1 }}y{{ else }}ies{{ end }}{{ else }}comment{{ if gt $count 1 }}s{{ end }}{{ end }}</h2>
-  {{- end -}}
-
-  {{- range $entries -}}
-    {{- $body := strings.TrimSpace (printf "%s" .body) -}}
-    {{- if not $body }}{{ continue }}{{ end -}}
-
-    <article class="comments-item">
-      <div class="comments-head">
-        <span class="comments-author">{{ .author | default "anonymous" }}</span>
-        <time class="comments-date" datetime="{{ .created.Format "2006-01-02" }}">{{ .created.Format "2 January 2006" }}</time>
-        {{- with .website }}
-        <a class="comments-website" href="{{ . }}" rel="noopener">{{ strings.TrimPrefix "https://" (strings.TrimPrefix "http://" .) }}</a>
-        {{- end }}
-      </div>
-      <div class="comments-body prose">
-        {{- $body | $page.RenderString -}}
-      </div>
-    </article>
   {{- end -}}
 
   <form id="comment-form" class="comments-form" method="post" action="{{ site.Params.commentsEndpoint }}">
@@ -55,12 +35,35 @@
     <input type="hidden" name="link" value="{{ $page.Permalink }}">
     <div class="comments-row">
       <input id="comment-name" class="comments-input" name="name" placeholder="Name*" required>
-      <input id="comment-email" class="comments-input" type="email" name="email" placeholder="Email (optional)">
+      <input id="comment-website" class="comments-input" name="website" placeholder="Website (optional)">
     </div>
-    <input id="comment-website" class="comments-input" name="website" placeholder="Website (optional)">
     <input class="comments-hp" name="spot" tabindex="-1" autocomplete="off" aria-hidden="true">
     <textarea id="comment-message" class="comments-input" name="message" rows="4" required placeholder="Message*"></textarea>
     <button class="comments-submit" type="submit">{{ if $guestbook }}Sign{{ else }}Post comment{{ end }}</button>
-    <p class="comments-note">Your entry lands in a review queue, once approved it appears automatically on the next site build.</p>
+    <p class="comments-note">Want a reply? put your contact in the message. Entries go live after approval, on the next build.</p>
   </form>
+
+  {{- if not $count -}}
+    <p class="comments-empty">{{ if $guestbook }}The guestbook is empty{{ else }}No comments yet{{ end }}</p>
+  {{- end -}}
+
+  {{- range $entries -}}
+    {{- $body := strings.TrimSpace (printf "%s" .body) -}}
+    {{- if not $body }}{{ continue }}{{ end -}}
+    {{- $author := .author | default "anonymous" -}}
+
+    <article class="comments-item">
+      <div class="comments-head">
+        {{- with .website }}
+        <a class="comments-author" href="{{ . }}" rel="noopener">{{ $author }}</a>
+        {{- else }}
+        <span class="comments-author">{{ $author }}</span>
+        {{- end }}
+        <time class="comments-date" datetime="{{ .created.Format "2006-01-02" }}">{{ .created.Format "2 January 2006" }}</time>
+      </div>
+      <div class="comments-body prose">
+        {{- $body | $page.RenderString -}}
+      </div>
+    </article>
+  {{- end -}}
 </div>

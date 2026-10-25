@@ -32,14 +32,13 @@ deploy workflow rebuilds `gh-pages` on every merge.
   "title": "Comment on: <page title>",
   "created": "2026-10-24T12:00:00Z",
   "author": "Satoshi",
-  "email": "",
   "website": "https://example.com",
   "body": "markdown body"
 }
 ```
 
-`email` is stored but never displayed; `comment: false` in front matter hides
-the section. One-time worker setup:
+The build renders every entry whose title matches the page, sorted by date;
+`comment: false` in front matter hides the section. One-time worker setup:
 1. Fine-grained GitHub PAT for this repo only — contents + pull-requests, read/write.
 2. `cd tools/worker && npx wrangler deploy && npx wrangler secret put TOKEN`
 3. Put the worker URL into `commentsEndpoint` in `config.toml`.

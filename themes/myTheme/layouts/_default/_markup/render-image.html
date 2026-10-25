@@ -4,14 +4,18 @@
 <figure>
   {{ $data := newScratch }}
   {{ if gt $src.Width 1100 }}
-    {{ $data.Set "webp" ($src.Resize "960x webp q85") }}
-    {{ $data.Set "fallback" ($src.Resize "960x q85") }}
-    {{ $data.Set "webpSmall" ($src.Resize "480x webp q85") }}
-    {{ $data.Set "fallbackSmall" ($src.Resize "480x q85") }}
+    {{ $data.Set "avif" ($src.Resize "960x avif") }}
+    {{ $data.Set "webp" ($src.Resize "960x webp") }}
+    {{ $data.Set "fallback" ($src.Resize "960x") }}
+    {{ $data.Set "avifSmall" ($src.Resize "480x avif") }}
+    {{ $data.Set "webpSmall" ($src.Resize "480x webp") }}
+    {{ $data.Set "fallbackSmall" ($src.Resize "480x") }}
   {{ else }}
-    {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q85" $src.Width $src.Height)) }}
-    {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q85" $src.Width $src.Height)) }}
+    {{ $data.Set "avif" ($src.Resize (printf "%dx%d avif" $src.Width $src.Height)) }}
+    {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp" $src.Width $src.Height)) }}
+    {{ $data.Set "fallback" ($src.Resize (printf "%dx%d" $src.Width $src.Height)) }}
   {{ end }}
+  {{ $avif := $data.Get "avif" }}
   {{ $webp := $data.Get "webp" }}
   {{ $fallback := $data.Get "fallback" }}
   {{ $isFirst := eq (.Page.Scratch.Get "imgCount") nil }}
@@ -21,9 +25,11 @@
   <a href="{{ $src.RelPermalink }}">
     <picture>
       {{ if $data.Get "webpSmall" }}
+      <source srcset="{{ ($data.Get "avifSmall").RelPermalink }} 480w, {{ $avif.RelPermalink }} 960w" sizes="(max-width: 640px) 100vw, 960px" type="image/avif">
       <source srcset="{{ ($data.Get "webpSmall").RelPermalink }} 480w, {{ $webp.RelPermalink }} 960w" sizes="(max-width: 640px) 100vw, 960px" type="image/webp">
-      <source srcset="{{ ($data.Get "fallbackSmall").RelPermalink }} 480w, {{ $fallback.RelPermalink }} 960w" sizes="(max-width: 640px) 100vw, 960px" type="image/jpeg">
+      <source srcset="{{ ($data.Get "fallbackSmall").RelPermalink }} 480w, {{ $fallback.RelPermalink }} 960w" sizes="(max-width: 640px) 100vw, 960px" type="{{ $fallback.MediaType.Type }}">
       {{ else }}
+      <source srcset="{{ $avif.RelPermalink }}" type="image/avif">
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
       {{ end }}
       <img src="{{ $fallback.RelPermalink }}" alt="{{ .Text }}" loading="{{ $loading }}" decoding="async" fetchpriority="{{ $fetchPriority }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"/>

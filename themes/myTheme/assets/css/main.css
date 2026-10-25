@@ -44,7 +44,7 @@ html.dark {
   --shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 
-html.light {
+html:has(#theme-toggle:checked) {
   color-scheme: light;
   --bg: #ffffff;
   --bg-elevated: #f6f8fa;
@@ -297,11 +297,21 @@ button:focus {
 
 /* No JavaScript: hide dead controls, keep the site navigable */
 
-.no-js .theme-toggle,
 .no-js .copy-btn,
 .no-js .mobile-dropdown-trigger,
 .no-js .hamburger {
   display: none;
+}
+.theme-toggle-box {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.theme-toggle-box:focus-visible + .theme-toggle {
+  outline: 1px solid var(--text-strong);
+  outline-offset: 2px;
 }
 
 .no-js .mobile-submenu {
@@ -525,11 +535,11 @@ button:focus {
   }
 }
 
-html.light #theme-toggle-light-icon {
+html:has(#theme-toggle:checked) #theme-toggle-light-icon {
   display: block !important;
 }
 
-html:not(.light) #theme-toggle-dark-icon {
+html:not(:has(#theme-toggle:checked)) #theme-toggle-dark-icon {
   display: block !important;
 }
 
@@ -800,7 +810,7 @@ html:not(.light) #theme-toggle-dark-icon {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   text-decoration: none;
-  transition: background 0.15s, border-color 0.15s;
+  transition: none;
 }
 
 .post-card:hover {
@@ -864,7 +874,7 @@ html:not(.light) #theme-toggle-dark-icon {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   text-decoration: none;
-  transition: background 0.15s, border-color 0.15s;
+  transition: none;
 }
 
 .project-card:hover {

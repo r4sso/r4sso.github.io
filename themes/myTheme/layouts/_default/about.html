@@ -17,10 +17,12 @@
       {{ end }}
     {{ end }}
     {{ if $src }}
-      {{ $webp := $src.Resize "320x webp q85" }}
-      {{ $fallback := $src.Resize "320x q85" }}
+      {{ $avif := $src.Resize "320x avif" }}
+      {{ $webp := $src.Resize "320x webp" }}
+      {{ $fallback := $src.Resize "320x" }}
   <div class="about-profile">
     <picture>
+      <source srcset="{{ $avif.RelPermalink }}" type="image/avif">
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
       <img
         class="about-thumb"

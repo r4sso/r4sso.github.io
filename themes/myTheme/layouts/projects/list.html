@@ -18,14 +18,17 @@
         {{ $img := resources.Get $imgPath }}
         {{ if not $img }}{{ $img = resources.Get (printf "images/%s" (path.Base .)) }}{{ end }}
         {{ if $img }}
-          {{ $webp := $img.Resize "640x webp q80" }}
-          {{ $webpSmall := $img.Resize "360x webp q75" }}
-          {{ $fallback := $img.Resize "640x q80" }}
-          {{ $fallbackSmall := $img.Resize "360x q75" }}
+          {{ $avif := $img.Resize "640x avif" }}
+          {{ $avifSmall := $img.Resize "360x avif" }}
+          {{ $webp := $img.Resize "640x webp" }}
+          {{ $webpSmall := $img.Resize "360x webp" }}
+          {{ $fallback := $img.Resize "640x" }}
+          {{ $fallbackSmall := $img.Resize "360x" }}
           <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="project-image-wrap">
             <picture>
+              <source srcset="{{ $avifSmall.RelPermalink }} 360w, {{ $avif.RelPermalink }} 640w" sizes="(max-width: 640px) calc(100vw - 72px), 640px" type="image/avif">
               <source srcset="{{ $webpSmall.RelPermalink }} 360w, {{ $webp.RelPermalink }} 640w" sizes="(max-width: 640px) calc(100vw - 72px), 640px" type="image/webp">
-              <source srcset="{{ $fallbackSmall.RelPermalink }} 360w, {{ $fallback.RelPermalink }} 640w" sizes="(max-width: 640px) calc(100vw - 72px), 640px" type="image/jpeg">
+              <source srcset="{{ $fallbackSmall.RelPermalink }} 360w, {{ $fallback.RelPermalink }} 640w" sizes="(max-width: 640px) calc(100vw - 72px), 640px" type="{{ $fallback.MediaType.Type }}">
               <img src="{{ $fallback.RelPermalink }}" alt="{{ $p.title }} thumbnail" loading="lazy" decoding="async" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" class="project-image">
             </picture>
           </a>

@@ -45,6 +45,16 @@
   background: var(--bg-elevated);
   border: 1px solid var(--border);
 }
+.article-footer {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bg-hover);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
 @media (min-width: 640px) {
   .article-card {

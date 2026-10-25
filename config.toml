@@ -12,7 +12,7 @@ enableRobotsTXT = true
 [pagination]
   pagerSize = 5
 
-# Formatting and Permalinks
+# Formatting and Permafavicons
 [permalinks]
   posts = "/:year/:month/:title/"
 
@@ -46,10 +46,24 @@ enableRobotsTXT = true
     endLevel = 4
     ordered = false
 
+# Image encoding: AVIF -> WebP -> original. Quality lives here (drop the q
+# token from Resize specs so these apply). q72/avif speed8 and q85/webp
+# method6 benchmark at VMAF ~95+ (visually transparent) on this site's images.
+[imaging]
+  [imaging.avif]
+    quality = 72
+    encoderspeed = 8
+  [imaging.webp]
+    quality = 85
+    method = 6
+  [imaging.jpeg]
+    quality = 85
+
 # Site Parameters
 [params]
   description = "My personal website, blog and notes of r4sso"
   logo = "/images/logo.svg"
+  favicon = "/images/favicon.ico"
   tableOfContents = true
   github = "r4sso"
   mail = "0xr4sso [at] proton (dot) me"

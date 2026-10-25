@@ -39,17 +39,19 @@
       {{ $title := $img.Params.title | default (default $parent.Title $img.Name) }}
 
       {{ $imgDate := "" }}
-      {{ if $img.Meta }}
-        {{ $imgDate = $img.Meta.Date.Format "Jan 02, 2006" }}
+      {{ with $img.Meta }}
+        {{ $imgDate = .Date.Format "Jan 02, 2006" }}
       {{ else }}
         {{ $imgDate = $parent.Date.Format "Jan 02, 2006" }}
       {{ end }}
 
       <div class="gallery-item{{ if $isTall }} tall{{ end }}">
         <a href="{{ $link }}" class="gallery-link">
-          {{ $webp := $img.Resize "800x webp q85" }}
-          {{ $fallback := $img.Resize "800x q85" }}
+          {{ $avif := $img.Resize "800x avif" }}
+          {{ $webp := $img.Resize "800x webp" }}
+          {{ $fallback := $img.Resize "800x" }}
           <picture>
+            <source srcset="{{ $avif.RelPermalink }}" type="image/avif">
             <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
             <img
               src="{{ $fallback.RelPermalink }}"
@@ -82,27 +84,21 @@
                 {{ end }}
 
               {{ else if $img.Meta }}
-
-                {{ with $img.Meta.Exif.Tags.Model }}
-                  <p class="gallery-camera">
-                    {{ . }}
-                  </p>
-                {{ end }}
-
-                <p class="gallery-settings">
-                  {{ with $img.Meta.Exif.Tags.FocalLengthIn35mmFormat }}
-                    {{ . }}mm •
+                {{ with $img.Meta.Exif }}
+                  {{ with .Tags }}
+                    {{ with .Model }}
+                      <p class="gallery-camera">{{ . }}</p>
+                    {{ end }}
+                    <p class="gallery-settings">
+                      {{ with .FocalLengthIn35mmFormat }}{{ . }}mm •{{ end }}
+                      {{ with .FNumber }}ƒ/{{ . }} •{{ end }}
+                      {{ with .ExposureTime }}{{ . }}s •{{ end }}
+                      {{ with .ISOSpeedRatings }}ISO {{ . }}{{ end }}
+                    </p>
+                    {{ with .LensModel }}
+                      <p class="gallery-lens">{{ . }}</p>
+                    {{ end }}
                   {{ end }}
-
-                  ƒ/{{ $img.Meta.Exif.Tags.FNumber }} •
-                  {{ $img.Meta.Exif.Tags.ExposureTime }}s •
-                  ISO {{ $img.Meta.Exif.Tags.ISOSpeedRatings }}
-                </p>
-
-                {{ with $img.Meta.Exif.Tags.LensModel }}
-                  <p class="gallery-lens">
-                    {{ . }}
-                  </p>
                 {{ end }}
 
               {{ end }}

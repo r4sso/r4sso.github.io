@@ -8,7 +8,11 @@
       {{- if isset $page.Params "categories" -}}
         {{- $categories = delimit $page.Params.categories " ; " -}}
       {{- end -}}
-      {{- $pageData := (dict "title" $page.Title "href" $page.Permalink "categories" $categories "content" $page.Plain) -}}
+      {{- $content := $page.Plain -}}
+      {{- if gt (len $content) 1000 -}}
+        {{- $content = substr $content 0 1000 -}}
+      {{- end -}}
+      {{- $pageData := (dict "title" $page.Title "href" $page.Permalink "categories" $categories "content" $content) -}}
       {{- $.Scratch.Add "pagesIndex" $pageData -}}
     {{- end -}}
   {{- end -}}

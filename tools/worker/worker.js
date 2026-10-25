@@ -3,7 +3,7 @@
 //   npx wrangler secret put TOKEN
 // TOKEN is a fine-grained GitHub PAT for r4sso.github.io with
 // contents:read+write and pull-requests:read+write, nothing else.
-// The site form posts name/email(honeypot-guarded)/website/message; this
+// The site form posts name/website/message; this
 // commits one JSON file to data/comments/ on a branch and opens a review PR.
 
 const REPO = "r4sso/r4sso.github.io";
@@ -21,7 +21,6 @@ export default {
 
     const page = clean(String(f.get("page") || ""), 200);
     const author = clean(String(f.get("name") || ""), 60);
-    const email = clean(String(f.get("email") || ""), 80);
     const website = linkify(clean(String(f.get("website") || ""), 120));
     const body = clean(String(f.get("message") || ""), 4000);
 
@@ -31,7 +30,6 @@ export default {
       title: "Comment on: " + page,
       created: new Date().toISOString(),
       author: author,
-      email: email,
       website: website,
       body: body,
     };

@@ -17,16 +17,20 @@
     <figure>
       {{ $data := newScratch }}
       {{ if gt $src.Width 1100 }}
-        {{ $data.Set "webp" ($src.Resize "960x webp q90") }}
-        {{ $data.Set "fallback" ($src.Resize "960x q90") }}
+        {{ $data.Set "avif" ($src.Resize "960x avif") }}
+        {{ $data.Set "webp" ($src.Resize "960x webp") }}
+        {{ $data.Set "fallback" ($src.Resize "960x") }}
       {{ else }}
-        {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp q90" $src.Width $src.Height)) }}
-        {{ $data.Set "fallback" ($src.Resize (printf "%dx%d q90" $src.Width $src.Height)) }}
+        {{ $data.Set "avif" ($src.Resize (printf "%dx%d avif" $src.Width $src.Height)) }}
+        {{ $data.Set "webp" ($src.Resize (printf "%dx%d webp" $src.Width $src.Height)) }}
+        {{ $data.Set "fallback" ($src.Resize (printf "%dx%d" $src.Width $src.Height)) }}
       {{ end }}
+      {{ $avif := $data.Get "avif" }}
       {{ $webp := $data.Get "webp" }}
       {{ $fallback := $data.Get "fallback" }}
       <a href="{{ $src.RelPermalink }}">
         <picture>
+          <source srcset="{{ $avif.RelPermalink }}" type="image/avif">
           <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
           <img src="{{ $fallback.RelPermalink }}" alt="{{ .Params.alt }}" decoding="async" loading="eager" fetchpriority="high" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" />
         </picture>

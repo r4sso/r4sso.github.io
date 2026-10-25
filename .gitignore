@@ -3,3 +3,5 @@ resources/
 *.log
 .hugo_build.lock
 .env
+resources/_gen/
+.min.*
