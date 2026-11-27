@@ -5,3 +5,4 @@ resources/
 .env
 resources/_gen/
 .min.*
+tools/worker/.wrangler/

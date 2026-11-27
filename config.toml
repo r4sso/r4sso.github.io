@@ -69,9 +69,9 @@ enableRobotsTXT = true
   mail = "0xr4sso [at] proton (dot) me"
   githubEditURL = "https://github.com/r4sso/r4sso.github.io/blob/main/content/"
   # comment form endpoint (Cloudflare worker, see tools/worker/)
-  commentsEndpoint = "https://misty-snow-6dce.0xr4sso.workers.dev"
+  commentsEndpoint = "https://comments-worker.0xr4sso.workers.dev"
   # Cloudflare Turnstile site key; the secret key lives in the worker
-  turnstileSiteKey = "0x00000000000000000000"
+  turnstileSiteKey = "0x4AAAAAAGVtX2UfrXNkWsFq"
 
 # Navigation Menu
 [[menu.main]]
