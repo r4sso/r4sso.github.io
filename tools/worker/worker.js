@@ -1,14 +1,12 @@
-// Comment form endpoint: anonymous HTML form POST -> pull request in the site
-// repo. Deploy to Cloudflare Workers (free tier), then set the secrets:
+// Comment form endpoint: JavaScript-free HTML form POST -> pull request in
+// the site repo. Deploy to Cloudflare Workers (free tier), then set secrets:
 //   npx wrangler secret put APP_ID
 //   npx wrangler secret put INSTALLATION_ID
 //   npx wrangler secret put PRIVATE_KEY
-//   npx wrangler secret put TURNSTILE_SECRET
 // A GitHub App opens the PRs, so they are never authored by your personal
 // account. The app needs contents:read+write and pull-requests:read+write.
-// The site form posts name/website/message plus a Turnstile token; this
-// commits one JSON file to data/comments/ on a branch and opens a review PR.
-// Turnstile runs before any GitHub call, so spam never creates a PR.
+// The form posts name/website/message; this commits one JSON file to
+// data/comments/ on a branch and opens a review PR. Honeypot drops naive bots.
 
 const REPO = "r4sso/r4sso.github.io";
 
@@ -22,12 +20,6 @@ export default {
     const link = clean(String(f.get("link") || ""), 300) || "https://r4sso.my";
 
     if (f.get("spot")) return back(link); // honeypot: silently drop bots
-
-    const token = clean(String(f.get("cf-turnstile-response") || ""), 2048);
-    if (!token || !(await human(token, request.headers.get("CF-Connecting-IP"), env))) {
-      console.error("comment: Turnstile rejected");
-      return Response.redirect(link + "#comments-error-turnstile", 303);
-    }
 
     const page = clean(String(f.get("page") || ""), 200);
     const author = clean(String(f.get("name") || ""), 60);
@@ -75,7 +67,7 @@ export default {
       if (!prOk) throw new Error("create pr");
     } catch (err) {
       console.error("comment: GitHub step failed:", err);
-      return Response.redirect(link + "#comments-error-github", 303);
+      return Response.redirect(link + "#comments-error", 303);
     }
 
     return Response.redirect(link + "#comments", 303);
@@ -95,24 +87,6 @@ function linkify(w) {
 
 function back(link) {
   return Response.redirect(link + "#comments", 303);
-}
-
-// Verify with Cloudflare before touching GitHub. A missing secret fails closed.
-async function human(token, ip, env) {
-  const body = new URLSearchParams({
-    secret: env.TURNSTILE_SECRET || "",
-    response: token,
-  });
-  if (ip) body.set("remoteip", ip);
-  const r = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-    method: "POST",
-    body: body,
-  });
-  const data = await r.json();
-  if (!data || !data.success) {
-    console.error("comment: siteverify:", JSON.stringify(data));
-  }
-  return !!(data && data.success);
 }
 
 // GitHub App auth: sign a short-lived JWT, exchange it for an installation
@@ -178,8 +152,11 @@ function b64(s) {
   );
 }
 
-function b64url(bytes) {
-  return btoa(String.fromCharCode(...new Uint8Array(bytes)))
+function b64url(value) {
+  const bytes = typeof value === "string"
+    ? new TextEncoder().encode(value)
+    : new Uint8Array(value);
+  return btoa(String.fromCharCode(...bytes))
     .replace(/\+/g, "-")
     .replace(/\//g, "_")
     .replace(/=+$/, "");

@@ -70,8 +70,6 @@ enableRobotsTXT = true
   githubEditURL = "https://github.com/r4sso/r4sso.github.io/blob/main/content/"
   # comment form endpoint (Cloudflare worker, see tools/worker/)
   commentsEndpoint = "https://comments-worker.0xr4sso.workers.dev"
-  # Cloudflare Turnstile site key; the secret key lives in the worker
-  turnstileSiteKey = "0x4AAAAAAGVtX2UfrXNkWsFq"
 
 # Navigation Menu
 [[menu.main]]

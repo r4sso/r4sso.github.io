@@ -22,11 +22,11 @@ make build
 ```
 
 ### Comments
-No accounts, no email. The form POSTs to a tiny Cloudflare Worker
-(`tools/worker/`) that verifies a Cloudflare Turnstile token first, then commits
-one JSON entry to `data/comments/` on a branch and opens a review PR. Approve =
-merge; the deploy workflow rebuilds `gh-pages` on every merge. Bots fail the
-Turnstile check before any GitHub call, so spam never leaves a PR in history.
+JavaScript-free, no accounts, no email. The form POSTs (plain HTML) to a tiny
+Cloudflare Worker (`tools/worker/`) that commits one JSON entry to
+`data/comments/` on a branch and opens a review PR as a GitHub App bot, never
+under your personal account. Approve = merge; the deploy workflow rebuilds
+`gh-pages` on every merge. A honeypot field drops naive bots.
 
 ```json
 {
@@ -40,13 +40,12 @@ Turnstile check before any GitHub call, so spam never leaves a PR in history.
 
 The build renders every entry whose title matches the page, sorted by date;
 `comment: false` in front matter hides the section. One-time setup:
-1. Create a GitHub App named e.g. `comment-bot`, with contents and
+1. Create a GitHub App named e.g. `r4sso-bot`, with contents and
    pull-requests read/write, generate a private key, and install it on this repo.
-2. Create a Turnstile widget in the Cloudflare dashboard for `r4sso.my`.
-3. `cd tools/worker` and set the secrets `APP_ID`, `INSTALLATION_ID`,
-   `PRIVATE_KEY` (the PEM), and `TURNSTILE_SECRET` with `npx wrangler secret put <name>`.
-4. Put the worker URL in `commentsEndpoint` and the widget's site key in
-   `turnstileSiteKey` in `config.toml`, then `npx wrangler deploy`.
+2. `cd tools/worker` and set the secrets `APP_ID`, `INSTALLATION_ID` and
+   `PRIVATE_KEY` (PKCS#8 PEM) with `bunx wrangler secret put <name>`.
+3. Put the worker URL in `commentsEndpoint` in `config.toml`, then
+   `bunx wrangler deploy`.
 
 Comment form tests: `bun test tools/worker/`.
 

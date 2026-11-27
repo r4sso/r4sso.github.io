@@ -30,18 +30,16 @@ async function makeEnv() {
     APP_ID: "1",
     INSTALLATION_ID: "2",
     PRIVATE_KEY: `-----BEGIN PRIVATE KEY-----\n${b64}\n-----END PRIVATE KEY-----`,
-    TURNSTILE_SECRET: "s",
   };
 }
 
 const env = await makeEnv();
 
-function stub(verifySuccess) {
+function stub() {
   const calls = [];
   const auth = [];
   globalThis.fetch = async (url, opts) => {
     calls.push(String(url));
-    if (String(url).includes("turnstile")) return json({ success: verifySuccess });
     if (String(url).includes("/app/installations/")) return json({ token: "bot-token" });
     auth.push(opts?.headers?.Authorization);
     if (String(url).includes("git/ref/heads/main")) return json({ object: { sha: "abc" } });
@@ -50,13 +48,12 @@ function stub(verifySuccess) {
   return { calls, auth };
 }
 
-function form(token = true, honeypot = false) {
+function form(honeypot = false, message = "Hello") {
   const f = new FormData();
   f.set("link", "https://r4sso.my/post/");
   f.set("page", "Test page");
   f.set("name", "Alice");
-  f.set("message", "Hello");
-  if (token) f.set("cf-turnstile-response", "valid-token");
+  f.set("message", message);
   if (honeypot) f.set("spot", "bot");
   return f;
 }
@@ -68,32 +65,25 @@ function post(f) {
   );
 }
 
-test("missing token is rejected before any GitHub call", async () => {
-  const { calls } = stub(true);
-  const res = await post(form(false));
-  expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments-error-turnstile");
-  expect(calls.length).toBe(0);
-});
-
-test("failed verification is rejected before any GitHub call", async () => {
-  const { calls } = stub(false);
-  const res = await post(form());
-  expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments-error-turnstile");
-  expect(calls.length).toBe(1); // turnstile only
-});
-
 test("honeypot drops the bot silently", async () => {
-  const { calls } = stub(true);
-  const res = await post(form(true, true));
+  const { calls } = stub();
+  const res = await post(form(true));
   expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments");
   expect(calls.length).toBe(0);
 });
 
-test("verified human opens the PR as the app", async () => {
-  const { calls, auth } = stub(true);
+test("empty fields are ignored", async () => {
+  const { calls } = stub();
+  const res = await post(form(false, ""));
+  expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments");
+  expect(calls.length).toBe(0);
+});
+
+test("valid comment opens the PR as the app", async () => {
+  const { calls, auth } = stub();
   const res = await post(form());
   expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments");
-  // turnstile + bot token + ref, branch, file, PR
-  expect(calls.length).toBe(6);
+  // bot token + ref, branch, file, PR
+  expect(calls.length).toBe(5);
   expect(auth.every((header) => header === "Bearer bot-token")).toBe(true);
 });
