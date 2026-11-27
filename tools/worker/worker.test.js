@@ -48,13 +48,12 @@ function stub() {
   return { calls, auth };
 }
 
-function form(honeypot = false, message = "Hello") {
+function form(message = "Hello") {
   const f = new FormData();
   f.set("link", "https://r4sso.my/post/");
   f.set("page", "Test page");
   f.set("name", "Alice");
   f.set("message", message);
-  if (honeypot) f.set("spot", "bot");
   return f;
 }
 
@@ -65,16 +64,9 @@ function post(f) {
   );
 }
 
-test("honeypot drops the bot silently", async () => {
-  const { calls } = stub();
-  const res = await post(form(true));
-  expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments");
-  expect(calls.length).toBe(0);
-});
-
 test("empty fields are ignored", async () => {
   const { calls } = stub();
-  const res = await post(form(false, ""));
+  const res = await post(form(""));
   expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments");
   expect(calls.length).toBe(0);
 });

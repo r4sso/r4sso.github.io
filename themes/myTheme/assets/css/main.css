@@ -1637,10 +1637,6 @@ html:not(:has(#theme-toggle:checked)) #theme-toggle-dark-icon {
   flex: 1 1 45%;
 }
 
-.comments-hp {
-  display: none;
-}
-
 /* Inline links */
 
 .inline-link {

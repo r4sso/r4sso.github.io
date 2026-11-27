@@ -6,7 +6,7 @@
 // A GitHub App opens the PRs, so they are never authored by your personal
 // account. The app needs contents:read+write and pull-requests:read+write.
 // The form posts name/website/message; this commits one JSON file to
-// data/comments/ on a branch and opens a review PR. Honeypot drops naive bots.
+// data/comments/ on a branch and opens a review PR.
 
 const REPO = "r4sso/r4sso.github.io";
 
@@ -18,8 +18,6 @@ export default {
 
     const f = await request.formData();
     const link = clean(String(f.get("link") || ""), 300) || "https://r4sso.my";
-
-    if (f.get("spot")) return back(link); // honeypot: silently drop bots
 
     const page = clean(String(f.get("page") || ""), 200);
     const author = clean(String(f.get("name") || ""), 60);

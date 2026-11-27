@@ -26,7 +26,7 @@ JavaScript-free, no accounts, no email. The form POSTs (plain HTML) to a tiny
 Cloudflare Worker (`tools/worker/`) that commits one JSON entry to
 `data/comments/` on a branch and opens a review PR as a GitHub App bot, never
 under your personal account. Approve = merge; the deploy workflow rebuilds
-`gh-pages` on every merge. A honeypot field drops naive bots.
+`gh-pages` on every merge.
 
 ```json
 {

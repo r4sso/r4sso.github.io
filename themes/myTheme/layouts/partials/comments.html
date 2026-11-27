@@ -37,7 +37,6 @@
       <input id="comment-name" class="comments-input" name="name" placeholder="Name*" required>
       <input id="comment-website" class="comments-input" name="website" placeholder="Website (optional)">
     </div>
-    <input class="comments-hp" name="spot" tabindex="-1" autocomplete="off" aria-hidden="true">
     <textarea id="comment-message" class="comments-input" name="message" rows="4" required placeholder="Message*"></textarea>
     <button class="comments-submit" type="submit">{{ if $guestbook }}Sign{{ else }}Post comment{{ end }}</button>
     <p class="comments-note">Want a reply? put your contact in the message. Entries go live after approval, on the next build.</p>
