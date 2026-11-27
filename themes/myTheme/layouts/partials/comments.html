@@ -44,7 +44,8 @@
     <button class="comments-submit" type="submit">{{ if $guestbook }}Sign{{ else }}Post comment{{ end }}</button>
     <p class="comments-note">Want a reply? put your contact in the message. Entries go live after approval, on the next build.</p>
   </form>
-  <p id="comments-error" class="comments-error">Could not post the comment. Please complete the verification and try again.</p>
+  <p id="comments-error-turnstile" class="comments-error">Verification failed. Please complete the Turnstile check and try again.</p>
+  <p id="comments-error-github" class="comments-error">Could not save your comment. Please try again later.</p>
 
   {{- if not $count -}}
     <p class="comments-empty">{{ if $guestbook }}The guestbook is empty{{ else }}No comments yet{{ end }}</p>

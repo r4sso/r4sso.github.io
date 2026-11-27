@@ -71,14 +71,14 @@ function post(f) {
 test("missing token is rejected before any GitHub call", async () => {
   const { calls } = stub(true);
   const res = await post(form(false));
-  expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments-error");
+  expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments-error-turnstile");
   expect(calls.length).toBe(0);
 });
 
 test("failed verification is rejected before any GitHub call", async () => {
   const { calls } = stub(false);
   const res = await post(form());
-  expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments-error");
+  expect(res.headers.get("location")).toBe("https://r4sso.my/post/#comments-error-turnstile");
   expect(calls.length).toBe(1); // turnstile only
 });
 

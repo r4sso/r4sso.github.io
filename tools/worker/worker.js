@@ -25,7 +25,8 @@ export default {
 
     const token = clean(String(f.get("cf-turnstile-response") || ""), 2048);
     if (!token || !(await human(token, request.headers.get("CF-Connecting-IP"), env))) {
-      return Response.redirect(link + "#comments-error", 303);
+      console.error("comment: Turnstile rejected");
+      return Response.redirect(link + "#comments-error-turnstile", 303);
     }
 
     const page = clean(String(f.get("page") || ""), 200);
@@ -73,7 +74,8 @@ export default {
       });
       if (!prOk) throw new Error("create pr");
     } catch (err) {
-      return Response.redirect(link + "#comments-error", 303);
+      console.error("comment: GitHub step failed:", err);
+      return Response.redirect(link + "#comments-error-github", 303);
     }
 
     return Response.redirect(link + "#comments", 303);
@@ -107,6 +109,9 @@ async function human(token, ip, env) {
     body: body,
   });
   const data = await r.json();
+  if (!data || !data.success) {
+    console.error("comment: siteverify:", JSON.stringify(data));
+  }
   return !!(data && data.success);
 }
 
