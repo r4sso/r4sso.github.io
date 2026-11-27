@@ -30,6 +30,7 @@
     <h2 class="comments-title">{{ $count }} {{ if $guestbook }}entr{{ if eq $count 1 }}y{{ else }}ies{{ end }}{{ else }}comment{{ if gt $count 1 }}s{{ end }}{{ end }}</h2>
   {{- end -}}
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <form id="comment-form" class="comments-form" method="post" action="{{ site.Params.commentsEndpoint }}">
     <input type="hidden" name="page" value="{{ $page.Title }}">
     <input type="hidden" name="link" value="{{ $page.Permalink }}">
@@ -39,9 +40,11 @@
     </div>
     <input class="comments-hp" name="spot" tabindex="-1" autocomplete="off" aria-hidden="true">
     <textarea id="comment-message" class="comments-input" name="message" rows="4" required placeholder="Message*"></textarea>
+    <div class="cf-turnstile" data-sitekey="{{ site.Params.turnstileSiteKey }}"></div>
     <button class="comments-submit" type="submit">{{ if $guestbook }}Sign{{ else }}Post comment{{ end }}</button>
     <p class="comments-note">Want a reply? put your contact in the message. Entries go live after approval, on the next build.</p>
   </form>
+  <p id="comments-error" class="comments-error">Could not post the comment. Please complete the verification and try again.</p>
 
   {{- if not $count -}}
     <p class="comments-empty">{{ if $guestbook }}The guestbook is empty{{ else }}No comments yet{{ end }}</p>

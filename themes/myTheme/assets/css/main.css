@@ -1564,9 +1564,14 @@ html:not(:has(#theme-toggle:checked)) #theme-toggle-dark-icon {
 }
 
 .comments-error {
+  display: none;
   margin: 0 0 12px;
   color: var(--text-dim);
   font-size: 9pt;
+}
+
+.comments-error:target {
+  display: block;
 }
 
 .comments-form {
